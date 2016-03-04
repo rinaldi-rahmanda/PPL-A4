@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Socialize;
 
 class HomeController extends Controller
 {
@@ -30,6 +31,6 @@ class HomeController extends Controller
     	take news from the database 
     	first then give it to the view
     	*/
-    	return view('news');
+    	return view('home.news');
     }
 }

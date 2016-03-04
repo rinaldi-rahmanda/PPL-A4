@@ -34,5 +34,10 @@ return [
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
-
+	
+	'google' => [
+		'client_id' => 'MASUKIN ID API',
+		'client_secret' => 'your-github-app-secret',
+		'redirect' => '/localhost/DAN LINKNYA',
+	],
 ];

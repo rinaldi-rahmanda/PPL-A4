@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index');
+Route::get('/contact','HomeController@contact');
+Route::get('/about','HomeController@about');
+Route::get('/faq','HomeController@faq');
+Route::get('/news','HomeController@news');
+
 
 /*
 |--------------------------------------------------------------------------
