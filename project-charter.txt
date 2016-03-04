@@ -19,7 +19,7 @@ ide kami tersebut adalah suatu aplikasi(terdapat form adopsi, forum tanya jawab,
 yang mempunyai target user yaitu pencinta hewan, khususnya untuk peliharaan berupa anjing dan kucing saja.
 Kami memilih ide tersebut karena setelah kami melakukan pengamatan dan pencarian di internet, sharing informasi tentang adopsi dan penitipan hewan di Indonesia
 hanya dilakukan melewati media sosial seperti facebook,twitter, ataupun blog-blog. Pencarian pada google juga tidak memberikan hasil website yang mengintegrasikan
-pencarian adopsi hewan dan penitipan hewan seperti project kami.
+pencarian adopsi hewan dan penitipan hewan seperti project kami
 
 2.Tujuan Bisnis
 a.Tujuan
