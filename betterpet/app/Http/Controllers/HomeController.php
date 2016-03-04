@@ -25,6 +25,14 @@ class HomeController extends Controller
     public function faq(){
     	return view('home.faq');
     }
+	//login view
+	public function login(){
+		return view('home.login');
+	}
+	//register view
+	public function register(){
+		return view('home.register');
+	}
     //displaying news
     public function news(){
     	/*

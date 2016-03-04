@@ -16,6 +16,9 @@ Route::get('/contact','HomeController@contact');
 Route::get('/about','HomeController@about');
 Route::get('/faq','HomeController@faq');
 Route::get('/news','HomeController@news');
+Route::get('/login','HomeController@login');
+Route::get('/register','HomeController@register');
+
 
 
 /*
