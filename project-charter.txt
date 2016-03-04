@@ -19,7 +19,14 @@ ide kami tersebut adalah suatu aplikasi(terdapat form adopsi, forum tanya jawab,
 yang mempunyai target user yaitu pencinta hewan, khususnya untuk peliharaan berupa anjing dan kucing saja.
 Kami memilih ide tersebut karena setelah kami melakukan pengamatan dan pencarian di internet, sharing informasi tentang adopsi dan penitipan hewan di Indonesia
 hanya dilakukan melewati media sosial seperti facebook,twitter, ataupun blog-blog. Pencarian pada google juga tidak memberikan hasil website yang mengintegrasikan
-pencarian adopsi hewan dan penitipan hewan seperti project kami
+pencarian adopsi hewan dan penitipan hewan seperti project kami. Data yang kami peroleh dari pencarian(googling) yang kami lakukan adalah, tidak ada website di Indonesia
+yang menawarkan jasa seperti yang web kami tawarkan(adopsi hewan, informasi dokter hewan, dan lain lain). Kami juga memperoleh terdapat beberapa akun atau grup di social media 
+seperti facebook dan twitter, 
+berikut ini beberapa akun yang menyediakan jasa adopsi hewan:
+- Tempat Jual-Beli/Hibah/Semi Hibah/Adopsi/Barter/Hewan ( Satwa ) https://www.facebook.com/groups/505681622841142/ 
+- LAPAK ADOPSI KUCING BANDUNG https://www.facebook.com/groups/450247965160855/
+- Adopsianjing.com https://www.facebook.com/adopsianjing/?fref=ts
+- dll
 
 2.Tujuan Bisnis
 a.Tujuan
