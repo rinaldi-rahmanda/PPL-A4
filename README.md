@@ -57,6 +57,7 @@ Kami memilih ide tersebut karena setelah kami melakukan pencarian di internet, *
 	Diperlukan usaha lebih bagi anggota yang belum menguasai framework Laravel. Anggota tim juga perlu menyediakan waktu 15 menit setiap harinya untuk melakukan scrum meeting dan mengusahakan tidak terlambat di setiap meeting agar meeting dapat terlaksana dengan baik dan tepat waktu. Setiap anggota juga perlu menyediakan waktu 1 hingga 2 jam untuk berkumpul bersama mengerjakan task yang ada, selain itu setiap anggota perlu menyediakan minimal 5-6 jam seminggu untuk dapat menyelesaikan task yang diberikan.
 - Estimasi Biaya  
 	Biaya utama dari proyek ini adalah waktu dari para anggota tim untuk mengerjakan proyek ini. Framework yang kami pilih (Laravel) dapat digunakan secara gratis, server yang digunakan akan disediakan dari fakultas, sehingga tidak ada biaya yang akan dikeluarkan untuk mengerjakan proyek ini.  
+
 ## Project Vision ##
 Mengembangkan sebuah aplikasi pembantu pecinta hewan yang mudah digunakan, nyaman digunakan, dan efektif dalam membantu pengguna.
 
