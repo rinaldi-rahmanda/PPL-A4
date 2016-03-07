@@ -73,3 +73,4 @@ Mengembangkan sebuah aplikasi pembantu pecinta hewan yang mudah digunakan, nyama
 	- Bapak Hadaiq Rolis Sanabila S.Kom., M.Kom 
 	- Muhammad Iqbal
 
+Terimah Kasih...
