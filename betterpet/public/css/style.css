@@ -1,9 +1,11 @@
 element {
-    warna-nav:#61abd8;
+    --warna-nav:#61abd8;
     bg-color:#fffaee;
     
 }
 
-h4{
-	color:red;
+.custom-navbar{
+	background-color:#61abd8;
+	border-color:#61abd8;
+	border-radius: 0px;
 }
