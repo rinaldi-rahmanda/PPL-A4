@@ -21,11 +21,12 @@
                     </div>
                     <div class="col-md-4">
                         <p>MICHAEL <br>
-                            ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem
+                            ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem psum lalalalsjajd
                         </p>
                     </div>  
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
+    
     @endsection
