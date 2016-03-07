@@ -28,7 +28,8 @@ Kami memilih ide tersebut karena setelah kami melakukan pencarian di internet, *
 - Target Pengguna dan Target Pasar  
 	Target pengguna dari aplikasi ini adalah masyarakat yang memiliki  atau yang ingin memiliki hewan peliharaan dengan adosip, masyarakat yang ingin menitipkan hewan peliharaanya untuk jangka waktu pendek pada user lain karena suatu kebutuhan atau halangan, begitu juga dengan target pasar.
 - Keluaran Yang Diharapkan  
-	Aplikasi web yang dapat membantu orang untuk mencari hewan untuk diadopsi ataupun mengiklankan hewan pribadinya untuk dititipkan orang lain.
+	Aplikasi web yang dapat membantu orang untuk mencari hewan untuk diadopsi ataupun mengiklankan hewan pribadinya untuk dititipkan orang lain.  
+	
 ## Daftar Resiko Yang Teridentifikasi ##
 - Project Risk  
 	- Resiko:
