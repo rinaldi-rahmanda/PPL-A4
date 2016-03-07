@@ -73,4 +73,4 @@ Mengembangkan sebuah aplikasi pembantu pecinta hewan yang mudah digunakan, nyama
 	- Bapak Hadaiq Rolis Sanabila S.Kom., M.Kom 
 	- Muhammad Iqbal
 
-![Scrum Core Team](Capture.png?raw=true)
+![Scrum Core Team](https://raw.github.com/maxplayer01/PPL-A4/master/Capture.PNG)
