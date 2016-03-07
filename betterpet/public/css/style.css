@@ -12,3 +12,6 @@
 .navbar-inverse .navbar-nav > li > a {
     color: white;
 }
+.login-button{
+	margin-top:15px;
+}
