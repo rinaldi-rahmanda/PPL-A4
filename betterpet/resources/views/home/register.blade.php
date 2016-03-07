@@ -25,7 +25,14 @@
 				    <option>Bekasi</option>
 				 </select>
 			</div>
-			<button type="submit" class="register-button btn btn-primary">Submit</button>
+			<button type="submit" class="register-button btn btn-success">Submit</button>
 		</form>
+		<h4>Too lazy to fill in the form?</h4>
+		<div class='form-group'>
+			<a href="register/social"><button class="register-button btn btn-danger">Register with Google</button></a>
+		</div>
+		<div class='form-group'>
+			<a href="register/social"><button class="register-button btn btn-primary">Register with Facebook</button></a>
+		</div>
 	</div>
 @endsection
