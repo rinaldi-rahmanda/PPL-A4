@@ -9,3 +9,7 @@ element {
 	border-color:#61abd8;
 	border-radius: 0px;
 }
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
