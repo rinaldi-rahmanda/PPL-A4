@@ -14,22 +14,22 @@
 			</div>
 			<div clas="form-group">
 				 <select class="form-control" id="domisili">
-				    <option>Jakarta Utara</option>
-				    <option>Jakarta Timur</option>
-				    <option>Jakarta Pusat</option>
-				    <option>Jakarta Barat</option>
-				    <option>Jakarta Selatan</option>
-				    <option>Bogor</option>
-				    <option>Depok</option>
-				    <option>Tangerang</option>
-				    <option>Bekasi</option>
+				    <option value="1">Jakarta Utara</option>
+				    <option value="2">Jakarta Timur</option>
+				    <option value="3">Jakarta Pusat</option>
+				    <option value="4">Jakarta Barat</option>
+				    <option value="5">Jakarta Selatan</option>
+				    <option value="6">Bogor</option>
+				    <option value="7">Depok</option>
+				    <option value="8">Tangerang</option>
+				    <option value="9">Bekasi</option>
 				 </select>
 			</div>
 			<button type="submit" class="register-button btn btn-success">Submit</button>
 		</form>
 		<h4>Too lazy to fill in the form?</h4>
 		<div class='form-group'>
-			<a href="register/social"><button class="register-button btn btn-danger">Register with Google</button></a>
+			<a href="register/button"><social class="register-button btn btn-danger">Register with Google</button></a>
 		</div>
 		<div class='form-group'>
 			<a href="register/social"><button class="register-button btn btn-primary">Register with Facebook</button></a>
