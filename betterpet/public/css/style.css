@@ -15,3 +15,32 @@
 .register-button{
 	margin-top:15px;
 }
+.register-form{
+	border-radius: 0px;
+	box-shadow: none;
+	border: 2px solid #ff9fad;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+.register-form:focus{
+	box-shadow:none;
+	-webkit-animation-name: registerform; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    animation-name: registerform;
+    animation-duration: 1s;
+}
+.register-h5{
+	padding-left: 15px;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes registerform {
+    from {border: 2px solid #ff9fad;}
+    to {border: 2px solid #66afe9;}
+}
+
+/* Standard syntax */
+@keyframes registerform {
+    from {border: 2px solid #ff9fad;}
+    to {border: 2px solid #66afe9;}
+}
