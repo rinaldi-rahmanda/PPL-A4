@@ -72,5 +72,3 @@ Mengembangkan sebuah aplikasi pembantu pecinta hewan yang mudah digunakan, nyama
 - SCRUM Master:  
 	- Bapak Hadaiq Rolis Sanabila S.Kom., M.Kom 
 	- Muhammad Iqbal
-
-Terimah Kasih...
