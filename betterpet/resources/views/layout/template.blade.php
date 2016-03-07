@@ -23,7 +23,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>                        
 			  </button>
-			  <a class="navbar-brand" href="/PPL-A4/betterpet/public/">LOGO BETTERPET</a>
+			  <a class="navbar-brand" href="/PPL-A4/betterpet/public/"><img src="/PPL-A4/betterpet/public/image/logo.png" width="100" height="40"></a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			  <ul class="nav navbar-nav navbar-right">
