@@ -2,6 +2,6 @@
 
 @section('content')
 	<div class='container-fluid'>
-		INI HOMEPAGE
+		<h4>INI HOMEPAGE</h4>
 	</div>
 @endsection
