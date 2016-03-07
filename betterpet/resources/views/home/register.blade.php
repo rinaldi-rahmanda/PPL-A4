@@ -2,8 +2,8 @@
 
 @section('content')
 	<div class='container-fluid'>
-		<div class="row">
-			<div class="col-xs-6 col-md-6">
+		<div class="register-row row">
+			<div class="col-xs-6 col-xs-offset-1 col-md-6 col-md-offset-1">
 				<form method="POST">
 					<div class="form-group">
 						<input type="text" name="email" class="register-form form-control" placeholder="Email" required>
@@ -29,7 +29,7 @@
 						 </select>
 					</div>
 					<div class="form-group">
-						<button type="submit" class="register-button btn btn-success">Submit</button>
+						<button type="submit" class="register-button btn btn-success">Register</button>
 					</div>
 				</form>
 				<h4>Easier way to Register</h4>
