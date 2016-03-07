@@ -1,15 +1,14 @@
-element {
-    --warna-nav:#61abd8;
-    bg-color:#fffaee;
-    
-}
 
 .custom-navbar{
 	background-color:#61abd8;
 	border-color:#61abd8;
 	border-radius: 0px;
+    color: #ffffff;
 }
 
+.navbar-inverse .navbar-nav>li>a {
+    color: #ffffff;
+}
 .navbar-inverse .navbar-nav > li > a {
     color: white;
 }

@@ -1,0 +1,7 @@
+.line {
+    width: 400px;
+   height: 3px;
+    /* Set the hr color */
+    color: #f9b2b6; /* old IE */
+    background-color: #f9b2b6; /* Modern Browsers */ 
+}

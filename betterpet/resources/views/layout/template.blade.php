@@ -11,6 +11,8 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/about-style.css">      
+
 	</head>
 	<body>
 		<nav class="custom-navbar navbar navbar-inverse">
