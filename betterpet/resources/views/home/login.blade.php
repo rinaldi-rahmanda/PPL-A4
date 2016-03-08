@@ -2,6 +2,9 @@
 
 @section('content')
 	<div class='container-fluid'>
+		@if(session('error'))
+			{{ session('error') }}
+		@endif
 		<div class="register-row row">
 			<div class="col-xs-6 col-md-6 col-md-offset-1 col-xs-offset-1">
 				<form method="POST">

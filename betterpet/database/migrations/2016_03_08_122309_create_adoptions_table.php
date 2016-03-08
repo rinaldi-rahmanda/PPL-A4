@@ -23,6 +23,7 @@ class CreateAdoptionsTable extends Migration
             $table->string('age');//age category
             $table->string('color');//base color
             $table->boolean('done');//is the adoption done
+            $table->longText('description');
             $table->timestamps();
         });
     }

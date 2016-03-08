@@ -8,7 +8,7 @@ class Adoption extends Model
 {
     //
     protected $fillable = [
-        'name', 'email', 'password',
+        'domicile', 'type', 'breed','sex','color','age','done','description',
     ];
      public function user(){
         return $this->belongsTo(User::class);

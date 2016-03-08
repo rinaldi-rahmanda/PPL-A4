@@ -17,7 +17,7 @@ Route::get('/about','HomeController@about');
 Route::get('/faq','HomeController@faq');
 Route::get('/news','HomeController@news');
 Route::post('/contact','HomeController@contactPost');
-
+Route::get('/adoption','UserController@listAdoptions');
 
 
 /*
@@ -44,6 +44,7 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/register/fCallBack','UserController@facebookCallBack');  
   Route::get('/logout','UserController@logout');  
   Route::get('/profile','UserController@showProfile');
-  Route::get('/adoption/user','UserController@listAdoption');
-  Route::get('/adoption/create','UserController@createAdoption');  
+  Route::get('/adoption/create','UserController@createAdoption');
+  Route::post('/adoption/create','UserController@saveAdoption');
+  Route::get('/adoption/mark/{id}','UserController@markDone');
 });

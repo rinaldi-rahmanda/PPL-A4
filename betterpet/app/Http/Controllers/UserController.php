@@ -22,7 +22,7 @@ class UserController extends Controller
         }
         else{
             //gagal login
-            return redirect('/about');
+            return redirect('/login')->with('error','Invalid username or password');
         }
     }
     public function loginForm(){
@@ -113,17 +113,44 @@ class UserController extends Controller
             return view('profile',['user'=>$user,'domicile'=>$domicile]);
         }
         else
-            return redirect('/login');
+            return redirect('/login')->with('error','You must be logged in first!');
     }
     public function createAdoption(){
+        if(Auth::check())
+        {
+            $user = Auth::user();
+            $userId = $user->id;
+            $adList = DB::table('adoptions')
+                ->join('domicile','adoptions.domicile','=','domicile.id')
+                ->where('adoptions.user_id',$userId);
+            return view('userAdoption',['adoptions'=>$adList]);     
+        }
+        else
+            return redirect('login')->with('error','You must be logged in first!');
+        
+    }
+    public function saveAdoption(Request $request){
+        if(Auth::check()){
+            $user = Auth::user();
+            $userId = $user->id;
+            $adoption = new Adoption();
+            //buat adopsi baru
+        }
+        else{
+            return redirect('login')->with('error','You must be logged in first!');
+        }
+    }
+    public function listAdoptions(){
+        return 'haha';
+    }
+    public function markDone($id){
+        //menandai bahwa adopsi untuk adoption pada suatu user sudah "done"
         $user = Auth::user();
         $userId = $user->id;
-        $adList = DB::table('adoptions')
-            ->join('domicile','adoptions.domicile','=','domicile.id')
-            ->where('user_id',$userId);
-        return view('userAdoption',['adoptions'=>$adList]);
-    }
-    public function listAdoption(){
-
+        $adoption = DB::table('adoptions')
+            ->where('user_id',$userId)
+            ->where('id',$id)
+            ->update(['done'=>1]);
+        return redirect('/adoption/create')->with('status','Adoption marked as done!');
     }
 }
