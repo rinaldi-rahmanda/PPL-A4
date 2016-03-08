@@ -115,4 +115,15 @@ class UserController extends Controller
         else
             return redirect('/login');
     }
+    public function createAdoption(){
+        $user = Auth::user();
+        $userId = $user->id;
+        $adList = DB::table('adoptions')
+            ->join('domicile','adoptions.domicile','=','domicile.id')
+            ->where('user_id',$userId);
+        return view('userAdoption',['adoptions'=>$adList]);
+    }
+    public function listAdoption(){
+
+    }
 }

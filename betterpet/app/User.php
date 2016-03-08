@@ -23,4 +23,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function adoption(){
+        return $this->hasMany(Adoption::class);
+    }
 }

@@ -36,12 +36,14 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('/login','UserController@loginForm');
 	Route::get('/register','UserController@registerForm');
-    Route::post('/login','UserController@login');
-    Route::post('/register','UserController@register');
-    Route::get('/register/google','UserController@google');
-    Route::get('/register/facebook','UserController@facebook');
-    Route::get('/register/gCallBack','UserController@googleCallBack');
-   	Route::get('/register/fCallBack','UserController@facebookCallBack');  
-   	Route::get('/logout','UserController@logout');  
-   	Route::get('/profile','UserController@showProfile');
+  Route::post('/login','UserController@login');
+  Route::post('/register','UserController@register');
+  Route::get('/register/google','UserController@google');
+  Route::get('/register/facebook','UserController@facebook');
+  Route::get('/register/gCallBack','UserController@googleCallBack');
+  Route::get('/register/fCallBack','UserController@facebookCallBack');  
+  Route::get('/logout','UserController@logout');  
+  Route::get('/profile','UserController@showProfile');
+  Route::get('/adoption/user','UserController@listAdoption');
+  Route::get('/adoption/create','UserController@createAdoption');  
 });
