@@ -23,17 +23,25 @@ class UserController extends Controller
         //
     }
     public function google(){
-        return Socialize::driver('google')->redirect();
+        if(!Auth::check())
+            return Socialize::driver('google')->redirect();
+        return redirect('/');
     }
     public function facebook(){
-        return Socialize::driver('facebook')->redirect();
+        if(!Auth::check())
+            return Socialize::driver('facebook')->redirect();
+        return redirect('/');
     }
     public function googleCallBack(){
         $user = Socialize::driver('google')->user();
-        //$user->token;
-        //Auth::login($user);
+        $name = $user->name;
+        $email = $user->email;
+        
     }
     public function facebookCallBack(){
         $user = Socialize::driver('facebook')->user();
+        $name = $user->name;
+        $email = $user->email;
+
     }
 }

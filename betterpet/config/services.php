@@ -34,10 +34,14 @@ return [
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
-	
 	'google' => [
-		'client_id' => 'MASUKIN ID API',
-		'client_secret' => 'your-github-app-secret',
-		'redirect' => '/localhost/DAN LINKNYA',
-	],
+        'client_id' => '258690452219-6q6deo6dbf9np1gr2k8r9ame2leec6rj.apps.googleusercontent.com',
+        'client_secret' => 'jcjQfN7671xIA7jklaXJbJEq',
+        'redirect' => 'http://localhost/PPL-A4/betterpet/public/register/gCallBack',
+    ],
+    'facebook' => [
+        'client_id' => '',
+        'client_secret' => '',
+        'redirect' => 'http://localhost/PPL-A4/betterpet/public/fCallBack',
+    ],
 ];
