@@ -47,4 +47,9 @@ class HomeController extends Controller
     	*/
     	return view('home.news');
     }
+    public function contactPost(Request $request){
+        $title = $request->title;
+        $content = $request->content;
+        //masukin ke db list pertanyaan
+    }
 }

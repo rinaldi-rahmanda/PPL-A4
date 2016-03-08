@@ -18,6 +18,7 @@ Route::get('/faq','HomeController@faq');
 Route::get('/news','HomeController@news');
 Route::get('/login','HomeController@login');
 Route::get('/register','HomeController@register');
+Route::post('/contact','HomeController@contactPost');
 
 
 
