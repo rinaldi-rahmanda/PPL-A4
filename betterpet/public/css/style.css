@@ -26,6 +26,12 @@
 	border-left: none;
 	border-right: none;
 }
+.register-google-button{
+	background-color:#db4a39;
+}
+.register-facebook-button{
+	background-color:#3b5998;
+}
 .register-form:focus{
 	box-shadow:none;
 	-webkit-animation-name: registerform; /* Chrome, Safari, Opera */
