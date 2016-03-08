@@ -9,6 +9,7 @@ use Auth;
 use App\User;
 use Socialize;
 use Hash;
+use DB;
 
 class UserController extends Controller
 {
@@ -95,5 +96,23 @@ class UserController extends Controller
     public function logout(){
         Auth::logout();
         return redirect('/');
+    }
+    public function showProfile(){
+        if(Auth::check())
+        {
+            //ambil segala data user
+            $user = Auth::user();
+            $idDom = $user->domicile;
+            $domicile = DB::table('domicile')->select('location')->where('id',$idDom)->first();
+            if( $idDom == 0 ){
+                //belum set domisili
+                $domicile = 'Belum memilih domisili';
+            }
+            else
+                $domicile = $domicile->location;
+            return view('profile',['user'=>$user,'domicile'=>$domicile]);
+        }
+        else
+            return redirect('/login');
     }
 }
