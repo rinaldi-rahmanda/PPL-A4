@@ -39,5 +39,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/register/google','UserController@google');
     Route::get('/register/facebook','UserController@facebook');
     Route::get('/register/gCallBack','UserController@googleCallBack');
-   	Route::get('/register/fCallBack','UserController@facebookCallBack');    
+   	Route::get('/register/fCallBack','UserController@facebookCallBack');  
+   	Route::get('/logout','UserController@logout');  
 });

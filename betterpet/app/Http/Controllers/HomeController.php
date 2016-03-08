@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Socialize;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -27,11 +27,17 @@ class HomeController extends Controller
     }
 	//login view
 	public function login(){
-		return view('home.login');
+        if(!Auth::check())
+	       return view('home.login');
+        else
+            return redirect('/');
 	}
 	//register view
 	public function register(){
-		return view('home.register');
+		 if(!Auth::check())
+           return view('home.register');
+        else
+            return redirect('/');
 	}
     //displaying news
     public function news(){

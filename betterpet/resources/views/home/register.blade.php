@@ -15,6 +15,9 @@
 					<div class="form-group">
 						<input type="text" name="name" class="register-form form-control" placeholder="Your Name ex: John Doe" required>
 					</div>
+					<div class="form-group">
+						<input type="text" name="phone" class="register-form form-control" placeholder="Phone Number ex: 081234567" required>
+					</div>
 					<div clas="form-group">
 						<h5 class="register-h5">Domisili</h5>
 						 <select class="register-form form-control" name="domicile">
