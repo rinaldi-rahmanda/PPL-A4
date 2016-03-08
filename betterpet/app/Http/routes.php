@@ -34,4 +34,10 @@ Route::get('/register','HomeController@register');
 
 Route::group(['middleware' => ['web']], function () {
     //
+    Route::post('/login','UserController@login');
+    Route::post('/register','UserController@register');
+    Route::get('/register/google','UserController@google');
+    Route::get('/register/facebook','UserController@facebook');
+    Route::get('/register/gCallBack','UserController@googleCallBack');
+   	Route::get('/register/fCallBack','UserController@facebookCallBack');    
 });

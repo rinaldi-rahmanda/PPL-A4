@@ -5,6 +5,7 @@
 		<div class="register-row row">
 			<div class="col-xs-6 col-xs-offset-1 col-md-6 col-md-offset-1">
 				<form method="POST">
+					{{ csrf_field() }}
 					<div class="form-group">
 						<input type="text" name="email" class="register-form form-control" placeholder="Email" required>
 					</div>
@@ -16,7 +17,7 @@
 					</div>
 					<div clas="form-group">
 						<h5 class="register-h5">Domisili</h5>
-						 <select class="register-form form-control" id="domisili">
+						 <select class="register-form form-control" name="domicile">
 						    <option value="1">Jakarta Utara</option>
 						    <option value="2">Jakarta Timur</option>
 						    <option value="3">Jakarta Pusat</option>
@@ -34,8 +35,8 @@
 				</form>
 				<h4>Easier way to Register</h4>
 				<div class='form-group'>
-					<a href="register/button"><social class="register-button btn btn-danger">Register with Google</button></a>
-					<a href="register/social"><button class="register-button btn btn-primary">Register with Facebook</button></a>
+					<a href="register/google"><social class="register-button btn btn-danger">Register with Google</button></a>
+					<a href="register/facebook"><button class="register-button btn btn-primary">Register with Facebook</button></a>
 				</div>
 			</div>
 		</div>
