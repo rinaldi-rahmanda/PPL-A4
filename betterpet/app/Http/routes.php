@@ -16,8 +16,6 @@ Route::get('/contact','HomeController@contact');
 Route::get('/about','HomeController@about');
 Route::get('/faq','HomeController@faq');
 Route::get('/news','HomeController@news');
-Route::get('/login','HomeController@login');
-Route::get('/register','HomeController@register');
 Route::post('/contact','HomeController@contactPost');
 
 
@@ -35,6 +33,9 @@ Route::post('/contact','HomeController@contactPost');
 
 Route::group(['middleware' => ['web']], function () {
     //
+
+	Route::get('/login','UserController@loginForm');
+	Route::get('/register','UserController@registerForm');
     Route::post('/login','UserController@login');
     Route::post('/register','UserController@register');
     Route::get('/register/google','UserController@google');

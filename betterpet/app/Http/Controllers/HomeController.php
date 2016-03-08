@@ -25,20 +25,6 @@ class HomeController extends Controller
     public function faq(){
     	return view('home.faq');
     }
-	//login view
-	public function login(){
-        if(!Auth::check())
-	       return view('home.login');
-        else
-            return redirect('/');
-	}
-	//register view
-	public function register(){
-		 if(!Auth::check())
-           return view('home.register');
-        else
-            return redirect('/');
-	}
     //displaying news
     public function news(){
     	/*

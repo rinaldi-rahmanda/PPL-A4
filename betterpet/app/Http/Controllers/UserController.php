@@ -8,6 +8,7 @@ use App\Http\Requests;
 use Auth;
 use App\User;
 use Socialize;
+use Hash;
 
 class UserController extends Controller
 {
@@ -19,14 +20,37 @@ class UserController extends Controller
             return redirect('/');
         }
         else{
-
+            //gagal login
+            return redirect('/about');
         }
+    }
+    public function loginForm(){
+         if(!Auth::check())
+           return view('home.login');
+        else
+            return redirect('/');
+    }
+    public function registerForm(){
+         if(!Auth::check())
+           return view('home.register');
+        else
+            return redirect('/');
     }
     public function register(Request $request){
         $name = $request->input('name');
         $password = $request->input('password');
         $email = $request->input('email');
         $domisili = $request->input('domicile');
+        $phone = $request->input('phone');
+        $user = new User();
+        $user->name = $name;
+        $user->domicile = $domisili;
+        $user->phone = $phone;
+        $user->email = $email;
+        $user->password = Hash::make($password);
+        $user->save();
+        Auth::loginUsingId($user->id);
+        return redirect('/');
         //
     }
     public function google(){
