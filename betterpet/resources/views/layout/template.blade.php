@@ -55,9 +55,10 @@
         <div class="container-fluid text-center">
             Connect with us <br>
             <div class="sosial">
-                <a href="#"><img src="/PPL-A4/betterpet/public/image/facebook.png"></a>
-                <a href="#"><img src="/PPL-A4/betterpet/public/image/twitter.png"></a>
-                <a href="#"><img src="/PPL-A4/betterpet/public/image/instagram.png"></a>
+                <a href="#"><img src="/PPL-A4/betterpet/public/image/facebook.png" ></a>
+                <a href="#"><img src="/PPL-A4/betterpet/public/image/twitter.png" ></a>
+                <a href="#"><img src="/PPL-A4/betterpet/public/image/instagram.png" ></a>
+                <a href="#"><img src="/PPL-A4/betterpet/public/image/google-plus.png" ></a>
             </div>
             <br>
             <p>&copy; PPL A04, Inc</p>
