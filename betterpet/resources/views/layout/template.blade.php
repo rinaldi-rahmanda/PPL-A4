@@ -4,11 +4,10 @@
         <title>BetterPet</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- insert CSS And JavaScript -->
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/about-style.css">
 		 <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="fonts/glyphicons-halflings-regular.ttf">
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -19,7 +18,7 @@
 
 	</head>
 	<body>
-		<nav class="custom-navbar navbar navbar-fixed-top">
+		<nav class="navbar custom-navbar">
 		  <div class="container-fluid">
 			<div class="navbar-header">
 			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
