@@ -19,7 +19,7 @@
             <h1 class="text-center">OUR TEAM</h1>
             <hr class="line">
             <div class="team">
-                <div class="row team-row" style="padding: 0;" >
+                <div class="row team-row" style="margin-top: 6%;" >
                     <div class="col-xs-3 col-xs-offset-3 col-md-2 col-md-offset-3">
                         <img class="img-responsive img-circle" src="/PPL-A4/betterpet/public/image/adit.jpg" width="150" height="150">
                     </div>
@@ -32,7 +32,7 @@
                     </div> 
                 </div>
                 <hr class="line2">
-                <div class="row team-row" style="padding: 0;">
+                <div class="row team-row">
                     <div class="col-xs-3 col-xs-offset-3 col-md-4 col-md-offset-3">
                         <h3>Faiz Kautsar</h3>
                         <blockquote><i>
@@ -46,7 +46,7 @@
                     </div> 
                 </div>
                 <hr class="line2">
-                <div class="row team-row" style="padding: 0;">
+                <div class="row team-row">
                     <div class="col-xs-3 col-xs-offset-3 col-md-2 col-md-offset-3">
                         <img class="img-responsive img-circle" src="/PPL-A4/betterpet/public/image/me.jpg" width="150" height="150">
                     </div>
@@ -58,7 +58,7 @@
                     </div> 
                 </div>
                 <hr class="line2">
-                <div class="row team-row" style="padding: 0;">
+                <div class="row team-row">
                     <div class="col-xs-3 col-xs-offset-3 col-md-4 col-md-offset-3">
                         <h3>Rinaldi Andrian</h3>
                         <blockquote><i>
@@ -72,7 +72,7 @@
                     </div> 
                 </div>
                 <hr class="line2">
-                <div class="row team-row" style="padding: 0;">
+                <div class="row team-row">
                     <div class="col-xs-3 col-xs-offset-3 col-md-2 col-md-offset-3">
                         <img class="img-responsive img-circle" src="/PPL-A4/betterpet/public/image/tommy.jpg" width="150" height="150">
                     </div>
