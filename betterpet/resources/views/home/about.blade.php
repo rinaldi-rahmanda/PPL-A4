@@ -26,7 +26,7 @@
                     <div class="col-md-4 col-xs-4">
                         <h3>Aditya Rama</h3>
                         <blockquote><i>
-                            ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem psum lalalalsjajd
+                            "ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem psum lalalalsjajd"
                             </i>
                         </blockquote>
                     </div> 
