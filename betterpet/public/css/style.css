@@ -1,46 +1,67 @@
+html, body { 
+    height: 100%; 
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom:0;
+    margin: auto;
+}
+
+body {
+    display: table;
+}
+
+.row {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    border-radius: 0px;
+    margin-bottom: 0px;
+    color: #ffffff;
+}
 
 .custom-navbar{
-	background-color:#61abd8;
-	border-color:#61abd8;
-	border-radius: 0px;
+    background-color:#61abd8;
+    border-color:#61abd8;
+    border-radius: 0px;
     color: #ffffff;
 }
 
-.navbar-inverse .navbar-nav>li>a {
+.navbar-fixed-top .navbar-nav>li>a {
     color: #ffffff;
 }
-.navbar-inverse .navbar-nav > li > a {
-    color: white;
-}
+
 .register-button{
-	margin-top:15px;
+    margin-top:15px;
 }
 .register-row{
-	margin-top:50px;
+    margin-top:50px;
 }
 .register-form{
-	border-radius: 0px;
-	box-shadow: none;
-	border: 2px solid #ff9fad;
-	border-top: none;
-	border-left: none;
-	border-right: none;
+    border-radius: 0px;
+    box-shadow: none;
+    border: 2px solid #ff9fad;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 .register-google-button{
-	background-color:#db4a39;
+    background-color:#db4a39;
 }
 .register-facebook-button{
-	background-color:#3b5998;
+    background-color:#3b5998;
 }
 .register-form:focus{
-	box-shadow:none;
-	-webkit-animation-name: registerform; /* Chrome, Safari, Opera */
+    box-shadow:none;
+    -webkit-animation-name: registerform; /* Chrome, Safari, Opera */
     -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
     animation-name: registerform;
     animation-duration: 1s;
 }
 .register-h5{
-	padding-left: 15px;
+    padding-left: 15px;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes registerform {

@@ -4,19 +4,22 @@
         <title>BetterPet</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- insert CSS And JavaScript -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/about-style.css">
 		 <!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="fonts/glyphicons-halflings-regular.ttf">
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<!-- Latest compiled JavaScript -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-		<link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/about-style.css">      
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
 	</head>
 	<body>
-		<nav class="custom-navbar navbar navbar-inverse">
+		<nav class="custom-navbar navbar navbar-fixed-top">
 		  <div class="container-fluid">
 			<div class="navbar-header">
 			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -45,5 +48,21 @@
 		  </div>
 		</nav>
         @yield('content')
+        
+         
+         <hr class="hrr">
+    <div class="footer">
+        <div class="container-fluid text-center">
+            Connect with us <br>
+            <div class="sosial">
+                <a href="#"><img src="/PPL-A4/betterpet/public/image/facebook.png"></a>
+                <a href="#"><img src="/PPL-A4/betterpet/public/image/twitter.png"></a>
+                <a href="#"><img src="/PPL-A4/betterpet/public/image/instagram.png"></a>
+            </div>
+            <br>
+            <p>&copy; PPL A04, Inc</p>
+        </div>
+    </div>
+
     </body>
 </html>
