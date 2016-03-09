@@ -53,7 +53,7 @@
                     <div class="col-md-4 col-xs-4">
                         <h3>Liany Gustina</h3>
                         <blockquote><i>
-                            "I love dogs and cats and really want to adopt a dog, but in Indonesia, it is so hard to find adoption place. I hope that BetterPet will help people to find their dream pet."</i>
+                            "I love dogs and cats and really want to adopt a dog, but in Indonesia, it is so hard to find an adoption place. I hope that BetterPet will help people to find their dream pet."</i>
                         </blockquote>
                     </div> 
                 </div>
