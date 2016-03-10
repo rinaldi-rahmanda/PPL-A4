@@ -37,8 +37,8 @@
 					</div>
 				</form>
 				<h4>Easier way to Register</h4>
-				<a href="register/google"><button class="register-google-button register-button btn btn-danger"><span><i class="icon-google-plus"></i></span> | Login with Google</button></a>
-				<a href="register/facebook"><button class="register-facebook-button register-button btn btn-primary"><span><i class="icon-facebook"></i></span> | Login with Facebook</button></a>	
+				<a href="register/google"><button class="register-google-button register-button btn btn-danger"><span><i class="icon-google-plus"></i></span> | Register with Google</button></a>
+				<a href="register/facebook"><button class="register-facebook-button register-button btn btn-primary"><span><i class="icon-facebook"></i></span> | Register with Facebook</button></a>	
 			</div>
 			</div>
 	</div>
