@@ -18,7 +18,7 @@
 
 	</head>
 	<body>
-		<nav class="navbar custom-navbar">
+		<nav class="navbar custom-navbar navbar-fixed-top">
 		  <div class="container-fluid">
 			<div class="navbar-header">
 			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
