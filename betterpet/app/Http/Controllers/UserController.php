@@ -48,6 +48,24 @@ class UserController extends Controller
         $user->domicile = $domisili;
         $user->phone = $phone;
         $user->email = $email;
+        //validate first!
+        $validator1 = Validator::make($request,[
+            'email' => 'email',
+        ],['email'=>'Email address is not in valid format']);
+        $validator2 = Validator::make($request,[
+            'phone' => 'numeric',
+        ],['phone'=>'Only numbers allowed']);
+        $validator3 = Validator::make($request,[
+            'name' => 'min:3',
+        ],['name'=>'Your name must be 3 characters or more']);
+        if ($validator1->fails()) {
+            return redirect('/register')
+                    ->withErrors($validator3);
+        }
+        if ($validator2->fails()) {
+            return redirect('/register')
+                    ->withErrors($validator2);
+        }
         $user->password = Hash::make($password);
         $user->save();
         Auth::loginUsingId($user->id);
