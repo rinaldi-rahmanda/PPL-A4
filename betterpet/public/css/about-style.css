@@ -7,7 +7,7 @@
 }
 
 .line2 {
-    width: 800px;
+    width: 50%;
    height: 3px;
     /* Set the hr color */
     color: #424242; /* old IE */
