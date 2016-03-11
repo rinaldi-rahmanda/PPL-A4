@@ -2,11 +2,17 @@
 
 @section('content')
 	<div class='container-fluid'>
-		@if(session('error'))
-			{{ session('error') }}
-		@endif
 		<div class="register-row row">
 			<div class="col-xs-6 col-md-6 col-md-offset-1 col-xs-offset-1">
+				@if(session('error'))
+				<div class="alert alert-danger">
+			        <strong>Login Failed :(</strong>
+			        <br><br>
+			        <ul>
+			        	{{session('error')}}
+			        </ul>
+			    </div>
+				@endif
 				<form method="POST">
 					{{ csrf_field() }}
 					<div class="form-group">

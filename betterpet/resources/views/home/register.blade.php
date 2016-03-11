@@ -1,9 +1,9 @@
 @extends('layout.template')
-
 @section('content')
 	<div class='container-fluid'>
 		<div class="register-row row">
 			<div class="col-xs-6 col-xs-offset-1 col-md-6 col-md-offset-1">
+				@include('common.error')
 				<form method="POST">
 					{{ csrf_field() }}
 					<div class="form-group">

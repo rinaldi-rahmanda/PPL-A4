@@ -10,6 +10,7 @@ use App\User;
 use Socialize;
 use Hash;
 use DB;
+use Validator;
 
 class UserController extends Controller
 {
@@ -22,7 +23,7 @@ class UserController extends Controller
         }
         else{
             //gagal login
-            return redirect('/login')->with('error','Invalid username or password');
+            return redirect('/login')->with('error','Invalid email or password');
         }
     }
     public function loginForm(){
@@ -49,22 +50,20 @@ class UserController extends Controller
         $user->phone = $phone;
         $user->email = $email;
         //validate first!
-        $validator1 = Validator::make($request,[
+        $validator = Validator::make($request->all(),[
             'email' => 'email',
-        ],['email'=>'Email address is not in valid format']);
-        $validator2 = Validator::make($request,[
             'phone' => 'numeric',
-        ],['phone'=>'Only numbers allowed']);
-        $validator3 = Validator::make($request,[
             'name' => 'min:3',
-        ],['name'=>'Your name must be 3 characters or more']);
-        if ($validator1->fails()) {
+            'password' => 'min:6',
+        ],[
+            'email'=>'Email address is not in valid format',
+            'phone'=>'Only numbers allowed',
+            'name'=>'Your name must be 3 characters or more',
+            'password' => 'Password must be at least 6 characters'
+        ]);
+        if ($validator->fails()) {
             return redirect('/register')
-                    ->withErrors($validator3);
-        }
-        if ($validator2->fails()) {
-            return redirect('/register')
-                    ->withErrors($validator2);
+                    ->withErrors($validator);
         }
         $user->password = Hash::make($password);
         $user->save();

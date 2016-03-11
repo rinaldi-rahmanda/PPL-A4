@@ -12,7 +12,15 @@ html, body {
 
     text-transform: uppercase;
 }
-
+.login-error{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid;
+    border-radius: 5px;
+    padding-left:4px;
+    background-color: #f4917d;
+    border-color: #e00707;
+}
 body {
     display: table;
 }
