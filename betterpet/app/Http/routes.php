@@ -12,11 +12,9 @@
 */
 
 Route::get('/','HomeController@index');
-Route::get('/contact','HomeController@contact');
 Route::get('/about','HomeController@about');
 Route::get('/faq','HomeController@faq');
 Route::get('/news','HomeController@news');
-Route::post('/contact','HomeController@contactPost');
 Route::get('/adoption','UserController@listAdoptions');
 
 
@@ -37,6 +35,8 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/login','UserController@loginForm');
 	Route::get('/register','UserController@registerForm');
   Route::post('/login','UserController@login');
+  Route::get('/contact','HomeController@contact');
+  Route::post('/contact','HomeController@contactPost');
   Route::post('/register','UserController@register');
   Route::get('/register/google','UserController@google');
   Route::get('/register/facebook','UserController@facebook');

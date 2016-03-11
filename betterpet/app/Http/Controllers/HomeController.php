@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Auth;
+use DB;
+use Validator;
 
 class HomeController extends Controller
 {
@@ -34,8 +36,36 @@ class HomeController extends Controller
     	return view('home.news');
     }
     public function contactPost(Request $request){
+        $name = $request->name;
+        $email = $request->email;
         $title = $request->title;
         $content = $request->content;
-        //masukin ke db list pertanyaan
+        //validasi the input first
+        $validator = Validator::make($request->all(),[
+            'name' => 'min:3',
+            'email' => 'email',
+            'title' => 'required',
+            'content' => 'required',
+        ],[
+            'email'=>'Email address is not in valid format',
+            'name'=>'Name must be more than 2 characters',
+            'title'=>'title must be filled',
+            'content' => 'content must be filled'
+        ]);
+        
+        if($validator->fails()){
+            return redirect('/contact')
+                    ->withErrors($validator);
+        }
+        else{
+            //insert the information to the database
+            //DB::table('questions')->insert([
+             //   'name'=>$name,
+              //  'email'=>$email,
+               // 'title'=>$title,
+                //'content'=>$content,
+            //]);
+            return redirect('/contact')->with('success','Your question is sent!');
+        }  
     }
 }

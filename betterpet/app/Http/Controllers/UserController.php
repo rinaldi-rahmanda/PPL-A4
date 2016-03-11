@@ -168,6 +168,6 @@ class UserController extends Controller
             ->where('user_id',$userId)
             ->where('id',$id)
             ->update(['done'=>1]);
-        return redirect('/adoption/create')->with('status','Adoption marked as done!');
+        return redirect('/adoption/create')->with('success','Adoption marked as done!');
     }
 }
