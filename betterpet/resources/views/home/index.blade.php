@@ -1,8 +1,7 @@
 @extends('layout.template')
 
 @section('content')
-	<div class='container-fluid page-wrap'>
-		 <!-- Full Page Image Background Carousel Header -->
+
         <header id="myCarousel" class="carousel slide">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -16,24 +15,24 @@
 
                 <div class="item active">
                     <!-- Set the first background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('img/140410_masterbed_lowres_preview.jpg');"></div>
-                    <div class="carousel-content">
+                    <div class="fill" style="background-image:url('image/catndog-01.jpg');"></div>
+                    <div class="carousel-caption">
+                        
                     </div>
-                    
 
                 </div>
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('img/140410_livingroom01_lowres_preview.jpg');"></div>
+                    <div class="fill" style="background-image:url('image/cats-home-01.jpg');"></div>
                     <div class="carousel-caption">
                         
                     </div>
                 </div>
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('img/140410_livinghook_lowres_preview.jpg');"></div>
+                    <div class="fill" style="background-image:url('image/corgi-home-01-01.jpg');"></div>
                     <div class="carousel-caption">
-                       
+                        
                     </div>
                 </div>
 
@@ -59,5 +58,4 @@
             })
         </script>
 
-	</div>
 @endsection

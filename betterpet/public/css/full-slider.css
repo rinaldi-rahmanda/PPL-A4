@@ -31,14 +31,6 @@ body {
     -o-background-size: cover;
 }
 
-footer {
-    margin: 50px 0;
-}
-
-.nav li a{
-    margin: 0 auto;
-    color: :#fee3a2
-}
 
 .carousel-caption {
     width: 15%;
