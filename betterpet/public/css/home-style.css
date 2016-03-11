@@ -1,0 +1,25 @@
+.wrap {
+    height: 600px;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    z-index: 8;
+}
+.wrap:after {
+    content: "";
+    position: absolute;
+    height: 130%;
+    width: 100%;
+    transform: skewY(4deg);
+    background: #cdc7f9;
+    border-bottom:10px solid #aea8f4;
+    top: -50%;
+    z-index: -2;
+    left: 0;
+}
+.lower {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+}

@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/contact-style.css">
+        <link rel="stylesheet" href="css/home-style.css">
         <link rel="stylesheet" href="fonts/glyphicons-halflings-regular.ttf">
         
         <!-- slider css -->
