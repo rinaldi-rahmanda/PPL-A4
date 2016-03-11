@@ -5,6 +5,12 @@ html, body {
     top: 0;
     bottom:0;
     margin: auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.font-header {
+
+    text-transform: uppercase;
 }
 
 body {
@@ -33,6 +39,22 @@ body {
     color: #ffffff;
 }
 
+.navbar-fixed-top .navbar-nav>li>a {
+    height: 60px;
+}
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 0px;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+
+}
+
+
 .sosial {
     margin-top: 3%;
     margin-bottom: 1%;
@@ -45,8 +67,8 @@ body {
 }
 
 .hrr {
-    width: 100%;
-    height: 1px; 
+    margin: 0;
+    height: 1px;
     color:darkgray;
     background-color: darkgray;
 }

@@ -1,0 +1,17 @@
+.leftHalf {
+    background: url('/PPL-A4/betterpet/public/image/dogcat.jpg') center center no-repeat;
+    background-size:cover;
+    width: 50%;
+    position: absolute;
+    left: 0px;
+    height: 100%;
+}
+
+.rightHalf {
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
+    position: absolute;
+    right: 0px;
+}

@@ -1,11 +1,11 @@
 @extends('layout.template')
 
 @section('content')
-<div class='container-fluid'>
+<div class='container-fluid page-wrap' id="page-wrap">
     <div class="row">
         <div class="about">
             <div class="col-md-12 col-xs-12">
-                <h1 class="text-center"> ABOUT US</h1>
+                <h1 class="text-center font-header"> About us</h1>
                 <hr class="line">
                 <div class="desc text-center">
                     <h4>Tired of searching through facebook and twitter to find dogs or cat for adoption? You have come to the right place! In BetterPet, you can find dogs and cats that ready for adoption, or they can advertise their own animals for adoption. As well, they can connect with the veterinarian, the animal care and pet supply stores. Here, they can also share information and stories about the animals in a forum that we provide. So, what are you waiting for? Come join BetterPet fellow!
@@ -16,7 +16,7 @@
     </div>
     <div class="row">
         <div class="team">
-            <h1 class="text-center">OUR TEAM</h1>
+            <h1 class="text-center font-header">Meet the team</h1>
             <hr class="line">
             <div class="team">
                 <div class="row team-row" style="margin-top: 6%;" >

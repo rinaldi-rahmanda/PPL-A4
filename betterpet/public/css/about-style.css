@@ -1,6 +1,6 @@
 .line {
     width: 300px;
-   height: 3px;
+    height: 3px;
     /* Set the hr color */
     color: #f9b2b6; /* old IE */
     background-color: #f9b2b6; /* Modern Browsers */ 
@@ -8,7 +8,7 @@
 
 .line2 {
     width: 50%;
-   height: 3px;
+    height: 3px;
     /* Set the hr color */
     color: #424242; /* old IE */
     background-color: #424242; /* Modern Browsers */ 
@@ -19,7 +19,7 @@
 }
 
 .about {
-    margin-top: 100px;
+    margin-top: 10%;
 }
 
 .desc {
@@ -37,3 +37,7 @@
     margin: 3% auto;
 }
 
+#page-wrap {
+    margin-bottom: -100px;
+
+}

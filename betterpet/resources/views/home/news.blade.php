@@ -1,7 +1,7 @@
 @extends('layout.template')
 
 @section('content')
-<div class='container-fluid' >
+<div class='container-fluid page-wrap' >
 <div class="row">
   <div class="col-md-1">.col-md-1</div>
   <div class="col-md-1">.col-md-1</div>
