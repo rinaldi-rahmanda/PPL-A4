@@ -38,10 +38,11 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/PPL-A4/betterpet/public/news">News</a></li>
                         <li><a href="/PPL-A4/betterpet/public/about">About Us</a></li>
                         <li><a href="/PPL-A4/betterpet/public/contact">Contact</a></li>
                         <li><a href="/PPL-A4/betterpet/public/faq">FAQ</a></li>
-                        <li><a href="/PPL-A4/betterpet/public/news">News</a></li>
+                        
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account
                                 <span class="caret"></span></a>
