@@ -5,6 +5,7 @@
     position: absolute;
     left: 0px;
     height: 100%;
+	border-right: 4px solid #61abd8;
 }
 
 .rightHalf {
