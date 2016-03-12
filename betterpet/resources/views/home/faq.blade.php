@@ -105,16 +105,11 @@
   
   </style>
 
-
+<div class="faq-jumbo jumbotron">
+</div>
 
 <!-- Container (Konten 1) -->
 <div class="container-fluid">
-	<div class='row'>
-		<div class='col-md-12 col-xs-12 col-sm-12'>
-			<div class="faq-jumbo jumbotron">
-			</div>
-		</div>
-	</div>
   <div class="row">
     <div class="col-md-8 col-xs-8 col-sm-8">
       <h2>KONTEN 1</h2><br>
