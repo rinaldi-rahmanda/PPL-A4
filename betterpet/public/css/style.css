@@ -157,3 +157,12 @@ body {
 .faq-jumbo{
 	margin-top:50px;
 }
+.news{
+	width:100%;
+	padding-left:50px;
+	padding-right:50px;
+}
+.news-thumbnail{
+	margin-left:10px;
+	margin-right:10px;
+}
