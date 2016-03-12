@@ -127,3 +127,33 @@ body {
     from {border: 2px solid #ff9fad;}
     to {border: 2px solid #66afe9;}
 }
+
+.navbar-toggle{
+	border: 1px solid white;
+}
+.navbar-toggle:hover{
+	background-color:#D3D3D3;
+	-webkit-animation-name: navbar-toggle-bar; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.3s; /* Chrome, Safari, Opera */
+    animation-name: navbar-toggle-bar;
+    animation-duration: 0.3s;
+}
+.navbar-toggle .icon-bar{
+	background-color:white;
+}
+/* animation for navbar toggle bar */
+@-webkit-keyframes navbar-toggle-bar {
+    from {background-color: transparent;}
+    to {
+	background-color: #D3D3D3;
+	}
+}
+
+/*navbar toggle bar*/
+@keyframes navbar-toggle-bar {
+    from {background-color: transparent;}
+    to {background-color: #D3D3D3;}
+}
+.faq-jumbo{
+	margin-top:50px;
+}
