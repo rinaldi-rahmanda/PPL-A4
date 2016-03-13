@@ -40,8 +40,8 @@ return [
         'redirect' => 'http://localhost/PPL-A4/betterpet/public/register/gCallBack',
     ],
     'facebook' => [
-        'client_id' => '',
-        'client_secret' => '',
+        'client_id' => '602542843247099',
+        'client_secret' => '5d9a4714898ba30bcc27f723d69d43b1',
         'redirect' => 'http://localhost/PPL-A4/betterpet/public/fCallBack',
     ],
 ];
