@@ -25,7 +25,7 @@
       background-position: center; 
       background-size: 90%;
       color: #fff;
-      padding: 240px 25px;
+      padding: 300px 25px;
       font-family: Montserrat, sans-serif;
 
   }
