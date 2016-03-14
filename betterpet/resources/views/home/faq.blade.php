@@ -108,6 +108,34 @@
 <div class="faq-jumbo jumbotron">
 </div>
 
+<!-- Container (Konten 2) -->
+<div class="container-fluid text-center">
+
+  <br><br>
+
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <h4>LOGIN</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>CHOOSE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-circle-arrow-right logo-small"></span>
+      <h4>ADOPT</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+  <br><br>
+  
+  </div>
+</div>
+
+
 <!-- Container (Konten 1) -->
 <div class="container-fluid">
   <div class="row">
