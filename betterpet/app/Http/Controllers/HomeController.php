@@ -59,12 +59,12 @@ class HomeController extends Controller
         }
         else{
             //insert the information to the database
-            //DB::table('questions')->insert([
-             //   'name'=>$name,
-              //  'email'=>$email,
-               // 'title'=>$title,
-                //'content'=>$content,
-            //]);
+            DB::table('questions')->insert([
+                'name'=>$name,
+                'email'=>$email,
+                'title'=>$title,
+                'content'=>$content,
+            ]);
             return redirect('/contact')->with('success','Your question is sent!');
         }  
     }
