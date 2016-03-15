@@ -6,7 +6,7 @@
                 <h2>Sign up</h2>
 				@include('common.error')
 				<form method="POST">
-					{{ csrf_field() }}
+					{{!! csrf_field() !!}}
 					<div class="form-group">
 						<input type="text" name="email" class="register-form form-control" placeholder="Email" required>
 					</div>

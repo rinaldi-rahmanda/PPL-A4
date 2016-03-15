@@ -26,7 +26,7 @@
                 <h3 class='text-center'>Don't hesitate to ask us!</h3>
                 <br>
     				<form method="POST">
-                    {{ csrf_field() }}
+                    {{!! csrf_field() !!}}
                     <div class="form-group">
 					<input type="text" class="register-form form-control" name="name" placeholder="Your Name" required></div>
 					<div class="form-group">

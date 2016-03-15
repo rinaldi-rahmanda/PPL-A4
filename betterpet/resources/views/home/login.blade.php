@@ -16,7 +16,7 @@
 				@endif
                
 				<form method="POST">
-					{{ csrf_field() }}
+					{{!! csrf_field() !!}}
 					<div class="form-group">
 						<input type="text" name="email" class="register-form form-control" placeholder="Email" required>
 					</div>
