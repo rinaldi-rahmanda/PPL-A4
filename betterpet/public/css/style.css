@@ -166,3 +166,7 @@ body {
 	margin-left:10px;
 	margin-right:10px;
 }
+
+.form-group {
+    margin-bottom: 25px;
+}

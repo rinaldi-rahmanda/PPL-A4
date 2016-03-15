@@ -19,7 +19,7 @@
 					<div class="form-group">
 						<input type="text" name="phone" class="register-form form-control" placeholder="Phone Number ex: 081234567" required>
 					</div>
-					<div clas="form-group">
+					<div class="form-group">
 						
 						 <select class="register-form form-control" name="domicile">
                             <option value="" disabled selected>Select your domicile</option>
