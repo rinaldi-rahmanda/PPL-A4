@@ -10,6 +10,32 @@
                 <div class="desc text-center">
                     <h4>Tired of searching through facebook and twitter to find dogs or cat for adoption? You have come to the right place! In BetterPet, you can find dogs and cats that ready for adoption, or they can advertise their own animals for adoption. As well, they can connect with the veterinarian, the animal care and pet supply stores. Here, they can also share information and stories about the animals in a forum that we provide. So, what are you waiting for? Come join BetterPet fellow!
                     </h4>
+                 
+                </div>
+                <br><br>
+                <div class="container-fluid text-center">
+                   
+
+                    <hr class="line">
+                    <div class="row slideanim">
+                        <div class="col-sm-4">
+                            <span class="glyphicon glyphicon-certificate logo-small"></span>
+                            <h4>CERTIFIED</h4>
+                            <p>We are certified. We make sure everything.</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <span class="glyphicon glyphicon-heart logo-small"></span>
+                            <h4>LOVE</h4>
+                            <p>We offer love for your pets.</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <span class="glyphicon glyphicon-leaf logo-small"></span>
+                            <h4>GREEN</h4>
+                            <p>We against animal cruelty</p>
+                        </div>
+                    </div>
+                     <hr class="line">
+                    
                 </div>
             </div>
         </div>

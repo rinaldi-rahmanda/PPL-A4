@@ -47,7 +47,7 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/PPL-A4/betterpet/public/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                                <li><a href="/PPL-A4/betterpet/public/register"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
                                 <li><a href="/PPL-A4/betterpet/public/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                             </ul>
                         </li>
