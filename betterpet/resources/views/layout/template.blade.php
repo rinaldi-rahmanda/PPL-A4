@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css/contact-style.css">
         <link rel="stylesheet" href="css/home-style.css">
         <link rel="stylesheet" href="fonts/glyphicons-halflings-regular.ttf">
+	<link rel='shortcut icon' href='favicon2.ico' type='favicon2.ico'/ >
         
         <!-- slider css -->
         <link href="css/full-slider.css" rel="stylesheet">
