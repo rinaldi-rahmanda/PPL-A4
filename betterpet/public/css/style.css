@@ -180,3 +180,28 @@ body {
 .register {
     background-color: #cdc7f9;
 }
+
+.strikeThrough {
+    position: relative;
+    text-align: center;
+    color: #a8a8a8;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: normal;
+    z-index: 10;
+}
+
+.strikeThrough:before {
+    border-top: solid 1px #d8d8d8;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    right: 10px;
+    z-index: -1;
+}
+
+.strikeThrough span {
+    background: #fff;
+    padding: 0 10px;
+}
