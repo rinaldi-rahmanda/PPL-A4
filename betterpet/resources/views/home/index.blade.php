@@ -2,7 +2,8 @@
 
 @section('content')
  <!-- Full Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide header ">
+
+    <div id="myCarousel" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -43,15 +44,7 @@
             <span class="icon-next"></span>
         </a>
 
-    </header>
-
-<div class="wrap">
-    Hello, World!
-    <div class="lower">Wanted text here?</div>
-</div>
-
-
-
+    </div>
 
 <!-- Script to Activate the Carousel -->
 <script>
