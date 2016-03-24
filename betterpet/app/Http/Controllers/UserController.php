@@ -57,7 +57,7 @@ class UserController extends Controller
             'password' => 'min:6',
         ],[
             'email'=>'Email address is not in valid format',
-            'phone'=>'Only numbers allowed',
+            'phone'=>'Only numbers are allowed',
             'name'=>'Your name must be 3 characters or more',
             'password' => 'Password must be at least 6 characters'
         ]);
