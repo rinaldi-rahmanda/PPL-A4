@@ -40,9 +40,11 @@
                         <button type="submit" class="register-button btn btn-success">Sign up</button>
                     </div>
                 </form>
-                <h4>Easier way to register</h4>
+                <div class="strikeThrough"><span>Or sign up with</span></div>
+                <div class="text-center" style="margin-top:4%;">
                 <a href="register/facebook" style="margin-right:15px;"><img src="/PPL-A4/betterpet/public/image/facebook.png" width="35" height="35"></a>
-                <a href="register/google"><img src="/PPL-A4/betterpet/public/image/google-plus.png" width="35" height="35"></a>               	
+                <a href="register/google"><img src="/PPL-A4/betterpet/public/image/google-plus.png" width="35" height="35"></a>
+                </div>	
             </div>
         </div>
     </div>
