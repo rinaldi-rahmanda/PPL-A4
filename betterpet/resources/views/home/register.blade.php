@@ -41,8 +41,8 @@
                     </div>
                 </form>
                 <h4>Easier way to register</h4>
-                <a href="register/google"><img src="/PPL-A4/betterpet/public/image/google-plus.png" ></a>
-                <a href="register/facebook"><img src="/PPL-A4/betterpet/public/image/facebook.png" ></a>	
+                <a href="register/facebook" style="margin-right:15px;"><img src="/PPL-A4/betterpet/public/image/facebook.png" width="35" height="35"></a>
+                <a href="register/google"><img src="/PPL-A4/betterpet/public/image/google-plus.png" width="35" height="35"></a>               	
             </div>
         </div>
     </div>

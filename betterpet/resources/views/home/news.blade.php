@@ -4,6 +4,8 @@
 <div class='container-fluid page-wrap' style='margin-top:100px;' >
 	<div class='news'>
 		<div class="row">
+            <h3 class="text-center"> Read our latest news</h3>
+            <hr class="line">
 			<div class="col-sm-4 col-xs-4 col-md-4">
 				<div class="news-thumbnail thumbnail">
 				  <img src="image/faiz.jpg" class='img-responsive' >
