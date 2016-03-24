@@ -170,3 +170,13 @@ body {
 .form-group {
     margin-bottom: 25px;
 }
+
+/* untuk register */
+.layout {
+    background-color: white;
+    padding: 2% 4% 2% 4%;
+}
+
+.register {
+    background-color: #cdc7f9;
+}
