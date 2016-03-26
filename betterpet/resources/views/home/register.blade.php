@@ -1,5 +1,19 @@
 @extends('layout.template-about')
 @section('content')
+<script>
+    function checkPasswordMatch() {
+        var password = $("#password").val();
+        var confirmPassword = $("#passwordconfirm").val();
+        var match = "<span class='glyphicon glyphicon-ok' aria-hidden='true'></span> Password Match";
+        if (password != confirmPassword)
+            $("#passwordconfirmation").html("Passwords do not match!");
+        else
+            $("#passwordconfirmation").html(match);
+    }
+    $(document).ready(function () {
+        $("#passwordconfirm").keyup(checkPasswordMatch);
+    });
+</script>
 <div class='container-fluid page-wrap register'>
     <div class="register-row row">
 
@@ -13,7 +27,14 @@
                         <input type="text" name="email" class="register-form form-control" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" class="register-form form-control" placeholder="Password" required>
+                        <input type="password" name="password" id="password" class="register-form form-control" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="passwordconfirm" name="passwordconfirm" class="register-form form-control"
+                         placeholder="Confirm Password" required>
+                    </div>
+                    <div class="form-group">
+                        <p id="passwordconfirmation"></p>
                     </div>
                     <div class="form-group">
                         <input type="text" name="name" class="register-form form-control" placeholder="Your Name ex: John Doe" required>
