@@ -9,6 +9,7 @@
             $("#passwordconfirmation").html("Passwords do not match!");
         else
             $("#passwordconfirmation").html(match);
+
     }
     $(document).ready(function () {
         $("#passwordconfirm").keyup(checkPasswordMatch);

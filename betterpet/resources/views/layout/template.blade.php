@@ -41,19 +41,21 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/PPL-A4/betterpet/public/news">News</a></li>
-                        <li><a href="/PPL-A4/betterpet/public/about">About Us</a></li>
-                        <li><a href="/PPL-A4/betterpet/public/contact">Contact</a></li>
-                        <li><a href="/PPL-A4/betterpet/public/faq">FAQ</a></li>
-                        
+                        <li><a href="{{URL::to('/news')}}">News</a></li>
+                        <li><a href="{{URL::to('/about')}}">About Us</a></li>
+                        <li><a href="{{URL::to('/contact')}}">Contact</a></li>
+                        <li><a href="{{URL::to('/faq')}}">FAQ</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/PPL-A4/betterpet/public/register"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
-                                <li><a href="/PPL-A4/betterpet/public/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                <li><a href="{{URL::to('/register')}}"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+                                <li><a href="{{URL::to('/login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                             </ul>
                         </li>
+                        @if(Session::get('user'))
+                            <li><a href="{{URL::to('/logout')}}">Logout</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>

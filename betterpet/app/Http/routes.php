@@ -11,13 +11,6 @@
 |
 */
 
-Route::get('/','HomeController@index');
-Route::get('/about','HomeController@about');
-Route::get('/faq','HomeController@faq');
-Route::get('/news','HomeController@news');
-Route::get('/adoption','UserController@listAdoptions');
-
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -31,7 +24,11 @@ Route::get('/adoption','UserController@listAdoptions');
 
 Route::group(['middleware' => ['web']], function () {
     //
-
+  Route::get('/','HomeController@index');
+  Route::get('/about','HomeController@about');
+  Route::get('/faq','HomeController@faq');
+  Route::get('/news','HomeController@news');
+  Route::get('/adoption','UserController@listAdoptions');
 	Route::get('/login','UserController@loginForm');
 	Route::get('/register','UserController@registerForm');
   Route::post('/login','UserController@login');

@@ -11,6 +11,7 @@ use Socialize;
 use Hash;
 use DB;
 use Validator;
+use Session;
 
 class UserController extends Controller
 {
@@ -19,6 +20,7 @@ class UserController extends Controller
         $password = $request->input('password');
         if(Auth::attempt(['email'=>$email,'password'=>$password])){
             //correct email and password
+            Session::put('user','1');
             return redirect('/');
         }
         else{
@@ -41,6 +43,9 @@ class UserController extends Controller
     public function register(Request $request){
         $name = $request->input('name');
         $password = $request->input('password');
+        $passconf = $request->input('passwordconfirm');
+        if($password != $passconf)
+            return redirect('/register')->withErrors('Both password field must have the same value');
         $email = $request->input('email');
         $domisili = $request->input('domicile');
         $phone = $request->input('phone');
@@ -68,6 +73,7 @@ class UserController extends Controller
         $user->password = Hash::make($password);
         $user->save();
         Auth::loginUsingId($user->id);
+        Session::put('user','1');
         return redirect('/');
         //
     }
@@ -94,6 +100,7 @@ class UserController extends Controller
             $user->save();
         }
         Auth::loginUsingId($user->id);
+        Session::put('user','1');
         return redirect('/');
     }
     public function facebookCallBack(){
@@ -108,10 +115,12 @@ class UserController extends Controller
             $user->save();
         }
         Auth::loginUsingId($user->id);
+        Session::put('user','1');
         return redirect('/');
     }
     public function logout(){
         Auth::logout();
+        Session::flush();
         return redirect('/');
     }
     public function showProfile(){
