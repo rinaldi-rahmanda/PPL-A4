@@ -18,15 +18,24 @@ class UserController extends Controller
     public function login(Request $request){
         $email = $request->input('email');
         $password = $request->input('password');
-        if(Auth::attempt(['email'=>$email,'password'=>$password])){
-            //correct email and password
-            Session::put('user','1');
-            return redirect('/');
+        $rememberme = $request->input('remember');
+        if($rememberme=="yes"){
+            return "yes";
+            if(Auth::attempt(['email'=>$email,'password'=>$password],true)){
+                //correct email and password
+                Session::put('user','1');
+                return redirect('/');
+            }
         }
         else{
-            //gagal login
-            return redirect('/login')->with('error','Invalid email or password');
-        }
+            if(Auth::attempt(['email'=>$email,'password'=>$password])){
+                //correct email and password
+                Session::put('user','1');
+                return redirect('/');
+            }
+        } 
+        //gagal login
+        return redirect('/login')->with('error','Invalid email or password');
     }
     public function loginForm(){
          if(!Auth::check())

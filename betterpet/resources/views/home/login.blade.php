@@ -25,6 +25,9 @@
                         <input type="password" name="password" class="register-form form-control" placeholder="Password" required>
                     </div>
                     <div class="form-group">
+                        <input name="remember" type="checkbox" value="yes" checked="checked"> Remember me
+                    </div>
+                    <div class="form-group">
                         <button type="submit" class="register-button btn btn-success">Login</button>
                     </div>
                 </form>	
