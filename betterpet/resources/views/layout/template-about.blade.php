@@ -43,6 +43,7 @@
                         <li><a href="{{URL::to('/about')}}">About Us</a></li>
                         <li><a href="{{URL::to('/contact')}}">Contact</a></li>
                         <li><a href="{{URL::to('/faq')}}">FAQ</a></li>
+                        @if(!Session::get('user'))
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account
                                 <span class="caret"></span></a>
@@ -51,6 +52,7 @@
                                 <li><a href="{{URL::to('/login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                             </ul>
                         </li>
+                        @endif
                         @if(Session::get('user'))
                             <li><a href="{{URL::to('/logout')}}">Logout</a></li>
                         @endif
