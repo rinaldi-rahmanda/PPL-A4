@@ -49,7 +49,7 @@
         <div class='container-fluid' style='padding-top:20px'>
             <div class='row'>
                 <div class='col-md-4 col-xs-4 col-sm-4'>
-                    <blockquote>
+                    <blockquote class="custom-quote">
                         <p>
                             "Time spent with cats is never wasted."
                         </p>
@@ -57,7 +57,7 @@
                             - Sigmund Freud
                         </h5>
                     </blockquote><br>
-                    <blockquote>
+                    <blockquote class="custom-quote">
                         <p>
                             "A dog is the only thing on earth that loves you more than you love yourself"
                         </p>
