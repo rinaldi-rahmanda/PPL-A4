@@ -45,20 +45,11 @@ body {
 blockquote{
     border-left:5px solid #ff9fad;
     border-radius: 6px;
-    background-color:lightgrey;
 }
-.home1{
-    background-color:#cdc7f9;
+.home2{
+    background-color:#ebebeb;
 }
-.home-hr{
-    border-color:magenta;
-}
-.home-thumbnail{
-    border: 1px solid darkgrey;
-    border-bottom: none;
-    border-top: none;
-    border-radius: 0px;
-}
+
 .navbar-fixed-top .navbar-nav>li>a {
     color: #ffffff;
 }
@@ -98,8 +89,8 @@ blockquote{
 }
 
 .footer {
-    margin-top: 4%;
-    margin-bottom: 4%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 .register-button{
@@ -194,7 +185,7 @@ blockquote{
 }
 
 .register {
-    background-color: #cdc7f9;
+    background-color: #ffe4e1;
 }
 
 .strikeThrough {
