@@ -20,7 +20,6 @@ class UserController extends Controller
         $password = $request->input('password');
         $rememberme = $request->input('remember');
         if($rememberme=="yes"){
-            return "yes";
             if(Auth::attempt(['email'=>$email,'password'=>$password],true)){
                 //correct email and password
                 Session::put('user','1');
