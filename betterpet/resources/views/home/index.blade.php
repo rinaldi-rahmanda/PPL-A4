@@ -80,30 +80,7 @@
                     <hr class='home-hr center-block' style='width:500px;'>
                 </div>
             </div>
-            <div class='row' style='margin-top:15px;'>
-                <div class="col-xs-12 col-sm-12 col-md-4">
-                    <a href="#" class="home-thumbnail center-block thumbnail" style='width:75%;height:75%;'>
-                      <img src="image/sample2.jpg" class='img img-responsive' alt="">
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4">
-                    <a href="#" class="home-thumbnail center-block thumbnail" style='width:75%;height:75%;'>
-                      <img src="image/sample3.png" class='img img-responsive' alt="">
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4">
-                    <a href="#" class="home-thumbnail center-block thumbnail" style='width:75%;height:75%;'>
-                      <img src="image/sample.jpg" class='img img-responsive' alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div clas='home3'>
-        <div class='container'>
-            <div class='row'>
-                NEWS
-            </div>
+            
         </div>
     </div>
 <!-- Script to Activate the Carousel -->
