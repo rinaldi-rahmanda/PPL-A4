@@ -29,7 +29,7 @@
     left: 0;
 }
 
-.thumbnail {
+.thumbnail-home {
     padding: 0px;
     margin-top: 5%;
     margin-bottom: 20px;
@@ -41,6 +41,6 @@
     z-index: 8;
 }
 
-.thumbnail img {
+.thumbnail-home img {
     width: 100%;
 }
