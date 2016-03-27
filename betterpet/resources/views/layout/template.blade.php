@@ -37,7 +37,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>                        
                     </button>
-                    <a href="/PPL-A4/betterpet/public/"><img src="/PPL-A4/betterpet/public/image/logo.png" width="150" height="60"></a>
+                    <a href="{{URL::to('/')}}"><img src="/PPL-A4/betterpet/public/image/logo.png" width="150" height="60"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
