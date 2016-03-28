@@ -1,8 +1,28 @@
 @extends('layout.template')
 
 @section('content')
+<script>
+    $(document).ready(function(){
+      if(!($("#flsmsg").html()==="")){
+        $("#flash-msg").delay(1500).fadeOut("slow");        
+      }
+      else{
+        $("#flash-msg").hide(); 
+      }
+    });    
+</script>
 <!-- Full Page Image Background Carousel Header -->
-
+<div id="flash-msg" class="center-block"
+    style="background-color:pink;position:absolute
+        ;margin-top:100px;width:100%;z-index:999;width:300px;border-radius: 10px;
+        margin-left:40%;">
+    @if(Session::get('msg'))
+    <h4 class="text-center" id="flsmsg">{{Session::get('msg')}}</h4>
+    @else
+    <h4 class="text-center" id="flsmsg"></h4>
+    @endif
+    
+</div>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">

@@ -23,14 +23,18 @@ class UserController extends Controller
             if(Auth::attempt(['email'=>$email,'password'=>$password],true)){
                 //correct email and password
                 Session::put('user','1');
-                return redirect('/');
+                $user = Auth::user();
+                Session::put('name',$user->name);
+                return redirect('/')->with('msg','You have been logged in');
             }
         }
         else{
             if(Auth::attempt(['email'=>$email,'password'=>$password])){
                 //correct email and password
+                $user = Auth::user();
+                Session::put('name',$user->name);
                 Session::put('user','1');
-                return redirect('/');
+                return redirect('/')->with('msg','You have been logged in');
             }
         } 
         //gagal login
@@ -82,16 +86,17 @@ class UserController extends Controller
         $user->save();
         Auth::loginUsingId($user->id);
         Session::put('user','1');
-        return redirect('/');
+        Session::put('name',$name);
+        return redirect('/')->with('msg','You have been logged in');
         //
     }
     public function google(){
-        if(Session::get('user'))
+        if(!Session::get('user'))
             return Socialize::driver('google')->redirect();
         return redirect('/');
     }
     public function facebook(){
-        if(Session::get('user'))
+        if(!Session::get('user'))
             return Socialize::driver('facebook')->redirect();
         return redirect('/');
     }
@@ -109,7 +114,8 @@ class UserController extends Controller
         }
         Auth::loginUsingId($user->id);
         Session::put('user','1');
-        return redirect('/');
+        Session::put('name',$name);
+        return redirect('/')->with('msg','You have been logged in');
     }
     public function facebookCallBack(){
         $user = Socialize::driver('facebook')->user();
@@ -124,12 +130,13 @@ class UserController extends Controller
         }
         Auth::loginUsingId($user->id);
         Session::put('user','1');
-        return redirect('/');
+        Session::put('name',$name);
+        return redirect('/')->with('msg','You have been logged in');
     }
     public function logout(){
         Auth::logout();
         Session::flush();
-        return redirect('/');
+        return redirect('/')->with('msg','You have been logged out');
     }
     public function showProfile(){
             //ambil segala data user

@@ -45,6 +45,9 @@
                         <li><a href="{{URL::to('/about')}}">About Us</a></li>
                         <li><a href="{{URL::to('/contact')}}">Contact</a></li>
                         <li><a href="{{URL::to('/faq')}}">FAQ</a></li>
+                        @if(Session::get('name'))
+                        <li><a href="{{URL::to('/profile')}}">{{Session::get('name')}}</a></li>
+                        @endif
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account
                                 <span class="caret"></span></a>
