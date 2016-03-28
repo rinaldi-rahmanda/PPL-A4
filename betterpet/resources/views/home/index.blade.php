@@ -44,6 +44,7 @@
         <span class="icon-next"></span>
     </a>
 
+<<<<<<< HEAD
 </div>
 
 <div class='home1' style='padding-top:10px;' >
@@ -88,6 +89,29 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
                         <p><a href="#" class="btn btn-info btn-xs" role="button">Adopt</a> <a href="#" class="btn btn-default btn-xs" role="button">Read</a></p>
                     </div>
+=======
+    </div>
+    <div class='home1'>
+        <div class='container-fluid' style='padding-top:20px'>
+            <div class='row'>
+                <div class='col-md-4 col-xs-4 col-sm-4'>
+                    <blockquote class="custom-quote">
+                        <p>
+                            "Time spent with cats is never wasted."
+                        </p>
+                        <h5>
+                            - Sigmund Freud
+                        </h5>
+                    </blockquote><br>
+                    <blockquote class="custom-quote">
+                        <p>
+                            "A dog is the only thing on earth that loves you more than you love yourself"
+                        </p>
+                        <h5>
+                            - Josh Billings
+                        </h5>
+                    </blockquote>
+>>>>>>> origin/master
                 </div>
             </div>
 
