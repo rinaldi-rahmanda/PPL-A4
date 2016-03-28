@@ -86,12 +86,12 @@ class UserController extends Controller
         //
     }
     public function google(){
-        if(!Auth::check())
+        if(Session::get('user'))
             return Socialize::driver('google')->redirect();
         return redirect('/');
     }
     public function facebook(){
-        if(!Auth::check())
+        if(Session::get('user'))
             return Socialize::driver('facebook')->redirect();
         return redirect('/');
     }
@@ -132,8 +132,6 @@ class UserController extends Controller
         return redirect('/');
     }
     public function showProfile(){
-        if(Auth::check())
-        {
             //ambil segala data user
             $user = Auth::user();
             $idDom = $user->domicile;
@@ -145,34 +143,20 @@ class UserController extends Controller
             else
                 $domicile = $domicile->location;
             return view('profile',['user'=>$user,'domicile'=>$domicile]);
-        }
-        else
-            return redirect('/login')->with('error','You must be logged in first!');
     }
     public function createAdoption(){
-        if(Auth::check())
-        {
-            $user = Auth::user();
-            $userId = $user->id;
-            $adList = DB::table('adoptions')
-                ->join('domicile','adoptions.domicile','=','domicile.id')
-                ->where('adoptions.user_id',$userId);
-            return view('userAdoption',['adoptions'=>$adList]);     
-        }
-        else
-            return redirect('login')->with('error','You must be logged in first!');
-        
+        $user = Auth::user();
+        $userId = $user->id;
+        $adList = DB::table('adoptions')
+            ->join('domicile','adoptions.domicile','=','domicile.id')
+            ->where('adoptions.user_id',$userId);
+        return view('userAdoption',['adoptions'=>$adList]);      
     }
     public function saveAdoption(Request $request){
-        if(Auth::check()){
             $user = Auth::user();
             $userId = $user->id;
             $adoption = new Adoption();
             //buat adopsi baru
-        }
-        else{
-            return redirect('login')->with('error','You must be logged in first!');
-        }
     }
     public function listAdoptions(){
         return 'haha';
