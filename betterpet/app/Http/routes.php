@@ -40,8 +40,10 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/register/gCallBack','UserController@googleCallBack');
   Route::get('/register/fCallBack','UserController@facebookCallBack');  
   Route::get('/logout','UserController@logout');  
-  Route::get('/profile','UserController@showProfile');
   Route::get('/adoption/create','UserController@createAdoption');
   Route::post('/adoption/create','UserController@saveAdoption');
   Route::get('/adoption/mark/{id}','UserController@markDone');
 });
+
+Route::get('/profile','UserController@showProfile')->middleware(['web','usermid']);
+Route::get('/list','UserController@listAdoptions')->middleware(['web','usermid']);
