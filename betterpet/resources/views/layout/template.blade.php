@@ -37,7 +37,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>                        
                     </button>
-                    <a href="{{URL::to('/')}}"><img src="/PPL-A4/betterpet/public/image/logo.png" width="150" height="60"></a>
+                    <a href="{{URL::to('/')}}"><img src="{{URL::to('/image/logo.png')}}" width="150" height="60"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
@@ -70,10 +70,10 @@
             <div class="container-fluid text-center">
                 Connect with us <br>
                 <div class="sosial">
-                    <a href="#"><img src="/PPL-A4/betterpet/public/image/facebook.png" ></a>
-                    <a href="#"><img src="/PPL-A4/betterpet/public/image/twitter.png" ></a>
-                    <a href="#"><img src="/PPL-A4/betterpet/public/image/instagram.png" ></a>
-                    <a href="#"><img src="/PPL-A4/betterpet/public/image/google-plus.png" ></a>
+                    <a href="#"><img src="{{URL::to('/image/facebook.png')}}" ></a>
+                    <a href="#"><img src="{{URL::to('/image/twitter.png')}}" ></a>
+                    <a href="#"><img src="{{URL::to('/image/instagram.png')}}" ></a>
+                    <a href="#"><img src="{{URL::to('/image/google-plus.png')}}" ></a>
                 </div>
                 <br>
                 <p>&copy; PPL A04, Inc</p>
