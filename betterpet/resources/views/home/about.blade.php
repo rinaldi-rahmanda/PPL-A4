@@ -44,7 +44,7 @@
             <div class="team">
                 <div class="row team-row" style="margin-top: 6%;" >
                     <div class="col-xs-3 col-xs-offset-3 col-md-2 col-md-offset-3">
-                        <img class="img-responsive img-circle" src="/PPL-A4/betterpet/public/image/adit.jpg" width="150" height="150">
+                        <img class="img-responsive img-circle" src="{{URL::to('/image/adit.jpg')}}" width="150" height="150">
                     </div>
                     <div class="col-md-4 col-xs-4">
                         <h3>Aditya Rama</h3>
@@ -64,14 +64,14 @@
                         </blockquote>
                     </div>
                     <div class="col-md-2 col-xs-4 img-team">
-                        <img class="img-responsive img-circle" src="/PPL-A4/betterpet/public/image/faiz.jpg" width="150" height="150">
+                        <img class="img-responsive img-circle" src="{{URL::to('/image/faiz.jpg')}}" width="150" height="150">
 
                     </div> 
                 </div>
                 <hr class="line2">
                 <div class="row team-row">
                     <div class="col-xs-3 col-xs-offset-3 col-md-2 col-md-offset-3">
-                        <img class="img-responsive img-circle" src="/PPL-A4/betterpet/public/image/me.jpg" width="150" height="150">
+                        <img class="img-responsive img-circle" src="{{URL::to('/image/me.jpg')}}" width="150" height="150">
                     </div>
                     <div class="col-md-4 col-xs-4">
                         <h3>Liany Gustina</h3>
@@ -92,14 +92,14 @@
                         </blockquote>
                     </div>
                     <div class="col-md-2 col-xs-4 img-team">
-                        <img class="img-responsive img-circle" src="/PPL-A4/betterpet/public/image/aldi.jpg" width="150" height="150">
+                        <img class="img-responsive img-circle" src="{{URL::to('/image/aldi.jpg')}}" width="150" height="150">
 
                     </div> 
                 </div>
                 <hr class="line2">
                 <div class="row team-row">
                     <div class="col-xs-3 col-xs-offset-3 col-md-2 col-md-offset-3">
-                        <img class="img-responsive img-circle" src="/PPL-A4/betterpet/public/image/tommy.jpg" width="150" height="150">
+                        <img class="img-responsive img-circle" src="{{URL::to('/image/tommy.jpg')}}" width="150" height="150">
                     </div>
                     <div class="col-md-4 col-xs-4">
                         <h3>Tommy Saprikan Kahar</h3>
