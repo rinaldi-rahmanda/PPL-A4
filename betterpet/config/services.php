@@ -37,11 +37,11 @@ return [
 	'google' => [
         'client_id' => '258690452219-6q6deo6dbf9np1gr2k8r9ame2leec6rj.apps.googleusercontent.com',
         'client_secret' => 'jcjQfN7671xIA7jklaXJbJEq',
-        'redirect' => 'http://localhost/PPL-A4/betterpet/public/register/gCallBack',
+        'redirect' => 'http://localhost/PPL-A4/betterpet/register/gCallBack',
     ],
     'facebook' => [
         'client_id' => '602542843247099',
         'client_secret' => '5d9a4714898ba30bcc27f723d69d43b1',
-        'redirect' => 'http://localhost/PPL-A4/betterpet/public/register/fCallBack',
+        'redirect' => 'http://localhost/PPL-A4/betterpet/register/fCallBack',
     ],
 ];
