@@ -21,10 +21,6 @@ html, body {
     background-color: #f4917d;
     border-color: #e00707;
 }
-body {
-    display: table;
-}
-
 .row {
     padding: 0;
     margin: 0;
