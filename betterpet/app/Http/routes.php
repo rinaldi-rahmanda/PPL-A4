@@ -43,6 +43,7 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 Route::get('/profile','UserController@showProfile')->middleware(['web','usermid']);
+Route::get('/asu','UserController@asu')->middleware(['web']);
 Route::get('/list','UserController@listAdoptions')->middleware(['web','usermid']);
 Route::get('/adoption/create','UserController@createAdoption')->middleware(['web','usermid']);
 Route::post('/adoption/create','UserController@saveAdoption')->middleware(['web','usermid']);

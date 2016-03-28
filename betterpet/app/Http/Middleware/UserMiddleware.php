@@ -18,9 +18,12 @@ class UserMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Session::get('user')||Auth::viaRemember()){
-            if(!Session::get('user'))
+        if(Session::get('user')||Auth::check()){
+            if(!Session::get('user')){
+                $user = Auth::user();
                 Session::put('user','1');
+                Session::put('name',$user->name);
+            }
             return $next($request);            
         }
         return redirect('/login');
