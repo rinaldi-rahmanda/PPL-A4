@@ -12,7 +12,7 @@
 				  <div class="caption">
 					<h3>Judul News</h3>
 					<p>Lorem ipsum lalala Lorem ipsum lalala Lorem ipsum lalala Lorem ipsum lalala</p>
-					<p><a href="#" class="btn btn-default" role="button">Read More</a></p>
+					<p><a href="{{URL::to('/news1')}}" class="btn btn-default" role="button">Read More</a></p>
 				  </div>
 				</div>
 		  </div>
