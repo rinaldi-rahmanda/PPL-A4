@@ -37,6 +37,7 @@ Cat food – Not that they would want this anyway, but cat food contains protein
                         <li>
 Coffee – Not sure why you would give your dog coffee, but pretty much the same applies here as to chocolate. This is essentially poison for your dog if ingested.</li>
                     </ol>
+                    <p>source : http://www.caninejournal.com/foods-not-to-feed-dog/</p>
              </div>
             </div>
 		</div>
