@@ -1,8 +1,10 @@
 @extends('layout.template-about')
 <script>
-	$("#upfile1").click(function () {
+     $(document).ready(function(){
+    $("#upfile1").click(function () {
     $("#file1").trigger('click');
 });
+}); 
 </script>
 @section('content')
 <div class='container-fluid'>
@@ -16,7 +18,8 @@
 
             <img src="http://placehold.it/200x200" alt="">
             <div class="ava-caption">
-            	<img src="/image/uploadButton.png" id="upfile1" style="cursor:pointer" />
+            	Edit your avatar
+            	<img src="image/pen.png" id="upfile1" style="cursor:pointer" width="20" height="20" style="float:right;"/>
 		<input type="file" id="file1"  name="file1" style="display:none" />
             </div>
         </div>
