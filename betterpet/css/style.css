@@ -7,7 +7,9 @@ html, body {
     margin: auto;
     font-family: 'Open Sans', sans-serif;
 }
-
+.panel-color{
+	background-color:#d5ff80 !important;
+}
 .font-header {
 
     text-transform: uppercase;
@@ -20,6 +22,10 @@ html, body {
     padding-left:4px;
     background-color: #f4917d;
     border-color: #e00707;
+}
+.custom-panel{
+	padding-left:50px;
+	padding-right:50px;
 }
 .row {
     padding: 0;
