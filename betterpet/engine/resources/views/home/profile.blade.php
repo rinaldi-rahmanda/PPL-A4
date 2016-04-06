@@ -37,23 +37,47 @@
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-3 control-label">Domicile</label>
                     <div class="col-sm-9">
-                        <h5>{{ $domicile }}</h5>
-                    </div>
-                    <label for="inputPassword3" class="col-sm-3 control-label"></label>
-                    <div class="col-sm-9">
-                    	<select class="register-form form-control" name="domicile">
-                            <option value="" disabled selected>Add domicile</option>
-                            <option value="1">Jakarta Utara</option>
-                            <option value="2">Jakarta Timur</option>
-                            <option value="3">Jakarta Pusat</option>
-                            <option value="4">Jakarta Barat</option>
-                            <option value="5">Jakarta Selatan</option>
-                            <option value="6">Bogor</option>
-                            <option value="7">Depok</option>
-                            <option value="8">Tangerang</option>
-                            <option value="9">Bekasi</option>
-                        </select>
-                    </div>
+                        @if($domicile=="None") 
+                            <h5> No domicile entered</h5>
+                        </div>
+                        <label for="inputPassword3" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <select class="register-form form-control" name="domicile">
+                                <option value="" disabled selected>Add domicile</option>
+                                <option value="1">Jakarta Utara</option>
+                                <option value="2">Jakarta Timur</option>
+                                <option value="3">Jakarta Pusat</option>
+                                <option value="4">Jakarta Barat</option>
+                                <option value="5">Jakarta Selatan</option>
+                                <option value="6">Bogor</option>
+                                <option value="7">Depok</option>
+                                <option value="8">Tangerang</option>
+                                <option value="9">Bekasi</option>
+                            </select>
+                        </div>
+                    
+                        @else
+                            <h5>{{ $domicile }}</h5>
+                        </div>
+                        <label for="inputPassword3" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <select class="register-form form-control" name="domicile">
+                                <option value="" disabled selected>Change domicile</option>
+                                <option value="1">Jakarta Utara</option>
+                                <option value="2">Jakarta Timur</option>
+                                <option value="3">Jakarta Pusat</option>
+                                <option value="4">Jakarta Barat</option>
+                                <option value="5">Jakarta Selatan</option>
+                                <option value="6">Bogor</option>
+                                <option value="7">Depok</option>
+                                <option value="8">Tangerang</option>
+                                <option value="9">Bekasi</option>
+                            </select>
+                        </div>
+                        @endif
+                        
+                    
+                    
                 </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-3 control-label">Phone number</label>
