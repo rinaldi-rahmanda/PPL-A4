@@ -155,7 +155,7 @@ class UserController extends Controller
             $domicile = DB::table('domicile')->select('location')->where('id',$idDom)->first();
             if( $idDom == 0 ){
                 //belum set domisili
-                $domicile = 'Belum memilih domisili';
+                $domicile = "None";
             }
             else
                 $domicile = $domicile->location;
