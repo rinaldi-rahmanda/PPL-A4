@@ -19,10 +19,24 @@
 				            @endforeach
 				        </ul>
 				    </div>
+				    
+				    
 				@endif
+				
+				<div id="flash-msg" class="center-block"
+				style="background-color:pink;position:absolute
+				;margin-top:400px;width:100%;z-index:999;width:300px;border-radius: 10px;
+				">
 				@if(session('success'))
-					{{ session('success') }}
+					    <h4 class="text-center" id="flsmsg">{{Session('success')}}</h4>
 				@endif
+				
+				</div>
+	
+    
+				
+				
+				
                 <h3 class='text-center'>Don't hesitate to ask us!</h3>
                 <br>
     				<form method="POST">
