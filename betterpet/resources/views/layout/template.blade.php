@@ -46,17 +46,25 @@
                         <li><a href="{{URL::to('/contact')}}">Contact</a></li>
                         <li><a href="{{URL::to('/faq')}}">FAQ</a></li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account
-                                <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                @if(Session::get('name'))
+                                 {{Session::get('name')}} <span class="caret"></span></a>
+                                 
+                                @endif
+                               
                             <ul class="dropdown-menu">
                                 @if(Session::get('name'))
-                                <li><a href="{{URL::to('/profile')}}"><span class="glyphicon glyphicon-user"> {{Session::get('name')}}</a></li>
+                                <li><a href="{{URL::to('/profile')}}"><span class="glyphicon glyphicon-user"></span> Edit Profile</a></li>
                                 @endif
 								@if(Session::get('user'))
 								<li><a href="{{URL::to('/logout')}}"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
+                                
 								@endif
+                                @if(!Session::get('name'))
                                 <li><a href="{{URL::to('/register')}}"><span class="glyphicon glyphicon-plus"></span> Sign up</a></li>
+                                
                                 <li><a href="{{URL::to('/login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                @endif
                             </ul>
                         </li>
                     </ul>
