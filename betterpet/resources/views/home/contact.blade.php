@@ -25,7 +25,7 @@
 				
 				<div id="flash-msg" class="center-block"
 				style="background-color:pink;position:absolute
-				;margin-top:400px;width:100%;z-index:999;width:300px;border-radius: 10px;
+				;margin-top:330px;width:100%;z-index:999;width:300px;border-radius: 10px;
 				">
 				@if(session('success'))
 					    <h4 class="text-center" id="flsmsg">{{Session('success')}}</h4>
@@ -50,6 +50,8 @@
 					<div class="form-group">
 					<textarea name="content" class="register-form form-control" placeholder="What are you wondering?" required></textarea></div>
 					<div class="form-group">
+					<br>
+					<br>
 					<button class='btn btn-primary pull-right'>Send</button></div>
 				</form>
 			</div>
