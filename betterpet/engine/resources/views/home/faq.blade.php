@@ -117,17 +117,17 @@
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-off logo-small"></span>
       <h4>LOGIN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <p>In order to adopt your favourite pet, you must register or logged in first</p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <span class="glyphicon glyphicon-search logo-small"></span>
       <h4>CHOOSE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <p>Search </p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-circle-arrow-right logo-small"></span>
       <h4>ADOPT</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <p>Click adopt and your request will be sent to the owner</p>
     </div>
   </div>
   <br><br>
@@ -216,31 +216,6 @@
 
 <!-- Container (Portfolio Section) -->
 <div class="container-fluid text-center bg-grey">
-  <h2>Portfolio</h2><br>
-  <h4>Anyone who we connect</h4>
-  <div class="row text-center slideanim">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="depok.jpg" alt="Depok" width="400" height="300">
-        <p><strong>Depok</strong></p>
-        <p>Yes, we connect in Depok</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="jakarta.jpg" alt="Jakarta" width="400" height="300">
-        <p><strong>Jakara</strong></p>
-        <p>Yes, we connect in Jakarta</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="Tanggerang.jpg" alt="Tanggerang" width="400" height="300">
-        <p><strong>Tanggerang</strong></p>
-        <p>Yes, we connect in Tanggerang</p>
-      </div>
-    </div>
-  </div><br>
   
   <h2>What our customers say</h2>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
