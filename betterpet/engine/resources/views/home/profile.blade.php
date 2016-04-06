@@ -1,12 +1,13 @@
 @extends('layout.template-about')
+
+@section('content')
 <script>
      $(document).ready(function(){
     $("#upfile1").click(function () {
     	$("#file1").trigger('click');
-     })
+     });
 }); 
 </script>
-@section('content')
 <div class='container-fluid'>
     <div class="row">
         <div class="row">
