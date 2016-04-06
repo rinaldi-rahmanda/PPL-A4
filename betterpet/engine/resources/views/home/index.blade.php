@@ -101,9 +101,10 @@
         <hr class='line' style='width:500px;'>
 
         <div class="row">
-            <div class="col-xs-18 col-sm-6 col-md-3">
+           
+            <div class="col-md-offset-1 col-xs-18 col-sm-6 col-md-3">
                 <div class="thumbnail thumbnail-home">
-                    <img src="http://placehold.it/500x300" alt="">
+                    <img src="http://placehold.it/400x300" alt="">
                     <div class="caption">
                         <h4>Thumbnail label</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
@@ -115,7 +116,7 @@
 
             <div class="col-xs-18 col-sm-6 col-md-3">
                 <div class="thumbnail thumbnail-home">
-                    <img src="http://placehold.it/500x300" alt="">
+                    <img src="http://placehold.it/400x300" alt="">
                     <div class="caption">
                         <h4>Thumbnail label</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
@@ -126,7 +127,7 @@
 
             <div class="col-xs-18 col-sm-6 col-md-3">
                 <div class="thumbnail thumbnail-home">
-                    <img src="http://placehold.it/500x300" alt="">
+                    <img src="http://placehold.it/400x300" alt="">
                     <div class="caption">
                         <h4>Thumbnail label</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
@@ -134,30 +135,20 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-xs-18 col-sm-6 col-md-3">
-                <div class="thumbnail thumbnail-home">
-                    <img src="http://placehold.it/500x300" alt="">
-                    <div class="caption">
-                        <h4>Thumbnail label</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                        <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-                    </div>
-                </div>
-            </div>
-
+           
+            
         </div><!-- End row -->
 
     </div><!-- End container -->
 
 </div>
 
-<div class="container-fluid text-center bg-grey">
+<div class="container-fluid text-center" style="min-height:300px;">
   
-  <h2>What our customers say</h2>
+  <h2 style="margin-top:80px;">What our customers say</h2>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+    <ol class="carousel-indicators1 carousel-indicators" style="bottom:-100px;">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
@@ -177,11 +168,11 @@
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <a class="left carousel-control1 carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <a class="right carousel-control1 carousel-control" href="#myCarousel" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>

@@ -43,7 +43,7 @@ html, body {
     border-radius: 6px;
 }
 .home2{
-    background-color:#ebebeb;
+    background-color: #f6f6f6;
 }
 
 .navbar-fixed-top .navbar-nav>li>a {
@@ -227,3 +227,18 @@ html, body {
     transform: translateY(-100%);
     bottom: initial;
 }
+
+.bg-grey {
+      background-color: #f6f6f6;
+  }
+
+.carousel-control1.right, .carousel-control1.left {
+      background-image: none;
+      color: #f4511e;
+  }
+  .carousel-indicators1 li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators1 li.active {
+      background-color: #f4511e;
+  }
