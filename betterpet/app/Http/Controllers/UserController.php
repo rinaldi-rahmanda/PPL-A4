@@ -149,7 +149,7 @@ class UserController extends Controller
             }
             else
                 $domicile = $domicile->location;
-            return view('profile',['user'=>$user,'domicile'=>$domicile]);
+            return view('home.profile',['user'=>$user,'domicile'=>$domicile]);
     }
     public function createAdoption(){
         $user = Auth::user();
