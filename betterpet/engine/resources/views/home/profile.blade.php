@@ -2,8 +2,8 @@
 <script>
      $(document).ready(function(){
     $("#upfile1").click(function () {
-    $("#file1").trigger('click');
-});
+    	$("#file1").trigger('click');
+     })
 }); 
 </script>
 @section('content')
