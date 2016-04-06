@@ -41,6 +41,14 @@ class HomeController extends Controller
     	*/
     	return view('home.news');
     }
+	public function singleNews($id){
+		if(!$id){
+			return redirect('/news');
+		}
+		else{
+			return view('home.singleNews');
+		}
+	}
     public function contactPost(Request $request){
         $name = $request->name;
         $email = $request->email;

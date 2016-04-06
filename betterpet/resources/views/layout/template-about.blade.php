@@ -4,13 +4,12 @@
         <title>BetterPet</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- insert CSS And JavaScript -->
-        <link rel="stylesheet" href="css/about-style.css">
+        <link rel="stylesheet" href="{{URL::to('/css/about-style.css')}}">
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/contact-style.css">
-        <link rel="stylesheet" href="fonts/glyphicons-halflings-regular.ttf">
-	<link rel='shortcut icon' href='favicon2.ico' type='favicon2.ico'/ >
+        <link rel="stylesheet" href="{{URL::to('/css/style.css')}}">
+        <link rel="stylesheet" href="{{URL::to('/css/contact-style.css')}}">
+        <link rel="stylesheet" href="{{URL::to('/fonts/glyphicons-halflings-regular.ttf')}}">
+		<link rel='shortcut icon' href="{{URL::to('/favicon2.ico')}}" type='favicon2.ico'/ >
         
         <!-- slider css -->
         <link href="css/full-slider.css" rel="stylesheet">

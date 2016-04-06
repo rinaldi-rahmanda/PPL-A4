@@ -27,9 +27,10 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/about','HomeController@about');
   Route::get('/faq','HomeController@faq');
   Route::get('/news','HomeController@news');
+  Route::get('/news/{id}','HomeController@singleNews');
   Route::get('/adoption','UserController@listAdoptions');
-	Route::get('/login','UserController@loginForm');
-	Route::get('/register','UserController@registerForm');
+  Route::get('/login','UserController@loginForm');
+  Route::get('/register','UserController@registerForm');
   Route::post('/login','UserController@login');
   Route::get('/contact','HomeController@contact');
   Route::post('/contact','HomeController@contactPost');
