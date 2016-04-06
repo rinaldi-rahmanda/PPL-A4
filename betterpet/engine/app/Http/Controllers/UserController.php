@@ -152,6 +152,10 @@ class UserController extends Controller
             //ambil segala data user
             $user = Auth::user();
             $idDom = $user->domicile;
+			$name = $user->name;
+			$phone = $user->phone;
+			$address = $user->address;
+			$desc = $user->description;
             $domicile = DB::table('domicile')->select('location')->where('id',$idDom)->first();
             if( $idDom == 0 ){
                 //belum set domisili
@@ -159,7 +163,7 @@ class UserController extends Controller
             }
             else
                 $domicile = $domicile->location;
-            return view('home.profile',['user'=>$user,'domicile'=>$domicile]);
+            return view('home.profile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone]);
     }
     public function createAdoption(){
         $user = Auth::user();
