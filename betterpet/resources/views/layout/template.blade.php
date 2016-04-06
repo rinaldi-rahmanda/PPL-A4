@@ -48,9 +48,12 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                 @if(Session::get('name'))
-                                 {{Session::get('name')}} <span class="caret"></span></a>
-                                 
+                                 {{Session::get('name')}} <span class="caret"></span>
+                                @else
+                                    Account <span class="caret"></span>
                                 @endif
+                             </a>   
+                            
                                
                             <ul class="dropdown-menu">
                                 @if(Session::get('name'))
