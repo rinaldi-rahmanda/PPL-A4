@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- insert CSS And JavaScript -->
         <link rel="stylesheet" href="{{URL::to('/css/about-style.css')}}">
+		<link rel="stylesheet" href="{{URL::to('/css/bootstrap.min.css')}}">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="{{URL::to('/css/style.css')}}">
         <link rel="stylesheet" href="{{URL::to('/css/contact-style.css')}}">
