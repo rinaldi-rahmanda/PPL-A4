@@ -248,3 +248,27 @@ html, body {
   .carousel-indicators1 li.active {
       background-color: #f4511e;
   }
+
+
+.card {
+  position: absolute;
+  width:200px;
+  height:300px;
+  padding:20px;
+  
+  font-size:150px;
+  line-height:250px;
+  text-align:center;
+  
+  background-color: #FFF;
+  border-right:10px solid #000;
+  border-radius:20px;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,.5);
+  
+  transition: all .75s;
+}
+
+.card:hover {
+   left: 500px;
+}
+

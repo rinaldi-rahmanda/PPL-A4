@@ -102,6 +102,30 @@
       -webkit-transform: translateY(0%);
     }
   }
+    
+    .card1 {
+  z-index:1;
+  top:20px;
+  left:270px;
+}
+
+.card2 {
+  z-index:2;
+  top:50px;
+  left:220px;
+}
+
+.card3 {
+  z-index:3;
+  top:80px;
+  left:170px;
+}
+
+.card4 {
+  z-index:4;
+  top:110px;
+  left: 120px;
+}
   
   </style>
 
@@ -201,7 +225,18 @@
 	</div>
   </div>
 </div>
+<div  class="container-fluid" >
+    <div class="row">
+        <div class="col-md-12" style="min-height:400px;">
+        <div class="card card1">A</div>
+        <div class="card card2">7</div>
+        <div class="card card3">K</div>
+        <div class="card card4">Q</div>
+        </div>
+    </div>
+    
 
+</div>
 
 <script>
 $(document).ready(function(){
