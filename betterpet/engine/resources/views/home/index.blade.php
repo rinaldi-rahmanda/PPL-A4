@@ -101,8 +101,8 @@
         <hr class='line' style='width:500px;'>
 
         <div class="row">
-           
-            <div class="col-md-offset-1 col-xs-18 col-sm-6 col-md-3">
+            <div class="col-md-offset-1 col-xs-18 col-sm-6 col-md-10">
+            <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail thumbnail-home">
                     <img src="http://placehold.it/400x300" alt="">
                     <div class="caption">
@@ -114,7 +114,7 @@
             </div>
 
 
-            <div class="col-xs-18 col-sm-6 col-md-3">
+            <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail thumbnail-home">
                     <img src="http://placehold.it/400x300" alt="">
                     <div class="caption">
@@ -125,7 +125,7 @@
                 </div>
             </div>
 
-            <div class="col-xs-18 col-sm-6 col-md-3">
+            <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail thumbnail-home">
                     <img src="http://placehold.it/400x300" alt="">
                     <div class="caption">
@@ -135,7 +135,7 @@
                     </div>
                 </div>
             </div>
-           
+           </div>
             
         </div><!-- End row -->
 
