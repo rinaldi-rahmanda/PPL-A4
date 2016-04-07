@@ -104,6 +104,10 @@ class UserController extends Controller
         $user = Socialize::driver('google')->user();
         $name = $user->name;
         $email = $user->email;
+		$avatar = $user->avatar;
+		//modifikasi avatar 
+		$avatar = substr($avatar,0,-2);
+		$avatar = $avatar."200";
         $user = User::where('email','=',$email)->first();
         if(!$user){
             //kalau user tidak ditemukan dalam database, buat user baru
@@ -115,12 +119,17 @@ class UserController extends Controller
         Auth::loginUsingId($user->id);
         Session::put('user','1');
         Session::put('name',$name);
+		Session::put('avatar',$avatar);
         return redirect('/')->with('msg','You have been logged in');
     }
     public function facebookCallBack(){
         $user = Socialize::driver('facebook')->user();
         $name = $user->name;
         $email = $user->email;
+		$avatar = $user->avatar;
+		//modifikasi avatar 
+		$avatar = substr($avatar,0,-2);
+		$avatar = $avatar."200";
         $user = User::where('email','=',$email)->first();
         if(!$user){
             $user = new User();
@@ -131,6 +140,7 @@ class UserController extends Controller
         Auth::loginUsingId($user->id);
         Session::put('user','1');
         Session::put('name',$name);
+		Session::put('avatar',$avatar);
         return redirect('/')->with('msg','You have been logged in');
     }
     public function logout(){
@@ -142,14 +152,18 @@ class UserController extends Controller
             //ambil segala data user
             $user = Auth::user();
             $idDom = $user->domicile;
+			$name = $user->name;
+			$phone = $user->phone;
+			$address = $user->address;
+			$desc = $user->description;
             $domicile = DB::table('domicile')->select('location')->where('id',$idDom)->first();
             if( $idDom == 0 ){
                 //belum set domisili
-                $domicile = 'Belum memilih domisili';
+                $domicile = "None";
             }
             else
                 $domicile = $domicile->location;
-            return view('home.profile',['user'=>$user,'domicile'=>$domicile]);
+            return view('home.profile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone]);
     }
     public function createAdoption(){
         $user = Auth::user();

@@ -1,5 +1,5 @@
 .leftHalf {
-    background: url('/PPL-A4/betterpet/image/dogcat.jpg') center center no-repeat;
+    background: url('image/dogcat.jpg') center center no-repeat;
     background-size:cover;
     width: 50%;
     position: absolute;

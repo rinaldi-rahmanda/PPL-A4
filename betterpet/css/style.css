@@ -7,7 +7,9 @@ html, body {
     margin: auto;
     font-family: 'Open Sans', sans-serif;
 }
-
+.panel-color{
+	background-color:#d5ff80 !important;
+}
 .font-header {
 
     text-transform: uppercase;
@@ -20,6 +22,10 @@ html, body {
     padding-left:4px;
     background-color: #f4917d;
     border-color: #e00707;
+}
+.custom-panel{
+	padding-left:50px;
+	padding-right:50px;
 }
 .row {
     padding: 0;
@@ -43,7 +49,7 @@ html, body {
     border-radius: 6px;
 }
 .home2{
-    background-color:#ebebeb;
+    background-color: #f6f6f6;
 }
 
 .navbar-fixed-top .navbar-nav>li>a {
@@ -208,3 +214,61 @@ html, body {
     background: #fff;
     padding: 0 10px;
 }
+
+
+.form-horizontal .control-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.ava-caption {
+    color: white;
+    background: rgba(0,0,0,0.6);
+    text-align: justify;
+    padding: 10px;
+    max-width: 200px;
+    min-width: 200px;
+    left: auto;
+    transform: translateY(-100%);
+    bottom: initial;
+}
+
+.bg-grey {
+      background-color: #f6f6f6;
+  }
+
+.carousel-control1.right, .carousel-control1.left {
+      background-image: none;
+      color: #f4511e;
+  }
+  .carousel-indicators1 li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators1 li.active {
+      background-color: #f4511e;
+  }
+
+
+.card {
+  position: absolute;
+  width:200px;
+  height:300px;
+  padding:20px;
+  
+  font-size:150px;
+  line-height:250px;
+  text-align:center;
+  
+  background-color: #FFF;
+  border-right:10px solid #000;
+  border-radius:20px;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,.5);
+  
+  transition: all .75s;
+}
+
+.card:hover {
+   left: 500px;
+}
+
