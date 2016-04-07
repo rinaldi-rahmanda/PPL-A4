@@ -3,46 +3,6 @@
 @section('content')
 
 <style>
-<<<<<<< HEAD
-  
-  h2 {
-      font-size: 24px;
-      text-transform: uppercase;
-      color: #303030;
-      font-weight: 600;
-      margin-bottom: 0px;
-  }
-  h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      color: #303030;
-      font-weight: 400;
-      margin-bottom: 30px;
-  }  
-  .jumbotron {
-  	  background-color: #ffffff;
-      background-image: url("/PPL-A4/betterpet/image/c&dFAQ.jpg");
-      background-repeat: no-repeat;
-      background-position: center; 
-      background-size: 90%;
-      color: #fff;
-      padding: 300px 25px;
-      font-family: Montserrat, sans-serif;
-
-  }
-  .bg-grey {
-      background-color: #f6f6f6;
-  }
-  .logo-small {
-      color: #61ABD8;
-      font-size: 50px;
-  }
-  .logo {
-      color: #61ABD8;
-      font-size: 200px;
-  }
-=======
->>>>>>> origin/master
 
     h2 {
         font-size: 24px;
@@ -113,11 +73,6 @@
         font-style: italic;
         margin: 70px 0;
     }
-<<<<<<< HEAD
-  }
-  
-  </style>
-=======
 
     .slideanim {visibility:hidden;}
     .slide {
@@ -173,7 +128,6 @@
     }
 
 </style>
->>>>>>> origin/master
 
 <div class="faq-jumbo jumbotron">
 </div>
@@ -183,23 +137,6 @@
 
     <br><br>
 
-<<<<<<< HEAD
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-off logo-small"></span>
-      <h4>LOGIN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4>CHOOSE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-circle-arrow-right logo-small"></span>
-      <h4>ADOPT</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-=======
     <div class="row slideanim">
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-off logo-small"></span>
@@ -216,7 +153,6 @@
             <h4>ADOPT</h4>
             <p>Click adopt and your request will be sent to the owner, and wait for the appro</p>
         </div>
->>>>>>> origin/master
     </div>
     <br><br>
 
@@ -226,144 +162,6 @@
 
 <!-- Container (Konten 1) -->
 <div class="container-fluid">
-<<<<<<< HEAD
-  <div class="row">
-    <div class="col-md-8 col-xs-8 col-sm-8">
-      <h2>KONTEN 1</h2><br>
-      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-    </div>
-    <div class="col-sm-4 col-xs-12 col-sm-12">
-    	<div class="poslog">
-     	 <span class="glyphicon glyphicon-signal logo"></span>
-    	</div>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid bg-grey">
-  <div class="row">
-    <div class="col-sm-4">
-    	<div class="poslog">
-      		<span class="glyphicon glyphicon-search logo slideanim text-center"></span>
-    	</div>
-    </div>
-    <div class="col-sm-8">
-      <h2>KONTEN 2</h2><br>
-      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- Container (Konten 2) -->
-<div class="container-fluid text-center">
-  <h2>KONTEN 3</h2>
-  <h4>What we offer</h4>
-  <br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-off logo-small"></span>
-      <h4>POWER</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4>LOVE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-lock logo-small"></span>
-      <h4>JOB DONE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
-  <br><br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>GREEN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4 style="color:#303030;">HARD WORK</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
-</div>
-
-
-<!-- Container (Portfolio Section) -->
-<div class="container-fluid text-center bg-grey">
-  <h2>Portfolio</h2><br>
-  <h4>Anyone who we connect</h4>
-  <div class="row text-center slideanim">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="depok.jpg" alt="Depok" width="400" height="300">
-        <p><strong>Depok</strong></p>
-        <p>Yes, we connect in Depok</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="jakarta.jpg" alt="Jakarta" width="400" height="300">
-        <p><strong>Jakara</strong></p>
-        <p>Yes, we connect in Jakarta</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="Tanggerang.jpg" alt="Tanggerang" width="400" height="300">
-        <p><strong>Tanggerang</strong></p>
-        <p>Yes, we connect in Tanggerang</p>
-      </div>
-    </div>
-  </div><br>
-  
-  <h2>What our customers say</h2>
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <h4>"This company is the best. I am so happy with the result!"<br><span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span></h4>
-      </div>
-      <div class="item">
-        <h4>"One word... WOW!!"<br><span style="font-style:normal;">John Doe, Salesman, Rep Inc</span></h4>
-      </div>
-      <div class="item">
-        <h4>"Could I... BE any more happy with this company?"<br><span style="font-style:normal;">Chandler Bing, Actor, FriendsAlot</span></h4>
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-=======
     <div class="row">
         <div class='col-sm-12 col-md-12 col-xs-12'>
             <div class="custom-panel panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -426,7 +224,6 @@
             </div>
         </div>
     </div>
->>>>>>> origin/master
 </div>
 <!-- div  class="container-fluid" >
 <div class="row">
@@ -438,9 +235,6 @@
 </div>
 </div>
 </div-->
-
-
-
 
 <script>
     $(document).ready(function(){
