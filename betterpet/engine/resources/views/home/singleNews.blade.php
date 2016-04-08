@@ -1,15 +1,23 @@
 @extends('layout.template')
 
 @section('content')
-<div class='container-fluid page-wrap' style='margin-top:100px;' >
+<style>
+    body {
+        background-color:#dfeef7;        
+    }
+</style>
+
+<div class='container-fluid page-wrap' style='padding-top:6%; padding-bottom:3%;' >
 	<div class='news'>
 		<div class="row">
-            <h3 class="text-center"> What Foods are Toxic for Dogs?</h3>
+           
+            <div class="col-md-offset-1 col-md-10 layout">
+                 <h3 class="text-center"> What Foods are Toxic for Dogs?</h3>
             <hr class="line">
-			<div class="col-md-offset-1 col-sm-2 col-xs-2 col-md-2">
-                <img src="image/sample3.png">
+                <div class="col-sm-4 col-xs-4 col-md-4">
+                <img src="{{URL::to('/image/samplex.jpg')}}" width="200" height="250">
             </div>
-            <div class="col-sm-4 col-xs-4 col-md-4">
+            <div class="col-sm-8 col-xs-8 col-md-8">
                 <div class="text-center" style="text-align: justify;">
                     <ol>
                          <li>
@@ -38,8 +46,9 @@ Cat food – Not that they would want this anyway, but cat food contains protein
 Coffee – Not sure why you would give your dog coffee, but pretty much the same applies here as to chocolate. This is essentially poison for your dog if ingested.</li>
                     </ol>
                     <p>source : http://www.caninejournal.com/foods-not-to-feed-dog/</p>
-             </div>
+                </div>
             </div>
+            </div>			
 		</div>
 	</div>
 </div>

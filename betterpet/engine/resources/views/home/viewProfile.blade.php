@@ -3,7 +3,8 @@
 @section('content')
 <style>
     body {
-        background-color:#dfeef7;        
+        background-color:#dfeef7;  
+        height: 100%;
     }
 </style>
 
