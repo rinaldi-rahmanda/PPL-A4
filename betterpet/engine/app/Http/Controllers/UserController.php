@@ -74,8 +74,8 @@ class UserController extends Controller
             'password' => 'min:6',
         ],[
             'email'=>'Email address is not in valid format',
-            'phone'=>'Only numbers are allowed',
-            'name'=>'Your name must be 3 characters or more',
+            'numeric'=>'Only numbers are allowed for :attribute',
+            'min'=>'Your :attribute must be 3 characters or more',
             'password' => 'Password must be at least 6 characters'
         ]);
         if ($validator->fails()) {
@@ -198,8 +198,8 @@ class UserController extends Controller
             'name' => 'min:3',
         ],[
             'email'=>'Email address is not in valid format',
-            'phone'=>'Only numbers are allowed',
-            'name'=>'Your name must be 3 characters or more',
+            'numeric'=>'Only numbers are allowed for :attribute',
+            'min'=>'Your :attribute must be 3 characters or more',
         ]);
         if ($validator->fails()) {
             return redirect('/profile')
