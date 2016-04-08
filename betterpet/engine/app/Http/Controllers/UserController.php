@@ -189,14 +189,15 @@ class UserController extends Controller
 		$user = User::find($user);
 		$name = $request->input('name');
 		$address = $request->input('address');
-		$email = $request->input('email');
         $domisili = $request->input('domicile');
         $phone = $request->input('phone');
 		$desc = $request->input('description');
+		if($domisili)
+		{
+			$user->domicile = $domisili;
+		}
         $user->name = $name;
-        $user->domicile = $domisili;
         $user->phone = $phone;
-        $user->email = $email;
 		$user->description = $desc;
 		$user->address = $address;
 		$user->save();
