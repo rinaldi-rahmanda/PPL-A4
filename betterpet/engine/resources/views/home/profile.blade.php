@@ -20,7 +20,7 @@
             <div class="ava-caption">
                 Edit your avatar
                 <img src="image/pen.png" id="upfile1" style="cursor:pointer" width="20" height="20" style="float:right;"/>
-                <input form="profile-form" type="file" id="file1"  name="profilePicture" style="display:none" />
+                <input form="profile-form" type="file" id="file1"  name="picture" style="display:none" />
             </div>
             <div>
                 <button class="button"> <a href="{{URL::to('/viewProfile')}}">View Profile</a> </button>

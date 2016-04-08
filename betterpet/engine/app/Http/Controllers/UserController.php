@@ -201,6 +201,7 @@ class UserController extends Controller
             'numeric'=>'Only numbers are allowed for :attribute',
             'min'=>'Your :attribute must be 3 characters or more',
         ]);
+		//cek foto
         if ($validator->fails()) {
             return redirect('/profile')
                     ->withErrors($validator);
