@@ -173,22 +173,23 @@ html, body {
 	padding-right:50px;
 }
 .news-thumbnail{
-	margin-left:10px;
-	margin-right:10px;
+    border: 1px solid #3f8edd ;
+    margin-bottom: 5%;
+    border-radius: 5px;
 }
 
 .form-group {
     margin-bottom: 25px;
 }
 
-/* untuk register */
+/* untuk register #ffe4e1*/
 .layout {
     background-color: white;
     padding: 2% 4% 2% 4%;
 }
 
 .register {
-    background-color: #ffe4e1;
+    background-color: #dfeef7;
 }
 
 .strikeThrough {
