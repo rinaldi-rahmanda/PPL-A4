@@ -94,7 +94,7 @@
 				<div class="form-group">
                     <label for="inputDesc" class="col-sm-3 control-label">Description</label>
                     <div class="col-sm-9">
-						<textarea class="register-form profile-form form-control" name="description" value="{{$description}}"></textarea>
+						<textarea class="register-form profile-form form-control" name="description">{{$description}}</textarea>
                     </div>
                 </div>
                 <div class="form-group">
