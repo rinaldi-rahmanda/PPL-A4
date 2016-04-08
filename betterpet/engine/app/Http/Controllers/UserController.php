@@ -192,6 +192,19 @@ class UserController extends Controller
         $domisili = $request->input('domicile');
         $phone = $request->input('phone');
 		$desc = $request->input('description');
+		$validator = Validator::make($request->all(),[
+            'email' => 'email',
+            'phone' => 'numeric',
+            'name' => 'min:3',
+        ],[
+            'email'=>'Email address is not in valid format',
+            'phone'=>'Only numbers are allowed',
+            'name'=>'Your name must be 3 characters or more',
+        ]);
+        if ($validator->fails()) {
+            return redirect('/profile')
+                    ->withErrors($validator);
+        }
 		if($domisili)
 		{
 			$user->domicile = $domisili;

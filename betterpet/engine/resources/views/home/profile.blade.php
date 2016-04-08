@@ -98,6 +98,9 @@
                     <textarea class="register-form profile-form form-control" name="description">{{$description}}</textarea>
                 </div>
             </div>
+			<div class="form-group">
+				@include('common.error')
+			</div>
             <div class="form-group">
                 <button type="submit" class="register-button btn btn-success">Update Profile</button>
             </div>
