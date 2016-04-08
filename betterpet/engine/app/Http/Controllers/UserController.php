@@ -165,6 +165,24 @@ class UserController extends Controller
                 $domicile = $domicile->location;
             return view('home.profile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone]);
     }
+    
+    public function viewProfile(){
+            //ambil segala data user
+            $user = Auth::user();
+            $idDom = $user->domicile;
+			$name = $user->name;
+			$phone = $user->phone;
+			$address = $user->address;
+			$desc = $user->description;
+            $domicile = DB::table('domicile')->select('location')->where('id',$idDom)->first();
+            if( $idDom == 0 ){
+                //belum set domisili
+                $domicile = "None";
+            }
+            else
+                $domicile = $domicile->location;
+            return view('home.viewProfile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone]);
+    }
 	public function editProfile(Request $request){
 		$user = Auth::user();
         $user = $user->id;
