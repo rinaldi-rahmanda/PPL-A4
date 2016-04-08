@@ -28,6 +28,7 @@
             
 
             <form id="profile-form" class="form-horizontal" method="POST">
+			{!! csrf_field() !!}
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
                     <div class="col-sm-9">

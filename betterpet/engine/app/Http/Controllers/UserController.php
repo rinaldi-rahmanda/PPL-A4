@@ -165,6 +165,25 @@ class UserController extends Controller
                 $domicile = $domicile->location;
             return view('home.profile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone]);
     }
+	public function editProfile(Request $request){
+		$user = Auth::user();
+        $user = $user->id;
+		$user = User::find($user);
+		$name = $request->input('name');
+		$address = $request->input('address');
+		$email = $request->input('email');
+        $domisili = $request->input('domicile');
+        $phone = $request->input('phone');
+		$desc = $request->input('description');
+        $user->name = $name;
+        $user->domicile = $domisili;
+        $user->phone = $phone;
+        $user->email = $email;
+		$user->description = $desc;
+		$user->address = $address;
+		$user->save();
+		return redirect('/profile');
+	}
     public function createAdoption(){
         $user = Auth::user();
         $userId = $user->id;

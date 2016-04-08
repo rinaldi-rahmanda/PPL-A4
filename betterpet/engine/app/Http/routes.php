@@ -42,6 +42,7 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/logout','UserController@logout');
 });
 Route::get('/profile','UserController@showProfile')->middleware(['web','usermid']);
+Route::post('/profile','UserController@editProfile')->middleware(['web','usermid']);
 Route::get('/list','UserController@listAdoptions')->middleware(['web','usermid']);
 Route::get('/adoption/create','UserController@createAdoption')->middleware(['web','usermid']);
 Route::post('/adoption/create','UserController@saveAdoption')->middleware(['web','usermid']);
