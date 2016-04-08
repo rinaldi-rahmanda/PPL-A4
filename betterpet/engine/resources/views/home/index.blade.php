@@ -72,7 +72,7 @@
         <div class='row'>
             <div class='col-md-8 col-xs-8 col-sm-8' style='padding-left:15px'>
                 <i class="fa fa-search fa-3x"> We would be glad to help you find your dream pets here!</i>
-                <img src="{{URL::to('/image/Cats.png')}}" width="740" height="335">
+                <img src="{{URL::to('/image/Cats.png')}}" width="740" height="335" class="img-responsive">
             </div>
             <div class='col-md-4 col-xs-4 col-sm-4'>
                 <blockquote>
