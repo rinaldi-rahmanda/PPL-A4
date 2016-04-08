@@ -214,7 +214,7 @@ class UserController extends Controller
 		$user->description = $desc;
 		$user->address = $address;
 		$user->save();
-		return redirect('/profile');
+		return redirect('/profile')->with('success','Your profile has been updated');
 	}
     public function createAdoption(){
         $user = Auth::user();
