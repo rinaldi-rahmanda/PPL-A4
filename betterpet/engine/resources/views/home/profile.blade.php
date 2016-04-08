@@ -29,8 +29,19 @@
         <div class="col-md-offset-1 col-md-5 col-xs-6">
             <form id="profile-form" class="form-horizontal" method="POST">
                 {!! csrf_field() !!}
+				@if (count($errors) > 0)
+				<div class="form-group">
+					@include('common.error')
+				</div>
+				@endif
+				@if (session::get('success'))
+					<div class="alert alert-success fade in">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>{{session::get('success')}}</strong>
+					</div>
+				@endif
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
+                    <label for="inputName13" class="col-sm-3 control-label">Name</label>
                     <div class="col-sm-9">
                         <input type="text" class="register-form profile-form form-control" name="name" value="{{$user->name}}">
                     </div>
@@ -98,9 +109,6 @@
                     <textarea class="register-form profile-form form-control" name="description">{{$description}}</textarea>
                 </div>
             </div>
-			<div class="form-group">
-				@include('common.error')
-			</div>
             <div class="form-group">
                 <button type="submit" class="register-button btn btn-success">Update Profile</button>
             </div>
