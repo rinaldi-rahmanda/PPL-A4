@@ -96,11 +96,11 @@
                     </div> 
                 </div>
                 <hr class="line2">
-                <div class="row team-row">
+                <div class="row team-row" style="margin-bottom:4%;">
                     <div class="col-xs-3 col-xs-offset-3 col-md-2 col-md-offset-3">
                         <img class="img-responsive img-circle" src="{{URL::to('/image/tommy.jpg')}}" width="150" height="150">
                     </div>
-                    <div class="col-md-4 col-xs-4">
+                    <div class="col-md-4 col-xs-4" >
                         <h3>Tommy Saprikan Kahar</h3>
                         <blockquote><i>
                             ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem psum lalalalsjajd

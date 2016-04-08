@@ -6,6 +6,7 @@ html, body {
     bottom:0;
     margin: auto;
     font-family: 'Open Sans', sans-serif;
+    background-color: white;
 }
 .panel-color{
 	background-color: #3f8edd !important;
@@ -26,10 +27,7 @@ html, body {
     background-color: #f4917d;
     border-color: #e00707;
 }
-.custom-panel{
-	padding-left:50px;
-	padding-right:50px;
-}
+
 .row {
     padding: 0;
     margin: 0;
@@ -94,8 +92,8 @@ html, body {
 }
 
 .footer {
-    margin-top: 3%;
-    margin-bottom: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 .register-button{
@@ -251,28 +249,3 @@ html, body {
   .carousel-indicators1 li.active {
       background-color: #f4511e;
   }
-
-
-.card {
-  position: absolute;
-  width:700px;
-  height:300px;
-  padding:20px;
-  
-  font-size:150px;
-  line-height:250px;
-  text-align:center;
-  
-  background-color: #FFF;
-  
-  border-radius:20px;
-  box-shadow: 0 0 5px 1px rgba(0,0,0,.5);
-  
-  transition: all .75s;
-}
-
-.card:hover {
-   top: 100px;
-
-}
-

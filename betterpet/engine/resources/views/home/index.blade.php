@@ -71,7 +71,8 @@
     <div class='container-fluid' style='padding-top:20px'>
         <div class='row'>
             <div class='col-md-8 col-xs-8 col-sm-8' style='padding-left:15px'>
-                <i class="fa fa-search fa-3x"> We would be glad to help you find your dream pets here</i>
+                <i class="fa fa-search fa-3x"> We would be glad to help you find your dream pets here!</i>
+                <img src="{{URL::to('/image/Cats.png')}}" width="740" height="335">
             </div>
             <div class='col-md-4 col-xs-4 col-sm-4'>
                 <blockquote>
@@ -88,6 +89,14 @@
                     </p>
                     <h5>
                         - Josh Billings
+                    </h5>
+                </blockquote>
+                <blockquote>
+                    <p>
+                        "Until one has loved an animal a part of one's soul remains unawakened"
+                    </p>
+                    <h5>
+                        - Anatole France
                     </h5>
                 </blockquote>
             </div>

@@ -3,7 +3,10 @@
 @section('content')
 
 <style>
-
+   
+    .footer{
+        background-color: white;
+    }
     h2 {
         font-size: 24px;
         text-transform: uppercase;
@@ -56,16 +59,7 @@
         height: 100%;
         margin-bottom: 10px;
     }
-    .carousel-control.right, .carousel-control.left {
-        background-image: none;
-        color: #f4511e;
-    }
-    .carousel-indicators li {
-        border-color: #f4511e;
-    }
-    .carousel-indicators li.active {
-        background-color: #f4511e;
-    }
+
     .item h4 {
         font-size: 19px;
         line-height: 1.375em;
@@ -102,29 +96,10 @@
             -webkit-transform: translateY(0%);
         }
     }
-
-    .card1 {
-        z-index:1;
-        top:20px;
-        left:120px;
-    }
-
-    .card2 {
-        z-index:2;
-        top:70px;
-        left:120px;
-    }
-
-    .card3 {
-        z-index:3;
-        top:130px;
-        left:120px;
-    }
-
-    .card4 {
-        z-index:4;
-        top:180px;
-        left: 120px;
+    .adopt-step {
+        padding-top: 4%;
+        padding-bottom: 4%;
+        background-color: #f6f6f6
     }
 
 </style>
@@ -133,43 +108,41 @@
 </div>
 
 <!-- Container (Konten 2) -->
-<div class="container-fluid text-center">
-
-    <br><br>
-
+<div class="container-fluid text-center adopt-step">
     <div class="row slideanim">
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-off logo-small"></span>
-            <h4>LOGIN</h4>
-            <p>In order to adopt a pet, you must register or logged in first</p>
-        </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-search logo-small"></span>
-            <h4>CHOOSE</h4>
-            <p>Search your favourite pet with filling the adoption's search form</p>
-        </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-circle-arrow-right logo-small"></span>
-            <h4>ADOPT</h4>
-            <p>Click adopt and your request will be sent to the owner, and wait for the appro</p>
+        <div class="col-md-offset-1 col-sm-10">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-off logo-small"></span>
+                <h4>REGISTER</h4>
+                <p>In order to adopt a pet, you must be a registered user.</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-search logo-small"></span>
+                <h4>CHOOSE</h4>
+                <p>Search your favourite pet, choose, and fill the adoption's form.</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-circle-arrow-right logo-small"></span>
+                <h4>ADOPT</h4>
+                <p>Click adopt and your request will be sent to the owner. Please wait for the approval.</p>
+            </div>
         </div>
     </div>
-    <br><br>
-
 </div>
 
 
 
 <!-- Container (Konten 1) -->
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top:1%;margin-bottom:3%;">
     <div class="row">
-        <div class='col-sm-12 col-md-12 col-xs-12'>
+        <div class='col-md-offset-1 col-sm-10 col-md-10 col-xs-10'>
+            <h3 style="margin-bottom:2%;">Read more about our faqs :</h3>
             <div class="custom-panel panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
                     <div class="panel-color panel-heading" role="tab" id="headingOne">
                         <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                How to be a member
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="text-decoration:none;">
+                                <span class="glyphicon glyphicon-question-sign"> </span> How to be a member
                             </a>
                         </h4>
                     </div>
@@ -182,8 +155,8 @@
                 <div class="panel panel-default">
                     <div class="panel-color panel-heading" role="tab" id="headingTwo">
                         <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                How to change my personal information
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"  style="text-decoration:none;">
+                                <span class="glyphicon glyphicon-question-sign"> </span> How to change my personal information
                             </a>
                         </h4>
                     </div>
@@ -196,8 +169,8 @@
                 <div class="panel panel-default">
                     <div class="panel-color panel-heading" role="tab" id="headingThree">
                         <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                How to advertise my pet
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"  style="text-decoration:none;">
+                                <span class="glyphicon glyphicon-question-sign"> </span> How to advertise my pet
                             </a>
                         </h4>
                     </div>
@@ -210,12 +183,12 @@
                 <div class="panel panel-default">
                     <div class="panel-color panel-heading" role="tab" id="headingFour">
                         <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                How to advertise your pet
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"  style="text-decoration:none;">
+                                <span class="glyphicon glyphicon-question-sign"> </span> How to advertise my pet
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                         <div class="panel-body">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                         </div>
@@ -225,16 +198,6 @@
         </div>
     </div>
 </div>
-<!-- div  class="container-fluid" >
-<div class="row">
-<div class="col-md-12" style="min-height:400px;">
-<div class="card card1">A</div>
-<div class="card card2">7</div>
-<div class="card card3">K</div>
-<div class="card card4">Q</div>
-</div>
-</div>
-</div-->
 
 <script>
     $(document).ready(function(){
