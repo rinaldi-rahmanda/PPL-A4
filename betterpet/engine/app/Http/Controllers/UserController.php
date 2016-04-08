@@ -156,6 +156,9 @@ class UserController extends Controller
 			$phone = $user->phone;
 			$address = $user->address;
 			$desc = $user->description;
+			$avatar = $user->avatar;
+			if(is_null($avatar))
+				$avatar = 'none';
             $domicile = DB::table('domicile')->select('location')->where('id',$idDom)->first();
             if( $idDom == 0 ){
                 //belum set domisili
@@ -163,7 +166,7 @@ class UserController extends Controller
             }
             else
                 $domicile = $domicile->location;
-            return view('home.profile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone]);
+            return view('home.profile',['user'=>$user,'avatar'=>$avatar,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone]);
     }
     
     public function viewProfile(){
@@ -187,21 +190,34 @@ class UserController extends Controller
 		$user = Auth::user();
         $user = $user->id;
 		$user = User::find($user);
+		$email = $user->email;
 		$name = $request->input('name');
 		$address = $request->input('address');
         $domisili = $request->input('domicile');
         $phone = $request->input('phone');
 		$desc = $request->input('description');
+		//cek foto
+		if($request->hasFile('picture'))
+		{
+			$file = $request->file('picture');
+			$validator = Validator::make(array('file'=>$file),[
+				'file' => 'image|max:2000',
+			]);
+			if($validator->fails())
+				return redirect('/profile')->withErrors($validator);
+			$destinationPath = 'engine/userimage';
+			$extension = $file->getClientOriginalExtension();
+			$fileName = $email.'.'.$extension;
+			$file->move($destinationPath,$fileName);
+			$user->avatar=$fileName;
+		}
 		$validator = Validator::make($request->all(),[
-            'email' => 'email',
             'phone' => 'numeric',
             'name' => 'min:3',
         ],[
-            'email'=>'Email address is not in valid format',
             'numeric'=>'Only numbers are allowed for :attribute',
             'min'=>'Your :attribute must be 3 characters or more',
         ]);
-		//cek foto
         if ($validator->fails()) {
             return redirect('/profile')
                     ->withErrors($validator);

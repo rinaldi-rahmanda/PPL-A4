@@ -16,19 +16,25 @@
             </div>
         </div>
         <div class="col-md-offset-2 col-md-2">
+			@if($avatar=="none")
             <img src="http://placehold.it/200x200" alt="">
+			@else
+			<img src="{{URL::to('/engine/userimage').'/'.$avatar}}" width="200px" height="200px" alt="">	
+			@endif
             <div class="ava-caption">
                 Edit your avatar
                 <img src="image/pen.png" id="upfile1" style="cursor:pointer" width="20" height="20" style="float:right;"/>
-                <input form="profile-form" type="file" id="file1"  name="picture" style="display:none" />
             </div>
             <div>
                 <button class="button"> <a href="{{URL::to('/viewProfile')}}">View Profile</a> </button>
             </div>
         </div>      
         <div class="col-md-offset-1 col-md-5 col-xs-6">
-            <form id="profile-form" class="form-horizontal" method="POST">
+			{!! Form::open(array('url'=>'profile','class'=>'form-horizontal','method'=>'POST', 'files'=>true)) !!}
+            <!--<form id="profile-form" class="form-horizontal" method="POST">-->
                 {!! csrf_field() !!}
+				{!! Form::file('picture',['style'=>'display:none','id'=>'file1']) !!}
+				<!--<input type="file" id="file1"  name="picture" style="display:none"/>-->
 				@if (count($errors) > 0)
 				<div class="form-group">
 					@include('common.error')
@@ -112,7 +118,8 @@
             <div class="form-group">
                 <button type="submit" class="register-button btn btn-success">Update Profile</button>
             </div>
-            </form>
+            <!--</form>-->
+			{!! Form::close() !!}
     </div>
 </div>
 </div>
