@@ -1,0 +1,26 @@
+Baca Saya
+
+File-file web yang ingin ditampilkan di internet harus diupload ke dalam direktori "public_html"
+
+Jika ingin web anda diakses seperti:
+* http://namadomain, upload file web anda ke direktori "public_html" 
+* http://namadomain/webku/, upload file web anda ke direktori "public_html/webku"
+
+
+************************************
+Cara upload
+************************************
+http://blog.dapurhosting.com/tag/ftp
+
+
+************************************
+Menghapus Tampilan Underconstruction
+************************************
+Silahkan hapus file index.htm dan underconstruction.gif yang terletak di public_html
+
+
+************************************
+Support
+************************************
+Jika mengalami masalah, kirim ticket melalui Member Area > Submit Ticket > Support
+Login Member Area ada di pojok kanan atas web site Dapur Hosting http://dapurhosting.com
