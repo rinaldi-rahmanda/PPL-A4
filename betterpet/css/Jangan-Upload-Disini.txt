@@ -1,4 +1,0 @@
-
-Do Not Upload Here, upload your web to public_html/ 
-
-Jangan Upload Ke Sini, upload web anda ke dalam public_html/
