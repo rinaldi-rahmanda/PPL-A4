@@ -105,7 +105,7 @@
                     <div class="col-md-4 col-xs-4" >
                         <h3>Tommy Saprikan Kahar</h3>
                         <blockquote><i>
-                            ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem psum lalalalsjajd
+                            Outside of a pet, a book is man's best friend. Inside of a pet it's too dark to read
                             </i>
                         </blockquote>
                     </div> 
