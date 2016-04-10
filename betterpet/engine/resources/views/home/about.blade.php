@@ -19,7 +19,7 @@
                         <div class="col-sm-4">
                             <span class="glyphicon glyphicon-certificate logo-small"></span>
                             <h4>CERTIFIED</h4>
-                            <p>We are certified. We make sure everything.</p>
+                            <p>We are certified. We make sure everything works.</p>
                         </div>
                         <div class="col-sm-4">
                             <span class="glyphicon glyphicon-heart logo-small"></span>
