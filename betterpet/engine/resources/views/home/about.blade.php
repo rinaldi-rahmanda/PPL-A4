@@ -59,7 +59,7 @@
                     <div class="col-xs-3 col-xs-offset-3 col-md-4 col-md-offset-3">
                         <h3>Faiz Kautsar</h3>
                         <blockquote><i>
-                            ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem psum lalalalsjajd
+                           "I really love cat, and i think betterpet will really helpful for pet lovers." 
                             </i>
                         </blockquote>
                     </div>
