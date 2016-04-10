@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="col-md-offset-2 col-md-2">
-			@if($avatar=="none")
+			@if($avatar=="")
             <img src="http://placehold.it/200x200" alt="">
 			@else
 			<img src="{{URL::to('/engine/userimage').'/'.$avatar}}" width="200px" height="200px" alt="">	
