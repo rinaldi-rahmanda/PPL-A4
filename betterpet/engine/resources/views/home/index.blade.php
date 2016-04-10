@@ -106,7 +106,7 @@
 </div>
 <div class='home2' style='padding-top:10px; min-height:95%;'>
     <div class="container-fluid" id="tourpackages-carousel">
-        <h3 class='text-center' style="margin-top:4%;">They are searching for home!</h3>
+        <h3 class='text-center' style="margin-top:4%;">They are searching for a home!</h3>
         <hr class='line' style='width:500px;'>
 
         <div class="row">
