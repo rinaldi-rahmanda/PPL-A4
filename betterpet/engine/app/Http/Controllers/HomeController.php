@@ -8,11 +8,17 @@ use App\Http\Requests;
 use Auth;
 use DB;
 use Validator;
+use Session;
 
 class HomeController extends Controller
 {
     //fungsi ini untuk menampilkan view index web root
     public function index(){
+        if(Auth::check()){
+            $user = Auth::user();
+            Session::put('user','1');
+            Session::put('name',$user->name);
+        }
     	return view('home.index');
     }
     //menampilkan contact form
@@ -35,6 +41,14 @@ class HomeController extends Controller
     	*/
     	return view('home.news');
     }
+	public function singleNews($id){
+		if(!$id){
+			return redirect('/news');
+		}
+		else{
+			return view('home.singleNews');
+		}
+	}
     public function contactPost(Request $request){
         $name = $request->name;
         $email = $request->email;

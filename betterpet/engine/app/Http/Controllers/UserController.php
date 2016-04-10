@@ -11,20 +11,34 @@ use Socialize;
 use Hash;
 use DB;
 use Validator;
+use Session;
 
 class UserController extends Controller
 {
     public function login(Request $request){
         $email = $request->input('email');
         $password = $request->input('password');
-        if(Auth::attempt(['email'=>$email,'password'=>$password])){
-            //correct email and password
-            return redirect('/');
+        $rememberme = $request->input('remember');
+        if($rememberme=="yes"){
+            if(Auth::attempt(['email'=>$email,'password'=>$password],true)){
+                //correct email and password
+                Session::put('user','1');
+                $user = Auth::user();
+                Session::put('name',$user->name);
+                return redirect('/')->with('msg','You have been logged in');
+            }
         }
         else{
-            //gagal login
-            return redirect('/login')->with('error','Invalid email or password');
-        }
+            if(Auth::attempt(['email'=>$email,'password'=>$password])){
+                //correct email and password
+                $user = Auth::user();
+                Session::put('name',$user->name);
+                Session::put('user','1');
+                return redirect('/')->with('msg','You have been logged in');
+            }
+        } 
+        //gagal login
+        return redirect('/login')->with('error','Invalid email or password');
     }
     public function loginForm(){
          if(!Auth::check())
@@ -41,6 +55,9 @@ class UserController extends Controller
     public function register(Request $request){
         $name = $request->input('name');
         $password = $request->input('password');
+        $passconf = $request->input('passwordconfirm');
+        if($password != $passconf)
+            return redirect('/register')->withErrors('Both password field must have the same value');
         $email = $request->input('email');
         $domisili = $request->input('domicile');
         $phone = $request->input('phone');
@@ -57,8 +74,8 @@ class UserController extends Controller
             'password' => 'min:6',
         ],[
             'email'=>'Email address is not in valid format',
-            'phone'=>'Only numbers allowed',
-            'name'=>'Your name must be 3 characters or more',
+            'numeric'=>'Only numbers are allowed for :attribute',
+            'min'=>'Your :attribute must be 3 characters or more',
             'password' => 'Password must be at least 6 characters'
         ]);
         if ($validator->fails()) {
@@ -68,16 +85,18 @@ class UserController extends Controller
         $user->password = Hash::make($password);
         $user->save();
         Auth::loginUsingId($user->id);
-        return redirect('/');
+        Session::put('user','1');
+        Session::put('name',$name);
+        return redirect('/')->with('msg','You have been logged in');
         //
     }
     public function google(){
-        if(!Auth::check())
+        if(!Session::get('user'))
             return Socialize::driver('google')->redirect();
         return redirect('/');
     }
     public function facebook(){
-        if(!Auth::check())
+        if(!Session::get('user'))
             return Socialize::driver('facebook')->redirect();
         return redirect('/');
     }
@@ -85,6 +104,10 @@ class UserController extends Controller
         $user = Socialize::driver('google')->user();
         $name = $user->name;
         $email = $user->email;
+		$avatar = $user->avatar;
+		//modifikasi avatar 
+		$avatar = substr($avatar,0,-2);
+		$avatar = $avatar."200";
         $user = User::where('email','=',$email)->first();
         if(!$user){
             //kalau user tidak ditemukan dalam database, buat user baru
@@ -94,12 +117,19 @@ class UserController extends Controller
             $user->save();
         }
         Auth::loginUsingId($user->id);
-        return redirect('/');
+        Session::put('user','1');
+        Session::put('name',$name);
+		Session::put('avatar',$avatar);
+        return redirect('/')->with('msg','You have been logged in');
     }
     public function facebookCallBack(){
         $user = Socialize::driver('facebook')->user();
         $name = $user->name;
         $email = $user->email;
+		$avatar = $user->avatar;
+		//modifikasi avatar 
+		$avatar = substr($avatar,0,-2);
+		$avatar = $avatar."200";
         $user = User::where('email','=',$email)->first();
         if(!$user){
             $user = new User();
@@ -108,54 +138,114 @@ class UserController extends Controller
             $user->save();
         }
         Auth::loginUsingId($user->id);
-        return redirect('/');
+        Session::put('user','1');
+        Session::put('name',$name);
+		Session::put('avatar',$avatar);
+        return redirect('/')->with('msg','You have been logged in');
     }
     public function logout(){
         Auth::logout();
-        return redirect('/');
+        Session::flush();
+        return redirect('/')->with('msg','You have been logged out');
     }
     public function showProfile(){
-        if(Auth::check())
-        {
             //ambil segala data user
             $user = Auth::user();
             $idDom = $user->domicile;
+			$name = $user->name;
+			$phone = $user->phone;
+			$address = $user->address;
+			$desc = $user->description;
+			$avatar = $user->avatar;
+			if(is_null($avatar))
+				$avatar = 'none';
             $domicile = DB::table('domicile')->select('location')->where('id',$idDom)->first();
             if( $idDom == 0 ){
                 //belum set domisili
-                $domicile = 'Belum memilih domisili';
+                $domicile = "None";
             }
             else
                 $domicile = $domicile->location;
-            return view('profile',['user'=>$user,'domicile'=>$domicile]);
-        }
-        else
-            return redirect('/login')->with('error','You must be logged in first!');
+            return view('home.profile',['user'=>$user,'avatar'=>$avatar,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone]);
     }
-    public function createAdoption(){
-        if(Auth::check())
-        {
+    
+    public function viewProfile(){
+            //ambil segala data user
             $user = Auth::user();
-            $userId = $user->id;
-            $adList = DB::table('adoptions')
-                ->join('domicile','adoptions.domicile','=','domicile.id')
-                ->where('adoptions.user_id',$userId);
-            return view('userAdoption',['adoptions'=>$adList]);     
+            $idDom = $user->domicile;
+			$name = $user->name;
+			$phone = $user->phone;
+			$address = $user->address;
+			$desc = $user->description;
+            $domicile = DB::table('domicile')->select('location')->where('id',$idDom)->first();
+            if( $idDom == 0 ){
+                //belum set domisili
+                $domicile = "None";
+            }
+            else
+                $domicile = $domicile->location;
+            return view('home.viewProfile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone]);
+    }
+	public function editProfile(Request $request){
+		$user = Auth::user();
+        $user = $user->id;
+		$user = User::find($user);
+		$email = $user->email;
+		$name = $request->input('name');
+		$address = $request->input('address');
+        $domisili = $request->input('domicile');
+        $phone = $request->input('phone');
+		$desc = $request->input('description');
+		//cek foto
+		if($request->hasFile('picture'))
+		{
+			$file = $request->file('picture');
+			$validator = Validator::make(array('file'=>$file),[
+				'file' => 'image|max:2000',
+			]);
+			if($validator->fails())
+				return redirect('/profile')->withErrors($validator);
+			$destinationPath = 'engine/userimage';
+			$extension = $file->getClientOriginalExtension();
+			$fileName = $email.'.'.$extension;
+			$file->move($destinationPath,$fileName);
+			$user->avatar=$fileName;
+		}
+		$validator = Validator::make($request->all(),[
+            'phone' => 'numeric',
+            'name' => 'min:3',
+        ],[
+            'numeric'=>'Only numbers are allowed for :attribute',
+            'min'=>'Your :attribute must be 3 characters or more',
+        ]);
+        if ($validator->fails()) {
+            return redirect('/profile')
+                    ->withErrors($validator);
         }
-        else
-            return redirect('login')->with('error','You must be logged in first!');
-        
+		if($domisili)
+		{
+			$user->domicile = $domisili;
+		}
+        $user->name = $name;
+        $user->phone = $phone;
+		$user->description = $desc;
+		$user->address = $address;
+		$user->save();
+		return redirect('/profile')->with('success','Your profile has been updated');
+	}
+    public function createAdoption(){
+        $user = Auth::user();
+        $userId = $user->id;
+        $adList = DB::table('adoptions')
+            ->join('domicile','adoptions.domicile','=','domicile.id')
+            ->where('adoptions.user_id',$userId);
+        return view('userAdoption',['adoptions'=>$adList]);      
     }
     public function saveAdoption(Request $request){
-        if(Auth::check()){
             $user = Auth::user();
             $userId = $user->id;
             $adoption = new Adoption();
             //buat adopsi baru
-        }
-        else{
-            return redirect('login')->with('error','You must be logged in first!');
-        }
     }
     public function listAdoptions(){
         return 'haha';

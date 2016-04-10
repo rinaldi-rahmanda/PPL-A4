@@ -1,17 +1,24 @@
-html, body { 
-    height: 100%; 
+html,body { 
+    min-height: 100%;
+    height: 100%;
     width: 100%;
     left: 0;
     top: 0;
     bottom:0;
     margin: auto;
     font-family: 'Open Sans', sans-serif;
+    background-color: white;
+}
+.panel-color{
+	background-color: #3f8edd !important;
+    color: white !important;
+    text-decoration: none !important;
 }
 
 .font-header {
-
     text-transform: uppercase;
 }
+
 .login-error{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -20,9 +27,6 @@ html, body {
     padding-left:4px;
     background-color: #f4917d;
     border-color: #e00707;
-}
-body {
-    display: table;
 }
 
 .row {
@@ -41,6 +45,13 @@ body {
     border-color:#61abd8;
     border-radius: 0px;
     color: #ffffff;
+}
+.custom-quote{
+    border-left:5px solid #ff9fad;
+    border-radius: 6px;
+}
+.home2{
+    background-color: #f6f6f6;
 }
 
 .navbar-fixed-top .navbar-nav>li>a {
@@ -82,8 +93,9 @@ body {
 }
 
 .footer {
-    margin-top: 4%;
-    margin-bottom: 4%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: white;
 }
 
 .register-button{
@@ -163,10 +175,81 @@ body {
 	padding-right:50px;
 }
 .news-thumbnail{
-	margin-left:10px;
-	margin-right:10px;
+    border: 1px solid #3f8edd ;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    box-shadow: 0 10px 8px -8px #888888;
 }
 
 .form-group {
     margin-bottom: 25px;
 }
+
+/* untuk register #ffe4e1*/
+.layout {
+    background-color: white;
+    padding: 2% 4% 2% 4%;
+}
+
+.register {
+    background-color: #dfeef7;
+}
+
+.strikeThrough {
+    position: relative;
+    text-align: center;
+    color: #a8a8a8;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: normal;
+    z-index: 10;
+}
+
+.strikeThrough:before {
+    border-top: solid 1px #d8d8d8;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    right: 10px;
+    z-index: -1;
+}
+
+.strikeThrough span {
+    background: #fff;
+    padding: 0 10px;
+}
+
+
+.form-horizontal .control-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.ava-caption {
+    color: white;
+    background: rgba(0,0,0,0.6);
+    text-align: justify;
+    padding: 10px;
+    max-width: 200px;
+    min-width: 200px;
+    left: auto;
+    transform: translateY(-100%);
+    bottom: initial;
+}
+
+.bg-grey {
+      background-color: #f6f6f6;
+  }
+
+.carousel-control1.right, .carousel-control1.left {
+      background-image: none;
+      color: #f4511e;
+  }
+  .carousel-indicators1 li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators1 li.active {
+      background-color: #f4511e;
+  }

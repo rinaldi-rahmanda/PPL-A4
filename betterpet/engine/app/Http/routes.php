@@ -11,13 +11,6 @@
 |
 */
 
-Route::get('/','HomeController@index');
-Route::get('/about','HomeController@about');
-Route::get('/faq','HomeController@faq');
-Route::get('/news','HomeController@news');
-Route::get('/adoption','UserController@listAdoptions');
-
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -30,10 +23,14 @@ Route::get('/adoption','UserController@listAdoptions');
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
-
-	Route::get('/login','UserController@loginForm');
-	Route::get('/register','UserController@registerForm');
+  Route::get('/','HomeController@index');
+  Route::get('/about','HomeController@about');
+  Route::get('/faq','HomeController@faq');
+  Route::get('/news','HomeController@news');
+  Route::get('/news/{id}','HomeController@singleNews');
+  Route::get('/adoption','UserController@listAdoptions');
+  Route::get('/login','UserController@loginForm');
+  Route::get('/register','UserController@registerForm');
   Route::post('/login','UserController@login');
   Route::get('/contact','HomeController@contact');
   Route::post('/contact','HomeController@contactPost');
@@ -42,9 +39,12 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/register/facebook','UserController@facebook');
   Route::get('/register/gCallBack','UserController@googleCallBack');
   Route::get('/register/fCallBack','UserController@facebookCallBack');  
-  Route::get('/logout','UserController@logout');  
-  Route::get('/profile','UserController@showProfile');
-  Route::get('/adoption/create','UserController@createAdoption');
-  Route::post('/adoption/create','UserController@saveAdoption');
-  Route::get('/adoption/mark/{id}','UserController@markDone');
+  Route::get('/logout','UserController@logout');
 });
+Route::get('/viewProfile','UserController@viewProfile')->middleware(['web','usermid']);
+Route::get('/profile','UserController@showProfile')->middleware(['web','usermid']);
+Route::post('/profile','UserController@editProfile')->middleware(['web','usermid']);
+Route::get('/list','UserController@listAdoptions')->middleware(['web','usermid']);
+Route::get('/adoption/create','UserController@createAdoption')->middleware(['web','usermid']);
+Route::post('/adoption/create','UserController@saveAdoption')->middleware(['web','usermid']);
+Route::get('/adoption/mark/{id}','UserController@markDone')->middleware(['web','usermid']);

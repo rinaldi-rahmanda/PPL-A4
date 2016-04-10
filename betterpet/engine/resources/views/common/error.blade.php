@@ -1,7 +1,7 @@
 @if (count($errors) > 0)
     <!-- Form Error List -->
     <div class="alert alert-danger">
-        <strong>Register Failed :(</strong>
+        <strong>Sorry, but it's failed :(</strong>
 
         <br><br>
 
