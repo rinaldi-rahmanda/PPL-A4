@@ -37,7 +37,7 @@
 				
 				
 				
-                <h3 class='text-center'>Don't hesitate to ask us!</h3>
+                <h3 class='text-center'>Ask us anything!</h3>
                 <br>
     				<form method="POST">
                     {!! csrf_field() !!}
