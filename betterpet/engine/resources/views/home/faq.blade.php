@@ -23,7 +23,7 @@
     }  
     .jumbotron {
         background-color: #ffffff;
-        background-image: url("/PPL-A4/betterpet/image/c&dFAQ.jpg");
+        background-image: url("/image/c&dFAQ.jpg");
         background-repeat: no-repeat;
         background-position: center; 
         background-size: 90%;
@@ -119,7 +119,7 @@
             <div class="col-sm-4">
                 <span class="glyphicon glyphicon-search logo-small"></span>
                 <h4>CHOOSE</h4>
-                <p>Search your favourite pet, choose, and fill the adoption's form.</p>
+                <p>Search for your favourite pet, choose, and fill the adoption form.</p>
             </div>
             <div class="col-sm-4">
                 <span class="glyphicon glyphicon-circle-arrow-right logo-small"></span>
@@ -136,7 +136,7 @@
 <div class="container-fluid" style="margin-top:1%;margin-bottom:3%;">
     <div class="row">
         <div class='col-md-offset-1 col-sm-10 col-md-10 col-xs-10'>
-            <h3 style="margin-bottom:2%;">Read more about our faqs :</h3>
+            <h3 style="margin-bottom:2%;">Frequently Asked Questions:</h3>
             <div class="custom-panel panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
                     <div class="panel-color panel-heading" role="tab" id="headingOne">
@@ -148,50 +148,60 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                        </div>
+							1. First, click the Account tab and choose Sign up.<br>
+							2. Fill in the required form or you can sign up using your Google or Facebook account.<br>
+							3. After you sign up, the next time you want to login, just fill in the login form, or choose to login using your Google or Facebook account.
+						</div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-color panel-heading" role="tab" id="headingTwo">
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"  style="text-decoration:none;">
-                                <span class="glyphicon glyphicon-question-sign"> </span> How to change my personal information
+                                <span class="glyphicon glyphicon-question-sign"> </span> How to change your personal information
                             </a>
                         </h4>
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                         <div class="panel-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                        </div>
+							1. Log into your account.<br>
+							2. Click the account tab and choose Edit profile.<br>
+							3. There, you can change your avatar or your personal information by filling the form.<br>
+						</div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-color panel-heading" role="tab" id="headingThree">
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"  style="text-decoration:none;">
-                                <span class="glyphicon glyphicon-question-sign"> </span> How to advertise my pet
+                                <span class="glyphicon glyphicon-question-sign"> </span> How to advertise your pet
                             </a>
                         </h4>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                         <div class="panel-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                        </div>
+							1. Log into your account.<br>
+							2. Choose the Adoption tab.<br>
+							3. Create a new adoption.<br>
+							4. Fill in the form with information about your pet.<br>
+						</div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-color panel-heading" role="tab" id="headingFour">
+				<div class="panel panel-default">
+                    <div class="panel-color panel-heading" role="tab" id="headingThree">
                         <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"  style="text-decoration:none;">
-                                <span class="glyphicon glyphicon-question-sign"> </span> How to advertise my pet
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree"  style="text-decoration:none;">
+                                <span class="glyphicon glyphicon-question-sign"> </span> How to adopt a pet
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                         <div class="panel-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                        </div>
+							1. Log into your account.<br>
+							2. Search for a pet you want to adopt in the Adoption page.<br>
+							3. Click the pet in order to view more details.<br>
+							4. Choose to request the adoption, and wait for the owner's approval.<br>
+						</div>
                     </div>
                 </div>
             </div>

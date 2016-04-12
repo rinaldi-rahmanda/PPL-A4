@@ -8,7 +8,7 @@
                 <h1 class="text-center font-header"> About us</h1>
                 <hr class="line">
                 <div class="desc text-center">
-                    <h4>Tired of searching through facebook and twitter to find dogs or cat for adoption? You have come to the right place! In BetterPet, you can find dogs and cats that ready for adoption, or they can advertise their own animals for adoption. As well, they can connect with the veterinarian, the animal care and pet supply stores. Here, they can also share information and stories about the animals in a forum that we provide. So, what are you waiting for? Come join BetterPet fellow!
+                    <h4>Tired of searching through Facebook and Twitter to find dogs or cat for adoption? You have come to the right place! With BetterPet, you can find dogs and cats ready for adoption, or advertise your own animals for adoption. As well, you can connect them with a veterinarian, animal care centers and pet supply stores. Here, you can also share information and stories about the animals in a forum that we provide. So, what are you waiting for? Join BetterPet today!
                     </h4>
 
                 </div>
@@ -19,7 +19,7 @@
                         <div class="col-sm-4">
                             <span class="glyphicon glyphicon-certificate logo-small"></span>
                             <h4>CERTIFIED</h4>
-                            <p>We are certified. We make sure everything.</p>
+                            <p>We are certified. We make sure everything works.</p>
                         </div>
                         <div class="col-sm-4">
                             <span class="glyphicon glyphicon-heart logo-small"></span>
@@ -29,7 +29,7 @@
                         <div class="col-sm-4">
                             <span class="glyphicon glyphicon-leaf logo-small"></span>
                             <h4>GREEN</h4>
-                            <p>We against animal cruelty</p>
+                            <p>We are against animal cruelty.</p>
                         </div>
                     </div>
                     <hr class="line">
@@ -59,7 +59,11 @@
                     <div class="col-xs-3 col-xs-offset-3 col-md-4 col-md-offset-3">
                         <h3>Faiz Kautsar</h3>
                         <blockquote><i>
+<<<<<<< HEAD
                            "I really love cat, and i think betterpet will really helpful for pet lovers."
+=======
+                           "I really love cat, and i think betterpet will really helpful for pet lovers." 
+>>>>>>> origin/master
                             </i>
                         </blockquote>
                     </div>
@@ -84,9 +88,9 @@
                 <hr class="line2">
                 <div class="row team-row">
                     <div class="col-xs-3 col-xs-offset-3 col-md-4 col-md-offset-3">
-                        <h3>Rinaldi Andrian</h3>
+                        <h3>Rinaldi Andrian Rahmanda</h3>
                         <blockquote><i>
-                            ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem ipsumblablabla lorem psum lalalalsjajd
+                            "What greater gift than the love of a cat." ~Charles Dickens
                             </i>
                         </blockquote>
                     </div>

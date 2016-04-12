@@ -106,18 +106,20 @@
 </div>
 <div class='home2' style='padding-top:10px; min-height:95%;'>
     <div class="container-fluid" id="tourpackages-carousel">
-        <h3 class='text-center' style="margin-top:4%;">They are searching for home!</h3>
+        <h3 class='text-center' style="margin-top:4%;">They are searching for a home!</h3>
         <hr class='line' style='width:500px;'>
 
         <div class="row">
             <div class="col-md-offset-1 col-xs-18 col-sm-6 col-md-10">
             <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail thumbnail-home">
-                    <img src="http://placehold.it/400x300" alt="">
+                    <img src="{{URL::to('/image/sample3.png')}}" alt="">
                     <div class="caption">
-                        <h4>Thumbnail label</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                        <p><a href="#" class="btn btn-info btn-xs" role="button">Adopt</a> <a href="#" class="btn btn-default btn-xs" role="button">Read</a></p>
+                        <h4>Leonardo</h4>
+                        <p>
+							He is a male dog and very friendly, even...
+						</p>
+						<a href="#" class="btn btn-info btn-sm" role="button">Read More</a>
                     </div>
                 </div>
             </div>
@@ -125,23 +127,25 @@
 
             <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail thumbnail-home">
-                    <img src="http://placehold.it/400x300" alt="">
+                    <img src="{{URL::to('/image/sample.jpg')}}" alt="">
                     <div class="caption">
-                        <h4>Thumbnail label</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                        <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-                    </div>
+                        <h4>Kitty</h4>
+                        <p>
+							Born as the cutest cat ever, Kitty...
+						</p>
+						<a href="#" class="btn btn-info btn-sm" role="button">Read More</a>
+					</div>
                 </div>
             </div>
 
             <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail thumbnail-home">
-                    <img src="http://placehold.it/400x300" alt="">
+                    <img src="{{URL::to('/image/sample2.jpg')}}" alt="">
                     <div class="caption">
-                        <h4>Thumbnail label</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                        <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-                    </div>
+                        <h4>Smith</h4>
+                        <p>Smith, just like the name of the great...</p>
+						<a href="#" class="btn btn-info btn-sm" role="button">Read More</a>
+					</div>
                 </div>
             </div>
            </div>
