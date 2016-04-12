@@ -1,5 +1,6 @@
 @extends('layout.template-about')
 @section('content')
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
     function checkPasswordMatch() {
         var password = $("#password").val();
@@ -58,6 +59,7 @@
                             <option value="9">Bekasi</option>
                         </select>
                     </div>
+		    <div class="g-recaptcha" data-sitekey="6LcFFR0TAAAAAPQzHzv5P_PgB00WTI_I-GaFxE_P"></div>
                     <div class="form-group">
                         <button type="submit" class="register-button btn btn-success">Sign up</button>
                     </div>

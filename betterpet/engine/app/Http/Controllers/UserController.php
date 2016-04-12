@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Traits\CaptchaTrait;
 use Auth;
 use App\User;
 use Socialize;
@@ -15,7 +16,11 @@ use Session;
 
 class UserController extends Controller
 {
-    public function login(Request $request){
+	use CaptchaTrait;
+
+        public function login(Request $request){
+    
+    
         $email = $request->input('email');
         $password = $request->input('password');
         $rememberme = $request->input('remember');
@@ -82,6 +87,13 @@ class UserController extends Controller
         if ($validator->fails()) {
             return redirect('/register')
                     ->withErrors($validator);
+        }
+	
+	if($this->captchaCheck() == false)
+        {
+            return redirect()->back()
+                ->withErrors(['Wrong Captcha'])
+                ->withInput();
         }
         $user->password = Hash::make($password);
         $user->save();
