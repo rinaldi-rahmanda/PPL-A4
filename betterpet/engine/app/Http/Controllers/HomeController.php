@@ -10,8 +10,12 @@ use DB;
 use Validator;
 use Session;
 
+use App\Traits\CaptchaTrait;
 class HomeController extends Controller
 {
+
+
+use CaptchaTrait;
     //fungsi ini untuk menampilkan view index web root
     public function index(){
         if(Auth::check()){
@@ -66,6 +70,13 @@ class HomeController extends Controller
             'title'=>'title must be filled',
             'content' => 'content must be filled'
         ]);
+	
+	if($this->captchaCheck() == false)
+        {
+            return redirect()->back()
+                ->withErrors(['Wrong Captcha'])
+                ->withInput();
+        }
         
         if($validator->fails()){
             return redirect('/contact')
