@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->integer('domicile')->index();
             $table->string('phone');
 			$table->string('avatar',260);
+			$table->boolean('admin')->default('0');
             $table->rememberToken();
             $table->timestamps();
         });
