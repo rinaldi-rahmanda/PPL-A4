@@ -25,6 +25,10 @@ use CaptchaTrait;
         }
     	return view('home.index');
     }
+    //menampilkan adoption form
+    public function adoption(){
+    	return view('home.adoption');
+    }
     //menampilkan contact form
     public function contact(){
     	return view('home.contact');
