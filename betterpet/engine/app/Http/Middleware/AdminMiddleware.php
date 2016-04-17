@@ -24,7 +24,7 @@ class AdminMiddleware
                 Session::put('user','1');
                 Session::put('name',$user->name);
             }
-			if(Auth::user()->admin=='1'){
+			if(Auth::user()->admin==1){
 				return $next($request);  
 			}
             else{
