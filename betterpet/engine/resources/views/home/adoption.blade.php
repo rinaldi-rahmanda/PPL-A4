@@ -1,9 +1,15 @@
 @extends('layout.template-about')
 @section('content')
+<style>
+    body {
+        background-color:#dfeef7;        
+    }
+</style>
 
-<div class='container-fluid page-wrap register'>
-    <div class="register-row row">
-
+<div class='container-fluid page-wrap' style='padding-top:6%; padding-bottom:3%;' >
+	<div class='news'>
+		<div class="row">
+           
         <div class="col-xs-8 col-xs-offset-1 col-md-6 col-md-offset-1 layout" style="border-radius:5px;">
 
             <h2>Find your favorite pet!</h2>
@@ -76,11 +82,49 @@
     </div>
       
         <div class="row">
-            <div class="col-md-8 col-md-offset-1">
+            <div class="col-md-10 col-md-offset-1">
                 <h3>Featured Pets :</h3>
+           
+            <div class="col-xs-18 col-sm-6 col-md-4">
+                <div class="thumbnail thumbnail-home">
+                    <img src="{{URL::to('/image/sample3.png')}}" alt="">
+                    <div class="caption">
+                        <h4>Leonardo</h4>
+                        <p>
+							He is a male dog and very friendly, even...
+						</p>
+						<a href="#" class="btn btn-info btn-sm" role="button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xs-18 col-sm-6 col-md-4">
+                <div class="thumbnail thumbnail-home">
+                    <img src="{{URL::to('/image/sample.jpg')}}" alt="">
+                    <div class="caption">
+                        <h4>Kitty</h4>
+                        <p>
+							Born as the cutest cat ever, Kitty...
+						</p>
+						<a href="#" class="btn btn-info btn-sm" role="button">Learn More</a>
+					</div>
+                </div>
+            </div>
+
+            <div class="col-xs-18 col-sm-6 col-md-4">
+                <div class="thumbnail thumbnail-home">
+                    <img src="{{URL::to('/image/sample2.jpg')}}" alt="">
+                    <div class="caption">
+                        <h4>Smith</h4>
+                        <p>Smith, just like the name of the great...
+                        </p>
+						<a href="#" class="btn btn-info btn-sm" role="button">Learn More</a>
+					</div>
+                </div>
+            </div>
+           </div>
             </div>
         </div>
-</div>
-
 
 @endsection
