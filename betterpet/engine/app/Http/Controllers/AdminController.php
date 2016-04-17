@@ -17,6 +17,13 @@ class AdminController extends Controller
 		$this->middleware('admin');
 	}
 	public function index(){
+		//return the homepage of admin section
 		return view('admin.index');
+	}
+	public function newNews(){
+		//return view form of creating new news
+	}
+	public function saveNews(){
+		//save the new submitted news to database
 	}
 }

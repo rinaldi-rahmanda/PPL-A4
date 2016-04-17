@@ -20,7 +20,6 @@ class UserController extends Controller
 
         public function login(Request $request){
     
-    
         $email = $request->input('email');
         $password = $request->input('password');
         $rememberme = $request->input('remember');
