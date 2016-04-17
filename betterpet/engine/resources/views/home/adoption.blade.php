@@ -4,14 +4,15 @@
 <div class='container-fluid page-wrap register'>
     <div class="register-row row">
 
-        <div class="col-xs-8 col-xs-offset-1 col-md-8 col-md-offset-1 layout" style="border-radius:5px;">
+        <div class="col-xs-8 col-xs-offset-1 col-md-6 col-md-offset-1 layout" style="border-radius:5px;">
 
             <h2>Find your favorite pet!</h2>
             @include('common.error')
             <form method="POST">
                 {!! csrf_field() !!}
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Domicile</label>
+                <div class="form-inline">
+                    <div class="form-group">
+                    <label class="in-form" for="exampleInputEmail1" style="display:block;">Domicile</label>
                     <select class="form-control" name="domicile">
                         <option value="" disabled selected>Select your domicile</option>
                         <option value="1">Jakarta Utara</option>
@@ -26,7 +27,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Type</label>
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Type</label>
                     <select class="form-control" name="type">
                         <option value="1">Any</option>
                         <option value="2">Cat</option>
@@ -34,12 +35,14 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Breed</label>
-                    <input type="text" name="breed" id="breed" class=" form-control" placeholder="breed" required>
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Breed</label>
+                    <input type="text" name="breed" id="breed" class=" form-control" placeholder="Breed" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Sex</label>
+                </div>
+                <div class="form-inline">
+                    <div class="form-group">
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Sex</label>
                     <select class="form-control" name="sex">
                         <option value="1">Any</option>
                         <option value="2">Female</option>
@@ -47,7 +50,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Age</label>
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Age</label>
                     <select class="form-control" name="age">
 
                         <option value="1">Any</option>
@@ -60,6 +63,8 @@
                     </select>
                 </div>
 
+                </div>
+                
 
                 <div class="form-group">
                     <button type="submit" class="register-button btn btn-success">Search</button>
@@ -67,7 +72,14 @@
             </form>
 
         </div>
+      
     </div>
+      
+        <div class="row">
+            <div class="col-md-8 col-md-offset-1">
+                <h3>Featured Pets :</h3>
+            </div>
+        </div>
 </div>
 
 
