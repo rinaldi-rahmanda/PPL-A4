@@ -12,7 +12,7 @@
            
         <div class="col-xs-8 col-xs-offset-1 col-md-6 col-md-offset-1 layout" style="border-radius:5px;">
 
-            <h2>Find your favorite pet!</h2>
+            <h2>Find shelter for your pet!</h2>
             @include('common.error')
             <form method="POST">
                 {!! csrf_field() !!}
@@ -32,44 +32,17 @@
                         <option value="9">Bekasi</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Type</label>
-                    <select class="form-control" name="type">
-                        <option value="1">Any</option>
-                        <option value="2">Cat</option>
-                        <option value="3">Dog</option>
-                    </select>
+                 <div class="form-group">
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Name</label>
+                    <input type="text" name="name" id="name" class=" form-control" placeholder="Name" required>
                 </div>
                 <div class="form-group">
-                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Breed</label>
-                    <input type="text" name="breed" id="breed" class=" form-control" placeholder="Breed" required>
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Address</label>
+                    <input type="text" name="address" id="address" class=" form-control" placeholder="Address" required>
                 </div>
 
                 </div>
-                <div class="form-inline">
-                    <div class="form-group">
-                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Sex</label>
-                    <select class="form-control" name="sex">
-                        <option value="1">Any</option>
-                        <option value="2">Female</option>
-                        <option value="3">Male</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Age</label>
-                    <select class="form-control" name="age">
-
-                        <option value="1">Any</option>
-                        <option value="2">0-6 months</option>
-                        <option value="3">6-12 months</option>
-                        <option value="4">12-18 months</option>
-                        <option value="5">More than 2 years</option>
-                        <option value="6">More than 3 years</option>
-
-                    </select>
-                </div>
-
-                </div>
+                
                 
 
                 <div class="form-group">
