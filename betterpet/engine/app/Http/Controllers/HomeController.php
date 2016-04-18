@@ -29,6 +29,10 @@ use CaptchaTrait;
     public function adoption(){
     	return view('home.adoption');
     }
+    //menampilkan shelter form
+     public function shelter(){
+    	return view('home.shelter');
+    }
     //menampilkan contact form
     public function contact(){
     	return view('home.contact');
