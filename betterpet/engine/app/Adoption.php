@@ -8,9 +8,6 @@ class Adoption extends Model
 {
     //
     protected $fillable = [
-        'domicile', 'type', 'breed','sex','color','age','done','description',
+        'domicile','user_id', 'type', 'breed','sex','age','done','description',
     ];
-     public function user(){
-        return $this->belongsTo(User::class);
-    }
 }

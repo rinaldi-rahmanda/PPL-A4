@@ -9,6 +9,7 @@ use Auth;
 use DB;
 use Validator;
 use Session;
+use App\Adoption;
 
 use App\Traits\CaptchaTrait;
 class HomeController extends Controller
@@ -27,7 +28,9 @@ use CaptchaTrait;
     }
     //menampilkan adoption form
     public function adoption(){
-    	return view('home.adoption');
+		$adoptions = Adoption::where('done','0');
+		$adoptions = $adoptions->take(3)->get();
+    	return view('home.adoption',['adoptions',$adoptions]);
     }
     //menampilkan shelter form
      public function shelter(){
@@ -108,7 +111,7 @@ use CaptchaTrait;
 		$breed = $request->input('breed');
 		$age = $request->input('age');
 		$sex = $request->input('sex');
-		if(type!='1'){
+		if($type!='1'){
 			if($type=='2'){
 				//isCat
 				$type = '0';
@@ -129,6 +132,7 @@ use CaptchaTrait;
 			$results = $results->where('sex',$sex);
 		}
 		$adoptions = $results->get();
-		return view('/adoption',['adoptions'=>$adoptions]);
+		return $adoptions;
+		//return view('/adoption',['adoptions'=>$adoptions]);
 	}
 }

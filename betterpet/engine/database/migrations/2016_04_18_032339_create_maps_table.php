@@ -12,11 +12,14 @@ class CreateMapsTable extends Migration
      */
     public function up()
     {
-         $table->increments('id');
+		Schema::create('maps', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('name');
 			$table->longText('address');
 			$table->longText('description');
             $table->longText('link');
+        });
+			
     }
 
     /**
