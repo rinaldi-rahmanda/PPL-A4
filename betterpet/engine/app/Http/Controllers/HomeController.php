@@ -101,4 +101,25 @@ use CaptchaTrait;
             return redirect('/contact')->with('success','Your question is sent!');
         }  
     }
+	public function searchAdoption(Request $request){
+		$domicile = $request->input('domicile');
+		//input can be 1,which is any type
+		$type = $request->input('type');
+		$breed = $request->input('breed');
+		$age = $request->input('age');
+		$sex = $request->input('sex');
+		if(type!='1'){
+		$results = Adoption::where('domicile',$domicile)
+			->where('breed','like','%'.$breed.'%')
+			->where('type',$type);
+		}
+		if($age!='1'){
+			$results = $results->where('age',$age);
+		}
+		if($sex!='1'){
+			$results = $results->where('sex',$sex);
+		}
+		$adoptions = $results->get();
+		return view('/adoption',['adoptions'=>$adoptions]);
+	}
 }
