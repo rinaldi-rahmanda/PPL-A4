@@ -21,7 +21,6 @@ class CreateAdoptionsTable extends Migration
             $table->string('breed');//jenis anjing atau kucingnya
             $table->string('sex');//male or female
             $table->string('age');//age category
-            $table->string('color');//base color
             $table->boolean('done');//is the adoption done
             $table->longText('description');
             $table->timestamps();
