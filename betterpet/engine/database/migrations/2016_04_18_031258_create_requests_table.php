@@ -13,9 +13,9 @@ class CreateRequestsTable extends Migration
     public function up()
     {
         Schema::create('requests', function (Blueprint $table) {           
-            $table->integer('idUser')->index;
-            $table->integer('idAdopsi')->index;
-            $table->primary({'idUser','idAdopsi'});
+            $table->integer('idUser')->index();
+            $table->integer('idAdopsi')->index();
+            $table->primary(['idUser','idAdopsi']);
         });
     }
 
