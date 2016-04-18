@@ -42,6 +42,7 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{URL::to('/adoption')}}">Adoption</a></li>
+		    <li><a href="{{URL::to('/shelter')}}">Shelter</a></li>
                         <li><a href="{{URL::to('/news')}}">News</a></li>
                         <li><a href="{{URL::to('/about')}}">About Us</a></li>
                         <li><a href="{{URL::to('/contact')}}">Contact</a></li>
