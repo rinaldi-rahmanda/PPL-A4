@@ -105,7 +105,7 @@ use CaptchaTrait;
 		$age = $request->input('age');
 		$sex = $request->input('sex');
 		if(type!='1'){
-		$results = Adoption::where('domicile'=>$domicile)
+		$results = Adoption::where('domicile',$domicile)
 			->where('breed','like','%'.$breed.'%')
 			->where('type',$type);
 		}
@@ -116,6 +116,6 @@ use CaptchaTrait;
 			$results = $results->where('sex',$sex);
 		}
 		$adoptions = $results->get();
-		return view('/adoption',['adoptions',$adoptions]);
+		return view('/adoption',['adoptions'=>$adoptions]);
 	}
 }
