@@ -78,6 +78,74 @@
             </form>
 
         </div>
+        <div class="col-md-3 col-md-offset-1">
+            <h4>Add new adoption post</h4> 
+           
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+              <span class="glyphicon glyphicon-edit"></span>  
+            </button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add New Adoption</h4>
+      </div>
+      <div class="modal-body">
+            <form method="POST">
+                {!! csrf_field() !!}  
+                <div class="form-group">
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Name</label>
+                    <input type="text" name="name" id="name" class=" form-control" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Breed</label>
+                    <input type="text" name="breed" id="breed" class=" form-control" placeholder="Breed" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Age</label>
+                    <select class="form-control" name="age">
+
+                        <option value="1">Any</option>
+                        <option value="2">0-6 months</option>
+                        <option value="3">6-12 months</option>
+                        <option value="4">12-18 months</option>
+                        <option value="5">More than 2 years</option>
+                        <option value="6">More than 3 years</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Photo</label>
+                    <input type="file" name="photo" id="photo" class=" form-control" placeholder="Photo" required>
+                </div>
+                <div class="form-group">
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Sex</label>
+                    <select class="form-control" name="age">
+
+                        <option value="1">Any</option>
+                        <option value="2">Female</option>
+                        <option value="3">Male</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Description</label>
+                    <input type="text" name="breed" id="breed" class=" form-control" placeholder="Description" required>
+                </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
       
     </div>
       
