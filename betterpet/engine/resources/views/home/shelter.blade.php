@@ -60,11 +60,11 @@
            
             <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail thumbnail-home">
-                    <img src="{{URL::to('/image/sample3.png')}}" alt="">
+                    <img src="{{URL::to('/image/shelter1.jpg')}}" alt="">
                     <div class="caption">
-                        <h4>Leonardo</h4>
+                        <h4>Shelter X</h4>
                         <p>
-							He is a male dog and very friendly, even...
+							Lorem ipsum
 						</p>
 						<a href="#" class="btn btn-info btn-sm" role="button">Learn More</a>
                     </div>
@@ -74,11 +74,11 @@
 
             <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail thumbnail-home">
-                    <img src="{{URL::to('/image/sample.jpg')}}" alt="">
+                    <img src="{{URL::to('/image/shelter2.jpg')}}" alt="">
                     <div class="caption">
-                        <h4>Kitty</h4>
+                        <h4>Shelter Y</h4>
                         <p>
-							Born as the cutest cat ever, Kitty...
+							Lorem ipsum
 						</p>
 						<a href="#" class="btn btn-info btn-sm" role="button">Learn More</a>
 					</div>
@@ -87,10 +87,10 @@
 
             <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail thumbnail-home">
-                    <img src="{{URL::to('/image/sample2.jpg')}}" alt="">
+                    <img src="{{URL::to('/image/shelter3.jpg')}}" alt="">
                     <div class="caption">
-                        <h4>Smith</h4>
-                        <p>Smith, just like the name of the great...
+                        <h4>Sheter Z</h4>
+                        <p>Lorem ipsum
                         </p>
 						<a href="#" class="btn btn-info btn-sm" role="button">Learn More</a>
 					</div>
