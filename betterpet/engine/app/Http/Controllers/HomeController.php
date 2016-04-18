@@ -109,9 +109,18 @@ use CaptchaTrait;
 		$age = $request->input('age');
 		$sex = $request->input('sex');
 		if(type!='1'){
-		$results = Adoption::where('domicile',$domicile)
-			->where('breed','like','%'.$breed.'%')
-			->where('type',$type);
+			if($type=='2'){
+				//isCat
+				$type = '0';
+				//0 for cat
+			}
+			else{
+				$type = '1';
+				//1 for dog
+			}
+			$results = Adoption::where('domicile',$domicile)
+				->where('breed','like','%'.$breed.'%')
+				->where('type',$type);
 		}
 		if($age!='1'){
 			$results = $results->where('age',$age);
