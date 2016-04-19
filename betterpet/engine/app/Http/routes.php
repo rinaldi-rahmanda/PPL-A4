@@ -24,11 +24,13 @@
 
 Route::group(['middleware' => ['web']], function () {
   Route::get('/','HomeController@index');
+  Route::get('/adoption','HomeController@adoption');
+  Route::get('/shelter','HomeController@shelter');
+  Route::post('/adoption','HomeController@searchAdoption');
   Route::get('/about','HomeController@about');
   Route::get('/faq','HomeController@faq');
   Route::get('/news','HomeController@news');
   Route::get('/news/{id}','HomeController@singleNews');
-  Route::get('/adoption','UserController@listAdoptions');
   Route::get('/login','UserController@loginForm');
   Route::get('/register','UserController@registerForm');
   Route::post('/login','UserController@login');
@@ -40,6 +42,9 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/register/gCallBack','UserController@googleCallBack');
   Route::get('/register/fCallBack','UserController@facebookCallBack');  
   Route::get('/logout','UserController@logout');
+  Route::get('/admin','AdminController@index');
+  Route::get('/admin/news/new','AdminController@newNews');
+  Route::post('/admin/news/new','AdminController@saveNews');
 });
 Route::get('/viewProfile','UserController@viewProfile')->middleware(['web','usermid']);
 Route::get('/profile','UserController@showProfile')->middleware(['web','usermid']);

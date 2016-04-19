@@ -23,7 +23,7 @@
     }  
     .jumbotron {
         background-color: #ffffff;
-        background-image: url("/PPL-A4/betterpet/image/c&dFAQ.jpg");
+        background-image: url("/image/c&dFAQ.jpg");
         background-repeat: no-repeat;
         background-position: center; 
         background-size: 90%;

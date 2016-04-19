@@ -9,9 +9,14 @@ use Auth;
 use DB;
 use Validator;
 use Session;
+use App\Adoption;
 
+use App\Traits\CaptchaTrait;
 class HomeController extends Controller
 {
+
+
+use CaptchaTrait;
     //fungsi ini untuk menampilkan view index web root
     public function index(){
         if(Auth::check()){
@@ -20,6 +25,16 @@ class HomeController extends Controller
             Session::put('name',$user->name);
         }
     	return view('home.index');
+    }
+    //menampilkan adoption form
+    public function adoption(){
+		$adoptions = Adoption::where('done','0');
+		$adoptions = $adoptions->take(3)->get();
+    	return view('home.adoption',['adoptions',$adoptions]);
+    }
+    //menampilkan shelter form
+     public function shelter(){
+    	return view('home.shelter');
     }
     //menampilkan contact form
     public function contact(){
@@ -66,6 +81,13 @@ class HomeController extends Controller
             'title'=>'title must be filled',
             'content' => 'content must be filled'
         ]);
+	
+	if($this->captchaCheck() == false)
+        {
+            return redirect()->back()
+                ->withErrors(['Wrong Captcha'])
+                ->withInput();
+        }
         
         if($validator->fails()){
             return redirect('/contact')
@@ -82,4 +104,35 @@ class HomeController extends Controller
             return redirect('/contact')->with('success','Your question is sent!');
         }  
     }
+	public function searchAdoption(Request $request){
+		$domicile = $request->input('domicile');
+		//input can be 1,which is any type
+		$type = $request->input('type');
+		$breed = $request->input('breed');
+		$age = $request->input('age');
+		$sex = $request->input('sex');
+		if($type!='1'){
+			if($type=='2'){
+				//isCat
+				$type = '0';
+				//0 for cat
+			}
+			else{
+				$type = '1';
+				//1 for dog
+			}
+			$results = Adoption::where('domicile',$domicile)
+				->where('breed','like','%'.$breed.'%')
+				->where('type',$type);
+		}
+		if($age!='1'){
+			$results = $results->where('age',$age);
+		}
+		if($sex!='1'){
+			$results = $results->where('sex',$sex);
+		}
+		$adoptions = $results->get();
+		return $adoptions;
+		//return view('/adoption',['adoptions'=>$adoptions]);
+	}
 }

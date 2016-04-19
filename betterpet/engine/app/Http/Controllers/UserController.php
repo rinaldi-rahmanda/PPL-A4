@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Traits\CaptchaTrait;
 use Auth;
 use App\User;
 use Socialize;
@@ -15,7 +16,10 @@ use Session;
 
 class UserController extends Controller
 {
-    public function login(Request $request){
+	use CaptchaTrait;
+
+        public function login(Request $request){
+    
         $email = $request->input('email');
         $password = $request->input('password');
         $rememberme = $request->input('remember');
@@ -70,17 +74,25 @@ class UserController extends Controller
         $validator = Validator::make($request->all(),[
             'email' => 'email',
             'phone' => 'numeric',
-            'name' => 'min:3',
+            'name' => 'min:3|max:16',
             'password' => 'min:6',
         ],[
             'email'=>'Email address is not in valid format',
             'numeric'=>'Only numbers are allowed for :attribute',
             'min'=>'Your :attribute must be 3 characters or more',
-            'password' => 'Password must be at least 6 characters'
+            'password' => 'Password must be at least 6 characters',
+			'max'=>'Your :attribute must be less than 16 characters',
         ]);
         if ($validator->fails()) {
             return redirect('/register')
                     ->withErrors($validator);
+        }
+	
+	if($this->captchaCheck() == false)
+        {
+            return redirect()->back()
+                ->withErrors(['Wrong Captcha'])
+                ->withInput();
         }
         $user->password = Hash::make($password);
         $user->save();
@@ -213,10 +225,11 @@ class UserController extends Controller
 		}
 		$validator = Validator::make($request->all(),[
             'phone' => 'numeric',
-            'name' => 'min:3',
+            'name' => 'min:3|max:16',
         ],[
             'numeric'=>'Only numbers are allowed for :attribute',
             'min'=>'Your :attribute must be 3 characters or more',
+			'max'=>'Your :attribute must be less than 16 characters',
         ]);
         if ($validator->fails()) {
             return redirect('/profile')

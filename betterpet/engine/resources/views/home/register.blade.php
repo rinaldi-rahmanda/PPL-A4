@@ -1,5 +1,6 @@
 @extends('layout.template-about')
 @section('content')
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
     function checkPasswordMatch() {
         var password = $("#password").val();
@@ -25,7 +26,7 @@
                 <form method="POST">
                     {!! csrf_field() !!}
                     <div class="form-group">
-                        <input type="text" name="email" class="register-form form-control" placeholder="Email" required>
+                        <input type="text" name="email" class="register-form form-control" placeholder="Email" required autofocus>
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" id="password" class="register-form form-control" placeholder="Password" required>
@@ -58,6 +59,7 @@
                             <option value="9">Bekasi</option>
                         </select>
                     </div>
+		    <div class="g-recaptcha" data-sitekey="6LcFFR0TAAAAAPQzHzv5P_PgB00WTI_I-GaFxE_P"></div>
                     <div class="form-group">
                         <button type="submit" class="register-button btn btn-success">Sign up</button>
                     </div>

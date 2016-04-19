@@ -13,7 +13,7 @@ class CreateAdoptionsTable extends Migration
     public function up()
     {
         //
-         Schema::create('adoptions', function (Blueprint $table) {
+         Schema::create('adoptions', function (Blueprint $table){
             $table->increments('id');
             $table->integer('user_id')->index();
             $table->integer('domicile')->index();
@@ -21,7 +21,6 @@ class CreateAdoptionsTable extends Migration
             $table->string('breed');//jenis anjing atau kucingnya
             $table->string('sex');//male or female
             $table->string('age');//age category
-            $table->string('color');//base color
             $table->boolean('done');//is the adoption done
             $table->longText('description');
             $table->timestamps();

@@ -19,7 +19,7 @@
                 <form method="POST">
                     {!! csrf_field() !!}
                     <div class="form-group">
-                        <input type="text" name="email" class="register-form form-control" placeholder="Email" required>
+                        <input type="text" name="email" class="register-form form-control" placeholder="Email" required autofocus>
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" class="register-form form-control" placeholder="Password" required>
