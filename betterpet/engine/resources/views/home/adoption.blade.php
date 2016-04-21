@@ -1,4 +1,4 @@
-@extends('layout.template-about')
+@extends('layout.template')
 @section('content')
 <style>
     body {
@@ -162,7 +162,7 @@
                         <p>
 							He is a male dog and very friendly, even...
 						</p>
-						<a href="#" class="btn btn-info btn-sm" role="button">Learn More</a>
+						<a href="{{URL::to('/adoption/adoptionInfo')}}" class="btn btn-info btn-sm" role="button">Learn More</a>
                     </div>
                 </div>
             </div>
