@@ -78,9 +78,9 @@
             </form>
 
         </div>
+		@if(Auth::check())
         <div class="col-md-3 col-md-offset-1">
             <h4>Add new adoption post</h4> 
-           
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
               <span class="glyphicon glyphicon-edit"></span>  
@@ -145,6 +145,7 @@
     </div>
   </div>
 </div>
+@endif
         </div>
       
     </div>
