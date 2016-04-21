@@ -36,7 +36,7 @@ use CaptchaTrait;
     //menampilkan shelter form
      public function shelter(){
 		$shelter = Shelter::all();
-    	        return view('home.shelter',['shelter'=>$shelter]);
+    	        return view('home.shelter',['shelters'=>$shelter]);
     }
     //menampilkan contact form
     public function contact(){
