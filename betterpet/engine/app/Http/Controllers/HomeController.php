@@ -142,39 +142,24 @@ use CaptchaTrait;
 			$results = $results->where('sex',$sex);
 		}
 		$adoptions = $results->get();
-		return $adoptions;
-		//return view('/adoption',['adoptions'=>$adoptions]);
+		return view('/adoption',['adoptions'=>$adoptions]);
 	}
 	
 	public function searchShelter(Request $request){
 		$domicile = $request->input('domicile');
 		//input can be 1,which is any type
-		$type = $request->input('type');
-		$breed = $request->input('breed');
-		$age = $request->input('age');
-		$sex = $request->input('sex');
-		if($type!='1'){
-			if($type=='2'){
-				//isCat
-				$type = '0';
-				//0 for cat
-			}
-			else{
-				$type = '1';
-				//1 for dog
-			}
-			$results = Adoption::where('domicile',$domicile)
-				->where('breed','like','%'.$breed.'%')
-				->where('type',$type);
-		}
-		if($age!='1'){
-			$results = $results->where('age',$age);
-		}
-		if($sex!='1'){
-			$results = $results->where('sex',$sex);
-		}
-		$adoptions = $results->get();
-		return $adoptions;
-		//return view('/adoption',['adoptions'=>$adoptions]);
+		$name = $request->input('name');
+		$address = $request->input('address');
+		
+		
+		$results = Shelter::where('domicile',$domicile)
+				->where('address','like','%'.$address.'%')
+				->where('name','like','%'.$name.'%')
+				
+		
+		
+		$shelter = $results->get();
+		return view('/shelter',['shelter'=>$shelter]);
+		
 	}
 }
