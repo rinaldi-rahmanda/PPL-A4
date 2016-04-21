@@ -26,6 +26,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/','HomeController@index');
     Route::get('/adoption','HomeController@adoption');
     Route::get('/shelter','HomeController@shelter');
+    Route::post('/shelter','HomeController@searchShelter');
     Route::post('/adoption','HomeController@searchAdoption');
     Route::get('/about','HomeController@about');
     Route::get('/faq','HomeController@faq');

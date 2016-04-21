@@ -142,7 +142,7 @@ use CaptchaTrait;
 			$results = $results->where('sex',$sex);
 		}
 		$adoptions = $results->get();
-		return view('/adoption',['adoptions'=>$adoptions]);
+		return view('home.adoption',['adoptions'=>$adoptions]);
 	}
 	
 	public function searchShelter(Request $request){
@@ -159,7 +159,7 @@ use CaptchaTrait;
 		
 		
 		$shelter = $results->get();
-		return view('/shelter',['shelter'=>$shelter]);
+		return view('home.shelter',['shelter'=>$shelter]);
 		
 	}
 }
