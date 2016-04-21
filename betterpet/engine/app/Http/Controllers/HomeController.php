@@ -64,6 +64,14 @@ use CaptchaTrait;
 			return view('home.singleNews');
 		}
 	}
+    public function adoptionInfo($id){
+		if(!$id){
+			return redirect('/news');
+		}
+		else{
+			return view('home.adoptionInfo');
+		}
+	}
     public function contactPost(Request $request){
         $name = $request->name;
         $email = $request->email;
