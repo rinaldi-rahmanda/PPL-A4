@@ -95,6 +95,7 @@
         <h4 class="modal-title" id="myModalLabel">Add New Adoption</h4>
       </div>
       <div class="modal-body">
+			{!! Form::open(array('url'=>'shelter/search','method'=>'POST', 'files'=>true)) !!}
             <form method="POST">
                 {!! csrf_field() !!}  
                 <div class="form-group">
