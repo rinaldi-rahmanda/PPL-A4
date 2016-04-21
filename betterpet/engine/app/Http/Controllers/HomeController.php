@@ -10,6 +10,7 @@ use DB;
 use Validator;
 use Session;
 use App\Adoption;
+use App\Shelter;
 
 use App\Traits\CaptchaTrait;
 class HomeController extends Controller
@@ -29,12 +30,13 @@ use CaptchaTrait;
     //menampilkan adoption form
     public function adoption(){
 		$adoptions = Adoption::where('done','0');
-		$adoptions = $adoptions->take(3)->get();
-    	return view('home.adoption',['adoptions',$adoptions]);
+		$adoptions = $adoptions->take(6)->get();
+    	return view('home.adoption',['adoptions'=>$adoptions]);
     }
     //menampilkan shelter form
      public function shelter(){
-    	return view('home.shelter');
+		$shelter = Shelter::all();
+    	        return view('home.shelter',['shelters'=>$shelter]);
     }
     //menampilkan contact form
     public function contact(){
@@ -62,6 +64,14 @@ use CaptchaTrait;
 		}
 		else{
 			return view('home.singleNews');
+		}
+	}
+    public function adoptionInfo($id){
+		if(!$id){
+			return redirect('/news');
+		}
+		else{
+			return view('home.adoptionInfo');
 		}
 	}
     public function contactPost(Request $request){
@@ -132,7 +142,24 @@ use CaptchaTrait;
 			$results = $results->where('sex',$sex);
 		}
 		$adoptions = $results->get();
-		return $adoptions;
-		//return view('/adoption',['adoptions'=>$adoptions]);
+		return view('home.adoption',['adoptions'=>$adoptions]);
+	}
+	
+	public function searchShelter(Request $request){
+		$domicile = $request->input('domicile');
+		//input can be 1,which is any type
+		$name = $request->input('name');
+		$address = $request->input('address');
+		
+		
+		$results = Shelter::where('domicile',$domicile)
+				->where('address','like','%'.$address.'%')
+				->where('sheltername','like','%'.$name.'%');
+				
+		
+		
+		$shelter = $results->get();
+		return view('home.shelter',['shelter'=>$shelter]);
+		
 	}
 }
