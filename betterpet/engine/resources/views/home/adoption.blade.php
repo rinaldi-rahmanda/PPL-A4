@@ -98,7 +98,7 @@
             <form method="POST">
                 {!! csrf_field() !!}  
                 <div class="form-group">
-                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Name</label>
+                    <label class="in-form" for="exampleInputEmail1"  style="display:block;">Name of your pet</label>
                     <input type="text" name="name" id="name" class=" form-control" placeholder="Name" required>
                 </div>
                 <div class="form-group">
@@ -125,7 +125,7 @@
                 </div>
                 <div class="form-group">
                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Sex</label>
-                    <select class="form-control" name="age">
+                    <select class="form-control" name="sex">
 
                         <option value="1">Any</option>
                         <option value="2">Female</option>
@@ -134,7 +134,7 @@
                 </div>
                 <div class="form-group">
                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Description</label>
-                    <input type="text" name="breed" id="breed" class=" form-control" placeholder="Description" required>
+					<textarea class="form-control" name="description" placeholder="Anything useful and related informations about your pet like color,behaviour,etc"></textarea>
                 </div>
           </form>
       </div>
