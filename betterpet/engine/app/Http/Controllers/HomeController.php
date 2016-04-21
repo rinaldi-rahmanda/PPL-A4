@@ -10,6 +10,7 @@ use DB;
 use Validator;
 use Session;
 use App\Adoption;
+use App\Shelter;
 
 use App\Traits\CaptchaTrait;
 class HomeController extends Controller
@@ -34,7 +35,8 @@ use CaptchaTrait;
     }
     //menampilkan shelter form
      public function shelter(){
-    	return view('home.shelter');
+		$shelter = Shelter::all();
+    	        return view('home.shelter',['shelter',$shelter]);
     }
     //menampilkan contact form
     public function contact(){
@@ -113,6 +115,38 @@ use CaptchaTrait;
         }  
     }
 	public function searchAdoption(Request $request){
+		$domicile = $request->input('domicile');
+		//input can be 1,which is any type
+		$type = $request->input('type');
+		$breed = $request->input('breed');
+		$age = $request->input('age');
+		$sex = $request->input('sex');
+		if($type!='1'){
+			if($type=='2'){
+				//isCat
+				$type = '0';
+				//0 for cat
+			}
+			else{
+				$type = '1';
+				//1 for dog
+			}
+			$results = Adoption::where('domicile',$domicile)
+				->where('breed','like','%'.$breed.'%')
+				->where('type',$type);
+		}
+		if($age!='1'){
+			$results = $results->where('age',$age);
+		}
+		if($sex!='1'){
+			$results = $results->where('sex',$sex);
+		}
+		$adoptions = $results->get();
+		return $adoptions;
+		//return view('/adoption',['adoptions'=>$adoptions]);
+	}
+	
+	public function searchShelter(Request $request){
 		$domicile = $request->input('domicile');
 		//input can be 1,which is any type
 		$type = $request->input('type');
