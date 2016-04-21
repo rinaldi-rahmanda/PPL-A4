@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Traits\CaptchaTrait;
 use Auth;
 use App\User;
+use App\Adoption;
 use Socialize;
 use Hash;
 use DB;
@@ -272,5 +273,39 @@ class UserController extends Controller
             ->where('id',$id)
             ->update(['done'=>1]);
         return redirect('/adoption/create')->with('success','Adoption marked as done!');
+    }
+    public function newAdoption(Request $request){
+        $name = $request->input('name');
+        $breed = $request->input('breed');
+        $age = $request->input('age');
+        $sex = $request->input('sex');
+        $desc = $request->input('description');
+        $user = Auth::user();
+        $userId = $user->id;
+        $adoption = new Adoption;
+        $adoption->name = $name;
+        $adoption->breed = $breed;
+        $adoption->sex = $sex;
+        $adoption->description = $desc;
+        $adoption->age = $age;
+        $adoption->user_id = $userId;
+		$count = Adoption::all();
+		$count = $count->count();
+        if($request->hasFile('picture'))
+        {
+            $file = $request->file('picture');
+            $validator = Validator::make(array('file'=>$file),[
+                'file' => 'image|max:2000',
+            ]);
+            if($validator->fails())
+                return redirect('/adoption')->withErrors($validator);
+            $destinationPath = 'engine/adoptionimage';
+            $extension = $file->getClientOriginalExtension();
+            $fileName = ($count+1).'.'.$extension;
+            $file->move($destinationPath,$fileName);
+            $adoption->picture = $fileName;
+        }
+        $adoption->save();
+        return 'success';
     }
 }

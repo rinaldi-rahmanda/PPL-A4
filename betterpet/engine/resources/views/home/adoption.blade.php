@@ -95,8 +95,7 @@
         <h4 class="modal-title" id="myModalLabel">Add New Adoption</h4>
       </div>
       <div class="modal-body">
-			{!! Form::open(array('url'=>'shelter/search','method'=>'POST', 'files'=>true)) !!}
-            <form method="POST">
+			{!! Form::open(array('url'=>'adoption/new','method'=>'POST', 'files'=>true)) !!}
                 {!! csrf_field() !!}  
                 <div class="form-group">
                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Name of your pet</label>
@@ -109,9 +108,9 @@
                 
                 <div class="form-group">
                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Age</label>
-                    <select class="form-control" name="age">
+                    <select class="form-control" required name="age">
 
-                        <option value="1">Any</option>
+                        <option value="1" disabled>Any</option>
                         <option value="2">0-6 months</option>
                         <option value="3">6-12 months</option>
                         <option value="4">12-18 months</option>
@@ -122,7 +121,7 @@
                 </div>
                 <div class="form-group">
                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Photo</label>
-                    <input type="file" name="photo" id="photo" class=" form-control" placeholder="Photo" required>
+                    {!! Form::file('picture',['id'=>'photo','class'=>'form-control']) !!}
                 </div>
                 <div class="form-group">
                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Sex</label>
@@ -137,11 +136,11 @@
                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Description</label>
 					<textarea class="form-control" name="description" placeholder="Anything useful and related informations about your pet like color,behaviour,etc"></textarea>
                 </div>
-          </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        {!! Form::close() !!}
       </div>
     </div>
   </div>
