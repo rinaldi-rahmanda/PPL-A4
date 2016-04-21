@@ -15,6 +15,8 @@ class CreateAdoptionsTable extends Migration
         //
          Schema::create('adoptions', function (Blueprint $table){
             $table->increments('id');
+			$table->string('name',260);
+			$table->string('picture',260);
             $table->integer('user_id')->index();
             $table->integer('domicile')->index();
             $table->boolean('type'); //0 for dog , 1 for cat

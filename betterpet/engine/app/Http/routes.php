@@ -26,6 +26,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/','HomeController@index');
     Route::get('/adoption','HomeController@adoption');
     Route::get('/shelter','HomeController@shelter');
+    Route::post('/shelter','HomeController@searchShelter');
     Route::post('/adoption','HomeController@searchAdoption');
     Route::get('/about','HomeController@about');
     Route::get('/faq','HomeController@faq');
@@ -50,6 +51,7 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('/viewProfile','UserController@viewProfile')->middleware(['web','usermid']);
 Route::get('/profile','UserController@showProfile')->middleware(['web','usermid']);
 Route::post('/profile','UserController@editProfile')->middleware(['web','usermid']);
+Route::post('/adoption/new','UserController@newAdoption')->middleware(['web','usermid']);
 Route::get('/list','UserController@listAdoptions')->middleware(['web','usermid']);
 Route::get('/adoption/create','UserController@createAdoption')->middleware(['web','usermid']);
 Route::post('/adoption/create','UserController@saveAdoption')->middleware(['web','usermid']);

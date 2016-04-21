@@ -17,6 +17,7 @@ class CreateSheltersTable extends Migration
             $table->string('shelterName');
 			$table->longText('address');
 			$table->longText('description');
+			$table->string('picture',255);
             $table->integer('domicile')->index();
         });
     }

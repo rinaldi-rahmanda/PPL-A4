@@ -30,13 +30,13 @@ use CaptchaTrait;
     //menampilkan adoption form
     public function adoption(){
 		$adoptions = Adoption::where('done','0');
-		$adoptions = $adoptions->take(3)->get();
-    	return view('home.adoption',['adoptions',$adoptions]);
+		$adoptions = $adoptions->take(6)->get();
+    	return view('home.adoption',['adoptions'=>$adoptions]);
     }
     //menampilkan shelter form
      public function shelter(){
 		$shelter = Shelter::all();
-    	        return view('home.shelter',['shelter',$shelter]);
+    	        return view('home.shelter',['shelters'=>$shelter]);
     }
     //menampilkan contact form
     public function contact(){
@@ -142,7 +142,7 @@ use CaptchaTrait;
 			$results = $results->where('sex',$sex);
 		}
 		$adoptions = $results->get();
-		return view('/adoption',['adoptions'=>$adoptions]);
+		return view('home.adoption',['adoptions'=>$adoptions]);
 	}
 	
 	public function searchShelter(Request $request){
@@ -159,7 +159,7 @@ use CaptchaTrait;
 		
 		
 		$shelter = $results->get();
-		return view('/shelter',['shelter'=>$shelter]);
+		return view('home.shelter',['shelter'=>$shelter]);
 		
 	}
 }
