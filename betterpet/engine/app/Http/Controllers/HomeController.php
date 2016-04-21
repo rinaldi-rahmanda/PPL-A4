@@ -154,7 +154,7 @@ use CaptchaTrait;
 		
 		$results = Shelter::where('domicile',$domicile)
 				->where('address','like','%'.$address.'%')
-				->where('sheltername','like','%'.$name.'%')
+				->where('sheltername','like','%'.$name.'%');
 				
 		
 		
