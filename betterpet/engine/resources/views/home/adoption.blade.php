@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-@extends('layout.template')
-=======
 
 
 @extends('layout.template-about')
->>>>>>> origin/master
 @section('content')
 <style>
    body {
@@ -74,14 +70,9 @@
             </div>
          </form>
       </div>
-<<<<<<< HEAD
     </div>
   </div>
 </div>
-@endif
-        </div>
-      
-    </div>
       
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -98,7 +89,6 @@
 						<a href="{{URL::to('/adoption/adoptionInfo')}}" class="btn btn-info btn-sm" role="button">Learn More</a>
                     </div>
                 </div>
-=======
       @if(Auth::check())
       <div class="col-md-3 col-md-offset-1">
          <h4>Add new adoption post</h4>
@@ -159,7 +149,6 @@
                      {!! Form::close() !!}
                   </div>
                </div>
->>>>>>> origin/master
             </div>
          </div>
          @endif
