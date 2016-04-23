@@ -33,11 +33,11 @@
                </div>
                <div class="form-group">
                   <label class="in-form" for="exampleInputEmail1"  style="display:block;">Name</label>
-                  <input type="text" name="name" id="name" class=" form-control" placeholder="Name" required>
+                  <input type="text" name="name" id="name" class=" form-control" placeholder="Name" >
                </div>
                <div class="form-group">
                   <label class="in-form" for="exampleInputEmail1"  style="display:block;">Address</label>
-                  <input type="text" name="address" id="address" class=" form-control" placeholder="Address" required>
+                  <input type="text" name="address" id="address" class=" form-control" placeholder="Address" >
                </div>
             </div>
             <div class="form-group">
