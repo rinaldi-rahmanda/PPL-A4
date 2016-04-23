@@ -45,7 +45,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/register/fCallBack','UserController@facebookCallBack');  
     Route::get('/logout','UserController@logout');
     Route::get('/admin','AdminController@index');
-    Route::get('/admin/news/new','AdminController@newNews');
     Route::post('/admin/news/new','AdminController@saveNews');
 });
 Route::get('/viewProfile','UserController@viewProfile')->middleware(['web','usermid']);

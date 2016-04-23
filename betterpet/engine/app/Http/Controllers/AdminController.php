@@ -20,11 +20,13 @@ class AdminController extends Controller
 		//return the homepage of admin section
 		return view('admin.index');
 	}
+	/*
 	public function newNews(){
 		//return view form of creating new news
-		return view('admin.newnews');
 	}
+	*/
 	public function saveNews(){
 		//save the new submitted news to database
+		
 	}
 }

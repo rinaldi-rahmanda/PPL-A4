@@ -96,6 +96,27 @@
 <div id="section42" class="container-fluid">
   <h1 class="text-center">CREATE NEWS</h1>
   <p>Membuat news baru</p>
+  @include('common.error')
+            {!! Form::open(array('url'=>'/admin/news/new','method'=>'POST', 'files'=>true)) !!}
+            {!! csrf_field() !!}
+            <div class="form-inline">
+               <div class="form-group">
+                  <label class="in-form" for="title" style="display:block;">Title</label>
+                  <input type="text" name="title" id="title" class="form-control" placeholder="Title" required>
+               </div>
+               <div class="form-group">
+                  <label class="in-form" for="photo"  style="display:block;">Photo</label>
+                  {!! Form::file('picture',['id'=>'photo','class'=>'form-control']) !!}
+               </div>
+               <div class="form-group">
+                  <label class="in-form" for="content"  style="display:block;">Content</label>
+                  <textarea class="form-control" name="content" id="content" placeholder="Lorem ipsum dolor sit amet"></textarea>
+               </div>
+            </div>
+            <div class="form-group">
+               <button type="submit" class="register-button btn btn-success">Search</button>
+            </div>
+         </form>
   </div>
 
 </body>

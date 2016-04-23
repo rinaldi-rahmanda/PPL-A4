@@ -11,7 +11,7 @@ use DB;
 use Validator;
 use Session;
 
-class UserController extends Controller
+class NewsController extends Controller
 {
     
        
