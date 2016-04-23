@@ -193,6 +193,7 @@ class UserController extends Controller
     public function viewProfile(){
             //ambil segala data user
             $user = Auth::user();
+            $id = $user->id;
             $idDom = $user->domicile;
 			$name = $user->name;
 			$phone = $user->phone;
@@ -205,7 +206,8 @@ class UserController extends Controller
             }
             else
                 $domicile = $domicile->location;
-            return view('home.viewProfile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone]);
+            $adoptions = Adoption::where('user_id','=',$id)->get();
+            return view('home.viewProfile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone,'adoptions'=>$adoptions]);
     }
 	public function editProfile(Request $request){
 		$user = Auth::user();
