@@ -12,7 +12,7 @@ class CreateQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('email');
