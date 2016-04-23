@@ -13,6 +13,9 @@
         <div class="col-md-offset-2 col-md-8 col-sm-8" style="background-color:white; min-height: 100%; margin-top:8%;">
             <div class="col-md-2 col-sm-2" style="margin-top:5%;margin-bottom:2%;padding-left:3%;">
                 <img src="http://placehold.it/200x200" alt="">
+                <div>
+                    <button class="button btn" style="width:200px;margin-top:5%;"> <a href="{{URL::to('/profile')}}">Edit Profile</a> </button>
+                </div>
             </div>
             <div class="col-md-offset-1 col-sm-offset-1 col-md-5 col-sm-5" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
                 <h1 >Hello, I am {{ $user->name }}!</h1>
@@ -25,7 +28,7 @@
 
                 <div class="tab-content">
                     <div class="tab-pane active" id="home">
-                        
+
                         <div class="panel panel-default" style="margin-top:8%;">
                             <div class="panel-heading">About Me</div>
                             <div class="panel-body">
@@ -34,11 +37,71 @@
                         </div>      
                     </div>
                     <div class="tab-pane" id="adoptions">
-                        <h4 style="margin-top:8%;">My adoption posts</h4>
+                        <h3 style="margin-top:8%;">My adoption posts</h3>
+                        <div class="row">
+                            <h5>Add new adoption post <button style="margin-left:3%;" type="button" data-toggle="modal" data-target="#myModal">
+                                <span class="glyphicon glyphicon-edit"></span>  
+                                </button></h5>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">Add New Adoption Post</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            {!! Form::open(array('url'=>'adoption/new','method'=>'POST', 'files'=>true)) !!}
+                                            {!! csrf_field() !!}  
+                                            <div class="form-group">
+                                                <label class="in-form" for="exampleInputEmail1"  style="display:block;">Name of your pet</label>
+                                                <input type="text" name="name" id="name" class=" form-control" placeholder="Name" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="in-form" for="exampleInputEmail1"  style="display:block;">Breed</label>
+                                                <input type="text" name="breed" id="breed" class=" form-control" placeholder="Breed" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="in-form" for="exampleInputEmail1"  style="display:block;">Age</label>
+                                                <select class="form-control" required name="age">
+
+                                                    <option value="2">0-6 months</option>
+                                                    <option value="3">6-12 months</option>
+                                                    <option value="4">12-18 months</option>
+                                                    <option value="5">More than 2 years</option>
+                                                    <option value="6">More than 3 years</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="in-form" for="exampleInputEmail1"  style="display:block;">Photo</label>
+                                                {!! Form::file('picture',['id'=>'photo','class'=>'form-control']) !!}
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="in-form" for="exampleInputEmail1"  style="display:block;">Sex</label>
+                                                <select class="form-control" name="sex">               
+                                                    <option value="2">Female</option>
+                                                    <option value="3">Male</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="in-form" for="exampleInputEmail1"  style="display:block;">Description</label>
+                                                <textarea class="form-control" name="description" placeholder="Anything useful and related informations about your pet like color, behaviour, etc"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                            {!! Form::close() !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-               
+
                 </div>
-                
+
             </div>
 
 
