@@ -8,6 +8,6 @@ class Shelter extends Model
 {
     protected $fillable = [
      
-	'domicile','id', 'shelterName', 'address','description',
+	'domicile','id', 'shelterName', 'address','description','user_id'
     ];
 }
