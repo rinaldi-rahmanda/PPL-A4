@@ -68,20 +68,16 @@
                     <div class="form-group">
                         <button type="submit" class="register-button btn btn-success">Search</button>
                     </div>
+                    <hr>
+                    <button type="button" class="btn btn-primary register-button" data-toggle="modal" data-target="#myModal">
+        <span class="glyphicon glyphicon-edit"></span> Add New Adoption 
+    </button>
                 </form>
             </div>
-        </div>
-    </div>
-</div>
 
 
 @if(Auth::check())
 <div class="col-md-3 col-md-offset-1">
-    <h4>Add new adoption post</h4>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        <span class="glyphicon glyphicon-edit"></span>  
-    </button>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -137,9 +133,25 @@
             </div>
         </div>
     </div>
-    @endif
+    
+</div>
+@endif
+        </div>
+
+        <div class="row adoption-section">
+            @foreach ($adoptions as $adoption)
+            <div class="col-md-4 col-sm-6 col-xs-6">
+                  <img class="img-responsive img-rounded img-adoption" width="300px" height="300px" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}">
+                    <h3 class="text-center">{{$adoption->name}}</h3>
+                    <p class="text-center"><a href="{{URL::to('/adoption')}}/{{$adoption->id}}" class="btn btn-primary" role="button">See the details</a></p>
+                  </div>
+            @endforeach
+        </div>
+    </div>
 </div>
 
+
+<!--
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <h3>Featured Pets :</h3>
@@ -180,13 +192,7 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <hr>
-    @foreach ($adoptions as $adoption)
-    <h5>{{$adoption->name}}</h5>
-    <img src="{{URL::to('/engine/adoptionimage')}}/{{$adoption->picture}}">
-    @endforeach
-</div>
+-->
 
 @endsection
 

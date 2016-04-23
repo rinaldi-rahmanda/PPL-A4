@@ -19,7 +19,7 @@
 			@if($avatar=="")
             <img src="http://placehold.it/200x200" alt="">
 			@else
-			<img src="{{URL::to('/engine/userimage').'/'.$avatar}}" width="200px" height="200px" alt="">	
+			<img src="{{URL::to('/engine/storage/app/userimage').'/'.$avatar}}" width="200px" height="200px" alt="">	
 			@endif
             <div class="ava-caption">
                 Edit your avatar
