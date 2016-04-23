@@ -12,9 +12,11 @@ use App\Adoption;
 use Socialize;
 use Hash;
 use DB;
+use URL;
 use Validator;
 use Session;
 use App\Shelter;
+use Storage;
 
 class UserController extends Controller
 {
@@ -231,7 +233,9 @@ class UserController extends Controller
 			$destinationPath = 'engine/userimage';
 			$extension = $file->getClientOriginalExtension();
 			$fileName = $email.'.'.$extension;
-			$file->move($destinationPath,$fileName);
+            Storage::put('userimage/'.$fileName,
+                file_get_contents($file->getRealPath()));
+			//$file->move($destinationPath,$fileName);
 			$user->avatar=$fileName;
 		}
 		$validator = Validator::make($request->all(),[
@@ -309,10 +313,11 @@ class UserController extends Controller
             ]);
             if($validator->fails())
                 return redirect('/adoption')->withErrors($validator);
-            $destinationPath = 'engine/adoptionimage';
             $extension = $file->getClientOriginalExtension();
             $fileName = ($count+1).'.'.$extension;
-            $file->move($destinationPath,$fileName);
+            Storage::put('adoptionimage/'.$fileName,
+                file_get_contents($file->getRealPath()));
+            //$file->move($destinationPath,$fileName);
             $adoption->picture = $fileName;
         }
         $adoption->save();
@@ -343,7 +348,9 @@ class UserController extends Controller
             $destinationPath = 'engine/shelterimage';
             $extension = $file->getClientOriginalExtension();
             $fileName = ($count+1).'.'.$extension;
-            $file->move($destinationPath,$fileName);
+            Storage::put('shelterimage/'.$fileName,
+                file_get_contents($file->getRealPath()));
+            //$file->move($destinationPath,$fileName);
             $shelter->picture = $fileName;
         }
         $shelter->save();
@@ -365,6 +372,7 @@ class UserController extends Controller
         //remove the available requests pointing at the adoption first
         DB::table('requests')->where('idAdopsi','=',$id)->delete();
         $adoption = Adoption::find($id);
+        Storage::delete('adoptionimage/'.$adoption->picture);
         $adoption->delete();
         return "deleted";
     }
