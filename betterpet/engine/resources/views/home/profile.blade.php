@@ -26,7 +26,7 @@
                 <img src="image/pen.png" id="upfile1" style="cursor:pointer" width="20" height="20" style="float:right;"/>
             </div>
             <div>
-                <button class="button btn" style="width:200px;"> <a href="{{URL::to('/viewProfile')}}">View Profile</a> </button>
+                <button class="button btn pro" style="width:200px;background:#337ab7;color:white;"> <a style="color:white;text-decoration:none;" href="{{URL::to('/viewProfile')}}">View Profile</a> </button>
             </div>
         </div>      
         <div class="col-md-offset-1 col-md-5 col-xs-6">

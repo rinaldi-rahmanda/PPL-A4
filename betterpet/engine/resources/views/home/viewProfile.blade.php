@@ -14,7 +14,7 @@
             <div class="col-md-2 col-sm-2" style="margin-top:5%;margin-bottom:2%;padding-left:3%;">
                 <img src="http://placehold.it/200x200" alt="">
                 <div>
-                    <button class="button btn" style="width:200px;margin-top:5%;"> <a href="{{URL::to('/profile')}}">Edit Profile</a> </button>
+                    <button class="button btn pro" style="width:200px;margin-top:5%;background:#337ab7;color:white;"> <a style="color:white;text-decoration:none;" href="{{URL::to('/profile')}}">Edit Profile</a> </button>
                 </div>
             </div>
             <div class="col-md-offset-1 col-sm-offset-1 col-md-5 col-sm-5" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
