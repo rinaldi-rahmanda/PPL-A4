@@ -56,3 +56,4 @@ Route::get('/list','UserController@listAdoptions')->middleware(['web','usermid']
 Route::get('/adoption/create','UserController@createAdoption')->middleware(['web','usermid']);
 Route::post('/adoption/create','UserController@saveAdoption')->middleware(['web','usermid']);
 Route::get('/adoption/mark/{id}','UserController@markDone')->middleware(['web','usermid']);
+Route::post('/shelter/new','UserController@newShelter')->middleware(['web','usermid']);
