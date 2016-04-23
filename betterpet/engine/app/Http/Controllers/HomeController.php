@@ -121,6 +121,7 @@ use CaptchaTrait;
 		$breed = $request->input('breed');
 		$age = $request->input('age');
 		$sex = $request->input('sex');
+        $results = Adoption::where('domicile',$domicile);
 		if($type!='1'){
 			if($type=='2'){
 				//isCat
@@ -131,8 +132,8 @@ use CaptchaTrait;
 				$type = '1';
 				//1 for dog
 			}
-			$results = Adoption::where('domicile',$domicile)
-				->where('breed','like','%'.$breed.'%')
+			$results = $results
+                ->where('breed','like','%'.$breed.'%')
 				->where('type',$type);
 		}
 		if($age!='1'){
@@ -142,6 +143,7 @@ use CaptchaTrait;
 			$results = $results->where('sex',$sex);
 		}
 		$adoptions = $results->get();
+        return $adoptions;
 		return view('home.adoption',['adoptions'=>$adoptions]);
 	}
 	

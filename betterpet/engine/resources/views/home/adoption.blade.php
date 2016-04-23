@@ -18,7 +18,7 @@
                     <div class="form-inline">
                         <div class="form-group">
                             <label class="in-form" for="exampleInputEmail1" style="display:block;">Domicile</label>
-                            <select class="form-control" name="domicile">
+                            <select class="form-control" name="domicile" required>
                                 <option value="" disabled selected>Select your domicile</option>
                                 <option value="1">Jakarta Utara</option>
                                 <option value="2">Jakarta Timur</option>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="form-group">
                             <label class="in-form" for="exampleInputEmail1"  style="display:block;">Breed</label>
-                            <input type="text" name="breed" id="breed" class=" form-control" placeholder="Breed" required>
+                            <input type="text" name="breed" id="breed" class=" form-control" placeholder="Breed">
                         </div>
                     </div>
                     <div class="form-inline">
@@ -96,6 +96,21 @@
                     <div class="form-group">
                         <label class="in-form" for="exampleInputEmail1"  style="display:block;">Breed</label>
                         <input type="text" name="breed" id="breed" class=" form-control" placeholder="Breed" required>
+                    </div>
+                    <div class="form-group">
+                            <label class="in-form" for="exampleInputEmail1" style="display:block;">Domicile</label>
+                            <select class="form-control" name="domicile" required>
+                                <option value="" disabled selected>Select your domicile</option>
+                                <option value="1">Jakarta Utara</option>
+                                <option value="2">Jakarta Timur</option>
+                                <option value="3">Jakarta Pusat</option>
+                                <option value="4">Jakarta Barat</option>
+                                <option value="5">Jakarta Selatan</option>
+                                <option value="6">Bogor</option>
+                                <option value="7">Depok</option>
+                                <option value="8">Tangerang</option>
+                                <option value="9">Bekasi</option>
+                            </select>
                     </div>
                     <div class="form-group">
                         <label class="in-form" for="exampleInputEmail1"  style="display:block;">Age</label>
