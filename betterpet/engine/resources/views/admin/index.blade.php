@@ -40,7 +40,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
         	<li><a> Admin</a></li>
-        	<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Out</a></li>
+        	<li><a href="{{URL::to('/logout')}}"><span class="glyphicon glyphicon-user"></span> Sign Out</a></li>
      	</ul>
 
       </div>
