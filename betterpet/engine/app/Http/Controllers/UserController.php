@@ -14,7 +14,7 @@ use Hash;
 use DB;
 use Validator;
 use Session;
-use App\Shelter
+use App\Shelter;
 
 class UserController extends Controller
 {
