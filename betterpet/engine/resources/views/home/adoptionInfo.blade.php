@@ -15,12 +15,15 @@
                 <img src="http://placehold.it/200x200" alt="">
             </div>
             <div class="col-md-offset-1 col-sm-offset-1 col-md-5 col-sm-5" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
-                <h1 >Hello, I am {{ $user->name }}!</h1>
-                <ul style="padding: 0;"><li style="display:inline;">{{ $domicile }}</li><li style="display:inline;padding-left:10px;">&#8226 Member since</li></ul>
+                <h1 >Hello, I am !</h1>
+                
                 <div class="panel panel-default">
                     <div class="panel-heading">About Me</div>
                     <div class="panel-body">
-                        <p>{{$description}}</p>
+                       <p>Breed</p>
+                        <p>Sex</p>
+                        <P>Age</P>
+                        
                     </div>
                 </div>      
             </div>

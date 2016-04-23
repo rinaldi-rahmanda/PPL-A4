@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+@extends('layout.template')
+=======
 
 
 @extends('layout.template-about')
+>>>>>>> origin/master
 @section('content')
 <style>
    body {
@@ -70,6 +74,31 @@
             </div>
          </form>
       </div>
+<<<<<<< HEAD
+    </div>
+  </div>
+</div>
+@endif
+        </div>
+      
+    </div>
+      
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>Featured Pets :</h3>
+           
+            <div class="col-xs-18 col-sm-6 col-md-4">
+                <div class="thumbnail thumbnail-home">
+                    <img src="{{URL::to('/image/sample3.png')}}" alt="">
+                    <div class="caption">
+                        <h4>Leonardo</h4>
+                        <p>
+							He is a male dog and very friendly, even...
+						</p>
+						<a href="{{URL::to('/adoption/adoptionInfo')}}" class="btn btn-info btn-sm" role="button">Learn More</a>
+                    </div>
+                </div>
+=======
       @if(Auth::check())
       <div class="col-md-3 col-md-offset-1">
          <h4>Add new adoption post</h4>
@@ -130,6 +159,7 @@
                      {!! Form::close() !!}
                   </div>
                </div>
+>>>>>>> origin/master
             </div>
          </div>
          @endif
