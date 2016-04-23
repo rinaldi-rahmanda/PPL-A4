@@ -159,7 +159,7 @@ use CaptchaTrait;
 		
 		
 		$shelter = $results->get();
-		return view('home.shelter',['shelter'=>$shelter]);
+		return view('home.shelter',['shelters'=>$shelter]);
 		
 	}
 }
