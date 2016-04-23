@@ -81,7 +81,7 @@ use CaptchaTrait;
         $content = $request->content;
         //validasi the input first
         $validator = Validator::make($request->all(),[
-            'name' => 'min:3',
+            'name' => 'min:3|max:20',
             'email' => 'email',
             'title' => 'required',
             'content' => 'required',

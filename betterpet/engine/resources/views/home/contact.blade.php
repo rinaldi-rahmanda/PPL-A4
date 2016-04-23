@@ -42,7 +42,7 @@
     				<form method="POST">
                     {!! csrf_field() !!}
                     <div class="form-group">
-					<input type="text" class="register-form form-control" name="name" placeholder="Your Name" required></div>
+					<input type="text" class="register-form form-control" name="name" placeholder="Your Name (20 character maximum)" required></div>
 					<div class="form-group">
 					<input type="text" class="register-form form-control" name="email" placeholder="Your Email Address" required></div>
 					<div class="form-group">
