@@ -308,4 +308,35 @@ class UserController extends Controller
         $adoption->save();
         return 'success';
     }
+    public function newShelter(Request $request){
+        $name = $request->input('shelterName');
+        $address = $request->input('address');
+        $age = $request->input('domicile');
+        $desc = $request->input('description');
+        $user = Auth::user();
+        $userId = $user->id;
+        $shelter = new Shelter;
+        $shelter->shelterName = $name;
+        $shelter->address = $address;
+        $shelter->description = $desc;
+        $shelter->user_id = $userId;
+        $count = Shelter::all();
+        $count = $count->count();
+        if($request->hasFile('picture'))
+        {
+            $file = $request->file('picture');
+            $validator = Validator::make(array('file'=>$file),[
+                'file' => 'image|max:2000',
+            ]);
+            if($validator->fails())
+                return redirect('/shelter')->withErrors($validator);
+            $destinationPath = 'engine/sheleterimage';
+            $extension = $file->getClientOriginalExtension();
+            $fileName = ($count+1).'.'.$extension;
+            $file->move($destinationPath,$fileName);
+            $Shelter->picture = $fileName;
+        }
+        $Shelter->save();
+        return 'success';
+    }
 }
