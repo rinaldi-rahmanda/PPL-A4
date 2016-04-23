@@ -30,8 +30,15 @@ class UserController extends Controller
                 //correct email and password
                 Session::put('user','1');
                 $user = Auth::user();
-                Session::put('name',$user->name);
-                return redirect('/')->with('msg','You have been logged in');
+                if($user->admin == '1'){
+                    Session::put('name',$user->name);
+                    return redirect('/admin')->with('msg','You have been logged in');
+                }
+                else{
+                    Session::put('name',$user->name);
+                    return redirect('/')->with('msg','You have been logged in');
+                }
+                
             }
         }
         else{
