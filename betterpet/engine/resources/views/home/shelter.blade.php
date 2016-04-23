@@ -46,9 +46,74 @@
          </form>
       </div>
    </div>
+   
+@if(Auth::check())
+<div class="col-md-3 col-md-offset-1">
+    <h4>Add new shelter post</h4>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        <span class="glyphicon glyphicon-edit"></span>  
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add New Adoption</h4>
+                </div>
+                <div class="modal-body">
+                    {!! Form::open(array('url'=>'shelter/new','method'=>'POST', 'files'=>true)) !!}
+                    {!! csrf_field() !!}  
+                    <div class="form-group">
+                        <label class="in-form" for="exampleInputEmail1"  style="display:block;">Name of your shelter</label>
+                        <input type="text" name="shelterName" id="shelterName" class=" form-control" placeholder="shelterName" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="in-form" for="exampleInputEmail1"  style="display:block;">Address</label>
+                        <input type="text" name="Address" id="Address" class=" form-control" placeholder="Address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="in-form" for="exampleInputEmail1"  style="display:block;">Photo</label>
+                        {!! Form::file('picture',['id'=>'photo','class'=>'form-control']) !!}
+                    </div>
+		    
+		    <div class="form-group">
+                            <label class="in-form" for="exampleInputEmail1" style="display:block;">Domicile</label>
+                            <select class="form-control" name="domicile">
+                                <option value="" disabled selected>Select your domicile</option>
+                                <option value="1">Jakarta Utara</option>
+                                <option value="2">Jakarta Timur</option>
+                                <option value="3">Jakarta Pusat</option>
+                                <option value="4">Jakarta Barat</option>
+                                <option value="5">Jakarta Selatan</option>
+                                <option value="6">Bogor</option>
+                                <option value="7">Depok</option>
+                                <option value="8">Tangerang</option>
+                                <option value="9">Bekasi</option>
+                            </select>
+                        </div>
+                 
+                    <div class="form-group">
+                        <label class="in-form" for="exampleInputEmail1"  style="display:block;">Description</label>
+                        <textarea class="form-control" name="description" placeholder="Anything useful and related informations about your shelter"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    {!! Form::close() !!}
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+</div>
+
    <div class="row">
       <div class="col-md-10 col-md-offset-1">
-         <h3>Featured Pets :</h3>
+         <h3>Featured Shelter :</h3>
          <div class="col-xs-18 col-sm-6 col-md-4">
             <div class="thumbnail thumbnail-home">
                <img src="{{URL::to('/image/shelter1.jpg')}}" alt="">
