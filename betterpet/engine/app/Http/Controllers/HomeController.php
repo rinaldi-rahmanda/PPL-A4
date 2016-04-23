@@ -92,16 +92,16 @@ use CaptchaTrait;
             'content' => 'content must be filled'
         ]);
 	
-	if($this->captchaCheck() == false)
+	    if($this->captchaCheck() == false)
         {
             return redirect()->back()
                 ->withErrors(['Wrong Captcha'])
                 ->withInput();
         }
-        
         if($validator->fails()){
-            return redirect('/contact')
-                    ->withErrors($validator);
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
         }
         else{
             //insert the information to the database
