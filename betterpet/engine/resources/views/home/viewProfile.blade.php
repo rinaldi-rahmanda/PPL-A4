@@ -7,7 +7,6 @@
         height: 100%;
     }
 </style>
-
 <div class='container-fluid page-wrap'>
     <div class="row">
         <div class="col-md-offset-2 col-md-8 col-sm-8" style="background-color:white; min-height: 100%; margin-top:8%;">
@@ -97,6 +96,18 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class='row'>
+                            @foreach($adoptions as $adoption)
+                                <h4>{{$adoption->name}}</h4>
+                                <a href="{{URL::to('/adoption')}}/{{$adoption->id}}">View</a>
+                                <a href="{{URL::to('/adoption')}}/edit/{{$adoption->id}}">Edit</a>
+                                <form action="{{URL::to('/adoption')}}/delete/{{$adoption->id}}" method="POST">
+                                    {!! csrf_field() !!}
+                                    <button type="submit">delete</button>
+                                </form>
+                                <hr>
+                            @endforeach
                         </div>
                     </div>
 

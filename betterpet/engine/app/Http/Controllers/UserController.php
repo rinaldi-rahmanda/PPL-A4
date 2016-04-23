@@ -349,4 +349,23 @@ class UserController extends Controller
         $shelter->save();
         return 'success';
     }
+    public function editAdoption($id){
+        $user = Auth::user();
+        $user_id = $user->id;
+        $adoption = Adoption::find($id);
+        if($user_id==$adoption->user_id){
+            //the user is correct for the current adoption
+            return view('home.editAdoption',['adoption'=>$adoption]);
+        }
+        else{
+            return back();
+        }
+    }
+    public function deleteAdoption(Request $request,$id){
+        //remove the available requests pointing at the adoption first
+        DB::table('requests')->where('idAdopsi','=',$id)->delete();
+        $adoption = Adoption::find($id);
+        $adoption->delete();
+        return "deleted";
+    }
 }
