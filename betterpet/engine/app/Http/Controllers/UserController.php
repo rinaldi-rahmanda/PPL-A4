@@ -222,6 +222,7 @@ class UserController extends Controller
         $phone = $request->input('phone');
 		$desc = $request->input('description');
 		//cek foto
+        return $request->hasFile('picture').'a';
 		if($request->hasFile('picture'))
 		{
 			$file = $request->file('picture');

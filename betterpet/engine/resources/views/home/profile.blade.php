@@ -22,8 +22,9 @@
 			<img src="{{URL::to('/engine/storage/app/userimage').'/'.$avatar}}" width="200px" height="200px" alt="">	
 			@endif
             <div class="ava-caption">
-                Edit your avatar
-                <img src="image/pen.png" id="upfile1" style="cursor:pointer" width="20" height="20" style="float:right;"/>
+                Upload Avatar
+                <img src="image/pen.png" id="upfile1" style="cursor:pointer" width="20" height="20" style="float:right;"/><br>
+                (max 2MB)
             </div>
             <div>
                 <a style="color:white;text-decoration:none;" href="{{URL::to('/viewProfile')}}"><button class="button btn pro" style="width:200px;background:#337ab7;color:white;"> View Profile</button></a> 
@@ -33,7 +34,7 @@
 			{!! Form::open(array('url'=>'profile','class'=>'form-horizontal','method'=>'POST', 'files'=>true)) !!}
             <!--<form id="profile-form" class="form-horizontal" method="POST">-->
                 {!! csrf_field() !!}
-				{!! Form::file('picture',['style'=>'display:none','id'=>'file1']) !!}
+				{!! Form::file('picture',['style'=>'display:none','id'=>'file1','accept'=>'image/*']) !!}
 				<!--<input type="file" id="file1"  name="picture" style="display:none"/>-->
 				@if (count($errors) > 0)
 				<div class="form-group">

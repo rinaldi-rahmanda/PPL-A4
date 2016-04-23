@@ -276,5 +276,9 @@ body {
 }
 .img-adoption{
    height: 300px;
-   width: 300px;
+   width: 100%;
+}
+.shelter-adoption{
+    padding-left: 10px;
+    padding-right: 10px;
 }

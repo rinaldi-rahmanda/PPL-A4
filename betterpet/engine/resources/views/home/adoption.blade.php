@@ -126,8 +126,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="in-form" for="exampleInputEmail1"  style="display:block;">Photo</label>
-                        {!! Form::file('picture',['id'=>'photo','class'=>'form-control']) !!}
+                        <label class="in-form" for="exampleInputEmail1"  style="display:block;">Photo (2MB max)</label>
+                        {!! Form::file('picture',['id'=>'photo','class'=>'form-control','accept'=>'image/*']) !!}
                     </div>
                     <div class="form-group">
                         <label class="in-form" for="exampleInputEmail1"  style="display:block;">Sex</label>
@@ -157,7 +157,7 @@
 
         <div class="row adoption-section">
             @foreach ($adoptions as $adoption)
-            <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="shelter col-md-4 col-sm-6 col-xs-6">
                   <img class="img-responsive img-rounded img-adoption" width="300px" height="300px" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}">
                     <h3 class="text-center">{{$adoption->name}}</h3>
                     <p class="text-center"><a href="{{URL::to('/adoption')}}/{{$adoption->id}}" class="btn btn-primary" role="button">See the details</a></p>
