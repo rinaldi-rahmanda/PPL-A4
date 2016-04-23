@@ -69,9 +69,11 @@
                         <button type="submit" class="register-button btn btn-success">Search</button>
                     </div>
                     <hr>
+                    @if(Auth::check())
                     <button type="button" class="btn btn-primary register-button" data-toggle="modal" data-target="#myModal">
-        <span class="glyphicon glyphicon-edit"></span> Add New Adoption 
-    </button>
+                        <span class="glyphicon glyphicon-edit"></span> Add New Adoption 
+                    </button>
+                    @endif
                 </form>
             </div>
 

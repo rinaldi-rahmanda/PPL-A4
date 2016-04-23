@@ -42,18 +42,18 @@
             </div>
             <div class="form-group">
                <button type="submit" class="register-button btn btn-success">Search</button>
+               @if(Auth::check())
+               <button type="button" class="register-button btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    <span class="glyphicon glyphicon-edit"></span> Add New Shelter
+                </button>
+               @endif
             </div>
          </form>
       </div>
    </div>
    
 @if(Auth::check())
-<div class="col-md-3 col-md-offset-1">
-    <h4>Add new shelter post</h4>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        <span class="glyphicon glyphicon-edit"></span>  
-    </button>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -108,8 +108,7 @@
             </div>
         </div>
     </div>
-    @endif
-</div>
+@endif
 
    <div class="row">
       <div class="col-md-10 col-md-offset-1">
@@ -150,11 +149,6 @@
             </div>
          </div>
       </div>
-   </div>
-   <div class="row">
-       @foreach($shelters as $shelter)
-            
-       @endforeach
    </div>
 </div>
 @endsection
