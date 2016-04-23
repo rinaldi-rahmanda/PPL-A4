@@ -330,13 +330,13 @@ class UserController extends Controller
             ]);
             if($validator->fails())
                 return redirect('/shelter')->withErrors($validator);
-            $destinationPath = 'engine/sheleterimage';
+            $destinationPath = 'engine/shelterimage';
             $extension = $file->getClientOriginalExtension();
             $fileName = ($count+1).'.'.$extension;
             $file->move($destinationPath,$fileName);
-            $Shelter->picture = $fileName;
+            $shelter->picture = $fileName;
         }
-        $Shelter->save();
+        $shelter->save();
         return 'success';
     }
 }
