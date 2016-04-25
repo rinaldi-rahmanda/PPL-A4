@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Auth;
 use DB;
+use App\Shelter;
+use App\Adoption;
+use App\User;
 use Validator;
 use Session;
 
@@ -18,12 +21,10 @@ class AdminController extends Controller
 	}
 	public function index(){
 		//return the homepage of admin section
-		return view('admin.index');
-	}
-	public function newNews(){
-		//return view form of creating new news
-	}
-	public function saveNews(){
-		//save the new submitted news to database
+		$shelters = Shelter::all();
+		$adoptions = Adoption::all();
+		$users = User::all();
+		return view('admin.index',
+			['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users]);
 	}
 }

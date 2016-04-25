@@ -61,23 +61,21 @@
   <table class="table">
     <thead>
       <tr>
-        <th>#</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Age</th>
-        <th>City</th>
-        <th>Country</th>
+        <th>Nama</th>
+        <th>email</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
+      @foreach ($users as $user)
       <tr>
-        <td>1</td>
-        <td>Faiz</td>
-        <td>Adit</td>
-        <td>36</td>
-        <td>Papua</td>
-        <td>Indonesia</td>
+        <td>{{$user->name}}</td>
+        <td>{{$user->email}}</td>
+        <td>
+          <a href="{{URL::to('/profile/view')}}/{{$user->id}}"><button class="btn btn-primary btn-sm">View</button></a>
+        </td>
       </tr>
+      @endforeach
     </tbody>
   </table>
   </div>

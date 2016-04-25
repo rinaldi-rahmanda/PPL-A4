@@ -17,8 +17,13 @@
                 
             </div>
             <div class="col-md-offset-1 col-sm-offset-1 col-md-5 col-sm-5" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
-                <h1 >Hello, I am !</h1>
-                
+                @if($adoption)
+                <h1 >{{$adoption->name}}</h1>
+                @if($user && $user->id!=$adoption->id)
+                    <a href="{{URL::to('/adoption/request/')}}/{{$adoption->id}}">
+                    <button class="btn btn-primary btn-sm">Request to adopt!</button>
+                    </a>
+                @endif
                 <div class="panel panel-default">
                     <div class="panel-heading">About Me</div>
                     <div class="panel-body">
@@ -27,7 +32,10 @@
                         <P>Age</P>
                         
                     </div>
-                </div>      
+                </div>
+                @else
+                <h1>No Adoption Found</h1>
+                @endif
             </div>
         </div>      
     </div>

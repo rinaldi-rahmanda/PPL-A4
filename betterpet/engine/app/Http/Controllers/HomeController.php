@@ -68,12 +68,10 @@ use CaptchaTrait;
 		}
 	}
     public function adoptionInfo($id){
-		if(!$id){
-			return redirect('/news');
-		}
-		else{
-			return view('home.adoptionInfo');
-		}
+		$adoption = Adoption::find($id);
+        $user = Auth::user();
+        return view('home.adoptionInfo',['adoption'=>$adoption,'user'=>$user]);
+		
 	}
     public function contactPost(Request $request){
         $name = $request->name;
