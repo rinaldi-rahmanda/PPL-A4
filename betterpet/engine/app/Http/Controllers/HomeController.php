@@ -70,7 +70,10 @@ use CaptchaTrait;
     public function adoptionInfo($id){
 		$adoption = Adoption::find($id);
         $user = Auth::user();
-        return view('home.adoptionInfo',['adoption'=>$adoption,'user'=>$user]);
+        $request = DB::table('requests')
+            ->where('idAdopsi',$adoption->id)
+            ->where('idUser',$user->id)->get();
+        return view('home.adoptionInfo',['adoption'=>$adoption,'user'=>$user,'request'=>$request]);
 		
 	}
     public function contactPost(Request $request){

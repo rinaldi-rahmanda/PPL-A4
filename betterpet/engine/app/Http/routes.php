@@ -59,3 +59,5 @@ Route::post('/adoption/delete/{id}','UserController@deleteAdoption')->middleware
 Route::get('/adoption/edit/{id}','UserController@editAdoption')->middleware(['web','usermid']);
 Route::get('/adoption/mark/{id}','UserController@markDone')->middleware(['web','usermid']);
 Route::post('/shelter/new','UserController@newShelter')->middleware(['web','usermid']);
+Route::post('/adoption/request/{id}','UserController@requestAdoption')->middleware(['web','usermid']);
+Route::post('/adoption/request/cancel/{id}','UserController@cancelRequest')->middleware(['web','usermid']);

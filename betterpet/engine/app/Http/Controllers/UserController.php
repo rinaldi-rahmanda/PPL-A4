@@ -357,4 +357,20 @@ class UserController extends Controller
         $adoption->delete();
         return "deleted";
     }
+    public function requestAdoption(Request $request,$id){
+        $user = Auth::user();
+        $idUser = $user->id;
+        DB::table('requests')
+            ->insert(['idUser'=>$idUser,'idAdopsi'=>$id]);
+        return "success";
+    }
+    public function cancelRequest(Request $request,$id){
+        $user = Auth::user();
+        $idUser = $user->id;
+        DB::table('requests')
+            ->where('idUser',$idUser)
+            ->where('idAdopsi',$id)
+            ->delete();
+        return "success";
+    }
 }

@@ -20,9 +20,20 @@
                 @if($adoption)
                 <h1 >{{$adoption->name}}</h1>
                 @if($user && $user->id!=$adoption->id)
-                    <a href="{{URL::to('/adoption/request/')}}/{{$adoption->id}}">
-                    <button class="btn btn-primary btn-sm">Request to adopt!</button>
-                    </a>
+                    <form method="POST" action="{{URL::to('/adoption/request/')}}/{{$adoption->id}}">
+                        {!! csrf_field() !!}
+                        @if($request)
+                        <button type="submit" disabled class="btn btn-primary btn-sm">Request already sent</button>
+                        @else
+                        <button type="submit" class="btn btn-primary btn-sm">Request to adopt!</button>
+                        @endif
+                    </form>
+                    <form method="POST" action="{{URL::to('/adoption/request/cancel')}}/{{$adoption->id}}">
+                        {!! csrf_field() !!}
+                        @if($request)
+                        <button type="submit" class="btn btn-danger btn-sm">Cancel Request</button>
+                        @endif
+                    </form>
                 @endif
                 <div class="panel panel-default">
                     <div class="panel-heading">About Me</div>
