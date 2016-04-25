@@ -20,6 +20,7 @@
                 @if($adoption)
                 <h1>{{$adoption->name}}</h1>
                 <h4>Owner: <a href="{{URL::to('/profile/view')}}/{{$adoptionOwner->id}}">{{$adoptionOwner->name}}</a></h4>
+                <h5>Requested by {{$count}}</h5>
                 @if($user && $user->id!=$adoption->id)
                     <form method="POST" action="{{URL::to('/adoption/request/')}}/{{$adoption->id}}">
                         {!! csrf_field() !!}

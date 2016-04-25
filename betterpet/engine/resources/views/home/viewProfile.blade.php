@@ -38,12 +38,13 @@
                         </div>      
                     </div>
                     <div class="tab-pane" id="adoptions">
-                        <h3 style="margin-top:8%;">My adoption posts</h3>
+                        <h3 style="margin-top:8%;">Adoptions owned</h3>
                         <div class="row">
+                            @if($check==1)
                             <h5>Add new adoption post <button style="margin-left:3%;" type="button" data-toggle="modal" data-target="#myModal">
                                 <span class="glyphicon glyphicon-edit"></span>  
-                                </button></h5>
-
+                                </button>
+                            </h5>
                             <!-- Modal -->
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
@@ -98,16 +99,19 @@
                                     </div>
                                 </div>
                             </div>
+                            @endif
                         </div>
                         <div class='row'>
                             @foreach($adoptions as $adoption)
                                 <h4>{{$adoption->name}}</h4>
                                 <a href="{{URL::to('/adoption')}}/{{$adoption->id}}">View</a>
+                                @if($check==1)
                                 <a href="{{URL::to('/adoption')}}/edit/{{$adoption->id}}">Edit</a>
                                 <form action="{{URL::to('/adoption')}}/delete/{{$adoption->id}}" method="POST">
                                     {!! csrf_field() !!}
                                     <button type="submit">delete</button>
                                 </form>
+                                @endif
                                 <hr>
                             @endforeach
                         </div>

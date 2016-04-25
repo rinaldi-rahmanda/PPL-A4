@@ -26,7 +26,7 @@
                 <form method="POST">
                     {!! csrf_field() !!}
                     <div class="form-group">
-                        <input type="text" name="email" class="register-form form-control" placeholder="Email" required autofocus>
+                        <input type="text" name="email" class="register-form form-control" placeholder="Email" required  value="{{old('email')}}"autofocus>
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" id="password" class="register-form form-control" placeholder="Password" required>
@@ -39,14 +39,14 @@
                         <p id="passwordconfirmation"></p>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="name" class="register-form form-control" placeholder="Your Name ex: John Doe" required>
+                        <input value="{{old('name')}}" type="text" name="name" class="register-form form-control" placeholder="Your Name ex: John Doe" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="phone" class="register-form form-control" placeholder="Phone Number ex: 081234567" required>
+                        <input type="text" value="{{old('phone')}}" name="phone" class="register-form form-control" placeholder="Phone Number ex: 081234567" required>
                     </div>
                     <div class="form-group">
 
-                        <select class="register-form form-control" name="domicile">
+                        <select class="register-form form-control" required name="domicile">
                             <option value="" disabled selected>Select your domicile</option>
                             <option value="1">Jakarta Utara</option>
                             <option value="2">Jakarta Timur</option>

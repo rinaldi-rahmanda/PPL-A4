@@ -72,11 +72,12 @@ use CaptchaTrait;
         $user = Auth::user();
         $request = DB::table('requests')
             ->where('idAdopsi',$adoption->id);
+        $count = $request->count();
         if($user)
             $request = $request->where('idUser',$user->id)->get();
         $adoptionOwner = User::where('id',$adoption->user_id)->first();
         return view('home.adoptionInfo',['adoption'=>$adoption,'user'=>$user,
-            'request'=>$request,'adoptionOwner'=>$adoptionOwner]);
+            'request'=>$request,'adoptionOwner'=>$adoptionOwner,'count'=>$count]);
 		
 	}
     public function contactPost(Request $request){

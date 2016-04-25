@@ -96,7 +96,8 @@ class UserController extends Controller
         ]);
         if ($validator->fails()) {
             return redirect('/register')
-                    ->withErrors($validator);
+                    ->withErrors($validator)
+                    ->withInput($request->except(['password','passwordconfirm']));
         }
 	
 	if($this->captchaCheck() == false)
