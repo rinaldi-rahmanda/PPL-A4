@@ -42,13 +42,13 @@
     				<form method="POST">
                     {!! csrf_field() !!}
                     <div class="form-group">
-					<input type="text" class="register-form form-control" name="name" placeholder="Your Name (20 character maximum)" required></div>
+					<input type="text" class="register-form form-control" name="name" placeholder="Your Name (20 character maximum)" value="{{old('name')}}" required></div>
 					<div class="form-group">
-					<input type="text" class="register-form form-control" name="email" placeholder="Your Email Address" required></div>
+					<input type="text" class="register-form form-control" name="email" placeholder="Your Email Address" required value="{{old('email')}}"></div>
 					<div class="form-group">
-					<input type="text" class="register-form form-control" name="title" placeholder="Title" required></div>
+					<input type="text" class="register-form form-control" name="title" value="{{old('title')}}" placeholder="Title" required></div>
 					<div class="form-group">
-					<textarea name="content" class="register-form form-control" placeholder="What are you wondering?" required></textarea></div>
+					<textarea name="content" class="register-form form-control" placeholder="What are you wondering?" required>{{old('content')}}</textarea></div>
 					<div class="form-group">
 					
 					    <div class="g-recaptcha" data-sitekey="6LcFFR0TAAAAAPQzHzv5P_PgB00WTI_I-GaFxE_P"></div>

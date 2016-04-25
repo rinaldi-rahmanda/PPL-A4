@@ -47,20 +47,20 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/admin','AdminController@index');
     Route::get('/admin/news/new','AdminController@newNews');
     Route::post('/admin/news/new','AdminController@saveNews');
+    Route::get('/shelter/{id}','HomeController@shelterInfo');
+    Route::get('/profile/view/{id}','HomeController@viewProfile');
 });
 Route::group(['middleware'=>['web','usermid']],function(){
-
+    Route::get('/profile','UserController@showProfile')->middleware(['web','usermid']);
+    Route::post('/profile','UserController@editProfile')->middleware(['web','usermid']);
+    Route::post('/adoption/new','UserController@newAdoption')->middleware(['web','usermid']);
+    Route::get('/list','UserController@listAdoptions')->middleware(['web','usermid']);
+    Route::get('/adoption/create','UserController@createAdoption')->middleware(['web','usermid']);
+    Route::post('/adoption/create','UserController@saveAdoption')->middleware(['web','usermid']);
+    Route::post('/adoption/delete/{id}','UserController@deleteAdoption')->middleware(['web','usermid']);
+    Route::get('/adoption/edit/{id}','UserController@editAdoption')->middleware(['web','usermid']);
+    Route::get('/adoption/mark/{id}','UserController@markDone')->middleware(['web','usermid']);
+    Route::post('/shelter/new','UserController@newShelter')->middleware(['web','usermid']);
+    Route::post('/adoption/request/{id}','UserController@requestAdoption')->middleware(['web','usermid']);
+    Route::post('/adoption/request/cancel/{id}','UserController@cancelRequest')->middleware(['web','usermid']);
 });
-Route::get('/profile/view/{id}','HomeController@viewProfile')->middleware(['web','usermid']);
-Route::get('/profile','UserController@showProfile')->middleware(['web','usermid']);
-Route::post('/profile','UserController@editProfile')->middleware(['web','usermid']);
-Route::post('/adoption/new','UserController@newAdoption')->middleware(['web','usermid']);
-Route::get('/list','UserController@listAdoptions')->middleware(['web','usermid']);
-Route::get('/adoption/create','UserController@createAdoption')->middleware(['web','usermid']);
-Route::post('/adoption/create','UserController@saveAdoption')->middleware(['web','usermid']);
-Route::post('/adoption/delete/{id}','UserController@deleteAdoption')->middleware(['web','usermid']);
-Route::get('/adoption/edit/{id}','UserController@editAdoption')->middleware(['web','usermid']);
-Route::get('/adoption/mark/{id}','UserController@markDone')->middleware(['web','usermid']);
-Route::post('/shelter/new','UserController@newShelter')->middleware(['web','usermid']);
-Route::post('/adoption/request/{id}','UserController@requestAdoption')->middleware(['web','usermid']);
-Route::post('/adoption/request/cancel/{id}','UserController@cancelRequest')->middleware(['web','usermid']);

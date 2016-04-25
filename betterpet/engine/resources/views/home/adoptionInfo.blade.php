@@ -18,7 +18,8 @@
             </div>
             <div class="col-md-offset-1 col-sm-offset-1 col-md-5 col-sm-5" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
                 @if($adoption)
-                <h1 >{{$adoption->name}}</h1>
+                <h1>{{$adoption->name}}</h1>
+                <h4>Owner: <a href="{{URL::to('/profile/view')}}/{{$adoptionOwner->id}}">{{$adoptionOwner->name}}</a></h4>
                 @if($user && $user->id!=$adoption->id)
                     <form method="POST" action="{{URL::to('/adoption/request/')}}/{{$adoption->id}}">
                         {!! csrf_field() !!}

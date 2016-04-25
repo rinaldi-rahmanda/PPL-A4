@@ -154,7 +154,7 @@
             @foreach ($shelters as $shelter)
             <div class="shelter-adoption col-md-4 col-sm-6 col-xs-6">
                   <img class="img-responsive img-rounded img-adoption" width="300px" height="300px" src="{{URL::to('/engine/storage/app/shelterimage')}}/{{$shelter->picture}}">
-                    <h3 class="text-center">{{$shelter->name}}</h3>
+                    <h3 class="text-center">{{$shelter->shelterName}}</h3>
                     <p class="text-center"><a href="{{URL::to('/shelter')}}/{{$shelter->id}}" class="btn btn-primary" role="button">See the details</a></p>
                   </div>
             @endforeach
