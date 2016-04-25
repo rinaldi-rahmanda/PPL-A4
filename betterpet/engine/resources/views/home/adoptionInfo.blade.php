@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-offset-2 col-md-8 col-sm-8" style="background-color:white; min-height: 100%; margin-top:8%;">
             <div class="col-md-2 col-sm-2" style="margin-top:5%;margin-bottom:2%;padding-left:3%;">
-                <img src="http://placehold.it/200x200" alt="">
+                <img class="img-rounded" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}" width="200px" height="200px" alt="">
                 
                 
             </div>
@@ -38,10 +38,10 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">About Me</div>
                     <div class="panel-body">
-                       <p>Breed</p>
-                        <p>Sex</p>
-                        <P>Age</P>
-                        
+                       <p>Breed: {{$adoption->breed}}</p>
+                        <p>Sex: {{$adoption->sex}}</p>
+                        <P>Age: {{$adoption->age}}</P>
+                        <p>Description: {{$adoption->description}}</p>
                     </div>
                 </div>
                 @else

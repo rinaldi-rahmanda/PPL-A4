@@ -48,6 +48,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/admin/news/new','AdminController@newNews');
     Route::post('/admin/news/new','AdminController@saveNews');
 });
+Route::group(['middleware'=>['web','usermid']],function(){
+
+});
 Route::get('/profile/view/{id}','HomeController@viewProfile')->middleware(['web','usermid']);
 Route::get('/profile','UserController@showProfile')->middleware(['web','usermid']);
 Route::post('/profile','UserController@editProfile')->middleware(['web','usermid']);

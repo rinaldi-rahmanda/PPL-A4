@@ -71,8 +71,9 @@ use CaptchaTrait;
 		$adoption = Adoption::find($id);
         $user = Auth::user();
         $request = DB::table('requests')
-            ->where('idAdopsi',$adoption->id)
-            ->where('idUser',$user->id)->get();
+            ->where('idAdopsi',$adoption->id);
+        if($user)
+            $request = $request->where('idUser',$user->id)->get();
         return view('home.adoptionInfo',['adoption'=>$adoption,'user'=>$user,'request'=>$request]);
 		
 	}
