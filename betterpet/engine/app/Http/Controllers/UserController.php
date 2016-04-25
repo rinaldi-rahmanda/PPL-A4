@@ -268,7 +268,7 @@ class UserController extends Controller
             ->where('user_id',$userId)
             ->where('id',$id)
             ->update(['done'=>1]);
-        return redirect('/adoption/create')->with('success','Adoption marked as done!');
+        return "success";
     }
     public function newAdoption(Request $request){
         $name = $request->input('name');
@@ -294,7 +294,8 @@ class UserController extends Controller
                 'file' => 'image|max:2000',
             ]);
             if($validator->fails())
-                return redirect('/adoption')->withErrors($validator);
+                return redirect()->back()
+                ->withErrors($validator);
             $extension = $file->getClientOriginalExtension();
             $fileName = ($count+1).'.'.$extension;
             Storage::put('adoptionimage/'.$fileName,
@@ -326,7 +327,7 @@ class UserController extends Controller
                 'file' => 'image|max:2000',
             ]);
             if($validator->fails())
-                return redirect('/shelter')->withErrors($validator);
+                return redirect()->back()->withErrors($validator);
             $destinationPath = 'engine/shelterimage';
             $extension = $file->getClientOriginalExtension();
             $fileName = ($count+1).'.'.$extension;

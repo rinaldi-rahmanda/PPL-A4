@@ -21,7 +21,10 @@
                 <h1>{{$adoption->name}}</h1>
                 <h4>Owner: <a href="{{URL::to('/profile/view')}}/{{$adoptionOwner->id}}">{{$adoptionOwner->name}}</a></h4>
                 <h5>Requested by {{$count}}</h5>
-                @if($user && $user->id!=$adoption->id)
+                @if($user && $user->id==$adoption->user_id)
+                <a href="{{URL::to('/adoption')}}/mark/{{$adoption->id}}" class="btn btn-sm btn-success">Mark as Done</a>
+                @endif
+                @if($user && $user->id!=$adoption->user_id)
                         
                         @if($request)
                         <button type="submit" disabled class="btn btn-primary btn-sm">Request already sent</button>
@@ -45,6 +48,17 @@
                         <p>Description: {{$adoption->description}}</p>
                     </div>
                 </div>
+                <!--<ul>
+                Requesting Users:
+                <form method="POST" action="{{URL::to('/approve/')}}/{{$adoption->id}}">
+                <select class="form-control" name="approved_user" required >
+                @foreach($requests as $personR)
+                    <option value="{{$personR->id}}">{{$personR->name}}</option>
+                @endforeach
+                </select>
+                <input value="Approve" type="submit" class="form-control btn btn-sm btn-primary">
+                </form>
+                </ul>-->
                 @else
                 <h1>No Adoption Found</h1>
                 @endif
