@@ -22,20 +22,19 @@
                 <h4>Owner: <a href="{{URL::to('/profile/view')}}/{{$adoptionOwner->id}}">{{$adoptionOwner->name}}</a></h4>
                 <h5>Requested by {{$count}}</h5>
                 @if($user && $user->id!=$adoption->id)
-                    <form method="POST" action="{{URL::to('/adoption/request/')}}/{{$adoption->id}}">
-                        {!! csrf_field() !!}
+                        
                         @if($request)
                         <button type="submit" disabled class="btn btn-primary btn-sm">Request already sent</button>
+                        <form method="POST" action="{{URL::to('/adoption/request/cancel/')}}/{{$adoption->id}}">
+                            {!! csrf_field() !!}
+                            <button type="submit" class="btn btn-danger btn-sm">cancel request</button>
+                        </form>
                         @else
-                        <button type="submit" class="btn btn-primary btn-sm">Request to adopt!</button>
+                        <form method="POST" action="{{URL::to('/adoption/request/')}}/{{$adoption->id}}">
+                            {!! csrf_field() !!}
+                            <button type="submit" class="btn btn-primary btn-sm">Request to adopt!</button>
+                        </form>
                         @endif
-                    </form>
-                    <form method="POST" action="{{URL::to('/adoption/request/cancel')}}/{{$adoption->id}}">
-                        {!! csrf_field() !!}
-                        @if($request)
-                        <button type="submit" class="btn btn-danger btn-sm">Cancel Request</button>
-                        @endif
-                    </form>
                 @endif
                 <div class="panel panel-default">
                     <div class="panel-heading">About Me</div>
