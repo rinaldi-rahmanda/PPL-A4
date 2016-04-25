@@ -27,7 +27,7 @@
                 (max 2MB)
             </div>
             <div>
-                <a style="color:white;text-decoration:none;" href="{{URL::to('/viewProfile')}}"><button class="button btn pro" style="width:200px;background:#337ab7;color:white;"> View Profile</button></a> 
+                <a style="color:white;text-decoration:none;" href="{{URL::to('/profile/view')}}/{{$user->id}}"><button class="button btn pro" style="width:200px;background:#337ab7;color:white;"> View Profile</button></a> 
             </div>
         </div>      
         <div class="col-md-offset-1 col-md-5 col-xs-6">

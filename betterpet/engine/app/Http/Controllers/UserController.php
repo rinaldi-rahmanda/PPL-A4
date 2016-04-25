@@ -192,25 +192,6 @@ class UserController extends Controller
             return view('home.profile',['user'=>$user,'avatar'=>$avatar,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone]);
     }
     
-    public function viewProfile(){
-            //ambil segala data user
-            $user = Auth::user();
-            $id = $user->id;
-            $idDom = $user->domicile;
-			$name = $user->name;
-			$phone = $user->phone;
-			$address = $user->address;
-			$desc = $user->description;
-            $domicile = DB::table('domicile')->select('location')->where('id',$idDom)->first();
-            if( $idDom == 0 ){
-                //belum set domisili
-                $domicile = "None";
-            }
-            else
-                $domicile = $domicile->location;
-            $adoptions = Adoption::where('user_id','=',$id)->get();
-            return view('home.viewProfile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone,'adoptions'=>$adoptions]);
-    }
 	public function editProfile(Request $request){
 		$user = Auth::user();
         $user = $user->id;
@@ -222,7 +203,6 @@ class UserController extends Controller
         $phone = $request->input('phone');
 		$desc = $request->input('description');
 		//cek foto
-        return $request->hasFile('picture').'a';
 		if($request->hasFile('picture'))
 		{
 			$file = $request->file('picture');

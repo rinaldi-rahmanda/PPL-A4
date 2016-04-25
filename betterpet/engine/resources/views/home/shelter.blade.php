@@ -18,7 +18,7 @@
             <div class="form-inline">
                <div class="form-group">
                   <label class="in-form" for="exampleInputEmail1" style="display:block;">Domicile</label>
-                  <select class="form-control" name="domicile">
+                  <select required class="form-control" name="domicile">
                      <option value="" disabled selected>Select your domicile</option>
                      <option value="1">Jakarta Utara</option>
                      <option value="2">Jakarta Timur</option>
@@ -81,7 +81,7 @@
 		    
 		    <div class="form-group">
                             <label class="in-form" for="exampleInputEmail1" style="display:block;">Domicile</label>
-                            <select class="form-control" name="domicile">
+                            <select class="form-control" required name="domicile">
                                 <option value="" disabled selected>Select your domicile</option>
                                 <option value="1">Jakarta Utara</option>
                                 <option value="2">Jakarta Timur</option>

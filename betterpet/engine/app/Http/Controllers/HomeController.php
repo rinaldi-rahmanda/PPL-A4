@@ -11,6 +11,7 @@ use Validator;
 use Session;
 use App\Adoption;
 use App\Shelter;
+use App\User;
 
 use App\Traits\CaptchaTrait;
 class HomeController extends Controller
@@ -122,6 +123,8 @@ use CaptchaTrait;
 		$age = $request->input('age');
 		$sex = $request->input('sex');
         $results = Adoption::where('domicile',$domicile);
+        if($breed)
+            $results = $results->where('breed','like','%'.$breed.'%');
 		if($type!='1'){
 			if($type=='2'){
 				//isCat
@@ -133,7 +136,6 @@ use CaptchaTrait;
 				//1 for dog
 			}
 			$results = $results
-                ->where('breed','like','%'.$breed.'%')
 				->where('type',$type);
 		}
 		if($age!='1'){
@@ -143,25 +145,36 @@ use CaptchaTrait;
 			$results = $results->where('sex',$sex);
 		}
 		$adoptions = $results->get();
-        return $adoptions;
 		return view('home.adoption',['adoptions'=>$adoptions]);
 	}
-	
+	public function viewProfile($id){
+        $user = User::find($id);
+        $idDom = $user->domicile;
+        $name = $user->name;
+        $phone = $user->phone;
+        $address = $user->address;
+        $desc = $user->description;
+        $domicile = DB::table('domicile')->select('location')->where('id',$idDom)->first();
+        if( $idDom == 0 ){
+            //belum set domisili
+            $domicile = "None";
+        }
+        else
+            $domicile = $domicile->location;
+        $adoptions = Adoption::where('user_id','=',$id)->get();
+        return view('home.viewProfile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone,'adoptions'=>$adoptions]);
+    }
 	public function searchShelter(Request $request){
 		$domicile = $request->input('domicile');
 		//input can be 1,which is any type
 		$name = $request->input('name');
 		$address = $request->input('address');
-		
-		
-		$results = Shelter::where('domicile',$domicile)
-				->where('address','like','%'.$address.'%')
-				->where('sheltername','like','%'.$name.'%');
-				
-		
-		
+		$results = Shelter::where('domicile',$domicile);
+        if($name)
+            $results = $results->where('shelterName','like','%'.$name.'%');
+		if($address)
+		  $results = $results->where('address','like','%'.$address.'%');
 		$shelter = $results->get();
-		return view('home.shelter',['shelters'=>$shelter]);
-		
+		return view('home.shelter',['shelters'=>$shelter]);	
 	}
 }
