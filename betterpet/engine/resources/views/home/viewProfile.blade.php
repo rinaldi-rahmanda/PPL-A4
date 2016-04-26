@@ -11,7 +11,11 @@
     <div class="row">
         <div class="col-md-offset-2 col-md-8 col-sm-8" style="background-color:white; min-height: 100%; margin-top:8%;">
             <div class="col-md-2 col-sm-2" style="margin-top:5%;margin-bottom:2%;padding-left:3%;">
+                @if($user->avatar=="")
                 <img src="http://placehold.it/200x200" alt="">
+                @else
+                <img width="200px" height="200px" src="{{URL::to('/engine/storage/app/userimage')}}/{{$user->avatar}}">
+                @endif
                 @if($check==1)
                 <div>
                     <a style="color:white;text-decoration:none;" href="{{URL::to('/profile')}}"><button class="button btn pro" style="width:200px;margin-top:5%;background:#337ab7;color:white;"> Edit Profile</button></a> 
