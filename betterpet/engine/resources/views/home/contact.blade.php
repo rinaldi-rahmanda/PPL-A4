@@ -18,9 +18,7 @@
 				                <li>{{ $error }}</li>
 				            @endforeach
 				        </ul>
-				    </div>
-				    
-				    
+				    </div>  
 				@endif
 				
 				<div id="flash-msg" class="center-block"
