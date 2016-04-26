@@ -75,7 +75,10 @@ use CaptchaTrait;
         $count = $requests->count();
         if($user)
             $request = $requests->where('idUser',$user->id)->get();
+        else
+            $request = "";
         $adoptionOwner = User::where('id',$adoption->user_id)->first();
+
         $requests = DB::table('requests')
             ->join('users','requests.idUser','=','users.id')
             ->where('idAdopsi',$adoption->id)
