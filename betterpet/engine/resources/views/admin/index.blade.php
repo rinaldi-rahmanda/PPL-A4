@@ -106,17 +106,17 @@
                </div>
                <div class="form-group">
                   <label class="in-form" for="photo"  style="display:block;">Photo</label>
-                  {!! Form::file('picture',['id'=>'photo','class'=>'form-control']) !!}
+                  {!! Form::file('newsimage',['id'=>'photo','class'=>'form-control']) !!}
                </div>
                <div class="form-group">
                   <label class="in-form" for="content"  style="display:block;">Content</label>
-                  <textarea class="form-control" name="content" id="content" placeholder="Lorem ipsum dolor sit amet"></textarea>
+                  <textarea class="form-control" name="content" id="content" placeholder="Lorem ipsum dolor sit amet" required></textarea>
                </div>
             </div>
             <div class="form-group">
-               <button type="submit" class="register-button btn btn-success">Search</button>
+               <button type="submit" class="btn btn-success">Search</button>
             </div>
-         </form>
+          {!! Form::close() !!}
   </div>
 
 </body>
