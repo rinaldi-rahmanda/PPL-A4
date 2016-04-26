@@ -107,7 +107,7 @@
             <div class="form-group">
                 <label for="inputPhone" class="col-sm-3 control-label">Phone number</label>
                 <div class="col-sm-9">
-                    <input type="text" class="register-form profile-form form-control" name="phone" value="{{$phone}}">
+                    <input required type="text" class="register-form profile-form form-control" name="phone" value="{{$phone}}">
                 </div>
             </div>
             <div class="form-group">

@@ -24,7 +24,11 @@
             </div>
             <div class="col-md-offset-1 col-sm-offset-1 col-md-5 col-sm-5" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
                 <h1 >Hello, I am {{ $user->name }}!</h1>
-                <ul style="padding: 0;"><li style="display:inline;">{{ $domicile }}</li><li style="display:inline;padding-left:10px;">&#8226 Member since {{$user->created_at->format('d/m/y')}}</li></ul>
+                <ul style="padding: 0;">
+                    <li style="display:inline;">{{$user->phone}}</li>
+                    <li style="display:inline;">&#8226 {{ $domicile }}</li>
+                    <li style="display:inline;padding-left:10px;">&#8226 Member since {{$user->created_at->format('d/m/y')}}</li>
+                </ul>
 
                 <ul class="nav nav-tabs" id="myTab">
                     <li class="active"><a data-target="#home" data-toggle="tab" >Profile</a></li>

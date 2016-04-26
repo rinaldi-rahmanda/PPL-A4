@@ -22,6 +22,11 @@
                 <h4>Owner: <a href="{{URL::to('/profile/view')}}/{{$adoptionOwner->id}}">{{$adoptionOwner->name}}</a></h4>
                 <h5>Requested by {{$count}}</h5>
                 @if($user && $user->id==$adoption->user_id)
+                <ul>
+                    @foreach($requests as $personR)
+                    <li><a href="{{URL::to('/profile/view')}}/{{$personR->id}}">{{$personR->name}}</a></li>
+                    @endforeach
+                </ul>
                 <a href="{{URL::to('/adoption')}}/mark/{{$adoption->id}}" class="btn btn-sm btn-success">Mark as Done</a>
                 @endif
                 @if($user && $user->id!=$adoption->user_id)
