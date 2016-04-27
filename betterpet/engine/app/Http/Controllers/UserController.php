@@ -351,17 +351,43 @@ class UserController extends Controller
         $shelter->save();
         return redirect()->back();
     }
-    public function editAdoption($id){
+    public function editAdoption(Request $request,$id){
+        $name = $request->input('name');
+        $breed = $request->input('breed');
+        $age = $request->input('age');
+        $sex = $request->input('sex');
+        $desc = $request->input('description');
         $user = Auth::user();
-        $user_id = $user->id;
+        $userId = $user->id;
         $adoption = Adoption::find($id);
-        if($user_id==$adoption->user_id){
-            //the user is correct for the current adoption
-            return view('home.editAdoption',['adoption'=>$adoption]);
+        $adoption->name = $name;
+        $adoption->breed = $breed;
+        $adoption->sex = $sex;
+        $adoption->description = $desc;
+        $adoption->age = $age;
+        $adoption->user_id = $userId;
+        $count = Adoption::all();
+        $count = $count->count();
+        if($request->hasFile('picture'))
+        {
+            $file = $request->file('picture');
+            $validator = Validator::make(array('file'=>$file),[
+                'file' => 'image|max:2000',
+            ]);
+            if($validator->fails())
+                return redirect()->back()
+                ->withErrors($validator);
+            $extension = $file->getClientOriginalExtension();
+            $fileName = ($count+1).'.'.$extension;
+            Storage::put('adoptionimage/'.$fileName,
+                file_get_contents($file->getRealPath()));
+            //$file->move($destinationPath,$fileName);
+            $adoption->picture = $fileName;
         }
-        else{
-            return redirect()->back();
-        }
+        $adoption->save();
+        return redirect()->back();
+
+       
     }
     public function deleteAdoption(Request $request,$id){
         //remove the available requests pointing at the adoption first

@@ -58,7 +58,7 @@ Route::group(['middleware'=>['web','usermid']],function(){
     Route::get('/adoption/create','UserController@createAdoption')->middleware(['web','usermid']);
     Route::post('/adoption/create','UserController@saveAdoption')->middleware(['web','usermid']);
     Route::post('/adoption/delete/{id}','UserController@deleteAdoption')->middleware(['web','usermid']);
-    Route::get('/adoption/edit/{id}','UserController@editAdoption')->middleware(['web','usermid']);
+    Route::post('/adoption/edit/{id}','UserController@editAdoption')->middleware(['web','usermid']);
     Route::get('/adoption/mark/{id}','UserController@markDone')->middleware(['web','usermid']);
     Route::get('/adoption/unmark/{id}','UserController@unmarkDone');
     Route::post('/shelter/new','UserController@newShelter')->middleware(['web','usermid']);
