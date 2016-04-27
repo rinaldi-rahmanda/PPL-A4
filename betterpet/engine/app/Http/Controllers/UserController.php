@@ -257,18 +257,30 @@ class UserController extends Controller
             $adoption = new Adoption();
             //buat adopsi baru
     }
-    public function listAdoptions(){
-        return 'haha';
-    }
     public function markDone($id){
         //menandai bahwa adopsi untuk adoption pada suatu user sudah "done"
         $user = Auth::user();
         $userId = $user->id;
+        $ad = Adoption::find($id);
+        if($ad->user_id!=$userId)
+            return redirect()->back()->withErrors("You're not authorized to do this");
         $adoption = DB::table('adoptions')
             ->where('user_id',$userId)
             ->where('id',$id)
             ->update(['done'=>1]);
-        return "success";
+        return redirect()->back();
+    }
+    public function unmarkDone($id){
+        $user = Auth::user();
+        $userId = $user->id;
+        $ad = Adoption::find($id);
+        if($ad->user_id!=$userId)
+            return redirect()->back()->withErrors("You're not authorized to do this");
+        $adoption = DB::table('adoptions')
+            ->where('user_id',$userId)
+            ->where('id',$id)
+            ->update(['done'=>0]);
+        return redirect()->back();
     }
     public function newAdoption(Request $request){
         $name = $request->input('name');
@@ -304,7 +316,7 @@ class UserController extends Controller
             $adoption->picture = $fileName;
         }
         $adoption->save();
-        return 'success';
+        return redirect()->back();
     }
     public function newShelter(Request $request){
         $name = $request->input('shelterName');
@@ -337,7 +349,7 @@ class UserController extends Controller
             $shelter->picture = $fileName;
         }
         $shelter->save();
-        return 'success';
+        return redirect()->back();
     }
     public function editAdoption($id){
         $user = Auth::user();
@@ -348,7 +360,7 @@ class UserController extends Controller
             return view('home.editAdoption',['adoption'=>$adoption]);
         }
         else{
-            return back();
+            return redirect()->back();
         }
     }
     public function deleteAdoption(Request $request,$id){
@@ -357,14 +369,14 @@ class UserController extends Controller
         $adoption = Adoption::find($id);
         Storage::delete('adoptionimage/'.$adoption->picture);
         $adoption->delete();
-        return "deleted";
+        return redirect()->back();
     }
     public function requestAdoption(Request $request,$id){
         $user = Auth::user();
         $idUser = $user->id;
         DB::table('requests')
             ->insert(['idUser'=>$idUser,'idAdopsi'=>$id]);
-        return "success";
+        return redirect()->back();
     }
     public function cancelRequest(Request $request,$id){
         $user = Auth::user();
@@ -373,6 +385,6 @@ class UserController extends Controller
             ->where('idUser',$idUser)
             ->where('idAdopsi',$id)
             ->delete();
-        return "success";
+        return redirect()->back();
     }
 }
