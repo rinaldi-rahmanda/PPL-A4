@@ -19,6 +19,11 @@
             <div class="col-md-offset-1 col-sm-offset-1 col-md-5 col-sm-5" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
                 @if($adoption)
                 <h1>{{$adoption->name}}</h1>
+                 @if($adoption->done=='1')
+                <div class="alert alert-warning" role="alert">
+                  This adoption is already sold
+                </div>
+                @endif
                 <h4>Owner: <a href="{{URL::to('/profile/view')}}/{{$adoptionOwner->id}}">{{$adoptionOwner->name}}</a></h4>
                 <h5>Requested by {{$count}}</h5>
                 @if($user && $user->id==$adoption->user_id)
@@ -29,8 +34,7 @@
                 </ul>
                 <a href="{{URL::to('/adoption')}}/mark/{{$adoption->id}}" class="btn btn-sm btn-success">Mark as Done</a>
                 @endif
-                @if($user && $user->id!=$adoption->user_id)
-                        
+                @if($user && $user->id!=$adoption->user_id && $adoption->done=='0')
                         @if($request)
                         <button type="submit" disabled class="btn btn-primary btn-sm">Request already sent</button>
                         <form method="POST" action="{{URL::to('/adoption/request/cancel/')}}/{{$adoption->id}}">
