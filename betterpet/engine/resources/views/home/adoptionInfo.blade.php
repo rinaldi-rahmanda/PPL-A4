@@ -100,8 +100,11 @@
                 </div>
                 @endif
                 <h4>Owner: <a href="{{URL::to('/profile/view')}}/{{$adoptionOwner->id}}">{{$adoptionOwner->name}}</a></h4>
-                <h5>Requested by {{$count}}</h5>
+                @if(!Auth::check())
+                <h5><i>Want to adopt a pet ? Login <a href="{{URL::to('/login')}}">here</a></i></h5>
+                @endif
                 @if($user && $user->id==$adoption->user_id)
+                <h5>Requested by {{$count}}</h5>
                 <ul>
                     @foreach($requests as $personR)
                     <li><a href="{{URL::to('/profile/view')}}/{{$personR->id}}">{{$personR->name}}</a></li>
