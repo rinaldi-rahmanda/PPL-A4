@@ -84,6 +84,22 @@ use CaptchaTrait;
             ->where('idAdopsi',$adoption->id)
             ->select('users.name','users.id');
         $requests = $requests->get();
+        if($adoption->sex=='2'){
+            $adoption->sex = 'female';
+        }
+        else{
+            $adoption->sex = 'male';
+        }
+        if($adoption->age=='2')
+            $adoption->age = '0-6 months';
+        if($adoption->age=='3')
+            $adoption->age = '6-12 months';
+        if($adoption->age=='4')
+            $adoption->age = '12-18 months';
+        if($adoption->age=='5')
+            $adoption->age = 'More than 2 years';
+        if($adoption->age=='6')
+            $adoption->age = 'More than 3 years';  
         return view('home.adoptionInfo',['adoption'=>$adoption,'user'=>$user,
             'request'=>$request,'requests'=>$requests,'adoptionOwner'=>$adoptionOwner,'count'=>$count]);
 		
