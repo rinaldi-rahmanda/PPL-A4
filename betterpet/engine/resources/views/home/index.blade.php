@@ -159,7 +159,7 @@
 <div class="container-fluid text-center" style="min-height:300px;">
   
   <h2 style="margin-top:80px;">What our customers say</h2>
-  <div id="myCarousel" class="carousel2 slide text-center" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators1 carousel-indicators" style="bottom:-100px;">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -198,10 +198,6 @@
         interval: 2200 //changes the speed
     })
 </script>
-<script>
-    $('.carousel2').carousel({
-        interval: 3000 //changes the speed
-    })
-</script>
+
 
 @endsection
