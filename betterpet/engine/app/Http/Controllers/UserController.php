@@ -288,6 +288,7 @@ class UserController extends Controller
         $age = $request->input('age');
         $sex = $request->input('sex');
         $desc = $request->input('description');
+        $domicile = $request->input('domicile');
         $user = Auth::user();
         $userId = $user->id;
         $adoption = new Adoption;
@@ -297,6 +298,7 @@ class UserController extends Controller
         $adoption->description = $desc;
         $adoption->age = $age;
         $adoption->user_id = $userId;
+        $adoption->domicile = $domicile;
 		$count = Adoption::all();
 		$count = $count->count();
         if($request->hasFile('picture'))
@@ -323,6 +325,7 @@ class UserController extends Controller
         $address = $request->input('address');
         $age = $request->input('domicile');
         $desc = $request->input('description');
+        $domicile = $request->input('domicile');
         $user = Auth::user();
         $userId = $user->id;
         $shelter = new Shelter;
@@ -330,6 +333,7 @@ class UserController extends Controller
         $shelter->address = $address;
         $shelter->description = $desc;
         $shelter->user_id = $userId;
+        $shelter->domicile = $domicile;
         $count = Shelter::all();
         $count = $count->count();
         if($request->hasFile('picture'))

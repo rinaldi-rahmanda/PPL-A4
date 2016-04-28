@@ -51,17 +51,16 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/profile/view/{id}','HomeController@viewProfile');
 });
 Route::group(['middleware'=>['web','usermid']],function(){
-    Route::get('/profile','UserController@showProfile')->middleware(['web','usermid']);
-    Route::post('/profile','UserController@editProfile')->middleware(['web','usermid']);
-    Route::post('/adoption/new','UserController@newAdoption')->middleware(['web','usermid']);
-    Route::get('/list','UserController@listAdoptions')->middleware(['web','usermid']);
-    Route::get('/adoption/create','UserController@createAdoption')->middleware(['web','usermid']);
-    Route::post('/adoption/create','UserController@saveAdoption')->middleware(['web','usermid']);
-    Route::post('/adoption/delete/{id}','UserController@deleteAdoption')->middleware(['web','usermid']);
-    Route::post('/adoption/edit/{id}','UserController@editAdoption')->middleware(['web','usermid']);
-    Route::get('/adoption/mark/{id}','UserController@markDone')->middleware(['web','usermid']);
+    Route::get('/profile','UserController@showProfile');
+    Route::post('/profile','UserController@editProfile');
+    Route::post('/adoption/new','UserController@newAdoption');
+    Route::get('/adoption/create','UserController@createAdoption');
+    Route::post('/adoption/create','UserController@saveAdoption');
+    Route::post('/adoption/delete/{id}','UserController@deleteAdoption');
+    Route::post('/adoption/edit/{id}','UserController@editAdoption');
+    Route::get('/adoption/mark/{id}','UserController@markDone');
     Route::get('/adoption/unmark/{id}','UserController@unmarkDone');
-    Route::post('/shelter/new','UserController@newShelter')->middleware(['web','usermid']);
-    Route::post('/adoption/request/{id}','UserController@requestAdoption')->middleware(['web','usermid']);
-    Route::post('/adoption/request/cancel/{id}','UserController@cancelRequest')->middleware(['web','usermid']);
+    Route::post('/shelter/new','UserController@newShelter');
+    Route::post('/adoption/request/{id}','UserController@requestAdoption');
+    Route::post('/adoption/request/cancel/{id}','UserController@cancelRequest');
 });

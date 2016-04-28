@@ -157,7 +157,7 @@ use CaptchaTrait;
 		if($sex!='1'){
 			$results = $results->where('sex',$sex);
 		}
-		$adoptions = $results->get();
+		$adoptions = $results->where('done','0')->get();
 		return view('home.adoption',['adoptions'=>$adoptions]);
 	}
 	public function viewProfile($id){
