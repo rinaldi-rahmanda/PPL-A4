@@ -89,7 +89,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label class="in-form" for="exampleInputEmail1"  style="display:block;">Sex</label>
-                                                <select class="form-control" name="sex">               
+                                                <select required class="form-control" name="sex">               
                                                     <option value="2">Female</option>
                                                     <option value="3">Male</option>
                                                 </select>
