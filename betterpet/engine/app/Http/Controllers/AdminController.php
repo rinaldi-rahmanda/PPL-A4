@@ -23,7 +23,14 @@ class AdminController extends Controller
 		//return the homepage of admin section
 		$shelters = Shelter::all();
 		$adoptions = Adoption::all();
-		$users = User::all();
+		$userss = User::all();
+		$users = [];
+		for($i=0 ; $i < count($userss); $i++){
+			$user = $userss[$i];
+			if($user->admin!='1')
+				array_push($users,$user);
+		}
+		return $users;
 		return view('admin.index',
 			['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users]);
 	}
