@@ -18,21 +18,15 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        /*if(Session::get('user')||Auth::check()){
-            if(!Session::get('user')){
-                $user = Auth::user();
-                Session::put('user','1');
-                Session::put('name',$user->name);
-            }
+        if(Auth::check()){
 			if(Auth::user()->admin==1){
 				return $next($request);  
 			}
             else{
 				return redirect('/');
 			}  
-        }*/
-        //return redirect('/login');
-		return $next($request);
+        }
+		return redirect('/login');
     }
 
 }
