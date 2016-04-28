@@ -1,0 +1,11 @@
+INSERT INTO 'domicile'('id', 'location')
+ VALUES 
+ (1,'Jakarta Utara'),
+ (2,'Jakarta Timur'),
+ (3,'Jakarta Pusat'),
+ (4,'Jakarta Barat'),
+ (4,'Jakarta Selatan'),
+ (5,'Bogor'),
+ (6,'Depok'),
+ (7,'Tangerang'),
+ (8,'Bekasi');
