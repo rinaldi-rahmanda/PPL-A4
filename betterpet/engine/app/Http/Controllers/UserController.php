@@ -74,6 +74,10 @@ class UserController extends Controller
         if($password != $passconf)
             return redirect('/register')->withErrors('Both password field must have the same value');
         $email = $request->input('email');
+        $searchUser = User::where('email',$email)->first();
+        if($searchUser){
+            return redirect()->back()->withErrors('Email address already used by another user');
+        }
         $domisili = $request->input('domicile');
         $phone = $request->input('phone');
         $user = new User();
@@ -100,7 +104,7 @@ class UserController extends Controller
                     ->withInput($request->except(['password','passwordconfirm']));
         }
 	
-	if($this->captchaCheck() == false)
+	    if($this->captchaCheck() == false)
         {
             return redirect()->back()
                 ->withErrors(['Wrong Captcha'])
