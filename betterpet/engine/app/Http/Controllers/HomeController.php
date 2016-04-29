@@ -26,7 +26,11 @@ use CaptchaTrait;
             Session::put('user','1');
             Session::put('name',$user->name);
         }
-    	return view('home.index');
+        $adoptions = Adoption::where('done','0')
+            ->orderBy('created_at','desc')
+            ->take(3)
+            ->get();
+    	return view('home.index',['adoptions'=>$adoptions]);
     }
     //menampilkan adoption form
     public function adoption(){

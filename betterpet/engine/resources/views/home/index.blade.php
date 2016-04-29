@@ -110,8 +110,8 @@
         <hr class='line' style='width:500px;'>
 
         <div class="row">
-            <div class="col-md-offset-1 col-xs-18 col-sm-6 col-md-10">
-            <div class="col-xs-18 col-sm-6 col-md-4">
+            <!--<div class="col-md-offset-1 col-xs-18 col-sm-6 col-md-10">-->
+            <!--<div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail thumbnail-home">
                     <img src="{{URL::to('/image/sample3.png')}}" alt="">
                     <div class="caption">
@@ -122,33 +122,15 @@
 						<a href="#" class="btn btn-info btn-sm" role="button">Read More</a>
                     </div>
                 </div>
+            </div>-->
+            @foreach ($adoptions as $adoption)
+            <div class="shelter-adoption col-md-4 col-sm-6 col-xs-6">
+                <img class="img-responsive img-rounded img-adoption" width="300px" height="300px" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}">
+                <h3 class="text-center">{{$adoption->name}}</h3>
+                <p class="text-center"><a href="{{URL::to('/adoption')}}/{{$adoption->id}}" class="btn btn-primary" role="button">See the details</a></p>
             </div>
-
-
-            <div class="col-xs-18 col-sm-6 col-md-4">
-                <div class="thumbnail thumbnail-home">
-                    <img src="{{URL::to('/image/sample.jpg')}}" alt="">
-                    <div class="caption">
-                        <h4>Kitty</h4>
-                        <p>
-							Born as the cutest cat ever, Kitty...
-						</p>
-						<a href="#" class="btn btn-info btn-sm" role="button">Read More</a>
-					</div>
-                </div>
-            </div>
-
-            <div class="col-xs-18 col-sm-6 col-md-4">
-                <div class="thumbnail thumbnail-home">
-                    <img src="{{URL::to('/image/sample2.jpg')}}" alt="">
-                    <div class="caption">
-                        <h4>Smith</h4>
-                        <p>Smith, just like the name of the great...</p>
-						<a href="#" class="btn btn-info btn-sm" role="button">Read More</a>
-					</div>
-                </div>
-            </div>
-           </div>
+            @endforeach
+           <!--</div>-->
             
         </div><!-- End row -->
 
