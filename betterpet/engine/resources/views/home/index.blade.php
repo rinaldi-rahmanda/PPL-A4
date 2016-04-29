@@ -123,6 +123,7 @@
                     </div>
                 </div>
             </div>-->
+            <div class="col-md-offset-1 col-xs-12 col-sm-6 col-md-10">
             @foreach ($adoptions as $adoption)
             <div class="shelter-adoption col-md-4 col-sm-6 col-xs-6">
                 <img class="img-responsive img-rounded img-adoption" width="300px" height="300px" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}">
@@ -130,6 +131,7 @@
                 <p class="text-center"><a href="{{URL::to('/adoption')}}/{{$adoption->id}}" class="btn btn-primary" role="button">See the details</a></p>
             </div>
             @endforeach
+            </div>
            <!--</div>-->
             
         </div><!-- End row -->

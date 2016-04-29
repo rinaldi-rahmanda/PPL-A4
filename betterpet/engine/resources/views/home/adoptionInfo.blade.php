@@ -10,13 +10,11 @@
 
 <div class='container-fluid'>
     <div class="row">
-        <div class="col-md-offset-2 col-md-8 col-sm-8" style="background-color:white; min-height: 100%; margin-top:8%;">
-            <div class="col-md-2 col-sm-2" style="margin-top:5%;margin-bottom:2%;padding-left:3%;">
-                <img class="img-rounded" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}" width="200px" height="200px" alt="">
-                
-                
+        <div class="col-md-offset-2 col-md-8 col-xs-12" style="background-color:white; min-height: 100%; margin-top:8%;">
+            <div class="col-md-2 col-sm-2 col-xs-12" style="margin-top:5%;margin-bottom:2%;padding-left:3%;">
+                <img class="img-rounded" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}" width="200px" height="200px" alt="">        
             </div>
-            <div class="col-md-offset-1 col-sm-offset-1 col-md-5 col-sm-5" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
+            <div class="col-md-offset-1 col-sm-offset-1 col-md-5 col-xs-12" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
                 @if($adoption)
                 <h1>{{$adoption->name}}</h1>
                 @if($user && $user->id==$adoption->user_id)
@@ -94,9 +92,10 @@
                     </div>
                 </div>
                 @endif
-                 @if($adoption->done=='1')
+                
+                @if($adoption->done=='1')
                 <div class="alert alert-warning" role="alert">
-                  This adoption is already sold
+                  This pet is already adopted
                 </div>
                 @endif
                 <h4>Owner: <a href="{{URL::to('/profile/view')}}/{{$adoptionOwner->id}}">{{$adoptionOwner->name}}</a></h4>
