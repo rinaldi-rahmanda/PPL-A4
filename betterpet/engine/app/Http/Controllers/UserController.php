@@ -20,7 +20,6 @@ use Storage;
 
 class UserController extends Controller
 {
-	use CaptchaTrait;
 
         public function login(Request $request){
     
