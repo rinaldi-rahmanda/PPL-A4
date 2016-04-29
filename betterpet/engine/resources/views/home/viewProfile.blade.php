@@ -26,7 +26,7 @@
                 <h1 >Hello, I am {{ $user->name }}!</h1>
                 <ul style="padding: 0;">
                     <li style="display:inline;">{{$user->phone}}</li>
-                    <li style="display:inline;">&#8226 {{ $domicile }}</li>
+                    <li style="display:inline;">&#8226 {{$domicile}}</li>
                     <li style="display:inline;padding-left:10px;">&#8226 Member since {{$user->created_at->format('d/m/y')}}</li>
                 </ul>
 
