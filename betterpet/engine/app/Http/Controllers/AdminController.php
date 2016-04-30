@@ -25,13 +25,13 @@ class AdminController extends Controller
 		$adoptions = Adoption::all();
 		$userss = User::all();
 		$users = [];
+		$questions = DB::table('questions')->get();
 		for($i=0 ; $i < count($userss); $i++){
 			$user = $userss[$i];
 			if($user->admin!='1')
 				array_push($users,$user);
 		}
-		return $users;
 		return view('admin.index',
-			['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users]);
+			['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users,'questions'=>$questions]);
 	}
 }

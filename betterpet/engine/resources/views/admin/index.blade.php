@@ -31,6 +31,7 @@
           <li><a href="#section1">Shelter</a></li>
           <li><a href="#section2">Users</a></li>
           <li><a href="#section3">Adoption</a></li>
+          <li><a href="#section5">Questions</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">News<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#section41">List News</a></li>
@@ -94,7 +95,33 @@
 <div id="section42" class="container-fluid">
   <h1 class="text-center">CREATE NEWS</h1>
   <p>Membuat news baru</p>
+</div>
+<div id="section5" class="container">
+  <h1 class="text-center">LIST QUESTIONS</h1>
+  <div class="row">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+      <table class="table table-responsive table-striped">
+        <thead>
+          <tr>
+            <td><b>Name</b></td>
+            <td><b>Email</b></td>
+            <td><b>Title</b></td>
+            <td><b>Content</b></td>
+          </tr>
+        </thead>
+        <tbody>
+        @foreach($questions as $question)
+        <tr>
+          <td>{{$question->name}}</td>
+          <td>{{$question->email}}</td>
+          <td>{{$question->title}}</td>
+          <td>{{$question->content}}</td>
+        </tr>
+        @endforeach
+        </tbody>
+      </table>
+    </div>
   </div>
-
+</div>
 </body>
 @endsection
