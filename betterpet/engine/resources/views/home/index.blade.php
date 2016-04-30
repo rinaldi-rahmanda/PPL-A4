@@ -110,19 +110,6 @@
         <hr class='line' style='width:500px;'>
 
         <div class="row">
-            <!--<div class="col-md-offset-1 col-xs-18 col-sm-6 col-md-10">-->
-            <!--<div class="col-xs-18 col-sm-6 col-md-4">
-                <div class="thumbnail thumbnail-home">
-                    <img src="{{URL::to('/image/sample3.png')}}" alt="">
-                    <div class="caption">
-                        <h4>Leonardo</h4>
-                        <p>
-							He is a male dog and very friendly, even...
-						</p>
-						<a href="#" class="btn btn-info btn-sm" role="button">Read More</a>
-                    </div>
-                </div>
-            </div>-->
             <div class="col-md-offset-1 col-xs-12 col-sm-6 col-md-10">
             @foreach ($adoptions as $adoption)
             <div class="shelter-adoption col-md-4 col-sm-6 col-xs-6">
@@ -132,7 +119,7 @@
             </div>
             @endforeach
             </div>
-           <!--</div>-->
+           </div>
             
         </div><!-- End row -->
 
