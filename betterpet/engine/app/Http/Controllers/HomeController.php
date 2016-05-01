@@ -11,6 +11,7 @@ use Validator;
 use Session;
 use App\Adoption;
 use App\Shelter;
+use App\News;
 use App\User;
 
 use App\Traits\CaptchaTrait;
@@ -57,11 +58,8 @@ use CaptchaTrait;
     }
     //displaying news
     public function news(){
-    	/*
-    	take news from the database 
-    	first then give it to the view
-    	*/
-    	return view('home.news');
+    	$allnews = News::all();
+    	return view('home.news',['allnews'=>$allnews]);
     }
 	public function singleNews($id){
 		if(!$id){
@@ -71,6 +69,7 @@ use CaptchaTrait;
 			return view('home.singleNews');
 		}
 	}
+
     public function adoptionInfo($id){
 		$adoption = Adoption::find($id);
         $user = Auth::user();
