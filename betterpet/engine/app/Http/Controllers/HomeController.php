@@ -58,16 +58,14 @@ use CaptchaTrait;
     }
     //displaying news
     public function news(){
-    	$allnews = News::all();
+    	$allnews = DB::table('news')
+                ->orderBy('created_at')
+                ->get();
     	return view('home.news',['allnews'=>$allnews]);
     }
 	public function singleNews($id){
-		if(!$id){
-			return redirect('/news');
-		}
-		else{
-			return view('home.singleNews');
-		}
+		$news = News::find($id);
+        return view('home.singleNews',['news'=>$news]);
 	}
 
     public function adoptionInfo($id){

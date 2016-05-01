@@ -88,14 +88,36 @@
   <p>Datar -----------</p>
   </div>
 <div id="section41" class="container-fluid">
-  <h1 class="text-center">LIST NEWS</h1>
-  <p>List semua news</p>
+  <h1 class="text-center">LIST QUESTIONS</h1>
+  <div class="row">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+      <table class="table table-responsive table-striped">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($allnews as $news)
+        <tr>
+          <td>{{$news->title}}</td>
+          <td>{{$news->content}}</td>
+          <td>
+            <a href="{{URL::to('/profile/view')}}/{{1}}"><button class="btn btn-primary btn-sm">Update</button></a>
+            <a href="{{URL::to('/admin/news/delete')}}/{{$news->id}}"><button class="btn btn-primary btn-sm">Delete</button></a>
+          </td>
+        </tr>
+        @endforeach
+      </tbody>
+      </table>
+    </div>
+  </div>
 
 </div>
 <div id="section42" class="container-fluid">
   <h1 class="text-center">CREATE NEWS</h1>
-  <p>Membuat news baru</p>
-<<<<<<< HEAD
   @include('common.error')
             {!! Form::open(array('url'=>'/admin/news/new','method'=>'POST', 'files'=>true)) !!}
             {!! csrf_field() !!}
@@ -108,16 +130,15 @@
                   <label class="in-form" for="photo"  style="display:block;">Photo</label>
                   {!! Form::file('newsimage',['id'=>'photo','class'=>'form-control']) !!}
                </div>
-               <div class="form-group">
+            </div>
+            <div class="form-group">
                   <label class="in-form" for="content"  style="display:block;">Content</label>
                   <textarea class="form-control" name="content" id="content" placeholder="Lorem ipsum dolor sit amet" required></textarea>
                </div>
-            </div>
             <div class="form-group">
                <button type="submit" class="btn btn-success">Search</button>
             </div>
           {!! Form::close() !!}
-=======
 </div>
 <div id="section5" class="container">
   <h1 class="text-center">LIST QUESTIONS</h1>
@@ -144,7 +165,6 @@
         </tbody>
       </table>
     </div>
->>>>>>> refs/remotes/origin/master
   </div>
 </div>
 </body>

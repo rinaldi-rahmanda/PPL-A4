@@ -11,6 +11,7 @@ use DB;
 use App\Shelter;
 use App\Adoption;
 use App\User;
+use App\Question;
 use Validator;
 use Session;
 
@@ -22,11 +23,15 @@ class AdminController extends Controller
 	}
 	public function index(){
 		//return the homepage of admin section
-		return view('admin.index');
-	}
-	
-	public function newNews(){
-		//return view form of creating new news
+        $shelters = Shelter::all();
+        $adoptions = Adoption::all();
+        $users = User::all();
+        $questions = Question::all();
+        $allnews = DB::table('news')
+                ->orderBy('created_at')
+                ->get();
+		return view('admin.index',
+            ['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users,'questions'=>$questions,'allnews'=>$allnews]);
 	}
 	
 	public function createNews(Request $request){
@@ -52,6 +57,12 @@ class AdminController extends Controller
         }
         $news->save();
 	}
+
+    public function deleteNews($id){
+        //save the new submitted news to database
+        DB::table('news')->where('id','=', $id)->delete();
+        return $this->index();
+    }
 
 	public function updateNews(Request $request){
 		//save the new submitted news to database
