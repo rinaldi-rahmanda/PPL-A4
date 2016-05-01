@@ -22,7 +22,6 @@ class AdminController extends Controller
 	}
 	public function index(){
 		//return the homepage of admin section
-<<<<<<< HEAD
 		return view('admin.index');
 	}
 	
@@ -52,7 +51,6 @@ class AdminController extends Controller
             $news->photo = $fileName;
         }
         $news->save();
-        return 'hohoho';
 	}
 
 	public function updateNews(Request $request){
@@ -77,8 +75,6 @@ class AdminController extends Controller
             $news->photo = $fileName;
         }
         $news->save();
-        return 'hohoho';
-=======
 		$shelters = Shelter::all();
 		$adoptions = Adoption::all();
 		$userss = User::all();
@@ -91,6 +87,5 @@ class AdminController extends Controller
 		}
 		return view('admin.index',
 			['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users,'questions'=>$questions]);
->>>>>>> refs/remotes/origin/master
 	}
 }

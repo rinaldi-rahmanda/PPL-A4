@@ -45,9 +45,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/register/fCallBack','UserController@facebookCallBack');  
     Route::get('/logout','UserController@logout');
     Route::get('/admin','AdminController@index');
-<<<<<<< HEAD
     Route::post('/admin/news/new','AdminController@createNews');
-=======
     Route::get('/admin/news/new','AdminController@newNews');
     Route::post('/admin/news/new','AdminController@saveNews');
     Route::get('/shelter/{id}','HomeController@shelterInfo');
@@ -66,5 +64,4 @@ Route::group(['middleware'=>['web','usermid']],function(){
     Route::post('/shelter/new','UserController@newShelter');
     Route::post('/adoption/request/{id}','UserController@requestAdoption');
     Route::post('/adoption/request/cancel/{id}','UserController@cancelRequest');
->>>>>>> refs/remotes/origin/master
 });

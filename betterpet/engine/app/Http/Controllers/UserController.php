@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+
 use App\Traits\CaptchaTrait;
 use Auth;
 use App\User;
@@ -103,7 +104,7 @@ class UserController extends Controller
                     ->withInput($request->except(['password','passwordconfirm']));
         }
 	
-	    if($this->captchaCheck() == false)
+	    if($this->captchacheck() == false)
         {
             return redirect()->back()
                 ->withErrors(['Wrong Captcha'])
