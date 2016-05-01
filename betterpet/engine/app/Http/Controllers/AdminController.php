@@ -30,6 +30,7 @@ class AdminController extends Controller
         $users = [];
         $questions = Question::all();
         $allnews = DB::table('news')
+                ->orderBy('created_at', 'desc')
                 ->get();
         foreach($userss as $singleUser){
         	if($singleUser->admin!='1')
@@ -54,16 +55,14 @@ class AdminController extends Controller
             ]);
             if($validator->fails())
                 return redirect('/admin')->withErrors($validator);
-            $destinationPath = 'engine/images/news';
 			$extension = $file->getClientOriginalExtension();
 			$fileName = ($count+1).'.'.$extension;
             Storage::put('newsimage/'.$fileName,
                 file_get_contents($file->getRealPath()));
-            //$file->move($destinationPath,$fileName);
             $news->photo = $fileName;
         }
         $news->save();
-        return redirect()->back();
+        return $this->index();
 	}
 
     public function deleteNews($id){
@@ -80,11 +79,10 @@ class AdminController extends Controller
 
 	public function updateNews(Request $request){
 		//save the new submitted news to database
-		$news = new News;
+        $theID = $request->input('id');
+		$news = News::find($theID);
         $news->title = $request->input('title');
         $news->content = $request->input('content');
-        $count = News::all();
-        $count = $count->count();
         if($request->hasFile('newsimage'))
         {
             $file = $request->file('newsimage');
@@ -93,12 +91,13 @@ class AdminController extends Controller
             ]);
             if($validator->fails())
                 return redirect('/admin')->withErrors($validator);
-            $destinationPath = 'engine/images/news';
             $extension = $file->getClientOriginalExtension();
-            $fileName = ($count+1).'.'.$extension;
-            $file->move($destinationPath,$fileName);
+            $fileName = $theID.'.'.$extension;
+            Storage::put('newsimage/'.$fileName,
+                file_get_contents($file->getRealPath()));
             $news->photo = $fileName;
         }
         $news->save();
+        return $this->index();
 	}
 }
