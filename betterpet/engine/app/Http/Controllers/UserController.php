@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use App\Traits\CaptchaTrait;
 use Auth;
 use App\User;
@@ -21,7 +19,7 @@ use Storage;
 
 class UserController extends Controller
 {
-
+        use CaptchaTrait;
         public function login(Request $request){
     
         $email = $request->input('email');
@@ -103,8 +101,7 @@ class UserController extends Controller
                     ->withErrors($validator)
                     ->withInput($request->except(['password','passwordconfirm']));
         }
-	
-	    if($this->captchacheck() == false)
+	    if($this->captchaCheck() == false)
         {
             return redirect()->back()
                 ->withErrors(['Wrong Captcha'])

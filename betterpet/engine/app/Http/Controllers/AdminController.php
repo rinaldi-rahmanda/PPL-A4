@@ -15,8 +15,8 @@ use App\Question;
 use Validator;
 use Session;
 use Storage;
-
 use App\Traits\CaptchaTrait;
+
 class AdminController extends Controller
 {
     public function __construct(){
@@ -26,10 +26,15 @@ class AdminController extends Controller
 		//return the homepage of admin section
         $shelters = Shelter::all();
         $adoptions = Adoption::all();
-        $users = User::all();
+        $userss = User::all();
+        $users = [];
         $questions = Question::all();
         $allnews = DB::table('news')
                 ->get();
+        foreach($userss as $singleUser){
+        	if($singleUser->admin!='1')
+        		array_push($users,$singleUser);
+        }
 		return view('admin.index',
             ['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users,'questions'=>$questions,'allnews'=>$allnews]);
 	}
