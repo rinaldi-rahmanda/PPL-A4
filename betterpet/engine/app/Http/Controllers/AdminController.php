@@ -100,17 +100,5 @@ class AdminController extends Controller
             $news->photo = $fileName;
         }
         $news->save();
-		$shelters = Shelter::all();
-		$adoptions = Adoption::all();
-		$userss = User::all();
-		$users = [];
-		$questions = DB::table('questions')->get();
-		for($i=0 ; $i < count($userss); $i++){
-			$user = $userss[$i];
-			if($user->admin!='1')
-				array_push($users,$user);
-		}
-		return view('admin.index',
-			['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users,'questions'=>$questions]);
 	}
 }

@@ -15,7 +15,7 @@
                  <h3 class="text-center">{{$news->title}}</h3>
             <hr class="line">
                 <div class="col-sm-4 col-xs-4 col-md-4">
-                <img src="{{URL::to('/engine/images/news')}}/{{$news->photo}}" width="200" height="250">
+                <img src="{{URL::to('/engine/storage/app/newsimage')}}/{{$news->photo}}" width="200" height="250">
             </div>
             <div class="col-sm-8 col-xs-8 col-md-8">
                 <div class="text-center" style="text-align: justify;">

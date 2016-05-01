@@ -58,10 +58,11 @@
                <div class="form-group">
                   <label class="in-form" for="title" style="display:block;">Title</label>
                   <input type="text" name="title" id="title" class="form-control" value="{{$news->title}}" required>
+                  <input type="hidden" name="id" value="{{$news->id}}">
                </div>
                <div class="form-group">
-                  <label class="in-form" for="photo"  style="display:block;">Photo</label>
-                  {!! Form::file('newsimage',['id'=>'photo','class'=>'form-control']) !!}
+                  <label class="in-form" for="newsimage"  style="display:block;">Photo</label>
+                  {!! Form::file('newsimage',['id'=>'newsimage','class'=>'form-control']) !!}
                </div>
             </div>
             <div class="form-group">
