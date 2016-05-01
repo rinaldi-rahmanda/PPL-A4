@@ -88,7 +88,7 @@
   <p>Datar -----------</p>
   </div>
 <div id="section41" class="container-fluid">
-  <h1 class="text-center">LIST QUESTIONS</h1>
+  <h1 class="text-center">LIST NEWS</h1>
   <div class="row">
     <div class="col-md-12 col-xs-12 col-sm-12">
       <table class="table table-responsive table-striped">

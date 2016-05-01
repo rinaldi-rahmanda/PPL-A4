@@ -108,7 +108,7 @@
     <div class="container-fluid" id="tourpackages-carousel">
         <h3 class='text-center' style="margin-top:4%;">They are searching for a home!</h3>
         <hr class='line' style='width:500px;'>
-
+        @if(count($adoptions)>0)
         <div class="row">
             <div class="col-md-offset-1 col-xs-12 col-sm-6 col-md-10">
             @foreach ($adoptions as $adoption)
@@ -119,7 +119,11 @@
             </div>
             @endforeach
             </div>
-           </div>
+        </div>
+        @else
+        There are no adoption available right now
+        @endif
+
             
         </div><!-- End row -->
 

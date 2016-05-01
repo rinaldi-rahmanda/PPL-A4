@@ -28,7 +28,6 @@ class AdminController extends Controller
         $users = User::all();
         $questions = Question::all();
         $allnews = DB::table('news')
-                ->orderBy('created_at')
                 ->get();
 		return view('admin.index',
             ['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users,'questions'=>$questions,'allnews'=>$allnews]);
