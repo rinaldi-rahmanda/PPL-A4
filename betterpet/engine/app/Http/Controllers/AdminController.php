@@ -14,6 +14,7 @@ use App\User;
 use App\Question;
 use Validator;
 use Session;
+use Storage;
 
 use App\Traits\CaptchaTrait;
 class AdminController extends Controller
@@ -49,12 +50,15 @@ class AdminController extends Controller
             if($validator->fails())
                 return redirect('/admin')->withErrors($validator);
             $destinationPath = 'engine/images/news';
-            $extension = $file->getClientOriginalExtension();
-            $fileName = ($count+1).'.'.$extension;
-            $file->move($destinationPath,$fileName);
+			$extension = $file->getClientOriginalExtension();
+			$fileName = ($count+1).'.'.$extension;
+            Storage::put('newsimage/'.$fileName,
+                file_get_contents($file->getRealPath()));
+            //$file->move($destinationPath,$fileName);
             $news->photo = $fileName;
         }
         $news->save();
+        return redirect()->back();
 	}
 
     public function deleteNews($id){

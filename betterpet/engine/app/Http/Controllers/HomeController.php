@@ -14,6 +14,7 @@ use App\Shelter;
 use App\News;
 use App\User;
 
+
 use App\Traits\CaptchaTrait;
 class HomeController extends Controller
 {
