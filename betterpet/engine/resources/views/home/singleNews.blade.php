@@ -12,13 +12,15 @@
 		<div class="row">
            
             <div class="col-md-offset-1 col-md-10 layout">
-                 <h3 class="text-center"> What Foods are Toxic for Dogs?</h3>
+                 <h3 class="text-center">{{$news->title}}</h3>
             <hr class="line">
                 <div class="col-sm-4 col-xs-4 col-md-4">
-                <img src="{{URL::to('/image/samplex.jpg')}}" width="200" height="250">
+                <img src="{{URL::to('/engine/images/news')}}/{{$news->photo}}" width="200" height="250">
             </div>
             <div class="col-sm-8 col-xs-8 col-md-8">
                 <div class="text-center" style="text-align: justify;">
+                    {{$news->content}}
+                    <!--
                     <ol>
                          <li>
                          Alcohol – I’m sure you’ve heard of the birthday parties where the dog accidentally gets into some of the spilled keg beer, and then gets all silly to the amusement of the crowd. While it may be funny to you, it’s not funny to your dog. Alcohol can cause not only intoxication, lack of coordination, poor breathing, and abnormal acidity, but potentially even coma and/or death.
@@ -46,6 +48,7 @@ Cat food – Not that they would want this anyway, but cat food contains protein
 Coffee – Not sure why you would give your dog coffee, but pretty much the same applies here as to chocolate. This is essentially poison for your dog if ingested.</li>
                     </ol>
                     <p>source : http://www.caninejournal.com/foods-not-to-feed-dog/</p>
+                    -->
                 </div>
             </div>
             </div>			

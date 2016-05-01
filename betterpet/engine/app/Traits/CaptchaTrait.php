@@ -5,7 +5,6 @@ use Request;
 use ReCaptcha\ReCaptcha;
 
 trait CaptchaTrait {
-
     public function captchaCheck()
     {
 
@@ -23,5 +22,4 @@ trait CaptchaTrait {
         }
 
     }
-
 }

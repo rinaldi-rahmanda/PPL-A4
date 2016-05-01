@@ -17,6 +17,7 @@ class CreateNewsTable extends Migration
             $table->string('title');
             $table->string('photo',255);
 			$table->longText('content');
+            $table->timestamps();
         });
     }
 
