@@ -28,6 +28,9 @@
                         <input name="remember" type="checkbox" value="yes" checked="checked"> Remember me
                     </div>
                     <div class="form-group">
+                        <i>Don't have an account? Register <a href="{{URL::to('/register')}}">here</a></i>
+                    </div>
+                    <div class="form-group">
                         <button type="submit" class="register-button btn btn-success">Login</button>
                     </div>
                 </form>	

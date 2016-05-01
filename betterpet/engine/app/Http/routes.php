@@ -45,13 +45,26 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/register/fCallBack','UserController@facebookCallBack');  
     Route::get('/logout','UserController@logout');
     Route::get('/admin','AdminController@index');
+<<<<<<< HEAD
     Route::post('/admin/news/new','AdminController@createNews');
+=======
+    Route::get('/admin/news/new','AdminController@newNews');
+    Route::post('/admin/news/new','AdminController@saveNews');
+    Route::get('/shelter/{id}','HomeController@shelterInfo');
+    Route::get('/profile/view/{id}','HomeController@viewProfile');
 });
-Route::get('/viewProfile','UserController@viewProfile')->middleware(['web','usermid']);
-Route::get('/profile','UserController@showProfile')->middleware(['web','usermid']);
-Route::post('/profile','UserController@editProfile')->middleware(['web','usermid']);
-Route::post('/adoption/new','UserController@newAdoption')->middleware(['web','usermid']);
-Route::get('/list','UserController@listAdoptions')->middleware(['web','usermid']);
-Route::get('/adoption/create','UserController@createAdoption')->middleware(['web','usermid']);
-Route::post('/adoption/create','UserController@saveAdoption')->middleware(['web','usermid']);
-Route::get('/adoption/mark/{id}','UserController@markDone')->middleware(['web','usermid']);
+Route::group(['middleware'=>['web','usermid']],function(){
+    Route::get('/profile','UserController@showProfile');
+    Route::post('/profile','UserController@editProfile');
+    Route::post('/adoption/new','UserController@newAdoption');
+    Route::get('/adoption/create','UserController@createAdoption');
+    Route::post('/adoption/create','UserController@saveAdoption');
+    Route::post('/adoption/delete/{id}','UserController@deleteAdoption');
+    Route::post('/adoption/edit/{id}','UserController@editAdoption');
+    Route::get('/adoption/mark/{id}','UserController@markDone');
+    Route::get('/adoption/unmark/{id}','UserController@unmarkDone');
+    Route::post('/shelter/new','UserController@newShelter');
+    Route::post('/adoption/request/{id}','UserController@requestAdoption');
+    Route::post('/adoption/request/cancel/{id}','UserController@cancelRequest');
+>>>>>>> refs/remotes/origin/master
+});

@@ -110,43 +110,14 @@
         <hr class='line' style='width:500px;'>
 
         <div class="row">
-            <div class="col-md-offset-1 col-xs-18 col-sm-6 col-md-10">
-            <div class="col-xs-18 col-sm-6 col-md-4">
-                <div class="thumbnail thumbnail-home">
-                    <img src="{{URL::to('/image/sample3.png')}}" alt="">
-                    <div class="caption">
-                        <h4>Leonardo</h4>
-                        <p>
-							He is a male dog and very friendly, even...
-						</p>
-						<a href="#" class="btn btn-info btn-sm" role="button">Read More</a>
-                    </div>
-                </div>
+            <div class="col-md-offset-1 col-xs-12 col-sm-6 col-md-10">
+            @foreach ($adoptions as $adoption)
+            <div class="shelter-adoption col-md-4 col-sm-6 col-xs-6">
+                <img class="img-responsive img-rounded img-adoption" width="300px" height="300px" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}">
+                <h3 class="text-center">{{$adoption->name}}</h3>
+                <p class="text-center"><a href="{{URL::to('/adoption')}}/{{$adoption->id}}" class="btn btn-primary" role="button">See the details</a></p>
             </div>
-
-
-            <div class="col-xs-18 col-sm-6 col-md-4">
-                <div class="thumbnail thumbnail-home">
-                    <img src="{{URL::to('/image/sample.jpg')}}" alt="">
-                    <div class="caption">
-                        <h4>Kitty</h4>
-                        <p>
-							Born as the cutest cat ever, Kitty...
-						</p>
-						<a href="#" class="btn btn-info btn-sm" role="button">Read More</a>
-					</div>
-                </div>
-            </div>
-
-            <div class="col-xs-18 col-sm-6 col-md-4">
-                <div class="thumbnail thumbnail-home">
-                    <img src="{{URL::to('/image/sample2.jpg')}}" alt="">
-                    <div class="caption">
-                        <h4>Smith</h4>
-                        <p>Smith, just like the name of the great...</p>
-						<a href="#" class="btn btn-info btn-sm" role="button">Read More</a>
-					</div>
-                </div>
+            @endforeach
             </div>
            </div>
             
@@ -159,7 +130,7 @@
 <div class="container-fluid text-center" style="min-height:300px;">
   
   <h2 style="margin-top:80px;">What our customers say</h2>
-  <div id="myCarousel" class="carousel2 slide text-center" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators1 carousel-indicators" style="bottom:-100px;">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -195,13 +166,9 @@
 <!-- Script to Activate the Carousel -->
 <script>
     $('.carousel').carousel({
-        interval: 2200 //changes the speed
-    })
-</script>
-<script>
-    $('.carousel2').carousel({
         interval: 3000 //changes the speed
     })
 </script>
+
 
 @endsection

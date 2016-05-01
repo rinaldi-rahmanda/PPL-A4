@@ -11,6 +11,7 @@ use Validator;
 use Session;
 use App\Adoption;
 use App\Shelter;
+use App\User;
 
 use App\Traits\CaptchaTrait;
 class HomeController extends Controller
@@ -25,7 +26,11 @@ use CaptchaTrait;
             Session::put('user','1');
             Session::put('name',$user->name);
         }
-    	return view('home.index');
+        $adoptions = Adoption::where('done','0')
+            ->orderBy('created_at','desc')
+            ->take(3)
+            ->get();
+    	return view('home.index',['adoptions'=>$adoptions]);
     }
     //menampilkan adoption form
     public function adoption(){
@@ -67,12 +72,41 @@ use CaptchaTrait;
 		}
 	}
     public function adoptionInfo($id){
-		if(!$id){
-			return redirect('/news');
-		}
-		else{
-			return view('home.adoptionInfo');
-		}
+		$adoption = Adoption::find($id);
+        $user = Auth::user();
+        $requests = DB::table('requests')
+            ->where('idAdopsi',$adoption->id);
+        $count = $requests->count();
+        if($user)
+            $request = $requests->where('idUser',$user->id)->get();
+        else
+            $request = "";
+        $adoptionOwner = User::where('id',$adoption->user_id)->first();
+
+        $requests = DB::table('requests')
+            ->join('users','requests.idUser','=','users.id')
+            ->where('idAdopsi',$adoption->id)
+            ->select('users.name','users.id');
+        $requests = $requests->get();
+        if($adoption->sex=='2'){
+            $adoption->sex = 'female';
+        }
+        else{
+            $adoption->sex = 'male';
+        }
+        if($adoption->age=='2')
+            $adoption->age = '0-6 months';
+        if($adoption->age=='3')
+            $adoption->age = '6-12 months';
+        if($adoption->age=='4')
+            $adoption->age = '12-18 months';
+        if($adoption->age=='5')
+            $adoption->age = 'More than 2 years';
+        if($adoption->age=='6')
+            $adoption->age = 'More than 3 years';  
+        return view('home.adoptionInfo',['adoption'=>$adoption,'user'=>$user,
+            'request'=>$request,'requests'=>$requests,'adoptionOwner'=>$adoptionOwner,'count'=>$count]);
+		
 	}
     public function contactPost(Request $request){
         $name = $request->name;
@@ -81,7 +115,7 @@ use CaptchaTrait;
         $content = $request->content;
         //validasi the input first
         $validator = Validator::make($request->all(),[
-            'name' => 'min:3',
+            'name' => 'min:3|max:20',
             'email' => 'email',
             'title' => 'required',
             'content' => 'required',
@@ -92,16 +126,16 @@ use CaptchaTrait;
             'content' => 'content must be filled'
         ]);
 	
-	if($this->captchaCheck() == false)
+	    if($this->captchaCheck() == false)
         {
             return redirect()->back()
                 ->withErrors(['Wrong Captcha'])
                 ->withInput();
         }
-        
         if($validator->fails()){
-            return redirect('/contact')
-                    ->withErrors($validator);
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
         }
         else{
             //insert the information to the database
@@ -121,6 +155,9 @@ use CaptchaTrait;
 		$breed = $request->input('breed');
 		$age = $request->input('age');
 		$sex = $request->input('sex');
+        $results = Adoption::where('domicile',$domicile);
+        if($breed)
+            $results = $results->where('breed','like','%'.$breed.'%');
 		if($type!='1'){
 			if($type=='2'){
 				//isCat
@@ -131,8 +168,7 @@ use CaptchaTrait;
 				$type = '1';
 				//1 for dog
 			}
-			$results = Adoption::where('domicile',$domicile)
-				->where('breed','like','%'.$breed.'%')
+			$results = $results
 				->where('type',$type);
 		}
 		if($age!='1'){
@@ -141,25 +177,50 @@ use CaptchaTrait;
 		if($sex!='1'){
 			$results = $results->where('sex',$sex);
 		}
-		$adoptions = $results->get();
+		$adoptions = $results->where('done','0')->get();
 		return view('home.adoption',['adoptions'=>$adoptions]);
 	}
-	
+	public function viewProfile($id){
+        $user = User::find($id);
+        $idDom = $user->domicile;
+        $name = $user->name;
+        $phone = $user->phone;
+        $address = $user->address;
+        $desc = $user->description;
+        $domicile = DB::table('domicile')->select('location')->where('id',$idDom)->first();
+        if( $idDom == 0 ){
+            //belum set domisili
+            $domicile = "None";
+        }
+        else
+            $domicile = $domicile->location;
+        $adoptions = Adoption::where('user_id','=',$id)->get();
+        $check = 0;
+        if(Auth::check())
+        {
+            $usr = Auth::user();
+            $usrId = $usr->id;
+            if($usrId == $id)
+                $check = 1;
+        }
+        return view('home.viewProfile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone,'adoptions'=>$adoptions,'check'=>$check]);
+    }
 	public function searchShelter(Request $request){
 		$domicile = $request->input('domicile');
 		//input can be 1,which is any type
 		$name = $request->input('name');
 		$address = $request->input('address');
-		
-		
-		$results = Shelter::where('domicile',$domicile)
-				->where('address','like','%'.$address.'%')
-				->where('sheltername','like','%'.$name.'%');
-				
-		
-		
+		$results = Shelter::where('domicile',$domicile);
+        if($name)
+            $results = $results->where('shelterName','like','%'.$name.'%');
+		if($address)
+		  $results = $results->where('address','like','%'.$address.'%');
 		$shelter = $results->get();
-		return view('home.shelter',['shelters'=>$shelter]);
-		
+		return view('home.shelter',['shelters'=>$shelter]);	
 	}
+    public function shelterInfo($id){
+        $shelter = Shelter::find($id);
+        $shelterOwner = User::where('id',$shelter->user_id)->first();
+        return view('home.shelterInfo',['shelter'=>$shelter,'shelterOwner'=>$shelterOwner]);
+    }
 }

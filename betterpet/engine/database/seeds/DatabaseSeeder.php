@@ -11,6 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
         
+=======
+        // $this->call(UserTableSeeder::class);
+        $this->call(LocationsTableSeeder::class);
+>>>>>>> refs/remotes/origin/master
     }
 }

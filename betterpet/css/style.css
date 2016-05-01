@@ -271,3 +271,25 @@ body {
     width: 300px;
     height: 250px;
 }
+.adoption-section{
+    margin-top:30px;
+}
+.img-adoption{
+   height: 300px;
+   width: 100%;
+}
+.shelter-adoption{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.circle {
+	width: 200px;
+	height: 200px;
+	background: #96bbb3;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}

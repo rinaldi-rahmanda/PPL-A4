@@ -19,6 +19,7 @@ class CreateSheltersTable extends Migration
 			$table->longText('description');
 			$table->string('picture',255);
             $table->integer('domicile')->index();
+            $table->integer('user_id')->index();
         });
     }
 

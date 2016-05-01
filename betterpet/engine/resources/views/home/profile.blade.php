@@ -19,21 +19,22 @@
 			@if($avatar=="")
             <img src="http://placehold.it/200x200" alt="">
 			@else
-			<img src="{{URL::to('/engine/userimage').'/'.$avatar}}" width="200px" height="200px" alt="">	
+			<img src="{{URL::to('/engine/storage/app/userimage').'/'.$avatar}}" width="200px" height="200px" alt="">	
 			@endif
             <div class="ava-caption">
-                Edit your avatar
-                <img src="image/pen.png" id="upfile1" style="cursor:pointer" width="20" height="20" style="float:right;"/>
+                Upload Avatar
+                <img src="image/pen.png" id="upfile1" style="cursor:pointer" width="20" height="20" style="float:right;"/><br>
+                (max 2MB)
             </div>
             <div>
-                <button class="button"> <a href="{{URL::to('/viewProfile')}}">View Profile</a> </button>
+                <a style="color:white;text-decoration:none;" href="{{URL::to('/profile/view')}}/{{$user->id}}"><button class="button btn pro" style="width:200px;background:#337ab7;color:white;"> View Profile</button></a> 
             </div>
         </div>      
         <div class="col-md-offset-1 col-md-5 col-xs-6">
 			{!! Form::open(array('url'=>'profile','class'=>'form-horizontal','method'=>'POST', 'files'=>true)) !!}
             <!--<form id="profile-form" class="form-horizontal" method="POST">-->
                 {!! csrf_field() !!}
-				{!! Form::file('picture',['style'=>'display:none','id'=>'file1']) !!}
+				{!! Form::file('picture',['style'=>'display:none','id'=>'file1','accept'=>'image/*']) !!}
 				<!--<input type="file" id="file1"  name="picture" style="display:none"/>-->
 				@if (count($errors) > 0)
 				<div class="form-group">
@@ -106,7 +107,7 @@
             <div class="form-group">
                 <label for="inputPhone" class="col-sm-3 control-label">Phone number</label>
                 <div class="col-sm-9">
-                    <input type="text" class="register-form profile-form form-control" name="phone" value="{{$phone}}">
+                    <input required type="text" class="register-form profile-form form-control" name="phone" value="{{$phone}}">
                 </div>
             </div>
             <div class="form-group">

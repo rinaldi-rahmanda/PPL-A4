@@ -18,7 +18,7 @@ class UserMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Session::get('user')||Auth::check()){
+        if(Auth::check()){
             if(!Session::get('user')){
                 $user = Auth::user();
                 Session::put('user','1');
