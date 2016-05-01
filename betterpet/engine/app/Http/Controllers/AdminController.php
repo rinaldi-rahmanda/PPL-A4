@@ -64,6 +64,12 @@ class AdminController extends Controller
         return $this->index();
     }
 
+    public function viewUpdateNews($id){
+        $news = News::find($id);
+        return view('admin.updateNews',
+            ['news'=>$news]);
+    }
+
 	public function updateNews(Request $request){
 		//save the new submitted news to database
 		$news = new News;

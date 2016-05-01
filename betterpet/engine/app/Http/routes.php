@@ -47,6 +47,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/admin','AdminController@index');
     Route::post('/admin/news/new','AdminController@createNews');
     Route::get('/admin/news/new','AdminController@newNews');
+    Route::get('/admin/news/update/{id}','AdminController@viewUpdateNews');
+    Route::post('/admin/news/update','AdminController@updateNews');
+    Route::post('/admin/news/new','AdminController@newNews');
     Route::get('/admin/news/delete/{id}','AdminController@deleteNews');
     Route::get('/shelter/{id}','HomeController@shelterInfo');
     Route::get('/profile/view/{id}','HomeController@viewProfile');
