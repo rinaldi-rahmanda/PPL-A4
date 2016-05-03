@@ -70,11 +70,11 @@
 <div class='home1' style='padding-top:10px;' >
     <div class='container-fluid' style='padding-top:20px'>
         <div class='row'>
-            <div class='col-md-8 col-xs-8 col-sm-8' style='padding-left:15px'>
+            <div class='col-md-8 col-xs-12 col-sm-12' style='padding-left:15px'>
                 <i class="fa fa-search fa-3x"> We would be glad to help you find your dream pets here!</i>
                 <img src="{{URL::to('/image/Cats.png')}}" width="740" height="335" class="img-responsive">
             </div>
-            <div class='col-md-4 col-xs-4 col-sm-4'>
+            <div class='col-md-4 col-xs-12 col-sm-12'>
                 <blockquote>
                     <p>
                         "Time spent with cats is never wasted."
@@ -112,7 +112,7 @@
         <div class="row">
             <div class="col-md-offset-1 col-xs-12 col-sm-6 col-md-10">
             @foreach ($adoptions as $adoption)
-            <div class="shelter-adoption col-md-4 col-sm-6 col-xs-6">
+            <div class="shelter-adoption col-md-4 col-sm-12 col-xs-12">
                 <img class="img-responsive img-rounded img-adoption" width="300px" height="300px" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}">
                 <h3 class="text-center">{{$adoption->name}}</h3>
                 <p class="text-center"><a href="{{URL::to('/adoption')}}/{{$adoption->id}}" class="btn btn-primary" role="button">See the details</a></p>
