@@ -116,16 +116,19 @@
                 @endif
                 @if($user && $user->id!=$adoption->user_id && $adoption->done=='0')
                         @if($request)
-                        <button type="submit" disabled class="btn btn-primary btn-sm">Request already sent</button>
-                        <form method="POST" action="{{URL::to('/adoption/request/cancel/')}}/{{$adoption->id}}">
-                            {!! csrf_field() !!}
-                            <button type="submit" class="btn btn-danger btn-sm">cancel request</button>
-                        </form>
+                        <div class="form-group">
+                            <form method="POST" action="{{URL::to('/adoption/request/cancel/')}}/{{$adoption->id}}">
+                                {!! csrf_field() !!}
+                                <button type="submit" class="btn btn-danger btn-sm">cancel request</button>
+                            </form>
+                        </div>
                         @else
-                        <form method="POST" action="{{URL::to('/adoption/request/')}}/{{$adoption->id}}">
-                            {!! csrf_field() !!}
-                            <button type="submit" class="btn btn-primary btn-sm">Request to adopt!</button>
-                        </form>
+                        <div class="form-group">
+                            <form method="POST" action="{{URL::to('/adoption/request/')}}/{{$adoption->id}}">
+                                {!! csrf_field() !!}
+                                <button type="submit" class="btn btn-primary btn-sm">Request to adopt!</button>
+                            </form>
+                        </div>
                         @endif
                 @endif
                 <div class="panel panel-default">
