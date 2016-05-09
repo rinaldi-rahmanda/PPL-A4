@@ -3,6 +3,21 @@
 @section('content')
 	<head>
  
+ <style type="text/css">
+/*<![CDATA[*/
+#myInstance1 {
+        border: 2px dashed #0000ff;
+}
+.nicEdit-selected {
+        border: 2px solid #0000ff !important;
+}
+ 
+.nicEdit-main {
+        background-color: #fff !important;
+}
+ 
+/*]]>*/
+</style>
   <style>
   body {
       position: relative; 
@@ -132,8 +147,19 @@
                </div>
             </div>
             <div class="form-group">
-                  <label class="in-form" for="content"  style="display:block;">Content</label>
-                  <textarea class="form-control" name="content" id="content" placeholder="Lorem ipsum dolor sit amet" required></textarea>
+	      <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+//<![CDATA[
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  //]]>
+  </script>
+  <h4>
+    First Textarea
+  </h4>
+  <textarea class="form-control" name="content" id="content" placeholder="Lorem ipsum dolor sit amet"  ></textarea>
+  <br />
+  
+
+                  
                </div>
             <div class="form-group">
                <button type="submit" class="btn btn-success">Search</button>
