@@ -5,6 +5,7 @@
    background-color:#dfeef7;        
    }
 </style>
+<script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
 <div class='container-fluid page-wrap' style='padding-top:6%; padding-bottom:3%;' >
 <div class='news'>
    <div class="row">
@@ -96,6 +97,9 @@
                     <div class="form-group">
                         <label class="in-form" for="exampleInputEmail1"  style="display:block;">Description</label>
                         <textarea class="form-control" name="description" placeholder="Anything useful and related informations about your shelter"></textarea>
+                        <script>
+                          CKEDITOR.replace('description');
+                        </script>
                     </div>
                 </div>
                 <div class="modal-footer">

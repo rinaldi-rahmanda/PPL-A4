@@ -17,7 +17,7 @@
 }
   
   </style>
-<script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.5.8/full/ckeditor.js"></script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
