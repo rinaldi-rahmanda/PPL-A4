@@ -31,7 +31,8 @@ use CaptchaTrait;
             ->orderBy('created_at','desc')
             ->take(3)
             ->get();
-    	return view('home.index',['adoptions'=>$adoptions]);
+        $news = DB::table('news')->take(3)->get();
+    	return view('home.index',['adoptions'=>$adoptions,'news'=>$news]);
     }
     //menampilkan adoption form
     public function adoption(){
