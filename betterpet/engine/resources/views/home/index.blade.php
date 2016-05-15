@@ -67,6 +67,7 @@
 
 </div>
 
+
 <div class='home1' style='padding-top:10px;' >
     <div class='container-fluid' style='padding-top:20px'>
         <div class='row'>
@@ -104,6 +105,34 @@
         </div>
     </div>  
 </div>
+
+@section('content')
+<div class='container-fluid page-wrap' style='margin-top:100px;' >
+    <div class='news'>
+        <div class="row">
+            <h3 class="text-center"> Read our latest news</h3>
+            <hr class="line">
+            @foreach ($news as $news)
+                <?php $newcontent = AppHelper::snippetgreedy($news->content, 125, "..."); ?>
+                <div class="col-md-offset-1 col-sm-10 col-xs-10 col-md-10 news-thumbnail">
+                <div class="col-md-4" style="margin-left:2%;margin-top:2%;margin-bottom:2%;"><img src="{{URL::to('/engine/storage/app/newsimage')}}/{{$news->photo}}" width="200" height="250"> </div>
+                    <div class="col-md-7">
+                        <div class="caption">
+                            <h3>{{$news->title}}</h3>
+
+                            <p>{!! $newcontent  !!}</p>
+
+                            <?php
+                                echo $newcontent;
+                            ?>
+
+                            <p><a href="{{URL::to('/news/')}}/{{$news->id}}" class="btn btn-default" role="button">Read More</a></p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
 <div class='home2' style='padding-top:10px; min-height:95%;'>
     <div class="container-fluid" id="tourpackages-carousel">
         <h3 class='text-center' style="margin-top:4%;">They are searching for a home!</h3>
@@ -130,6 +159,8 @@
     </div><!-- End container -->
 
 </div>
+
+
 
 <div class="container-fluid text-center" style="min-height:300px;">
   
