@@ -149,16 +149,7 @@
             </div>
             <div class="form-group">
 
-	      <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
-//<![CDATA[
-        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-  //]]>
-  </script>
-  <h4>
-    First Textarea
-  </h4>
-  <textarea class="form-control" name="content" id="content" placeholder="Lorem ipsum dolor sit amet"  ></textarea>
-  <br />
+	
   
 
                   
