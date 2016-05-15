@@ -208,7 +208,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-            <div id="googleMap" style="width:500px;height:380px;"></div>
+            <h2 class="text-center">Location of some Animal Hospital / Doctor</h2>
+            <div id="googleMap" style="width:100%;height:380px;"></div>
         </div>
     </div>
 </div>
