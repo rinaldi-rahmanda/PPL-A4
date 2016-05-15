@@ -147,6 +147,8 @@
                   {!! Form::file('newsimage',['id'=>'photo','class'=>'form-control']) !!}
                </div>
             </div>
+	    
+	    </br>
             <div class="form-group">
 
 	
@@ -162,7 +164,7 @@
 
                </div>
             <div class="form-group">
-               <button type="submit" class="btn btn-success">Search</button>
+               <button type="submit" class="btn btn-success">Submit</button>
             </div>
           {!! Form::close() !!}
 </div>
