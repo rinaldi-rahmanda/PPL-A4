@@ -7,6 +7,7 @@
         background-color:#dfeef7;        
     }
 </style>
+<script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
 <div class='container-fluid page-wrap' style='padding-top:6%; padding-bottom:3%;' >
     <div class='news'>
         <div class="row">
@@ -139,6 +140,9 @@
                                 <div class="form-group">
                                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Description</label>
                                     <textarea class="form-control" name="description" placeholder="Anything useful and related informations about your pet like color,behaviour,etc"></textarea>
+                                    <script>
+                                        CKEDITOR.replace('description');
+                                    </script>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -160,7 +164,7 @@
                 <h3>Featured Pets :</h3>
                 <br>
                 @foreach ($adoptions as $adoption)
-                <div class="shelter-adoption col-md-4 col-sm-6 col-xs-6">
+                <div class="shelter-adoption col-md-4 col-sm-12 col-xs-12">
                     <img class="img-responsive img-rounded img-adoption" width="300px" height="300px" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}">
                     <h3 class="text-center">{{$adoption->name}}</h3>
                     <p class="text-center"><a href="{{URL::to('/adoption')}}/{{$adoption->id}}" class="btn btn-primary" role="button">See the details</a></p>

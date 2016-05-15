@@ -17,6 +17,7 @@
 }
   
   </style>
+<script src="//cdn.ckeditor.com/4.5.8/full/ckeditor.js"></script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
@@ -88,7 +89,7 @@
   <p>Datar -----------</p>
   </div>
 <div id="section41" class="container-fluid">
-  <h1 class="text-center">LIST QUESTIONS</h1>
+  <h1 class="text-center">LIST NEWS</h1>
   <div class="row">
     <div class="col-md-12 col-xs-12 col-sm-12">
       <table class="table table-responsive table-striped">
@@ -116,7 +117,7 @@
   </div>
 
 </div>
-<div id="section42" class="container-fluid">
+<div id="section42" class="container-fluid" style="min-height:700px">
   <h1 class="text-center">CREATE NEWS</h1>
   @include('common.error')
             {!! Form::open(array('url'=>'/admin/news/new','method'=>'POST', 'files'=>true)) !!}
@@ -134,6 +135,9 @@
             <div class="form-group">
                   <label class="in-form" for="content"  style="display:block;">Content</label>
                   <textarea class="form-control" name="content" id="content" placeholder="Lorem ipsum dolor sit amet" required></textarea>
+                  <script>
+                      CKEDITOR.replace('content');
+                  </script>
                </div>
             <div class="form-group">
                <button type="submit" class="btn btn-success">Search</button>

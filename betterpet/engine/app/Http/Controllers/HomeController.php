@@ -13,8 +13,8 @@ use App\Adoption;
 use App\Shelter;
 use App\News;
 use App\User;
-
 use App\Traits\CaptchaTrait;
+
 class HomeController extends Controller
 {
 
@@ -59,7 +59,7 @@ use CaptchaTrait;
     //displaying news
     public function news(){
     	$allnews = DB::table('news')
-                ->orderBy('created_at')
+                ->orderBy('created_at', 'desc')
                 ->get();
     	return view('home.news',['allnews'=>$allnews]);
     }

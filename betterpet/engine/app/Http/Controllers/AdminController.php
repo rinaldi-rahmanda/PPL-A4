@@ -14,8 +14,9 @@ use App\User;
 use App\Question;
 use Validator;
 use Session;
-
+use Storage;
 use App\Traits\CaptchaTrait;
+
 class AdminController extends Controller
 {
     public function __construct(){
@@ -25,11 +26,16 @@ class AdminController extends Controller
 		//return the homepage of admin section
         $shelters = Shelter::all();
         $adoptions = Adoption::all();
-        $users = User::all();
+        $userss = User::all();
+        $users = [];
         $questions = Question::all();
         $allnews = DB::table('news')
-                ->orderBy('created_at')
+                ->orderBy('created_at', 'desc')
                 ->get();
+        foreach($userss as $singleUser){
+        	if($singleUser->admin!='1')
+        		array_push($users,$singleUser);
+        }
 		return view('admin.index',
             ['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users,'questions'=>$questions,'allnews'=>$allnews]);
 	}
@@ -49,13 +55,14 @@ class AdminController extends Controller
             ]);
             if($validator->fails())
                 return redirect('/admin')->withErrors($validator);
-            $destinationPath = 'engine/images/news';
-            $extension = $file->getClientOriginalExtension();
-            $fileName = ($count+1).'.'.$extension;
-            $file->move($destinationPath,$fileName);
+			$extension = $file->getClientOriginalExtension();
+			$fileName = ($count+1).'.'.$extension;
+            Storage::put('newsimage/'.$fileName,
+                file_get_contents($file->getRealPath()));
             $news->photo = $fileName;
         }
         $news->save();
+        return $this->index();
 	}
 
     public function deleteNews($id){
@@ -72,11 +79,10 @@ class AdminController extends Controller
 
 	public function updateNews(Request $request){
 		//save the new submitted news to database
-		$news = new News;
+        $theID = $request->input('id');
+		$news = News::find($theID);
         $news->title = $request->input('title');
         $news->content = $request->input('content');
-        $count = News::all();
-        $count = $count->count();
         if($request->hasFile('newsimage'))
         {
             $file = $request->file('newsimage');
@@ -85,24 +91,13 @@ class AdminController extends Controller
             ]);
             if($validator->fails())
                 return redirect('/admin')->withErrors($validator);
-            $destinationPath = 'engine/images/news';
             $extension = $file->getClientOriginalExtension();
-            $fileName = ($count+1).'.'.$extension;
-            $file->move($destinationPath,$fileName);
+            $fileName = $theID.'.'.$extension;
+            Storage::put('newsimage/'.$fileName,
+                file_get_contents($file->getRealPath()));
             $news->photo = $fileName;
         }
         $news->save();
-		$shelters = Shelter::all();
-		$adoptions = Adoption::all();
-		$userss = User::all();
-		$users = [];
-		$questions = DB::table('questions')->get();
-		for($i=0 ; $i < count($userss); $i++){
-			$user = $userss[$i];
-			if($user->admin!='1')
-				array_push($users,$user);
-		}
-		return view('admin.index',
-			['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users,'questions'=>$questions]);
+        return $this->index();
 	}
 }

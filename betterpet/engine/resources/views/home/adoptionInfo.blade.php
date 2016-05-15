@@ -7,7 +7,7 @@
         height: 100%;
     }
 </style>
-
+<script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
 <div class='container-fluid'>
     <div class="row">
         <div class="col-md-offset-2 col-md-8 col-xs-12" style="background-color:white; min-height: 100%; margin-top:8%;">
@@ -81,6 +81,9 @@
                                 <div class="form-group">
                                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Description</label>
                                     <textarea class="form-control" name="description" placeholder="Anything useful and related informations about your pet like color,behaviour,etc">{{$adoption->description}}</textarea>
+                                    <script>
+                                        CKEDITOR.replace('description');
+                                    </script>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -116,16 +119,19 @@
                 @endif
                 @if($user && $user->id!=$adoption->user_id && $adoption->done=='0')
                         @if($request)
-                        <button type="submit" disabled class="btn btn-primary btn-sm">Request already sent</button>
-                        <form method="POST" action="{{URL::to('/adoption/request/cancel/')}}/{{$adoption->id}}">
-                            {!! csrf_field() !!}
-                            <button type="submit" class="btn btn-danger btn-sm">cancel request</button>
-                        </form>
+                        <div class="form-group">
+                            <form method="POST" action="{{URL::to('/adoption/request/cancel/')}}/{{$adoption->id}}">
+                                {!! csrf_field() !!}
+                                <button type="submit" class="btn btn-danger btn-sm">cancel request</button>
+                            </form>
+                        </div>
                         @else
-                        <form method="POST" action="{{URL::to('/adoption/request/')}}/{{$adoption->id}}">
-                            {!! csrf_field() !!}
-                            <button type="submit" class="btn btn-primary btn-sm">Request to adopt!</button>
-                        </form>
+                        <div class="form-group">
+                            <form method="POST" action="{{URL::to('/adoption/request/')}}/{{$adoption->id}}">
+                                {!! csrf_field() !!}
+                                <button type="submit" class="btn btn-primary btn-sm">Request to adopt!</button>
+                            </form>
+                        </div>
                         @endif
                 @endif
                 <div class="panel panel-default">
@@ -134,7 +140,10 @@
                        <p>Breed: {{$adoption->breed}}</p>
                         <p>Sex: {{$adoption->sex}}</p>
                         <P>Age: {{$adoption->age}}</P>
-                        <p>Description: {{$adoption->description}}</p>
+                        <p>Description: </p>
+                        <?php
+                            echo $adoption->description;
+                        ?>
                     </div>
                 </div>
                 <!--<ul>
