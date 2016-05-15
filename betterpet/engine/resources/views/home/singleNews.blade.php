@@ -19,7 +19,13 @@
             </div>
             <div class="col-sm-8 col-xs-8 col-md-8">
                 <div class="text-center" style="text-align: justify;">
+
                     {!! $news->content !!}
+
+                    <?php
+                        echo $news->content;
+                    ?>
+
                     <!--
                     <ol>
                          <li>

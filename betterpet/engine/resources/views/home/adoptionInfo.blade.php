@@ -7,7 +7,7 @@
         height: 100%;
     }
 </style>
-
+<script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
 <div class='container-fluid'>
     <div class="row">
         <div class="col-md-offset-2 col-md-8 col-xs-12" style="background-color:white; min-height: 100%; margin-top:8%;">
@@ -81,6 +81,9 @@
                                 <div class="form-group">
                                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Description</label>
                                     <textarea class="form-control" name="description" placeholder="Anything useful and related informations about your pet like color,behaviour,etc">{{$adoption->description}}</textarea>
+                                    <script>
+                                        CKEDITOR.replace('description');
+                                    </script>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -137,7 +140,10 @@
                        <p>Breed: {{$adoption->breed}}</p>
                         <p>Sex: {{$adoption->sex}}</p>
                         <P>Age: {{$adoption->age}}</P>
-                        <p>Description: {{$adoption->description}}</p>
+                        <p>Description: </p>
+                        <?php
+                            echo $adoption->description;
+                        ?>
                     </div>
                 </div>
                 <!--<ul>

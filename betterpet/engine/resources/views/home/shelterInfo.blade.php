@@ -22,7 +22,9 @@
                 </a>
             </h4>
             <p class="text-center">
-                {{$shelter->description}}
+                <?php
+                    echo $shelter->description;
+                ?>
             </p>
         </div>
     </div>
