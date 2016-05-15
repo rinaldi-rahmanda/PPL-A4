@@ -47,6 +47,14 @@ class AdminController extends Controller
         $news->content = $request->input('content');
         $count = News::all();
         $count = $count->count();
+        $validator = Validator::make($request->all(),[
+            'title' => 'required',
+            'content' => 'required',
+        ],[
+            'required'=>'the :attribute field is required',
+        ]);
+        if($validator->fails())
+            return redirect('/admin')->withErrors($validator);
         if($request->hasFile('newsimage'))
         {
             $file = $request->file('newsimage');
