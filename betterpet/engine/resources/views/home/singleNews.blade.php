@@ -22,10 +22,6 @@
 
                     {!! $news->content !!}
 
-                    <?php
-                        echo $news->content;
-                    ?>
-
                     <!--
                     <ol>
                          <li>

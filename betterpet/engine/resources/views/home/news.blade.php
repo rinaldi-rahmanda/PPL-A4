@@ -15,11 +15,6 @@
                             <h3>{{$news->title}}</h3>
 
                             <p>{!! $newcontent  !!}</p>
-
-                            <?php
-                                echo $newcontent;
-                            ?>
-
                             <p><a href="{{URL::to('/news/')}}/{{$news->id}}" class="btn btn-default" role="button">Read More</a></p>
                         </div>
                     </div>

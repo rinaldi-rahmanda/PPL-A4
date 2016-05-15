@@ -148,12 +148,6 @@
                </div>
             </div>
             <div class="form-group">
-
-	
-  
-
-                  
-
                   <label class="in-form" for="content"  style="display:block;">Content</label>
                   <textarea class="form-control" name="content" id="content" placeholder="Lorem ipsum dolor sit amet" required></textarea>
                   <script>
@@ -162,7 +156,7 @@
 
                </div>
             <div class="form-group">
-               <button type="submit" class="btn btn-success">Search</button>
+               <button type="submit" class="btn btn-success">Create</button>
             </div>
           {!! Form::close() !!}
 </div>

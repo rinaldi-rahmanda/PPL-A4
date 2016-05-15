@@ -106,7 +106,6 @@
     </div>  
 </div>
 
-@section('content')
 <div class='container-fluid page-wrap' style='margin-top:100px;' >
     <div class='news'>
         <div class="row">
@@ -121,11 +120,6 @@
                             <h3>{{$news->title}}</h3>
 
                             <p>{!! $newcontent  !!}</p>
-
-                            <?php
-                                echo $newcontent;
-                            ?>
-
                             <p><a href="{{URL::to('/news/')}}/{{$news->id}}" class="btn btn-default" role="button">Read More</a></p>
                         </div>
                     </div>
@@ -133,6 +127,7 @@
             @endforeach
         </div>
     </div>
+</div>
 <div class='home2' style='padding-top:10px; min-height:95%;'>
     <div class="container-fluid" id="tourpackages-carousel">
         <h3 class='text-center' style="margin-top:4%;">They are searching for a home!</h3>
@@ -198,13 +193,8 @@
   </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            EMBED MAP HERE
-        </div>
-    </div>
-</div>
+
+
 
 <!-- Script to Activate the Carousel -->
 <script>
