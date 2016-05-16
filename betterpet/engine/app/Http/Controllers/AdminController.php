@@ -117,4 +117,15 @@ class AdminController extends Controller
         else
             return redirect('/admin')->with('error','No Shelter Found for the requested id');
     }
+    public function removeAdoption($id){
+        $adoption = Adoption::find($id);
+        if(!$adoption)
+            return redirect('/admin')->with('error','No Adoption found for the requested id');
+        else{
+            DB::table('requests')->where('idAdopsi','=',$id)->delete();
+            Storage::delete('adoptionimage/'.$adoption->picture);
+            $adoption->delete();
+            return redirect()->back();
+        }
+    }
 }

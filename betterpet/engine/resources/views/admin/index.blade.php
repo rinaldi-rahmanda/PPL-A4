@@ -85,7 +85,8 @@
                     <a class="btn btn-default" href="{{URL::to('/shelter')}}/{{$shelter->id}}">View</a>
                   </td>
                   <td>
-                    <form method="POST" action="{{URL::to('/shelter')}}/{{$shelter->id}}">
+                    <form method="POST" action="{{URL::to('/shelter')}}/remove/{{$shelter->id}}">
+                    {{!! csrf_field() !!}}
                     <input type="submit" value="Delete" class="btn btn-danger">
                     </form>
                   </td>
@@ -127,8 +128,36 @@
 </div>
 <div id="section3" class="container-fluid">
   <h1 class="text-center">ADOPTION</h1>
-  <p>Datar -----------</p>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <table class="table table-responsive table-striped">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>View</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+              @foreach($adoptions as $adoption)
+                <tr>
+                  <td>{{$adoption->name}}</td>
+                  <td>
+                    <a class="btn btn-default" href="{{URL::to('/adoption')}}/{{$adoption->id}}">View</a>
+                  </td>
+                  <td>
+                    <form method="POST" action="{{URL::to('/adoption')}}/remove/{{$adoption->id}}">
+                    {{!! csrf_field() !!}}
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                    </form>
+                  </td>
+                </tr>
+              @endforeach
+              </tbody>
+        </table>
+    </div>
   </div>
+</div>
 <div id="section41" class="container-fluid">
   <h1 class="text-center">LIST NEWS</h1>
   <div class="row">
