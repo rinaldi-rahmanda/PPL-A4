@@ -108,4 +108,13 @@ class AdminController extends Controller
         $news->save();
         return $this->index();
 	}
+    public function removeShelter($id){
+        $shelter = Shelter::find($id);
+        if($shelter){
+            $shelter->delete();
+            return redirect()->back();
+        }
+        else
+            return redirect('/admin')->with('error','No Shelter Found for the requested id');
+    }
 }
