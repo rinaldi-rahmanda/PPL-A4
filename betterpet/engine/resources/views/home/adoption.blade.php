@@ -11,7 +11,7 @@
 <div class='container-fluid page-wrap' style='padding-top:6%; padding-bottom:3%;' >
     <div class='news'>
         <div class="row">
-            <div class="col-xs-8 col-xs-offset-1 col-md-6 col-md-offset-1 layout" style="border-radius:5px;">
+            <div class="col-xs-12 col-md-6 col-md-offset-1 layout" style="border-radius:5px;">
                 <h2>Find your favorite pet!</h2>
                 @include('common.error')
                 <form method="POST">
