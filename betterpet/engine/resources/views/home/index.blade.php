@@ -192,23 +192,58 @@
     </a>
   </div>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script><script>
+function init() {
+   var map = new google.maps.Map(document.getElementById('googleMap'), {
+     center: {
+       lat: 12.9715987,
+       lng: 77.59456269999998
+     },
+     zoom: 12
+   });
 
-<script src="http://maps.googleapis.com/maps/api/js"></script>
-<script>
-function initialize() {
-  var mapProp = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
+
+   var searchBox = new google.maps.places.SearchBox(document.getElementById('pac-input'));
+   map.controls[google.maps.ControlPosition.TOP_CENTER].push(document.getElementById('pac-input'));
+   google.maps.event.addListener(searchBox, 'places_changed', function() {
+     searchBox.set('map', null);
+
+
+     var places = searchBox.getPlaces();
+
+     var bounds = new google.maps.LatLngBounds();
+     var i, place;
+     for (i = 0; place = places[i]; i++) {
+       (function(place) {
+         var marker = new google.maps.Marker({
+
+           position: place.geometry.location
+         });
+         marker.bindTo('map', searchBox, 'map');
+         google.maps.event.addListener(marker, 'map_changed', function() {
+           if (!this.getMap()) {
+             this.unbindAll();
+           }
+         });
+         bounds.extend(place.geometry.location);
+
+
+       }(place));
+
+     }
+     map.fitBounds(bounds);
+     searchBox.set('map', map);
+     map.setZoom(Math.min(map.getZoom(),12));
+
+   });
+ }
+ google.maps.event.addDomListener(window, 'load', init);
 </script>
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <h2 class="text-center">Location of some Animal Hospital / Doctor</h2>
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
             <div id="googleMap" style="width:100%;height:380px;"></div>
         </div>
     </div>
