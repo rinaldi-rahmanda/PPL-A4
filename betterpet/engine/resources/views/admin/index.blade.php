@@ -166,7 +166,6 @@
         <thead>
         <tr>
           <th>Title</th>
-          <th>Content</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -174,7 +173,6 @@
         @foreach ($allnews as $news)
         <tr>
           <td>{{$news->title}}</td>
-          <td>{{$news->content}}</td>
           <td>
             <a href="{{URL::to('/admin/news/update')}}/{{$news->id}}"><button class="btn btn-primary btn-sm">Update</button></a>
             <a href="{{URL::to('/admin/news/delete')}}/{{$news->id}}"><button class="btn btn-primary btn-sm">Delete</button></a>

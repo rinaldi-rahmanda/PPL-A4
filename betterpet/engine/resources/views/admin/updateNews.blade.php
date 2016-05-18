@@ -2,7 +2,7 @@
 
 @section('content')
 	<head>
- 
+  <script src="//cdn.ckeditor.com/4.5.8/full/ckeditor.js"></script>
   <style>
   body {
       position: relative; 
@@ -67,7 +67,11 @@
             </div>
             <div class="form-group">
                   <label class="in-form" for="content"  style="display:block;">Content</label>
-                  <textarea class="form-control" name="content" id="content" required>{{$news->content}}</textarea>
+                  <textarea class="form-control" name="content" id="content" required>{!! $news->content !!}
+                  </textarea>
+                  <script>
+                      CKEDITOR.replace('content');
+                  </script>
                </div>
             <div class="form-group">
                <button type="submit" class="btn btn-success">Update</button>
