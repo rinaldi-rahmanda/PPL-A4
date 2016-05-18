@@ -232,7 +232,7 @@
           <td>{{$question->name}}</td>
           <td>{{$question->email}}</td>
           <td>{{$question->title}}</td>
-          <td>{{$question->content}}</td>
+          <td>{!! $question->content !!}</td>
         </tr>
         @endforeach
         </tbody>
