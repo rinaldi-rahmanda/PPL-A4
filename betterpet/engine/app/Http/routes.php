@@ -69,4 +69,5 @@ Route::group(['middleware'=>['web','usermid']],function(){
     Route::post('/adoption/request/cancel/{id}','UserController@cancelRequest');
     Route::post('/shelter/remove/{id}','AdminController@removeShelter');
     Route::post('/adoption/remove/{id}','AdminController@removeAdoption');
+    Route::post('/admin/newmap','AdminController@newMapMarker');
 });

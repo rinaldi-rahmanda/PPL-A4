@@ -128,4 +128,10 @@ class AdminController extends Controller
             return redirect()->back();
         }
     }
+    public function newMapMarker(Request $request){
+        $name = $request->input('name');
+        $long = $request->input('long');
+        $lat = $request->input('lat');
+        //TODO , insert into database
+    }
 }

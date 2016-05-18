@@ -268,18 +268,18 @@
 <div id="section7" class="container">
   <h1 class="text-center">Add New Map Marker</h1>
   <div class="row">
-    <form method="POST">
+    <form method="POST" action="{{URL::to('/admin/newmap')}}">
     {!! csrf_field() !!}
     <div class="col-md-4 col-xs-4 col-sm-4">
       <div class="form-group">
-      <input type="text" class="form-control" placeholder="Name" required>
+      <input type="text" class="form-control" placeholder="Name" name="name" required>
       </div>
     </div>
     <div class="col-md-4 col-xs-4 col-sm-4">
-      <input type="text" class="form-control" placeholder="Longitude" required>
+      <input type="text" class="form-control" placeholder="Longitude" name="long" required>
     </div>
     <div class="col-md-4 col-xs-4 col-sm-4">
-      <input type="text" class="form-control" placeholder="Latitude" required>
+      <input type="text" class="form-control" placeholder="Latitude" name="lat" required>
     </div>
     </form>
   </div>
