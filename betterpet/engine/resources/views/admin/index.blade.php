@@ -240,5 +240,49 @@
     </div>
   </div>
 </div>
+<div id="section6" class="container">
+  <h1 class="text-center">LIST Map markers</h1>
+  <div class="row">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+      <table class="table table-responsive table-striped">
+        <thead>
+          <tr>
+            <td><b>Name</b></td>
+            <td><b>Latitude</b></td>
+            <td><b>Longitude</b></td>
+          </tr>
+        </thead>
+        <tbody>
+        @foreach($questions as $question)
+        <tr>
+          <td>{{$question->email}}</td>
+          <td>{{$question->title}}</td>
+          <td>{!! $question->content !!}</td>
+        </tr>
+        @endforeach
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="section7" class="container">
+  <h1 class="text-center">Add New Map Marker</h1>
+  <div class="row">
+    <form method="POST">
+    {!! csrf_field() !!}
+    <div class="col-md-4 col-xs-4 col-sm-4">
+      <div class="form-group">
+      <input type="text" class="form-control" placeholder="Name" required>
+      </div>
+    </div>
+    <div class="col-md-4 col-xs-4 col-sm-4">
+      <input type="text" class="form-control" placeholder="Longitude" required>
+    </div>
+    <div class="col-md-4 col-xs-4 col-sm-4">
+      <input type="text" class="form-control" placeholder="Latitude" required>
+    </div>
+    </form>
+  </div>
+</div>
 </body>
 @endsection
