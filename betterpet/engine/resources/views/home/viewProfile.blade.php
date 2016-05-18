@@ -9,7 +9,7 @@
 </style>
 <div class='container-fluid page-wrap'>
     <div class="row">
-        <div class="col-md-offset-2 col-md-8 col-sm-8" style="background-color:white; min-height: 100%; margin-top:8%;">
+        <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" style="background-color:white; min-height: 100%; margin-top:8%;">
             <div class="col-md-2 col-sm-2" style="margin-top:5%;margin-bottom:2%;padding-left:3%;">
                 @if($user->avatar=="")
                 <img src="http://placehold.it/200x200" alt="">
