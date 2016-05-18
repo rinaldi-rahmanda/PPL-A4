@@ -106,28 +106,7 @@
     </div>  
 </div>
 
-<div class='container-fluid page-wrap' style='margin-top:100px;' >
-    <div class='news'>
-        <div class="row">
-            <h3 class="text-center"> Read our latest news</h3>
-            <hr class="line">
-            @foreach ($news as $news)
-                <?php $newcontent = AppHelper::snippetgreedy($news->content, 125, "..."); ?>
-                <div class="col-md-offset-1 col-sm-10 col-xs-10 col-md-10 news-thumbnail">
-                <div class="col-md-4" style="margin-left:2%;margin-top:2%;margin-bottom:2%;"><img src="{{URL::to('/engine/storage/app/newsimage')}}/{{$news->photo}}" width="200" height="250"> </div>
-                    <div class="col-md-7">
-                        <div class="caption">
-                            <h3>{{$news->title}}</h3>
 
-                            <p>{!! $newcontent  !!}</p>
-                            <p><a href="{{URL::to('/news/')}}/{{$news->id}}" class="btn btn-default" role="button">Read More</a></p>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</div>
 <div class='home2' style='padding-top:10px; min-height:95%;'>
     <div class="container-fluid" id="tourpackages-carousel">
         <h3 class='text-center' style="margin-top:4%;">They are searching for a home!</h3>
@@ -153,10 +132,32 @@
 
 </div><!-- End container -->
 
+<div class='container-fluid page-wrap' style='margin-top:2%;' >
+    <div class='news'>
+        <div class="row">
+            <h3 class="text-center"> Read our latest news</h3>
+            <hr class="line">
+            @foreach ($news as $news)
+            <?php $newcontent = AppHelper::snippetgreedy($news->content, 125, "..."); ?>
+            <div class="col-md-offset-1 col-sm-10 col-xs-10 col-md-10 news-thumbnail">
+                <div class="col-md-4" style="margin-left:2%;margin-top:2%;margin-bottom:2%;"><img src="{{URL::to('/engine/storage/app/newsimage')}}/{{$news->photo}}" width="200" height="250"> </div>
+                <div class="col-md-7">
+                    <div class="caption">
+                        <h3>{{$news->title}}</h3>
+
+                        <p>{!! $newcontent  !!}</p>
+                        <p><a href="{{URL::to('/news/')}}/{{$news->id}}" class="btn btn-default" role="button">Read More</a></p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
 
 
 
-<div class="container-fluid text-center" style="min-height:300px;">
+<div class="container-fluid text-center" style="min-height:300px;background:#f6f6f6;">
 
     <h2 style="margin-top:80px;">What our customers say</h2>
     <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
@@ -193,55 +194,56 @@
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script><script>
 function init() {
-   var map = new google.maps.Map(document.getElementById('googleMap'), {
-     center: {
-       lat: 12.9715987,
-       lng: 77.59456269999998
-     },
-     zoom: 12
-   });
+    var map = new google.maps.Map(document.getElementById('googleMap'), {
+        center: {
+            lat: 12.9715987,
+            lng: 77.59456269999998
+        },
+        zoom: 12
+    });
 
 
-   var searchBox = new google.maps.places.SearchBox(document.getElementById('pac-input'));
-   map.controls[google.maps.ControlPosition.TOP_CENTER].push(document.getElementById('pac-input'));
-   google.maps.event.addListener(searchBox, 'places_changed', function() {
-     searchBox.set('map', null);
+    var searchBox = new google.maps.places.SearchBox(document.getElementById('pac-input'));
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(document.getElementById('pac-input'));
+    google.maps.event.addListener(searchBox, 'places_changed', function() {
+        searchBox.set('map', null);
 
 
-     var places = searchBox.getPlaces();
+        var places = searchBox.getPlaces();
 
-     var bounds = new google.maps.LatLngBounds();
-     var i, place;
-     for (i = 0; place = places[i]; i++) {
-       (function(place) {
-         var marker = new google.maps.Marker({
+        var bounds = new google.maps.LatLngBounds();
+        var i, place;
+        for (i = 0; place = places[i]; i++) {
+            (function(place) {
+                var marker = new google.maps.Marker({
 
-           position: place.geometry.location
-         });
-         marker.bindTo('map', searchBox, 'map');
-         google.maps.event.addListener(marker, 'map_changed', function() {
-           if (!this.getMap()) {
-             this.unbindAll();
-           }
-         });
-         bounds.extend(place.geometry.location);
+                    position: place.geometry.location
+                });
+                marker.bindTo('map', searchBox, 'map');
+                google.maps.event.addListener(marker, 'map_changed', function() {
+                    if (!this.getMap()) {
+                        this.unbindAll();
+                    }
+                });
+                bounds.extend(place.geometry.location);
 
 
-       }(place));
+            }(place));
 
-     }
-     map.fitBounds(bounds);
-     searchBox.set('map', map);
-     map.setZoom(Math.min(map.getZoom(),12));
+        }
+        map.fitBounds(bounds);
+        searchBox.set('map', map);
+        map.setZoom(Math.min(map.getZoom(),12));
 
-   });
- }
- google.maps.event.addDomListener(window, 'load', init);
+    });
+}
+google.maps.event.addDomListener(window, 'load', init);
 </script>
-<div class="container">
+
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <h2 class="text-center">Location of some Animal Hospital / Doctor</h2>
+        <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:2%;">
+            <h2 class="text-center" style="margin-bottom:3%;">Find a Veterinary Hospital / Doctor for Your Pet</h2>
             <input id="pac-input" class="controls" type="text" placeholder="Search Box">
             <div id="googleMap" style="width:100%;height:380px;"></div>
         </div>
