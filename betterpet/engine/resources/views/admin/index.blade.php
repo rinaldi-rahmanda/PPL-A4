@@ -147,7 +147,7 @@
                   </td>
                   <td>
                     <form method="POST" action="{{URL::to('/adoption')}}/remove/{{$adoption->id}}">
-                    {{!! csrf_field() !!}}
+                    {!! csrf_field() !!}
                     <input type="submit" value="Delete" class="btn btn-danger">
                     </form>
                   </td>
