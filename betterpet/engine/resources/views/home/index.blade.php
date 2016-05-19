@@ -110,7 +110,7 @@
 <div class='home2' style='padding-top:10px; min-height:95%;'>
     <div class="container-fluid" id="tourpackages-carousel">
         <h3 class='text-center' style="margin-top:4%;">They are searching for a home!</h3>
-        <hr class='line' style='width:500px;'>
+        <hr class='line'>
         @if(count($adoptions)>0)
         <div class="row">
             <div class="col-md-offset-1 col-xs-12 col-sm-6 col-md-10">
