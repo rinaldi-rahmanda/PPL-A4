@@ -196,8 +196,8 @@
 function init() {
     var map = new google.maps.Map(document.getElementById('googleMap'), {
         center: {
-            lat: 12.9715987,
-            lng: 77.59456269999998
+            lat: -6.211298,
+            lng: 106.847015
         },
         zoom: 12
     });
