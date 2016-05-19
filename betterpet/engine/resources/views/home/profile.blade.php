@@ -11,11 +11,11 @@
 <div class='container-fluid'>
     <div class="row">
         <div class="row">
-            <div class="col-md-offset-2 col-md-4" style="margin-top:8%;margin-bottom:2%;">
+            <div class="col-md-offset-2 col-md-4 col-sm-12" style="margin-top:8%;margin-bottom:2%;">
                 <h2 >Hello, {{ $user->name }}</h2>
             </div>
         </div>
-        <div class="col-md-offset-2 col-md-2">
+        <div class="col-md-offset-2 col-md-2  col-sm-12">
 			@if($avatar=="")
             <img src="http://placehold.it/200x200" alt="">
 			@else
@@ -30,7 +30,7 @@
                 <a style="color:white;text-decoration:none;" href="{{URL::to('/profile/view')}}/{{$user->id}}"><button class="button btn pro" style="width:200px;background:#337ab7;color:white;"> View Profile</button></a> 
             </div>
         </div>      
-        <div class="col-md-offset-1 col-md-5 col-xs-6">
+        <div class="col-md-offset-1 col-md-5 col-xs-offset-1 col-xs-10">
 			{!! Form::open(array('url'=>'profile','class'=>'form-horizontal','method'=>'POST', 'files'=>true)) !!}
             <!--<form id="profile-form" class="form-horizontal" method="POST">-->
                 {!! csrf_field() !!}

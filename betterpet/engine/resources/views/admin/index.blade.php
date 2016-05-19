@@ -66,9 +66,36 @@
 </nav>    
 
 <div id="section1" class="container-fluid">
-  <h1 class="text-center">SHELTER</h1>
-  <p>Dafatar penitipan hewan</p>
- 
+    <h1 class="text-center">SHELTER</h1>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+          <table class="table table-responsive table-striped">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>View</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+              @foreach($shelters as $shelter)
+                <tr>
+                  <td>{{$shelter->shelterName}}</td>
+                  <td>
+                    <a class="btn btn-default" href="{{URL::to('/shelter')}}/{{$shelter->id}}">View</a>
+                  </td>
+                  <td>
+                    <form method="POST" action="{{URL::to('/shelter')}}/remove/{{$shelter->id}}">
+                    {!! csrf_field() !!}
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                    </form>
+                  </td>
+                </tr>
+              @endforeach
+              </tbody>
+          </table>
+      </div>
+    </div>
 </div>
 <div id="section2" class="container-fluid">
   <h1 class="text-center">USERS</h1>
@@ -101,8 +128,36 @@
 </div>
 <div id="section3" class="container-fluid">
   <h1 class="text-center">ADOPTION</h1>
-  <p>Datar -----------</p>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <table class="table table-responsive table-striped">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>View</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+              @foreach($adoptions as $adoption)
+                <tr>
+                  <td>{{$adoption->name}}</td>
+                  <td>
+                    <a class="btn btn-default" href="{{URL::to('/adoption')}}/{{$adoption->id}}">View</a>
+                  </td>
+                  <td>
+                    <form method="POST" action="{{URL::to('/adoption')}}/remove/{{$adoption->id}}">
+                    {!! csrf_field() !!}
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                    </form>
+                  </td>
+                </tr>
+              @endforeach
+              </tbody>
+        </table>
+    </div>
   </div>
+</div>
 <div id="section41" class="container-fluid">
   <h1 class="text-center">LIST NEWS</h1>
   <div class="row">
@@ -111,7 +166,6 @@
         <thead>
         <tr>
           <th>Title</th>
-          <th>Content</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -119,7 +173,6 @@
         @foreach ($allnews as $news)
         <tr>
           <td>{{$news->title}}</td>
-          <td>{{$news->content}}</td>
           <td>
             <a href="{{URL::to('/admin/news/update')}}/{{$news->id}}"><button class="btn btn-primary btn-sm">Update</button></a>
             <a href="{{URL::to('/admin/news/delete')}}/{{$news->id}}"><button class="btn btn-primary btn-sm">Delete</button></a>
@@ -150,12 +203,6 @@
 	    
 	    </br>
             <div class="form-group">
-
-	
-  
-
-                  
-
                   <label class="in-form" for="content"  style="display:block;">Content</label>
                   <textarea class="form-control" name="content" id="content" placeholder="Lorem ipsum dolor sit amet" required></textarea>
                   <script>
@@ -164,7 +211,11 @@
 
                </div>
             <div class="form-group">
+
                <button type="submit" class="btn btn-success">Submit</button>
+
+               <button type="submit" class="btn btn-success">Create</button>
+
             </div>
           {!! Form::close() !!}
 </div>
@@ -187,12 +238,56 @@
           <td>{{$question->name}}</td>
           <td>{{$question->email}}</td>
           <td>{{$question->title}}</td>
-          <td>{{$question->content}}</td>
+          <td>{!! $question->content !!}</td>
         </tr>
         @endforeach
         </tbody>
       </table>
     </div>
+  </div>
+</div>
+<div id="section6" class="container">
+  <h1 class="text-center">LIST Map markers</h1>
+  <div class="row">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+      <table class="table table-responsive table-striped">
+        <thead>
+          <tr>
+            <td><b>Name</b></td>
+            <td><b>Latitude</b></td>
+            <td><b>Longitude</b></td>
+          </tr>
+        </thead>
+        <tbody>
+        @foreach($questions as $question)
+        <tr>
+          <td>{{$question->email}}</td>
+          <td>{{$question->title}}</td>
+          <td>{!! $question->content !!}</td>
+        </tr>
+        @endforeach
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="section7" class="container">
+  <h1 class="text-center">Add New Map Marker</h1>
+  <div class="row">
+    <form method="POST" action="{{URL::to('/admin/newmap')}}">
+    {!! csrf_field() !!}
+    <div class="col-md-4 col-xs-4 col-sm-4">
+      <div class="form-group">
+      <input type="text" class="form-control" placeholder="Name" name="name" required>
+      </div>
+    </div>
+    <div class="col-md-4 col-xs-4 col-sm-4">
+      <input type="text" class="form-control" placeholder="Longitude" name="long" required>
+    </div>
+    <div class="col-md-4 col-xs-4 col-sm-4">
+      <input type="text" class="form-control" placeholder="Latitude" name="lat" required>
+    </div>
+    </form>
   </div>
 </div>
 </body>

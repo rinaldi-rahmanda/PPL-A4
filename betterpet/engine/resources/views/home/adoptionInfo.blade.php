@@ -112,10 +112,13 @@
                     <li><a href="{{URL::to('/profile/view')}}/{{$personR->id}}">{{$personR->name}}</a></li>
                     @endforeach
                 </ul>
+                @if($adoption->done=='0')
                 <a href="{{URL::to('/adoption')}}/mark/{{$adoption->id}}"
                     class="btn btn-sm btn-success">Mark as Done</a>
+                @else
                 <a href="{{URL::to('/adoption')}}/unmark/{{$adoption->id}}"
                     class="btn btn-sm btn-danger">Unmark as Done</a>
+                @endif
                 @endif
                 @if($user && $user->id!=$adoption->user_id && $adoption->done=='0')
                         @if($request)

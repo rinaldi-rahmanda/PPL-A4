@@ -47,6 +47,14 @@ class AdminController extends Controller
         $news->content = $request->input('content');
         $count = News::all();
         $count = $count->count();
+        $validator = Validator::make($request->all(),[
+            'title' => 'required',
+            'content' => 'required',
+        ],[
+            'required'=>'the :attribute field is required',
+        ]);
+        if($validator->fails())
+            return redirect('/admin')->withErrors($validator);
         if($request->hasFile('newsimage'))
         {
             $file = $request->file('newsimage');
@@ -100,4 +108,30 @@ class AdminController extends Controller
         $news->save();
         return $this->index();
 	}
+    public function removeShelter($id){
+        $shelter = Shelter::find($id);
+        if($shelter){
+            $shelter->delete();
+            return redirect()->back();
+        }
+        else
+            return redirect('/admin')->with('error','No Shelter Found for the requested id');
+    }
+    public function removeAdoption($id){
+        $adoption = Adoption::find($id);
+        if(!$adoption)
+            return redirect('/admin')->with('error','No Adoption found for the requested id');
+        else{
+            DB::table('requests')->where('idAdopsi','=',$id)->delete();
+            Storage::delete('adoptionimage/'.$adoption->picture);
+            $adoption->delete();
+            return redirect()->back();
+        }
+    }
+    public function newMapMarker(Request $request){
+        $name = $request->input('name');
+        $long = $request->input('long');
+        $lat = $request->input('lat');
+        //TODO , insert into database
+    }
 }
