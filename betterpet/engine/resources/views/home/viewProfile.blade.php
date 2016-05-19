@@ -40,8 +40,8 @@
                         <div class="panel panel-default" style="margin-top:8%;">
                             <div class="panel-heading">About Me</div>
                             <div class="panel-body">
-                                <p>You can call me at {{$user->phone}}</p>
-                                <p>{{$description}}</p>
+                                <p style="word-wrap: break-word;"> You can call me at {{$user->phone}}</p>
+                                <p style="word-wrap: break-word;">{{$description}}</p>
                             </div>
                         </div>      
                     </div>
