@@ -242,7 +242,7 @@ google.maps.event.addDomListener(window, 'load', init);
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:2%;">
+        <div class="map col-md-8 col-sm-8 col-xs-8 col-md-offset-2 col-sm-offset-2 col-xs-offset-2" style="margin-top:2%;">
             <h2 class="text-center" style="margin-bottom:3%;">Find a Veterinary Hospital / Doctor for Your Pet</h2>
             <input id="pac-input" class="controls" type="text" placeholder="Search Box">
             <div id="googleMap" style="width:100%;height:380px;"></div>
