@@ -276,19 +276,21 @@
   <div class="row">
     <form method="POST" action="{{URL::to('/admin/newmap')}}">
     {!! csrf_field() !!}
-    <div class="col-md-4 col-xs-4 col-sm-4">
       <div class="form-group">
-      <input type="text" class="form-control" placeholder="Name" name="name" required>
+        <label for="name">Nama Rumah Sakit / Dr:</label>
+        <input type="name" class="form-control" id="name">
       </div>
-    </div>
-    <div class="col-md-4 col-xs-4 col-sm-4">
-      <input type="text" class="form-control" placeholder="Longitude" name="long" required>
-    </div>
-    <div class="col-md-4 col-xs-4 col-sm-4">
-      <input type="text" class="form-control" placeholder="Latitude" name="lat" required>
-    </div>
-    </form>
-  </div>
+      <div class="form-group">
+        <label for="lat">Latitude</label>
+        <input type="text" class="form-control" id="lat">
+      </div>
+      <div class="form-group">
+        <label for="long">Longitude</label>
+        <input type="text" class="form-control" id="long">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
 </div>
 </body>
 @endsection
