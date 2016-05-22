@@ -256,6 +256,7 @@
             <td><b>Name</b></td>
             <td><b>Latitude</b></td>
             <td><b>Longitude</b></td>
+            <td><b>Action</b></td>
           </tr>
         </thead>
         <tbody>
@@ -264,6 +265,12 @@
           <td>{{$map->name}}</td>
           <td>{{$map->longitude}}</td>
           <td>{{$map->latitude}}</td>
+          <td>
+            <form method="POST" action="{{URL::to('/admin')}}/maprm/{{$map->id}}">
+              {!! csrf_field() !!}
+              <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+          </td>
         </tr>
         @endforeach
         </tbody>

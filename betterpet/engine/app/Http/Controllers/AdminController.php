@@ -139,4 +139,8 @@ class AdminController extends Controller
         );
         return redirect('/admin');
     }
+    public function removeMapMarker($id){
+        DB::table('maps')->where('id',$id)->delete();
+        return redirect('/admin');
+    }
 }
