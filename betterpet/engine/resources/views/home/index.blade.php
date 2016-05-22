@@ -96,7 +96,7 @@
       </div>
    </div>
 </div>
-<div class='home2' style='padding-top:10px; min-height:95%;'>
+<div class='home2' style='padding-top:10px;'>
    <div class="container-fluid" id="tourpackages-carousel">
       <h3 class='text-center' style="margin-top:4%;">They are searching for a home!</h3>
       <hr class='line'>
@@ -113,17 +113,20 @@
          </div>
       </div>
       @else
-      There are no adoption available right now
+      <h3 class="text-center">There are no adoption available right now</h3>
       @endif
    </div>
    <!-- End row -->
 </div>
 <!-- End container -->
-<div class='container-fluid page-wrap' style='margin-top:2%;' >
+<div class='container-fluid' style='margin-top:2%;' >
    <div class='news'>
       <div class="row">
          <h3 class="text-center"> Read our latest news</h3>
          <hr class="line">
+         @if(count($news)==0)
+          <h3 class="text-center">Sorry, there are no available news</h3>
+         @endif
          @foreach ($news as $news)
          <?php $newcontent = AppHelper::snippetgreedy($news->content, 125, "..."); ?>
          <div class="col-md-offset-1 col-sm-10 col-xs-10 col-md-10 news-thumbnail">

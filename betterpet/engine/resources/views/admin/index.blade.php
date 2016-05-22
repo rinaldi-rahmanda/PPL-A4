@@ -246,7 +246,7 @@
     </div>
   </div>
 </div>
-<div id="section6" class="container">
+<div id="section6" class="container-fluid">
   <h1 class="text-center">LIST Map markers</h1>
   <div class="row">
     <div class="col-md-12 col-xs-12 col-sm-12">
@@ -271,22 +271,22 @@
     </div>
   </div>
 </div>
-<div id="section7" class="container">
+<div id="section7" class="container-fluid">
   <h1 class="text-center">Add New Map Marker</h1>
   <div class="row">
     <form method="POST" action="{{URL::to('/admin/newmap')}}">
     {!! csrf_field() !!}
       <div class="form-group">
         <label for="name">Nama Rumah Sakit / Dr:</label>
-        <input type="name" class="form-control" id="name">
+        <input type="name" class="form-control" id="name" required>
       </div>
       <div class="form-group">
         <label for="lat">Latitude</label>
-        <input type="text" class="form-control" id="lat">
+        <input type="text" class="form-control" id="lat" required>
       </div>
       <div class="form-group">
         <label for="long">Longitude</label>
-        <input type="text" class="form-control" id="long">
+        <input type="text" class="form-control" id="long" required>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
         </form>
