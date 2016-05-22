@@ -32,7 +32,8 @@ use CaptchaTrait;
             ->take(3)
             ->get();
         $news = DB::table('news')->take(3)->get();
-    	return view('home.index',['adoptions'=>$adoptions,'news'=>$news]);
+        $markers = DB::table('maps')->get();
+    	return view('home.index',['adoptions'=>$adoptions,'news'=>$news,'markers'=>$markers]);
     }
     //menampilkan adoption form
     public function adoption(){

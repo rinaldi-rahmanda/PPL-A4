@@ -182,11 +182,14 @@
                lat: -6.211298,
                lng: 106.847015
            },
-           zoom: 12
+           zoom: 10
        });
         var locations = [
-        ['Citos', -6.291416, 106.799808, 4],
-        ['Dominos', -6.289294, 106.795581, 5]
+        @foreach($markers as $marker)
+        <?php
+          echo "['".$marker->name."',".$marker->latitude.",".$marker->longitude."],";
+        ?>
+        @endforeach
       ];
       var infowindow = new google.maps.InfoWindow();
       var marker, i;
