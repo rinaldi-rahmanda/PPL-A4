@@ -76,6 +76,12 @@ body {
 #section6{
     background-color: #61abd8;
 }
+#pac-input{
+    text-align: center;
+    font-size: 1.2em;
+    width: 45%;
+    height: 25px;
+}
 .sosial {
     margin-top: 3%;
     margin-bottom: 1%;

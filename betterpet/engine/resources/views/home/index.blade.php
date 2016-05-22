@@ -175,7 +175,7 @@
       </a>
    </div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script><script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script><script>
    function init() {
        var map = new google.maps.Map(document.getElementById('googleMap'), {
            center: {
@@ -184,16 +184,29 @@
            },
            zoom: 12
        });
-   
-   
-       var searchBox = new google.maps.places.SearchBox(document.getElementById('pac-input'));
+        var locations = [
+        ['Citos', -6.291416, 106.799808, 4],
+        ['Dominos', -6.289294, 106.795581, 5]
+      ];
+      var infowindow = new google.maps.InfoWindow();
+      var marker, i;
+      for (i = 0; i < locations.length; i++) { 
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+          map: map
+        });
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+      }
+      var searchBox = new google.maps.places.SearchBox(document.getElementById('pac-input'));
        map.controls[google.maps.ControlPosition.TOP_CENTER].push(document.getElementById('pac-input'));
        google.maps.event.addListener(searchBox, 'places_changed', function() {
            searchBox.set('map', null);
-   
-   
            var places = searchBox.getPlaces();
-   
            var bounds = new google.maps.LatLngBounds();
            var i, place;
            for (i = 0; place = places[i]; i++) {
@@ -226,7 +239,7 @@
    <div class="row">
       <div class="map col-md-8 col-sm-8 col-xs-8 col-md-offset-2 col-sm-offset-2 col-xs-offset-2" style="margin-top:2%;">
          <h2 class="text-center" style="margin-bottom:3%;">Find a Veterinary Hospital / Doctor for Your Pet</h2>
-         <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+         <input id="pac-input" class="controls" type="text" placeholder="Address/Hospital name">
          <div id="googleMap" style="width:100%;height:380px;"></div>
       </div>
    </div>
