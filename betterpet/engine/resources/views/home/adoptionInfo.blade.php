@@ -139,7 +139,7 @@
                 @endif
                 <div class="panel panel-default">
                     <div class="panel-heading">About Me</div>
-                    <div class="panel-body">
+                    <div class="panel-body" style="word-wrap: break-word;">
                        <p>Breed: {{$adoption->breed}}</p>
                         <p>Sex: {{$adoption->sex}}</p>
                         <P>Age: {{$adoption->age}}</P>

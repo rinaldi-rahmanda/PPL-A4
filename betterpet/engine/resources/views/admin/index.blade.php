@@ -200,6 +200,8 @@
                   {!! Form::file('newsimage',['id'=>'photo','class'=>'form-control']) !!}
                </div>
             </div>
+	    
+	    </br>
             <div class="form-group">
                   <label class="in-form" for="content"  style="display:block;">Content</label>
                   <textarea class="form-control" name="content" id="content" placeholder="Lorem ipsum dolor sit amet" required></textarea>
@@ -209,7 +211,11 @@
 
                </div>
             <div class="form-group">
+
+               <button type="submit" class="btn btn-success">Submit</button>
+
                <button type="submit" class="btn btn-success">Create</button>
+
             </div>
           {!! Form::close() !!}
 </div>

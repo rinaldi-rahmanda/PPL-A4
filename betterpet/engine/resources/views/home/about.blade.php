@@ -43,10 +43,10 @@
             <hr class="line">
             <div class="team">
                 <div class="row team-row" style="margin-top: 6%;" >
-                    <div class="col-xs-3 col-xs-offset-3 col-md-2 col-md-offset-3">
+                    <div class="col-xs-3  col-md-2 col-md-offset-3">
                         <img class="img-responsive img-circle" src="{{URL::to('/image/adit.jpg')}}" width="150" height="150">
                     </div>
-                    <div class="col-md-4 col-xs-4">
+                    <div class="col-md-4 col-xs-6">
                         <h3>Aditya Rama</h3>
                         <blockquote><i>
                             "Growing together with a pet is wonderful, and i hope i'm not the only one who feel it."
@@ -56,7 +56,7 @@
                 </div>
                 <hr class="line2">
                 <div class="row team-row">
-                    <div class="col-xs-3 col-xs-offset-3 col-md-4 col-md-offset-3">
+                    <div class="col-xs-3  col-md-4 col-md-offset-3">
                         <h3>Faiz Kautsar</h3>
                         <blockquote><i>
 
@@ -72,10 +72,10 @@
                 </div>
                 <hr class="line2">
                 <div class="row team-row">
-                    <div class="col-xs-3 col-xs-offset-3 col-md-2 col-md-offset-3">
+                    <div class="col-xs-3  col-md-2 col-md-offset-3">
                         <img class="img-responsive img-circle" src="{{URL::to('/image/me.jpg')}}" width="150" height="150">
                     </div>
-                    <div class="col-md-4 col-xs-4">
+                    <div class="col-md-4 col-xs-6">
                         <h3>Liany Gustina</h3>
                         <blockquote>
                             <i>
@@ -85,7 +85,7 @@
                 </div>
                 <hr class="line2">
                 <div class="row team-row">
-                    <div class="col-xs-3 col-xs-offset-3 col-md-4 col-md-offset-3">
+                    <div class="col-xs-3 col-md-4 col-md-offset-3">
                         <h3>Rinaldi Andrian Rahmanda</h3>
                         <blockquote><i>
                             "What greater gift than the love of a cat." ~Charles Dickens
@@ -99,7 +99,7 @@
                 </div>
                 <hr class="line2">
                 <div class="row team-row" style="margin-bottom:4%;">
-                    <div class="col-xs-3 col-xs-offset-3 col-md-2 col-md-offset-3">
+                    <div class="col-xs-3 col-md-2 col-md-offset-3">
                         <img class="img-responsive img-circle" src="{{URL::to('/image/tommy.jpg')}}" width="150" height="150">
                     </div>
                     <div class="col-md-4 col-xs-4" >
