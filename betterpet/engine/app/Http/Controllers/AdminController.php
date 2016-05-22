@@ -36,8 +36,10 @@ class AdminController extends Controller
         	if($singleUser->admin!='1')
         		array_push($users,$singleUser);
         }
+        $maps = DB::table('maps')->get();
 		return view('admin.index',
-            ['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users,'questions'=>$questions,'allnews'=>$allnews]);
+            ['shelters'=>$shelters,'adoptions'=>$adoptions,'users'=>$users,
+            'questions'=>$questions,'allnews'=>$allnews,'maps'=>$maps]);
 	}
 	
 	public function createNews(Request $request){
@@ -132,6 +134,9 @@ class AdminController extends Controller
         $name = $request->input('name');
         $long = $request->input('long');
         $lat = $request->input('lat');
-        //TODO , insert into database
+        DB::table('maps')->insert(
+            ['name'=>$name,'latitude'=>$lat,'longitude'=>$long]
+        );
+        return redirect('/admin');
     }
 }

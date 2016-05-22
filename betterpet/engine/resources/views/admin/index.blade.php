@@ -259,11 +259,11 @@
           </tr>
         </thead>
         <tbody>
-        @foreach($questions as $question)
+        @foreach($maps as $map)
         <tr>
-          <td>{{$question->email}}</td>
-          <td>{{$question->title}}</td>
-          <td>{!! $question->content !!}</td>
+          <td>{{$map->name}}</td>
+          <td>{{$map->longitude}}</td>
+          <td>{{$map->latitude}}</td>
         </tr>
         @endforeach
         </tbody>
@@ -278,15 +278,15 @@
     {!! csrf_field() !!}
       <div class="form-group">
         <label for="name">Nama Rumah Sakit / Dr:</label>
-        <input type="name" class="form-control" id="name" required>
+        <input type="name" class="form-control" id="name" name="name" required>
       </div>
       <div class="form-group">
         <label for="lat">Latitude</label>
-        <input type="text" class="form-control" id="lat" required>
+        <input type="text" class="form-control" id="lat" name="lat" required>
       </div>
       <div class="form-group">
         <label for="long">Longitude</label>
-        <input type="text" class="form-control" id="long" required>
+        <input type="text" class="form-control" id="long" name="long" required>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
         </form>
