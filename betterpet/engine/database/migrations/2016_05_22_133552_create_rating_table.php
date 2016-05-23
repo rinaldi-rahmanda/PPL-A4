@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSheltersTable extends Migration
+class CreateRatingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,16 +12,13 @@ class CreateSheltersTable extends Migration
      */
     public function up()
     {
-        Schema::create('shelters', function (Blueprint $table) {
+        //'shelter_id', 'user_id', 'rating', 'comment'
+        Schema::create('ratings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('shelterName');
-			$table->longText('address');
-			$table->longText('description');
-			$table->string('picture',255);
-            $table->integer('domicile')->index();
-            $table->integer('rating');
-            $table->integer('numRating');
+            $table->integer('shelter_id')->index();
             $table->integer('user_id')->index();
+            $table->integer('rating');
+            $table->longText('comment');
         });
     }
 

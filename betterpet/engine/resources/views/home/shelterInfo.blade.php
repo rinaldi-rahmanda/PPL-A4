@@ -23,10 +23,53 @@
             </h4>
             <p class="text-center">
                 <?php
-                    echo $shelter->description;
+                    if ($shelter->numRating > 0) {
+                        echo "Rating: " . ($shelter->rating / 100) . "/5";
+                    } else {
+                        echo "No ratings yet!";
+                    }
                 ?>
             </p>
+            @if(Auth::check())
+                <button type="button" class="register-button btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    <span class="glyphicon glyphicon-edit"></span> Leave a rating
+                </button>
+            @endif
+            <?php
+                echo $shelter->description;
+            ?>
         </div>
     </div>
+    @if(Auth::check())
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Rate this shelter</h4>
+                    </div>
+                    <div class="modal-body">
+                        {!! Form::open(array('url'=>'shelter/rate/'.$shelter->id,'method'=>'POST')) !!}
+                        {!! csrf_field() !!}  
+                        <div class="form-group">
+                            <label class="in-form" for="exampleInputEmail1"  style="display:block;">Rating</label>
+                            <label class="control-label"><input type="radio" name="rating" class=" form-control" value="100">1</label>
+                            <label class="control-label"><input type="radio" name="rating" class=" form-control" value="200">2</label>
+                            <label class="control-label"><input type="radio" name="rating" class=" form-control" value="300">3</label>
+                            <label class="control-label"><input type="radio" name="rating" class=" form-control" value="400">4</label>
+                            <label class="control-label"><input type="radio" name="rating" class=" form-control" value="500" checked>5</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
 </div>
 @endsection

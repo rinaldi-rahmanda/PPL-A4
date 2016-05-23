@@ -65,6 +65,7 @@ Route::group(['middleware'=>['web','usermid']],function(){
     Route::get('/adoption/mark/{id}','UserController@markDone');
     Route::get('/adoption/unmark/{id}','UserController@unmarkDone');
     Route::post('/shelter/new','UserController@newShelter');
+    Route::post('/shelter/rate/{id}','UserController@leaveRating');
     Route::post('/adoption/request/{id}','UserController@requestAdoption');
     Route::post('/adoption/request/cancel/{id}','UserController@cancelRequest');
     Route::post('/shelter/remove/{id}','AdminController@removeShelter');

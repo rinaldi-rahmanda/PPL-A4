@@ -418,4 +418,13 @@ class UserController extends Controller
             ->delete();
         return redirect()->back();
     }
+    public function leaveRating(Request $request,$id){
+        $shelter = Shelter::find($id);
+        $user = Auth::user();
+        $idUser = $user->id;
+        $shelter->rating = (($shelter->rating * $shelter->numRating) + $request->rating) / ($shelter->numRating + 1);
+        $shelter->numRating = $shelter->numRating + 1;
+        $shelter->save();
+        return redirect()->back();
+    }
 }
