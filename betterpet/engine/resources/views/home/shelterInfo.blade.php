@@ -35,6 +35,9 @@
                     <span class="glyphicon glyphicon-edit"></span> Leave a rating
                 </button>
             @endif
+            @if(Auth::check() && $shelterOwner->id==Auth::user()->id)
+                <button class="register-button btn btn-success">Edit this shelter</button>
+            @endif
             <?php
                 echo $shelter->description;
             ?>

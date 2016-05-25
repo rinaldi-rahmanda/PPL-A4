@@ -129,6 +129,7 @@
                 <p class="text-center"><a href="{{URL::to('/shelter')}}/{{$shelter->id}}" class="btn btn-primary" role="button">See the details</a></p>
             </div>
             @endforeach
+            {!! $shelters->render() !!}
         </div>
     </div>
     @endsection

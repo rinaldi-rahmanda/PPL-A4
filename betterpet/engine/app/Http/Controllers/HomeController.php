@@ -38,13 +38,13 @@ use CaptchaTrait;
     //menampilkan adoption form
     public function adoption(){
 		$adoptions = Adoption::where('done','0');
-		$adoptions = $adoptions->take(6)->get();
+		$adoptions = $adoptions->paginate(6);
     	return view('home.adoption',['adoptions'=>$adoptions]);
     }
     //menampilkan shelter form
      public function shelter(){
-		$shelter = Shelter::all();
-    	        return view('home.shelter',['shelters'=>$shelter]);
+		$shelter = Shelter::paginate(6);
+    	return view('home.shelter',['shelters'=>$shelter]);
     }
     //menampilkan contact form
     public function contact(){

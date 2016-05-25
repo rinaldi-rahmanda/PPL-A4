@@ -171,6 +171,7 @@
                 </div>
                 @endforeach
             </div>
+            {!! $adoptions->render() !!}
         </div>
     </div>
 </div>
