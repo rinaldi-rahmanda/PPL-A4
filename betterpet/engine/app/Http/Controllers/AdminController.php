@@ -114,6 +114,7 @@ class AdminController extends Controller
         $shelter = Shelter::find($id);
         if($shelter){
             $shelter->delete();
+            Storage::delete('shelterimage/'.$adoption->picture);
             return redirect()->back();
         }
         else

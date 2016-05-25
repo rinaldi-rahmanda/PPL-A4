@@ -42,6 +42,10 @@
                     @endif
                     @if(Auth::check() && $shelterOwner->id==Auth::user()->id)
                         <button class="register-button btn btn-success" data-toggle="modal" data-target="#editModal">Edit this shelter</button>
+                        <form method="POST" action="{{URL::to('/shelter/delete')}}/{{$shelter->id}}">
+                            {!! csrf_field() !!}
+                            <button type="submit" class="btn btn-danger">Delete Shelter</button>
+                        </form>
                         <!-- Modal -->
                         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                             <div class="modal-dialog" role="document">

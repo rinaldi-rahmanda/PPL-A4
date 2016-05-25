@@ -460,4 +460,7 @@ class UserController extends Controller
         $shelter->save();
         return redirect()->back()->with('success','Your shelter has been updated');
     }
+    public function removeShelter(){
+        return "jancok";
+    }
 }
