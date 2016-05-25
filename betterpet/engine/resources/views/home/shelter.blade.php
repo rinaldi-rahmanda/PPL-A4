@@ -9,7 +9,7 @@
 <div class='container-fluid page-wrap' style='padding-top:6%; padding-bottom:3%;' >
     <div class='news'>
         <div class="row">
-            <div class="col-xs-12 col-md-5 col-md-offset-1 layout" style="border-radius:5px;">
+            <div class="col-xs-12 col-md-5 col-md-offset-1 col-sm-12 layout" style="border-radius:5px;">
                 <h3>Find Shelter For Your Pet!</h3>
                 @include('common.error')
                 <form method="POST">
@@ -32,26 +32,24 @@
                         </div>
                         <div class="form-group" >
                             <label class="in-form" for="exampleInputEmail1"  style="display:block;">Name</label>
-                            <input type="text" name="name" id="name" class=" form-control" placeholder="Name"  >
+                            <input type="text" name="name" id="name" class=" form-control" placeholder="Name">
                         </div>
                         <div class="form-group">
                             <label class="in-form" for="exampleInputEmail1"  style="display:block;">Address</label>
                             <input type="text" name="address" id="address" class=" form-control" placeholder="Address">
                         </div>
                     </div>
-                    <div class="form-group" style="text-align: center;">
+                    <div class="form-group">
                         <button type="submit" class="register-button btn btn-success" style="width: 150px"> 
                             <span class="glyphicon glyphicon-search"></span> Search</button>
                     </div>
                 </form>
             </div>
              @if(Auth::check())
-             <div class="col-xs-12 col-md-5 col-md-offset-1 layout" style="border-radius:5px; text-align: center; padding-top: 20px; padding-bottom: 40px;" >
-              
-               
+             <div class="col-xs-12 col-md-5 col-md-offset-1 col-sm-12 layout" style="border-radius:5px; text-align: center; padding-top: 20px; padding-bottom: 40px;" >               
                  <h3>Do You Have a shelter?</h3> 
-                 <h3>Help Them !!!</h3><br><br><br><br>
-                 <h3>Create Your Own Shelter!</h3>
+                 <h3>Help them!</h3><br><br><br><br>
+                 <h3>Create Your Own Shelter</h3>
                         <button type="button" class="register-button btn btn-primary" data-toggle="modal" data-target="#myModal">
                             <span class="glyphicon glyphicon-edit"></span> Add New Shelter
                         </button>

@@ -196,6 +196,7 @@ body {
 .layout {
     background-color: white;
     padding: 2% 4% 2% 4%;
+    margin-top:20px;
 }
 
 .register {
