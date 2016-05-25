@@ -394,7 +394,7 @@ class UserController extends Controller
         $adoption = Adoption::find($id);
         Storage::delete('adoptionimage/'.$adoption->picture);
         $adoption->delete();
-        return redirect()->back()->with('success','Your adoption has been deleted');
+        return redirect('/adoption')->with('success','Your adoption has been deleted');
     }
     public function requestAdoption(Request $request,$id){
         $user = Auth::user();
