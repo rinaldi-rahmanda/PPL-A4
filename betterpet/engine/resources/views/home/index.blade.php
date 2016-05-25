@@ -102,7 +102,7 @@
       <hr class='line'>
       @if(count($adoptions)>0)
       <div class="row">
-         <div class="col-md-offset-1 col-xs-12 col-sm-6 col-md-10">
+         <div class="col-md-offset-1 col-sm-offset-1 col-xs-10 col-md-10">
             @foreach ($adoptions as $adoption)
             <div class="shelter-adoption col-md-4 col-sm-12 col-xs-12">
                <img class="img-responsive img-rounded img-adoption" width="300px" height="300px" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}">
@@ -112,8 +112,9 @@
             @endforeach
          </div>
       </div>
+       <div style="margin-bottom:5%;"></div>
       @else
-      <h3 class="text-center">There are no adoption available right now</h3>
+      <h3 class="text-center" style="margin-bottom:5%;">There are no adoption available right now</h3>
       @endif
    </div>
    <!-- End row -->

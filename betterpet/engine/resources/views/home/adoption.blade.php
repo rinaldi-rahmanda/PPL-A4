@@ -78,12 +78,12 @@
                 </form>
             </div>
             @if(Auth::check())
-                <div class="col-xs-12 col-md-5 col-md-offset-1 col-sm-12 layout" style="border-radius:5px; text-align: center; padding-top: 20px; padding-bottom: 40px;" >
-                    <h3>Want to create an adoption?</h3> 
-                    <button type="button" class="btn btn-primary register-button" data-toggle="modal" data-target="#myModal">
-                        <span class="glyphicon glyphicon-edit"></span> Add New Adoption 
-                    </button>
-                </div>
+            <div class="col-xs-12 col-md-5 col-md-offset-1 col-sm-12 layout" style="border-radius:5px; text-align: center; padding-top: 20px; padding-bottom: 40px;" >
+                <h3>Want to create an adoption?</h3> 
+                <button type="button" class="btn btn-primary register-button" data-toggle="modal" data-target="#myModal">
+                    <span class="glyphicon glyphicon-edit"></span> Add New Adoption 
+                </button>
+            </div>
             @endif
             @if(Auth::check())
             <div class="col-md-3 col-md-offset-1">
@@ -166,11 +166,10 @@
 
         <div class="row adoption-section">
 
-            <div class="col-md-offset-1 col-xs-12 col-md-10">
-                <h3>Featured Pets :</h3>
-                <br>
+            <div class="col-md-offset-1 col-sm-offset-1 col-xs-10 col-md-10">
+
                 @foreach ($adoptions as $adoption)
-                <div class="shelter-adoption col-md-4 col-sm-12 col-xs-12">
+                <div class="shelter-adoption col-md-4 col-xs-12 col-sm-6" style="margin:10px;">
                     <img class="img-responsive img-rounded img-adoption" width="300px" height="300px" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}">
                     <h3 class="text-center">{{$adoption->name}}</h3>
                     <p class="text-center"><a href="{{URL::to('/adoption')}}/{{$adoption->id}}" class="btn btn-primary" role="button">See the details</a></p>
@@ -178,6 +177,7 @@
                 @endforeach
             </div>
             {!! $adoptions->render() !!}
+
         </div>
     </div>
 </div>
