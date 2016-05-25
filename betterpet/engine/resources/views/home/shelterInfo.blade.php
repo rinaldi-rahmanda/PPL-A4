@@ -37,7 +37,7 @@
                     <br>
                     @if(Auth::check())
                     <button type="button" class="register-button btn btn-primary" data-toggle="modal" data-target="#myModal">
-                        <span class="glyphicon glyphicon-edit"></span> Leave a rating
+                        <span class="glyphicon glyphicon-edit"></span> Rate this shelter
                     </button>
                     @endif
                     @if(Auth::check() && $shelterOwner->id==Auth::user()->id)
@@ -124,11 +124,12 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Rate this shelter</h4>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body text-center">
                         {!! Form::open(array('url'=>'shelter/rate/'.$shelter->id,'method'=>'POST')) !!}
                         {!! csrf_field() !!}  
                         <div class="form-group">
-                            <label class="in-form" for="exampleInputEmail1"  style="display:block;">Rating</label>
+                            <h3>Rating</h3>
+                            <p>1(Bad)|2(Enough)|3(Good)|4(Very Good)</p>
                             <label class="control-label"><input type="radio" name="rating" class=" form-control" value="100">1</label>
                             <label class="control-label"><input type="radio" name="rating" class=" form-control" value="200">2</label>
                             <label class="control-label"><input type="radio" name="rating" class=" form-control" value="300">3</label>
