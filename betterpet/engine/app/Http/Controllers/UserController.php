@@ -421,4 +421,43 @@ class UserController extends Controller
         $shelter->save();
         return redirect()->back();
     }
+    public function editShelter(Request $request,$id){
+        $shelter = Shelter::find($id);
+        $name = $request->input('shelterName');
+        $address = $request->input('address');
+        $domicile = $request->input('domicile');
+        $description = $request->input('description');
+        $validator = Validator::make($request->all(),[
+            'name' => 'min:3|max:30',
+            'address' => 'min:3|max:255',
+        ],[
+            'min'=>':attribute must be at least 3 characters',
+            'max'=>':attribute must fewer than :max characters',
+        ]);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator);
+        }
+        $shelter->shelterName = $name;
+        $shelter->address = $address;
+        $shelter->domicile = $domicile;
+        $shelter->description = $description;
+        if($request->hasFile('picture'))
+        {
+            $file = $request->file('picture');
+            $validator = Validator::make(array('file'=>$file),[
+                'file' => 'image|max:2000',
+            ]);
+            if($validator->fails())
+                return redirect()->back()
+                ->withErrors($validator);
+            $extension = $file->getClientOriginalExtension();
+            $fileName = ($count+1).'.'.$extension;
+            Storage::put('shelterimage/'.$fileName,
+                file_get_contents($file->getRealPath()));
+            //$file->move($destinationPath,$fileName);
+            $shelter->picture = $fileName;
+        }
+        $shelter->save();
+        return redirect()->back()->with('success','Your shelter has been updated');
+    }
 }
