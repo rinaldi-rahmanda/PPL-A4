@@ -11,10 +11,13 @@
 <div class='container-fluid page-wrap' style='padding-top:6%; padding-bottom:3%;' >
     <div class='news'>
         <div class="row">
-            @include('common.success')
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                @include('common.success')
+                @include('common.error')
+            </div>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-md-6 col-md-offset-1 layout" style="border-radius:5px;">
+            <div class="col-xs-12 col-md-5 col-md-offset-1 layout" style="border-radius:5px;">
                 <h2>Find your favorite pet!</h2>
                 @include('common.error')
                 <form method="POST">
@@ -71,17 +74,17 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="register-button btn btn-success">Search</button>
-                        @if(Auth::check())
-                        <button type="button" class="btn btn-primary register-button" data-toggle="modal" data-target="#myModal">
-                            <span class="glyphicon glyphicon-edit"></span> Add New Adoption 
-                        </button>
-                        @endif
                     </div>
-
                 </form>
             </div>
-
-
+            @if(Auth::check())
+                <div class="col-xs-12 col-md-5 col-md-offset-1 col-sm-12 layout" style="border-radius:5px; text-align: center; padding-top: 20px; padding-bottom: 40px;" >
+                    <h3>Want to create an adoption?</h3> 
+                    <button type="button" class="btn btn-primary register-button" data-toggle="modal" data-target="#myModal">
+                        <span class="glyphicon glyphicon-edit"></span> Add New Adoption 
+                    </button>
+                </div>
+            @endif
             @if(Auth::check())
             <div class="col-md-3 col-md-offset-1">
                 <!-- Modal -->

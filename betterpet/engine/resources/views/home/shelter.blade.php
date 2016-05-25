@@ -9,9 +9,14 @@
 <div class='container-fluid page-wrap' style='padding-top:6%; padding-bottom:3%;' >
     <div class='news'>
         <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                @include('common.error')
+                @include('common.success')
+            </div>
+        </div>
+        <div class="row">
             <div class="col-xs-12 col-md-5 col-md-offset-1 col-sm-12 layout" style="border-radius:5px;">
                 <h3>Find Shelter For Your Pet!</h3>
-                @include('common.error')
                 <form method="POST">
                     {!! csrf_field() !!}
                     <div class="form-inline">
@@ -65,7 +70,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Add New Adoption</h4>
+                        <h4 class="modal-title" id="myModalLabel">Add New Shelter</h4>
                     </div>
                     <div class="modal-body">
                         {!! Form::open(array('url'=>'shelter/new','method'=>'POST', 'files'=>true)) !!}

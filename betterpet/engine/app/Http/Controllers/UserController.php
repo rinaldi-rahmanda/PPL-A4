@@ -384,7 +384,7 @@ class UserController extends Controller
             $adoption->picture = $fileName;
         }
         $adoption->save();
-        return redirect()->back();
+        return redirect()->back()->with('success','Edit successful!');
 
        
     }

@@ -17,6 +17,8 @@
             <div class="col-md-offset-1 col-sm-offset-1 col-md-5 col-xs-12" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
                 @if($adoption)
                 <h1>{{$adoption->name}}</h1>
+                @include('common.success')
+                @include('common.error')
                 @if($user && $user->id==$adoption->user_id)
                 <form action="{{URL::to('/adoption')}}/delete/{{$adoption->id}}" method="POST">
                     {!! csrf_field() !!}
@@ -79,7 +81,6 @@
                                 <div class="form-group">
                                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Sex</label>
                                     <select class="form-control" name="sex">
-                                        <option value="1">Any</option>
                                         <option value="2">Female</option>
                                         <option value="3">Male</option>
                                     </select>
