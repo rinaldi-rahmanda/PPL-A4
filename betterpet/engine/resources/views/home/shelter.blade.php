@@ -14,7 +14,7 @@
                 @include('common.success')
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-xs-12 col-md-5 col-md-offset-1 col-sm-12 layout" style="border-radius:5px;">
                 <h3>Find Shelter For Your Pet!</h3>

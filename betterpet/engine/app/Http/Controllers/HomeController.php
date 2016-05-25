@@ -176,7 +176,7 @@ use CaptchaTrait;
 		if($sex!='1'){
 			$results = $results->where('sex',$sex);
 		}
-		$adoptions = $results->where('done','0')->get();
+		$adoptions = $results->where('done','0')->paginate(6);
 		return view('home.adoption',['adoptions'=>$adoptions]);
 	}
 	public function viewProfile($id){
@@ -214,7 +214,7 @@ use CaptchaTrait;
             $results = $results->where('shelterName','like','%'.$name.'%');
 		if($address)
 		  $results = $results->where('address','like','%'.$address.'%');
-		$shelter = $results->get();
+		$shelter = $results->paginate(6);
 		return view('home.shelter',['shelters'=>$shelter]);	
 	}
     public function shelterInfo($id){
