@@ -413,9 +413,13 @@ class UserController extends Controller
         return redirect()->back();
     }
     public function leaveRating(Request $request,$id){
-        $shelter = Shelter::find($id);
         $user = Auth::user();
         $idUser = $user->id;
+        $newRating = new Rating;
+        $newRating->shelter_id = $id;
+        $newRating->user_id = $idUser;
+        $newRating->rating = $shelter->rating;
+        $shelter = Shelter::find($id);
         $shelter->rating = (($shelter->rating * $shelter->numRating) + $request->rating) / ($shelter->numRating + 1);
         $shelter->numRating = $shelter->numRating + 1;
         $shelter->save();
