@@ -464,6 +464,7 @@ class UserController extends Controller
         $shelter = Shelter::find($id);
         if($shelter->user_id != Auth::user()->id)
             return redirect()->back()->withErrors("You're not allowed to do this");
+        DB::table('ratings')->where('shelter_id',$shelter->id)->delete();
         $shelter->delete();
         Storage::delete('shelterimage/'.$shelter->picture);
         return redirect('/shelter')->with('success',"You're shelter has been deleted");
