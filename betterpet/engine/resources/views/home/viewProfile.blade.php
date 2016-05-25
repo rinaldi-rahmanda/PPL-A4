@@ -7,6 +7,7 @@
         height: 100%;
     }
 </style>
+<script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
 <div class='container-fluid page-wrap'>
     <div class="row">
         <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" style="background-color:white; min-height: 100%; margin-top:8%;">
@@ -47,13 +48,15 @@
                         </div>      
                     </div>
                     <div class="tab-pane" id="adoptions">
-                        <h3 style="margin-top:8%;">Adoptions owned</h3>
+                        @if($check==1)
+                        <h4>Add new Adoption</h4>
+                        <button style="margin-left:3%;" type="button" data-toggle="modal" class="btn btn-primary" data-target="#myModal">
+                            <span class="glyphicon glyphicon-edit"></span> Create Adoption  
+                        </button>
+                        <hr>
+                        <h4 style="margin-top:8%;">Adoptions Owned</h4>
+                        <hr>
                         <div class="row">
-                            @if($check==1)
-                            <h5>Add new adoption post <button style="margin-left:3%;" type="button" data-toggle="modal" data-target="#myModal">
-                                <span class="glyphicon glyphicon-edit"></span>  
-                                </button>
-                            </h5>
                             <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
@@ -130,18 +133,21 @@
                             @endif
                         </div>
                         <div class='row'>
-                            @foreach($adoptions as $adoption)
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                @foreach($adoptions as $adoption)
                                 <h4>{{$adoption->name}}</h4>
-                                <a href="{{URL::to('/adoption')}}/{{$adoption->id}}">View</a>
                                 @if($check==1)
-                                <a href="{{URL::to('/adoption')}}/edit/{{$adoption->id}}">Edit</a>
                                 <form action="{{URL::to('/adoption')}}/delete/{{$adoption->id}}" method="POST">
                                     {!! csrf_field() !!}
-                                    <button type="submit">delete</button>
+                                    <div class="form-group">
+                                        <a class="btn btn-default" href="{{URL::to('/adoption')}}/{{$adoption->id}}">View</a>
+                                        <button class="btn btn-danger" type="submit">delete</button>
+                                    </div>
                                 </form>
                                 @endif
                                 <hr>
                             @endforeach
+                            </div>
                         </div>
                     </div>
 

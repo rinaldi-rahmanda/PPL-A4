@@ -18,9 +18,15 @@
                 @if($adoption)
                 <h1>{{$adoption->name}}</h1>
                 @if($user && $user->id==$adoption->user_id)
-                <button type="button" class="btn btn-primary register-button" data-toggle="modal" data-target="#myModal">
-                    <span class="glyphicon glyphicon-edit"></span> Edit this adoption info 
-                </button>
+                <form action="{{URL::to('/adoption')}}/delete/{{$adoption->id}}" method="POST">
+                    {!! csrf_field() !!}
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                            <span class="glyphicon glyphicon-edit"></span> Edit this adoption info 
+                        </button>
+                        <button class="btn btn-danger" type="submit">delete</button>
+                    </div>
+                </form>
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
@@ -114,10 +120,10 @@
                 </ul>
                 @if($adoption->done=='0')
                 <a href="{{URL::to('/adoption')}}/mark/{{$adoption->id}}"
-                    class="btn btn-sm btn-success">Mark as Done</a>
+                    class="btn btn-sm btn-success" style="margin-bottom: 5px">Mark as Done</a>
                 @else
                 <a href="{{URL::to('/adoption')}}/unmark/{{$adoption->id}}"
-                    class="btn btn-sm btn-danger">Unmark as Done</a>
+                    class="btn btn-sm btn-danger" style="margin-bottom: 5px">Unmark as Done</a>
                 @endif
                 @endif
                 @if($user && $user->id!=$adoption->user_id && $adoption->done=='0')
