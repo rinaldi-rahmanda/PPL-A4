@@ -23,7 +23,7 @@
                 </div>
                 @endif
             </div>
-            <div class="col-md-offset-1 col-sm-offset-1 col-md-5 col-sm-5" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
+            <div class="col-md-offset-1 col-md-5 col-xs-11 col-sm-11" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
                 <h1 >Hello, I am {{ $user->name }}!</h1>
                 @include('common.success')
                 <ul style="padding: 0;">

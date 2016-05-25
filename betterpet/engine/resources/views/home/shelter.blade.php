@@ -37,7 +37,7 @@
                             </select>
                         </div>
                         <div class="form-group" >
-                            <label class="in-form" for="exampleInputEmail1"  style="display:block;">Name</label>
+                            <label class="in-form" for="exampleInputEmail1"  style="display:block;">Shelter Name</label>
                             <input type="text" name="name" id="name" class=" form-control" placeholder="Name">
                         </div>
                         <div class="form-group">
@@ -46,8 +46,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="register-button btn btn-success" style="width: 150px"> 
-                            <span class="glyphicon glyphicon-search"></span> Search</button>
+                        <button type="submit" class="register-button btn btn-success" > 
+                            Search <span class="glyphicon glyphicon-search"></span> </button>
                     </div>
                 </form>
             </div>

@@ -14,7 +14,7 @@
             <div class="col-md-2 col-sm-2 col-xs-12" style="margin-top:5%;margin-bottom:2%;padding-left:3%;">
                 <img class="img-rounded" src="{{URL::to('/engine/storage/app/adoptionimage')}}/{{$adoption->picture}}" width="200px" height="200px" alt="">        
             </div>
-            <div class="col-md-offset-1 col-sm-offset-1 col-md-5 col-xs-12" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
+            <div class="col-md-offset-1 col-md-5 col-xs-11 col-sm-11" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
                 @if($adoption)
                 <h1>{{$adoption->name}}</h1>
                 @include('common.success')

@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="register-button btn btn-success">Search</button>
+                        <button type="submit" class="register-button btn btn-success">Search <span class="glyphicon glyphicon-search"></span></button>
                     </div>
                 </form>
             </div>
