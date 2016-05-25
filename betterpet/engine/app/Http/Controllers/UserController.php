@@ -348,7 +348,7 @@ class UserController extends Controller
             $shelter->picture = $fileName;
         }
         $shelter->save();
-        return redirect()->back();
+        return redirect()->back()->with('success','Successfuly created new shelter');
     }
     public function editAdoption(Request $request,$id){
         $name = $request->input('name');
@@ -460,7 +460,12 @@ class UserController extends Controller
         $shelter->save();
         return redirect()->back()->with('success','Your shelter has been updated');
     }
-    public function removeShelter(){
-        return "jancok";
+    public function removeShelter($id){
+        $shelter = Shelter::find($id);
+        if($shelter->user_id != Auth::user()->id)
+            return redirect()->back()->withErrors("You're not allowed to do this");
+        $shelter->delete();
+        Storage::delete('shelterimage/'.$shelter->picture);
+        return redirect('/shelter')->with('success',"You're shelter has been deleted");
     }
 }
