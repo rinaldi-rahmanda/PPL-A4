@@ -135,7 +135,7 @@
 <!-- Container (Konten 1) -->
 <div class="container-fluid" style="margin-top:1%;margin-bottom:3%;">
     <div class="row">
-        <div class='col-md-offset-1 col-sm-10 col-md-10 col-xs-10'>
+        <div class='col-md-offset-1 col-sm-12 col-md-10 col-xs-12'>
             <h3 style="margin-bottom:2%;">Frequently Asked Questions:</h3>
             <div class="custom-panel panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
