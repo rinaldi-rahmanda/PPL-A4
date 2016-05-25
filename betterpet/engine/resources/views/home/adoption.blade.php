@@ -11,6 +11,9 @@
 <div class='container-fluid page-wrap' style='padding-top:6%; padding-bottom:3%;' >
     <div class='news'>
         <div class="row">
+            @include('common.success')
+        </div>
+        <div class="row">
             <div class="col-xs-12 col-md-6 col-md-offset-1 layout" style="border-radius:5px;">
                 <h2>Find your favorite pet!</h2>
                 @include('common.error')

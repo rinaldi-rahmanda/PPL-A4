@@ -252,12 +252,6 @@ class UserController extends Controller
             ->where('adoptions.user_id',$userId);
         return view('userAdoption',['adoptions'=>$adList]);      
     }
-    public function saveAdoption(Request $request){
-            $user = Auth::user();
-            $userId = $user->id;
-            $adoption = new Adoption();
-            //buat adopsi baru
-    }
     public function markDone($id){
         //menandai bahwa adopsi untuk adoption pada suatu user sudah "done"
         $user = Auth::user();
@@ -319,7 +313,7 @@ class UserController extends Controller
             $adoption->picture = $fileName;
         }
         $adoption->save();
-        return redirect()->back();
+        return redirect()->back()->with('success','Your new adoption has been created');
     }
     public function newShelter(Request $request){
         $name = $request->input('shelterName');
@@ -400,7 +394,7 @@ class UserController extends Controller
         $adoption = Adoption::find($id);
         Storage::delete('adoptionimage/'.$adoption->picture);
         $adoption->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success','Your adoption has been deleted');
     }
     public function requestAdoption(Request $request,$id){
         $user = Auth::user();

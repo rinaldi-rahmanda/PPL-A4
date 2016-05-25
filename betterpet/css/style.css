@@ -202,7 +202,10 @@ body {
 .register {
     background-color: #dfeef7;
 }
-
+#googleMap{
+    margin-bottom:20px;
+    border:1px solid black;
+}
 .strikeThrough {
     position: relative;
     text-align: center;
