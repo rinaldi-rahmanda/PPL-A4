@@ -26,7 +26,7 @@
   #section2 {padding-top:50px;height:500px;color: #101010; background-color: #f6f6f6;}
   #section3 {padding-top:50px;height:500px;color: #101010; background-color: #61abd8;}
   #section41 {padding-top:50px;height:500px;color: #101010; background-color: #f6f6f6;}
-  #section42 {padding-top:50px;height:500px;color: #101010; background-color:#61abd8;}
+  #section42 {padding-top:50px;color: #101010; background-color:#61abd8;}
   .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
    background-color: #5AC2FF;
 }
@@ -278,7 +278,7 @@
     </div>
   </div>
 </div>
-<div id="section7" class="container-fluid">
+<div id="section7" class="container" style="margin-bottom:20px;">
   <h1 class="text-center">Add New Map Marker</h1>
   <div class="row">
     <form method="POST" action="{{URL::to('/admin/newmap')}}">

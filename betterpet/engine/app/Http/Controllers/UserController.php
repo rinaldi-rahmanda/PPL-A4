@@ -428,7 +428,7 @@ class UserController extends Controller
         $domicile = $request->input('domicile');
         $description = $request->input('description');
         $validator = Validator::make($request->all(),[
-            'name' => 'min:3|max:30',
+            'shelterName' => 'min:3|max:30',
             'address' => 'min:3|max:255',
         ],[
             'min'=>':attribute must be at least 3 characters',
