@@ -441,6 +441,8 @@ class UserController extends Controller
         $shelter->address = $address;
         $shelter->domicile = $domicile;
         $shelter->description = $description;
+        $count = Shelter::all();
+        $count = $count->count();
         if($request->hasFile('picture'))
         {
             $file = $request->file('picture');
