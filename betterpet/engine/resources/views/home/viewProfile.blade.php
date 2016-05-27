@@ -48,13 +48,30 @@
                   </div>
                </div>
                <div class="tab-pane" id="adoptions">
+                <h4 style="margin-top:8%;">Adoptions Owned</h4>
+                    <div class='row'>
+                     <div class="col-md-12 col-sm-12 col-xs-12">
+                        @foreach($adoptions as $adoption)
+                        <h4>{{$adoption->name}}</h4>
+                        @if($check==1)
+                        <form action="{{URL::to('/adoption')}}/delete/{{$adoption->id}}" method="POST">
+                           {!! csrf_field() !!}
+                           <div class="form-group">
+                              <a class="btn btn-default" href="{{URL::to('/adoption')}}/{{$adoption->id}}">View</a>
+                              <button class="btn btn-danger" type="submit">delete</button>
+                           </div>
+                        </form>
+                        @endif
+                        <hr>
+                        @endforeach
+                     </div>
+                  </div>
                   @if($check==1)
                   <h4>Add new Adoption</h4>
                   <button style="margin-left:3%;" type="button" data-toggle="modal" class="btn btn-primary" data-target="#myModal">
                   <span class="glyphicon glyphicon-edit"></span> Create Adoption  
                   </button>
                   <hr>
-                  <h4 style="margin-top:8%;">Adoptions Owned</h4>
                   <hr>
                   <div class="row">
                      <!-- Modal -->
@@ -130,23 +147,6 @@
                         </div>
                      </div>
                      @endif
-                  </div>
-                  <div class='row'>
-                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        @foreach($adoptions as $adoption)
-                        <h4>{{$adoption->name}}</h4>
-                        @if($check==1)
-                        <form action="{{URL::to('/adoption')}}/delete/{{$adoption->id}}" method="POST">
-                           {!! csrf_field() !!}
-                           <div class="form-group">
-                              <a class="btn btn-default" href="{{URL::to('/adoption')}}/{{$adoption->id}}">View</a>
-                              <button class="btn btn-danger" type="submit">delete</button>
-                           </div>
-                        </form>
-                        @endif
-                        <hr>
-                        @endforeach
-                     </div>
                   </div>
                </div>
             </div>
