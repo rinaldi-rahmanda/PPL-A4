@@ -42,7 +42,9 @@
                         <div class="panel panel-default" style="margin-top:8%;">
                             <div class="panel-heading">About Me</div>
                             <div class="panel-body " style="word-wrap: break-word;">
+                                @if($user->phone)
                                 <p > You can call me at {{$user->phone}}</p>
+                                @endif
                                 <p >{{$description}}</p>
                             </div>
                         </div>      
