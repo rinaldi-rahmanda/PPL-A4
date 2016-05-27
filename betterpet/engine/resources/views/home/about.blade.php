@@ -14,7 +14,6 @@
                 </div>
                 <br><br>
                 <div class="container-fluid text-center bg-grey">
-                    <hr class="line">
                     <div class="row ">
                         <div class="col-sm-4">
                             <span class="glyphicon glyphicon-certificate logo-small"></span>
