@@ -49,10 +49,15 @@
                </div>
                <div class="tab-pane" id="adoptions">
                 <h4 style="margin-top:8%;">Adoptions Owned</h4>
+                <hr>
                     <div class='row'>
                      <div class="col-md-12 col-sm-12 col-xs-12">
                         @foreach($adoptions as $adoption)
+                        @if($check!=1)
+                        <a href="{{URL::to('/adoption/')}}/{{$adoption->id}}"><h4>{{$adoption->name}}</h4></a>
+                        @else
                         <h4>{{$adoption->name}}</h4>
+                        @endif
                         @if($check==1)
                         <form action="{{URL::to('/adoption')}}/delete/{{$adoption->id}}" method="POST">
                            {!! csrf_field() !!}
