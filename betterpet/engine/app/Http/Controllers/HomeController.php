@@ -212,7 +212,10 @@ use CaptchaTrait;
 		//input can be 1,which is any type
 		$name = $request->input('name');
 		$address = $request->input('address');
-		$results = Shelter::where('domicile',$domicile);
+        if($domicile!='0')
+		  $results = Shelter::where('domicile',$domicile);
+        else
+            $results = Shelter::where('domicile','>',$domicile);
         if($name)
             $results = $results->where('shelterName','like','%'.$name.'%');
 		if($address)
