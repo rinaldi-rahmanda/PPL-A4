@@ -72,7 +72,7 @@ class AdminController extends Controller
             $news->photo = $fileName;
         }
         $news->save();
-        return $this->index();
+        return redirect('/admin')->with('success','The news has been deleted');;
 	}
 
     public function deleteNews($id){
@@ -108,7 +108,7 @@ class AdminController extends Controller
             $news->photo = $fileName;
         }
         $news->save();
-        return $this->index();
+        return $this->index()->with('success','News has been updated');;
 	}
     public function removeShelter($id){
         $shelter = Shelter::find($id);
@@ -139,10 +139,10 @@ class AdminController extends Controller
         DB::table('maps')->insert(
             ['name'=>$name,'latitude'=>$lat,'longitude'=>$long]
         );
-        return redirect('/admin');
+        return redirect('/admin')->with('success','New marker has been created');;
     }
     public function removeMapMarker($id){
         DB::table('maps')->where('id',$id)->delete();
-        return redirect('/admin');
+        return redirect('/admin')->with('success','The Marker has been deleted');;
     }
 }

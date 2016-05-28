@@ -88,7 +88,7 @@
                   <td>
                     <form method="POST" action="{{URL::to('/shelter')}}/remove/{{$shelter->id}}">
                     {!! csrf_field() !!}
-                    <input type="submit" value="Delete" class="btn btn-danger">
+                    <input onclick="return confirm('Are you sure to delete this shelter?')" type="submit" value="Delete" class="btn btn-danger">
                     </form>
                   </td>
                 </tr>
@@ -149,7 +149,7 @@
                   <td>
                     <form method="POST" action="{{URL::to('/adoption')}}/remove/{{$adoption->id}}">
                     {!! csrf_field() !!}
-                    <input type="submit" value="Delete" class="btn btn-danger">
+                    <input type="submit" value="Delete" onclick="return confirm('Are you sure to delete this adoption?')" class="btn btn-danger">
                     </form>
                   </td>
                 </tr>
@@ -176,7 +176,7 @@
           <td>{{$news->title}}</td>
           <td>
             <a href="{{URL::to('/admin/news/update')}}/{{$news->id}}"><button class="btn btn-primary btn-sm">Update</button></a>
-            <a href="{{URL::to('/admin/news/delete')}}/{{$news->id}}"><button class="btn btn-primary btn-sm">Delete</button></a>
+            <a href="{{URL::to('/admin/news/delete')}}/{{$news->id}}"><button onclick="return confirm('Are you sure to delete this news?')" class="btn btn-primary btn-sm">Delete</button></a>
           </td>
         </tr>
         @endforeach
@@ -191,17 +191,37 @@
   @include('common.error')
             {!! Form::open(array('url'=>'/admin/news/new','method'=>'POST', 'files'=>true)) !!}
             {!! csrf_field() !!}
-            <div class="form-inline">
-               <div class="form-group">
-                  <label class="in-form" for="title" style="display:block;">Title</label>
-                  <input type="text" name="title" id="title" class="form-control" placeholder="Title" required>
-               </div>
-               <div class="form-group">
-                  <label class="in-form" for="photo"  style="display:block;">Photo</label>
-                  {!! Form::file('newsimage',['id'=>'photo','class'=>'form-control']) !!}
-               </div>
-            </div>
-	    
+            <script>
+              function newspicture(){
+                $("#photo").click();
+              }
+              function readURL(input) {
+                  if (input.files && input.files[0]) {
+                      var reader = new FileReader();
+
+                      reader.onload = function (e) {
+                          $('#image-choosen')
+                              .attr('src', e.target.result)
+                              .width(150)
+                              .height(150);
+                      };
+
+                      reader.readAsDataURL(input.files[0]);
+                  }
+              }
+            </script>
+           <div class="form-group">
+              <label class="in-form" for="title" style="display:block;">Title</label>
+              <input type="text" name="title" id="title" class="form-control" placeholder="Title" required>
+           </div>
+           <div class="form-group">
+              <div onclick="newspicture()" class="btn-primary btn">Upload Picture</div>
+              {!! Form::file('newsimage',['id'=>'photo','onchange'=>'readURL(this)','style'=>'display:none','class'=>'form-control']) !!}
+           </div>
+           <div class="form-group">
+            <img src="#" id="image-choosen" alt="choosen image">
+           </div>
+  
 	    </br>
             <div class="form-group">
                   <label class="in-form" for="content"  style="display:block;">Content</label>
@@ -212,11 +232,7 @@
 
                </div>
             <div class="form-group">
-
                <button type="submit" class="btn btn-success">Submit</button>
-
-               <button type="submit" class="btn btn-success">Create</button>
-
             </div>
           {!! Form::close() !!}
 </div>
@@ -269,7 +285,7 @@
           <td>
             <form method="POST" action="{{URL::to('/admin')}}/maprm/{{$map->id}}">
               {!! csrf_field() !!}
-              <input type="submit" value="Delete" class="btn btn-danger">
+              <input type="submit" onclick="return confirm('Are you sure to delete this marker?')" value="Delete" class="btn btn-danger">
             </form>
           </td>
         </tr>
