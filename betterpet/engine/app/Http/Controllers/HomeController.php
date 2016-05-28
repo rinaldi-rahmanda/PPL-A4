@@ -154,7 +154,10 @@ use CaptchaTrait;
 		$breed = $request->input('breed');
 		$age = $request->input('age');
 		$sex = $request->input('sex');
-        $results = Adoption::where('domicile',$domicile);
+        if($domicile!='0')
+            $results = Adoption::where('domicile',$domicile);
+        else
+            $results = Adoption::where('domicile','>',$domicile);
         if($breed)
             $results = $results->where('breed','like','%'.$breed.'%');
 		if($type!='1'){

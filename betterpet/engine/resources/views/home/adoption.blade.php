@@ -26,7 +26,7 @@
                         <div class="form-group">
                             <label class="in-form" for="exampleInputEmail1" style="display:block;">Domicile</label>
                             <select class="form-control" name="domicile" required>
-                                <option value="" disabled selected>Select your domicile</option>
+                                <option value="0" selected>any</option>
                                 <option value="1">Jakarta Utara</option>
                                 <option value="2">Jakarta Timur</option>
                                 <option value="3">Jakarta Pusat</option>
