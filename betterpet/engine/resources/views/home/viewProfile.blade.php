@@ -63,7 +63,7 @@
                            {!! csrf_field() !!}
                            <div class="form-group">
                               <a class="btn btn-default" href="{{URL::to('/adoption')}}/{{$adoption->id}}">View</a>
-                              <button class="btn btn-danger" type="submit">delete</button>
+                              <button onclick="return confirm('Are you sure to delete this adoption?')" class="btn btn-danger" type="submit">delete</button>
                            </div>
                         </form>
                         @endif

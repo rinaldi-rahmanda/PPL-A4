@@ -27,7 +27,7 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                             <span class="glyphicon glyphicon-edit"></span> Edit this adoption info 
                         </button>
-                        <button class="btn btn-danger" type="submit">delete</button>
+                        <button onclick="return confirm('Are you sure to delete this adoption?')" class="btn btn-danger" type="submit">delete</button>
                     </div>
                 </form>
                 <!-- Modal -->
