@@ -34,6 +34,7 @@
             <ul class="nav nav-tabs" id="myTab">
                <li class="active"><a data-target="#home" data-toggle="tab" >Profile</a></li>
                <li><a data-target="#adoptions" data-toggle="tab">Adoptions</a></li>
+               <li><a data-target="#shelters" data-toggle="tab">Shelters</a></li>
             </ul>
             <div class="tab-content">
                <div class="tab-pane active" id="home">
@@ -50,7 +51,7 @@
                <div class="tab-pane" id="adoptions">
                 <h4 style="margin-top:8%;">Adoptions Owned</h4>
                 <hr>
-                    <div class='row'>
+                  <div class='row'>
                      <div class="col-md-12 col-sm-12 col-xs-12">
                         @foreach($adoptions as $adoption)
                         @if($check!=1)
@@ -152,6 +153,18 @@
                         </div>
                      </div>
                      @endif
+                  </div>
+               </div>
+               <div class="tab-pane" id="shelters">
+                  <h4 style="margin-top:8%;">Shelters Owned</h4>
+                  <hr>
+                  <div class='row'>
+                     <div class="col-md-12 col-sm-12 col-xs-12">
+                        @foreach($shelters as $shelter)
+                        <a href="{{URL::to('/shelter/')}}/{{$shelter->id}}"><h4>{{$shelter->shelterName}}</h4></a>
+                        <br>
+                        @endforeach
+                     </div>
                   </div>
                </div>
             </div>

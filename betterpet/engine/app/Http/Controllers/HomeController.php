@@ -199,6 +199,7 @@ use CaptchaTrait;
         else
             $domicile = $domicile->location;
         $adoptions = Adoption::where('user_id','=',$id)->get();
+        $shelters = Shelter::where('user_id',$id)->get();
         $check = 0;
         if(Auth::check())
         {
@@ -207,7 +208,9 @@ use CaptchaTrait;
             if($usrId == $id)
                 $check = 1;
         }
-        return view('home.viewProfile',['user'=>$user,'domicile'=>$domicile,'address'=>$address,'description'=>$desc,'phone'=>$phone,'adoptions'=>$adoptions,'check'=>$check]);
+        return view('home.viewProfile',['user'=>$user,'domicile'=>$domicile,'address'=>$address
+            ,'description'=>$desc,'phone'=>$phone,'adoptions'=>$adoptions,'check'=>$check,
+            'shelters'=>$shelters]);
     }
 	public function searchShelter(Request $request){
 		$domicile = $request->input('domicile');
