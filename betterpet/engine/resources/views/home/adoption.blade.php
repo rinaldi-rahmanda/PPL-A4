@@ -19,7 +19,6 @@
         <div class="row">
             <div class="col-xs-12 col-md-5 col-md-offset-1 layout" style="border-radius:5px;">
                 <h2>Find your favorite pet!</h2>
-                @include('common.error')
                 <form method="POST">
                     {!! csrf_field() !!}
                     <div class="form-inline">
