@@ -29,7 +29,7 @@
                         <input type="text" name="email" class="register-form form-control" placeholder="Email" required  value="{{old('email')}}"autofocus>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" id="password" class="register-form form-control" placeholder="Password" required>
+                        <input type="password" name="password" id="password" class="register-form form-control" placeholder="Password (6 Characters minimum)" required>
                     </div>
                     <div class="form-group">
                         <input type="password" id="passwordconfirm" name="passwordconfirm" class="register-form form-control"
@@ -39,7 +39,7 @@
                         <p id="passwordconfirmation"></p>
                     </div>
                     <div class="form-group">
-                        <input value="{{old('name')}}" type="text" name="name" class="register-form form-control" placeholder="Your Name ex: John Doe" required>
+                        <input value="{{old('name')}}" type="text" name="name" class="register-form form-control" placeholder="Your Name (maximum : 20 characters)" required>
                     </div>
                     <div class="form-group">
                         <input type="text" value="{{old('phone')}}" name="phone" class="register-form form-control" placeholder="Phone Number ex: 081234567" required>

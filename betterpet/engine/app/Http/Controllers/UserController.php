@@ -87,14 +87,14 @@ class UserController extends Controller
         $validator = Validator::make($request->all(),[
             'email' => 'email',
             'phone' => 'numeric',
-            'name' => 'min:3|max:16',
+            'name' => 'min:3|max:20',
             'password' => 'min:6',
         ],[
             'email'=>'Email address is not in valid format',
             'numeric'=>'Only numbers are allowed for :attribute',
             'min'=>'Your :attribute must be 3 characters or more',
             'password' => 'Password must be at least 6 characters',
-			'max'=>'Your :attribute must be less than 16 characters',
+			'max'=>'Your :attribute must be less than 20 characters',
         ]);
         if ($validator->fails()) {
             return redirect('/register')
