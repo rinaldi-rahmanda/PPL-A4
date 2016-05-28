@@ -7,6 +7,20 @@
             $("#file1").trigger('click');
         });
     }); 
+    function readURL(input) {
+         if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function (e) {
+                 $('#image-choosen')
+                     .attr('src', e.target.result)
+                     .width(200)
+                     .height(200);
+             };
+
+             reader.readAsDataURL(input.files[0]);
+         }
+    }
 </script>
 <div class='container-fluid'>
     <div class="row">
@@ -17,9 +31,9 @@
         </div>
         <div class="col-md-offset-2 col-md-2  col-sm-12">
 			@if($avatar=="")
-            <img src="http://placehold.it/200x200" alt="">
+            <img id="image-choosen" src="http://placehold.it/200x200" alt="">
 			@else
-			<img src="{{URL::to('/engine/storage/app/userimage').'/'.$avatar}}" width="200px" height="200px" alt="">	
+			<img id="image-choosen" src="{{URL::to('/engine/storage/app/userimage').'/'.$avatar}}" width="200px" height="200px" alt="">	
 			@endif
             <div class="ava-caption">
                 Upload Avatar
@@ -34,7 +48,7 @@
 			{!! Form::open(array('url'=>'profile','class'=>'form-horizontal','method'=>'POST', 'files'=>true)) !!}
             <!--<form id="profile-form" class="form-horizontal" method="POST">-->
                 {!! csrf_field() !!}
-				{!! Form::file('picture',['style'=>'display:none','id'=>'file1','accept'=>'image/*']) !!}
+				{!! Form::file('picture',['style'=>'display:none','onchange'=>'readURL(this)','id'=>'file1','accept'=>'image/*']) !!}
 				<!--<input type="file" id="file1"  name="picture" style="display:none"/>-->
 				@if (count($errors) > 0)
 				<div class="form-group">
