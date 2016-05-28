@@ -81,7 +81,8 @@ use CaptchaTrait;
         else
             $request = "";
         $adoptionOwner = User::where('id',$adoption->user_id)->first();
-
+        $id_dom = $adoption->domicile;
+        $domicile = DB::table('domicile')->where('id',$id_dom)->first();
         $requests = DB::table('requests')
             ->join('users','requests.idUser','=','users.id')
             ->where('idAdopsi',$adoption->id)
@@ -104,7 +105,8 @@ use CaptchaTrait;
         if($adoption->age=='6')
             $adoption->age = 'More than 3 years';  
         return view('home.adoptionInfo',['adoption'=>$adoption,'user'=>$user,
-            'request'=>$request,'requests'=>$requests,'adoptionOwner'=>$adoptionOwner,'count'=>$count]);
+            'request'=>$request,'requests'=>$requests,'adoptionOwner'=>$adoptionOwner,'count'=>$count,
+            'domicile'=>$domicile]);
 		
 	}
     public function contactPost(Request $request){

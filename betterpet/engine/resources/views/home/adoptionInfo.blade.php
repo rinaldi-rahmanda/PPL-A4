@@ -17,6 +17,7 @@
             <div class="col-md-offset-1 col-md-5 col-xs-11 col-sm-11" style="margin-top:3%;margin-bottom:2%;padding-left:4%;">
                 @if($adoption)
                 <h1>{{$adoption->name}}</h1>
+                <h4>in {{$domicile->location}}</h4>
                 @include('common.success')
                 @include('common.error')
                 @if($user && $user->id==$adoption->user_id)
