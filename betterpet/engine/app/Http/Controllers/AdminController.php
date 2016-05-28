@@ -117,6 +117,7 @@ class AdminController extends Controller
             Storage::delete('shelterimage/'.$shelter->picture);
             return redirect()->back();
             DB::table('ratings')->where('shelter_id',$shelter->id)->delete();
+            return redirect()->back()->with('success','The Adoption has been deleted');
         }
         else
             return redirect('/admin')->with('error','No Shelter Found for the requested id');
@@ -129,7 +130,7 @@ class AdminController extends Controller
             DB::table('requests')->where('idAdopsi','=',$id)->delete();
             Storage::delete('adoptionimage/'.$adoption->picture);
             $adoption->delete();
-            return redirect()->back();
+            return redirect()->back()->with('success','The Adoption has been deleted');
         }
     }
     public function newMapMarker(Request $request){
