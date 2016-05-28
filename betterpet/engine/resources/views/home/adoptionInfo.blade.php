@@ -77,7 +77,31 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Photo (2MB max)</label>
-                                    {!! Form::file('picture',['id'=>'photo','class'=>'form-control','accept'=>'image/*']) !!}
+                                    <script>
+                                        function uploadPhoto(){
+                                            $("#photo").click();
+                                        }
+                                        function readURL(input) {
+                                            if (input.files && input.files[0]) {
+                                                var reader = new FileReader();
+
+                                                reader.onload = function (e) {
+                                                    $('#image-choosen')
+                                                        .attr('src', e.target.result)
+                                                        .width(150)
+                                                        .height(150);
+                                                };
+
+                                                reader.readAsDataURL(input.files[0]);
+                                            }
+                                        }
+                                    </script>
+                                    <div id="choose-picture" onclick="uploadPhoto()" class="btn btn-primary">Choose Picture</div>
+                                    {!! Form::file('picture',['id'=>'photo','onchange'=>'readURL(this)','style="display:none;"','accept'=>'image/*']) !!}
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <img id="image-choosen" src="#" alt="No Image Choosen" />
                                 </div>
                                 <div class="form-group">
                                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Sex</label>
