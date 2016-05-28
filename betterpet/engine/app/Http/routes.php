@@ -59,7 +59,6 @@ Route::group(['middleware'=>['web','usermid']],function(){
     Route::post('/profile','UserController@editProfile');
     Route::post('/adoption/new','UserController@newAdoption');
     Route::get('/adoption/create','UserController@createAdoption');
-    Route::post('/adoption/create','UserController@saveAdoption');
     Route::post('/adoption/delete/{id}','UserController@deleteAdoption');
     Route::post('/adoption/edit/{id}','UserController@editAdoption');
     Route::get('/adoption/mark/{id}','UserController@markDone');

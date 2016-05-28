@@ -133,7 +133,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Photo (2MB max)</label>
-                                    {!! Form::file('picture',['id'=>'photo','class'=>'form-control','accept'=>'image/*']) !!}
+                                    <script>
+                                        function uploadPhoto(){
+                                            $("#photo").click();
+                                        }
+                                    </script>
+                                    <div id="choose-picture" onclick="uploadPhoto()" class="btn btn-primary">Choose Picture</div>
+                                    {!! Form::file('picture',['id'=>'photo','style="display:none;"','accept'=>'image/*']) !!}
                                 </div>
                                 <div class="form-group">
                                     <label class="in-form" for="exampleInputEmail1"  style="display:block;">Sex</label>

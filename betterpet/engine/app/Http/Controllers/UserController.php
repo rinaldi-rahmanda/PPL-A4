@@ -312,6 +312,9 @@ class UserController extends Controller
             //$file->move($destinationPath,$fileName);
             $adoption->picture = $fileName;
         }
+        else{
+            return redirect()->back()->withErrors('You have to upload a photo for this adoption');
+        }
         $adoption->save();
         return redirect()->back()->with('success','Your new adoption has been created');
     }
@@ -346,6 +349,9 @@ class UserController extends Controller
                 file_get_contents($file->getRealPath()));
             //$file->move($destinationPath,$fileName);
             $shelter->picture = $fileName;
+        }
+        else{
+            return redirect()->back()->withErrors('You have to upload a photo for this shelter');
         }
         $shelter->save();
         return redirect()->back()->with('success','Successfuly created new shelter');
