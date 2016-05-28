@@ -114,7 +114,7 @@ class AdminController extends Controller
         $shelter = Shelter::find($id);
         if($shelter){
             $shelter->delete();
-            Storage::delete('shelterimage/'.$adoption->picture);
+            Storage::delete('shelterimage/'.$shelter->picture);
             return redirect()->back();
             DB::table('ratings')->where('shelter_id',$shelter->id)->delete();
         }
