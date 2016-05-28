@@ -225,7 +225,9 @@ use CaptchaTrait;
 	}
     public function shelterInfo($id){
         $shelter = Shelter::find($id);
+        $id_dom = $shelter->domicile;
+        $domicile = DB::table('domicile')->where('id',$id_dom)->first();
         $shelterOwner = User::where('id',$shelter->user_id)->first();
-        return view('home.shelterInfo',['shelter'=>$shelter,'shelterOwner'=>$shelterOwner]);
+        return view('home.shelterInfo',['shelter'=>$shelter,'shelterOwner'=>$shelterOwner,'domicile'=>$domicile]);
     }
 }

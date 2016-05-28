@@ -21,11 +21,13 @@
             </div> 
             <div class="container col-md-8 col-xs-8 col-sm-8">
                 <h2 class="text-center">{{$shelter->shelterName}}</h2>
+                <h4 class="text-center">in {{$domicile->location}}</h4>
                 <h4 class="text-center">Owned by 
                     <a href="{{URL::to('/profile/view/')}}/{{$shelterOwner->id}}">
                         {{$shelterOwner->name}}
                     </a>
                 </h4>
+
                 <p class="text-center">
                     <?php
                         if ($shelter->numRating > 0) {
